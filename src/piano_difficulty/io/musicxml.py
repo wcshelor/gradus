@@ -17,16 +17,26 @@ Planned responsibilities:
 from __future__ import annotations
 
 from collections.abc import Iterable
+from dataclasses import dataclass
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from typing import Any
 from xml.etree import ElementTree
 from zipfile import BadZipFile, ZipFile
 
-from partitura.io.importmusicxml import load_musicxml as _partitura_load_musicxml
-
 MUSICXML_PARSER_BACKEND = "partitura"
 _SUPPORTED_SUFFIXES = {".musicxml", ".xml", ".mxl"}
+
+
+@dataclass(slots=True)
+class MusicXMLDocument:
+    """Raw MusicXML payload and parsed XML root used by normalization."""
+
+    source_path: Path
+    root: ElementTree.Element
+    xml_payload: bytes
+    rootfile_path: str | None = None
+    compressed: bool = False
 
 
 def _coerce_score_path(path: str | Path) -> Path:
@@ -59,12 +69,8 @@ def _iter_parts(parsed_score: Any) -> list[Any]:
     return []
 
 
-def read_mxl_archive(path: str | Path) -> bytes:
-    """Return the main MusicXML document payload from an MXL archive.
-
-    The final implementation should read `META-INF/container.xml` rather than
-    guessing the location of the score payload.
-    """
+def _read_mxl_archive_payload(path: str | Path) -> tuple[bytes, str]:
+    """Return the main MusicXML payload and rootfile path from an MXL archive."""
     archive_path = _coerce_score_path(path)
     if archive_path.suffix.lower() != ".mxl":
         raise ValueError(f"Expected an .mxl file, got '{archive_path.name}'.")
@@ -98,7 +104,7 @@ def read_mxl_archive(path: str | Path) -> bytes:
                 )
 
             try:
-                return archive.read(rootfile_path)
+                return archive.read(rootfile_path), rootfile_path
             except KeyError as exc:
                 raise ValueError(
                     f"MXL archive '{archive_path}' references missing score payload "
@@ -108,6 +114,42 @@ def read_mxl_archive(path: str | Path) -> bytes:
         raise ValueError(f"File '{archive_path}' is not a valid MXL archive.") from exc
 
 
+def read_mxl_archive(path: str | Path) -> bytes:
+    """Return the main MusicXML document payload from an MXL archive.
+
+    The final implementation should read `META-INF/container.xml` rather than
+    guessing the location of the score payload.
+    """
+    payload, _rootfile_path = _read_mxl_archive_payload(path)
+    return payload
+
+
+def load_musicxml_document(path: str | Path) -> MusicXMLDocument:
+    """Load a MusicXML-family file as raw XML for normalization."""
+    score_path = _coerce_score_path(path)
+
+    if score_path.suffix.lower() == ".mxl":
+        xml_payload, rootfile_path = _read_mxl_archive_payload(score_path)
+        compressed = True
+    else:
+        xml_payload = score_path.read_bytes()
+        rootfile_path = None
+        compressed = False
+
+    try:
+        root = ElementTree.fromstring(xml_payload)
+    except ElementTree.ParseError as exc:
+        raise ValueError(f"MusicXML file '{score_path}' is malformed.") from exc
+
+    return MusicXMLDocument(
+        source_path=score_path,
+        root=root,
+        xml_payload=xml_payload,
+        rootfile_path=rootfile_path,
+        compressed=compressed,
+    )
+
+
 def load_musicxml(path: str | Path) -> Any:
     """Load a MusicXML-family score with the chosen parser backend.
 
@@ -115,6 +157,17 @@ def load_musicxml(path: str | Path) -> Any:
     immediately hand the parser object to the normalization layer rather than
     using it directly.
     """
+    try:
+        from partitura.io.importmusicxml import (
+            load_musicxml as _partitura_load_musicxml,
+        )
+    except ImportError as exc:
+        raise ImportError(
+            "partitura is required for load_musicxml(...). Use "
+            "load_musicxml_document(...) for raw XML normalization without "
+            "partitura."
+        ) from exc
+
     score_path = _coerce_score_path(path)
 
     if score_path.suffix.lower() == ".mxl":

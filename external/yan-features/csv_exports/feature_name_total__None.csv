@@ -1,0 +1,7 @@
+repr
+"np.void((b'feature_name_total', b'MCOS', b'string', array([[3707764736],
+       [         2],
+       [         1],
+       [         1],
+       [         1],
+       [         1]], dtype=uint32)), dtype=[('s0', 'O'), ('s1', 'O'), ('s2', 'O'), ('arr', 'O')])"

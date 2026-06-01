@@ -1,0 +1,3 @@
+relative_path,commit_status,label_system,known_label,title,composer,provenance,license_or_usage_notes,notes
+evaluation_scores/known_levels/henle/example_piece.musicxml,committed,henle,4,Example Piece,Example Composer,"Public-domain MusicXML export prepared for evaluation","Confirm repository-safe usage before commit","Replace this row with real corpus metadata"
+evaluation_scores/ad_hoc/local_piece.mxl,local_only,unknown,,Unknown,Unknown,"Local exploratory file; not committed","Do not commit without provenance review","Useful for temporary inspection runs"

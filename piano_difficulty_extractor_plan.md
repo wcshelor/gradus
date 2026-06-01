@@ -1,6 +1,24 @@
 # Piano Difficulty Descriptor Extraction Repo - Updated Plan
 
-Updated for the current repository state on 2026-04-22.
+Updated for the current repository state on 2026-05-19.
+
+## 2026-05-19 Status Note
+
+The single-file path now reaches a JSON-ready result for one MusicXML-family
+score:
+
+1. load raw `.musicxml`, `.xml`, or `.mxl`
+2. normalize into `ScoreIR`
+3. run sanity checks
+4. extract the v0 feature families from `docs/core_feature_registry.md`
+5. summarize feature records
+6. emit a JSON payload through `extract_score(...).to_json_payload()` or
+   `piano-difficulty extract <path>`
+
+The remaining finishing work is hardening rather than first wiring: add
+measure-scoped descriptor coverage, freeze regression outputs, broaden fixture
+coverage for notation edge cases, and compare descriptors against reference
+pieces for face validity.
 
 ## Purpose
 
@@ -30,7 +48,7 @@ In particular:
 - the repo already has a concrete IR schema,
 - the repo already has a feature record contract,
 - the repo already has design docs and a CLI shape,
-- most runtime behavior is still stubbed and needs implementation,
+- the first runtime extraction path is now wired and needs hardening,
 - some previously proposed file names do not match the actual tree.
 
 ## Current Repository State
@@ -50,19 +68,22 @@ In particular:
 - console entry point in `pyproject.toml`
 - clean test bootstrap in `tests/conftest.py`
 - loader fixture and unit tests in `tests/unit/test_musicxml_io.py`
+- raw MusicXML normalization into `ScoreIR`
+- conservative hand assignment and onset grouping
+- source-span helper for feature traceability
+- direct v0 feature modules
+- piece and measure summary helpers
+- JSON export helper
+- `extract_score(...)` pipeline orchestration
+- CLI execution for `piano-difficulty extract <path>`
 
 ### Major implementation still pending
 
-- score normalization and tie collapsing
-- hand assignment
-- onset grouping and source-span helpers
-- sanity checks
-- all feature extraction modules
-- piece-level and measure-level aggregation
-- JSON export
-- pipeline orchestration
-- CLI dispatch
 - real fixtures, integration tests, and regression baselines
+- richer measure-scoped descriptors
+- more complete notation edge cases, especially cross-staff writing
+- stronger sanity checks for unsupported score layouts
+- face-validity comparisons across representative reference pieces
 
 ### Important repo-specific corrections
 
@@ -558,20 +579,20 @@ descriptor engine.
 - implement `read_mxl_archive`
 - implement lightweight parser-level support checks
 
-### Milestone 2 - Build normalized score objects
+### Milestone 2 - Completed
 
 - implement measure, written-note, and direction normalization
 - implement tie collapsing
 - return a populated `ScoreIR`
 
-### Milestone 3 - Build shared analysis views
+### Milestone 3 - Completed
 
 - assign hands
 - group onsets
 - build source spans
 - add sanity checks
 
-### Milestone 4 - Implement the direct feature slice
+### Milestone 4 - Completed
 
 - metadata
 - rhythm
@@ -581,13 +602,13 @@ descriptor engine.
 - coordination
 - notation
 
-### Milestone 5 - Finish the first public extractor path
+### Milestone 5 - Completed
 
 - piece summary
 - measure summary
 - JSON payload
 - CLI dispatch
-- integration test
+- pipeline payload test
 
 ## Definition Of Success For The First Real Release
 

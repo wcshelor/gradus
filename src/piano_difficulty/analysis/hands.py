@@ -8,7 +8,19 @@ cross-staff inference.
 
 from __future__ import annotations
 
-from piano_difficulty.normalize.schema import LogicalNoteIR, WrittenNoteIR
+from piano_difficulty.normalize.schema import LogicalNoteIR, RestEventIR, WrittenNoteIR
+
+
+def _assign_staff_hand(event: WrittenNoteIR | LogicalNoteIR | RestEventIR) -> None:
+    if event.staff == 1:
+        event.hand = "right"
+        event.hand_confidence = "staff"
+    elif event.staff == 2:
+        event.hand = "left"
+        event.hand_confidence = "staff"
+    elif event.staff is not None:
+        event.hand = None
+        event.hand_confidence = "unknown_staff"
 
 
 def assign_hands_to_written_notes(
@@ -20,7 +32,9 @@ def assign_hands_to_written_notes(
     introduce stronger heuristics when those heuristics can be tested well.
     """
 
-    raise NotImplementedError("Written-note hand assignment is not implemented yet.")
+    for note in notes:
+        _assign_staff_hand(note)
+    return notes
 
 
 def assign_hands_to_logical_notes(
@@ -28,5 +42,14 @@ def assign_hands_to_logical_notes(
 ) -> list[LogicalNoteIR]:
     """Populate hand labels on logical notes."""
 
-    raise NotImplementedError("Logical-note hand assignment is not implemented yet.")
+    for note in notes:
+        _assign_staff_hand(note)
+    return notes
 
+
+def assign_hands_to_rests(rests: list[RestEventIR]) -> list[RestEventIR]:
+    """Populate hand labels on rest events."""
+
+    for rest in rests:
+        _assign_staff_hand(rest)
+    return rests

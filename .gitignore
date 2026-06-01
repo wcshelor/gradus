@@ -6,4 +6,7 @@ __pycache__/
 build/
 dist/
 *.egg-info/
-
+reference_code/
+evaluation_scores/ad_hoc/*
+!evaluation_scores/ad_hoc/README.md
+external/ScoreAnalyzer

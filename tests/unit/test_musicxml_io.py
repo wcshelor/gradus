@@ -3,8 +3,11 @@ from __future__ import annotations
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
 
+import pytest
+
 from piano_difficulty.io.musicxml import (
     MUSICXML_PARSER_BACKEND,
+    load_musicxml_document,
     load_musicxml,
     read_mxl_archive,
     validate_supported_score,
@@ -12,6 +15,7 @@ from piano_difficulty.io.musicxml import (
 
 FIXTURES_DIR = Path(__file__).resolve().parents[1] / "fixtures"
 MINIMAL_PIANO_FIXTURE = FIXTURES_DIR / "minimal_piano.musicxml"
+REAL_MXL_FIXTURE = FIXTURES_DIR / "real_mxl_basic_grand_staff.mxl"
 
 MXL_CONTAINER_XML = """<?xml version="1.0" encoding="UTF-8"?>
 <container
@@ -92,6 +96,8 @@ def test_musicxml_backend_is_partitura() -> None:
 
 
 def test_load_musicxml_reads_minimal_piano_fixture() -> None:
+    pytest.importorskip("partitura")
+
     parsed_score = load_musicxml(MINIMAL_PIANO_FIXTURE)
 
     assert len(parsed_score.parts) == 1
@@ -109,6 +115,8 @@ def test_read_mxl_archive_returns_primary_musicxml_payload(tmp_path: Path) -> No
 
 
 def test_load_musicxml_reads_mxl_archive(tmp_path: Path) -> None:
+    pytest.importorskip("partitura")
+
     archive_path = _write_mxl_archive(tmp_path, MINIMAL_PIANO_FIXTURE.read_text())
 
     parsed_score = load_musicxml(archive_path)
@@ -120,6 +128,8 @@ def test_load_musicxml_reads_mxl_archive(tmp_path: Path) -> None:
 def test_validate_supported_score_flags_non_piano_multi_part_layout(
     tmp_path: Path,
 ) -> None:
+    pytest.importorskip("partitura")
+
     ensemble_path = tmp_path / "ensemble.musicxml"
     ensemble_path.write_text(ENSEMBLE_FIXTURE_XML)
 
@@ -128,3 +138,36 @@ def test_validate_supported_score_flags_non_piano_multi_part_layout(
 
     assert any("contains 2 parts" in diagnostic for diagnostic in diagnostics)
     assert any("does not advertise a piano" in diagnostic for diagnostic in diagnostics)
+
+
+def test_load_musicxml_document_reads_musicxml_and_xml(tmp_path: Path) -> None:
+    xml_path = tmp_path / "minimal.xml"
+    xml_path.write_text(MINIMAL_PIANO_FIXTURE.read_text())
+
+    musicxml_document = load_musicxml_document(MINIMAL_PIANO_FIXTURE)
+    xml_document = load_musicxml_document(xml_path)
+
+    assert musicxml_document.root.tag.endswith("score-partwise")
+    assert xml_document.root.tag.endswith("score-partwise")
+    assert musicxml_document.compressed is False
+    assert xml_document.source_path == xml_path
+
+
+def test_load_musicxml_document_reads_mxl_archive(tmp_path: Path) -> None:
+    archive_path = _write_mxl_archive(tmp_path, MINIMAL_PIANO_FIXTURE.read_text())
+
+    document = load_musicxml_document(archive_path)
+
+    assert document.root.tag.endswith("score-partwise")
+    assert document.compressed is True
+    assert document.rootfile_path == "scores/score.musicxml"
+    assert b"<part-name>Piano</part-name>" in document.xml_payload
+
+
+def test_load_musicxml_document_reads_committed_real_mxl_fixture() -> None:
+    document = load_musicxml_document(REAL_MXL_FIXTURE)
+
+    assert document.root.tag.endswith("score-partwise")
+    assert document.compressed is True
+    assert document.source_path == REAL_MXL_FIXTURE
+    assert document.rootfile_path == "score.musicxml"

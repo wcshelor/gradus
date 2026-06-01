@@ -19,5 +19,13 @@ class HasMeasureIndex(Protocol):
 def build_source_span(events: list[HasMeasureIndex]) -> dict[str, int | None]:
     """Build a coarse measure-span mapping from score events."""
 
-    raise NotImplementedError("Source span construction is not implemented yet.")
+    measure_indices = [
+        event.measure_index for event in events if event.measure_index is not None
+    ]
+    if not measure_indices:
+        return {"measure_start": None, "measure_end": None}
 
+    return {
+        "measure_start": min(measure_indices),
+        "measure_end": max(measure_indices),
+    }

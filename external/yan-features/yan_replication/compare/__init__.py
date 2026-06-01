@@ -1,0 +1,1 @@
+"""Comparison and diagnostics utilities."""

@@ -47,6 +47,12 @@ physical and rhythmic analyses such as leap size, hand span, and attack density.
 Represents dynamics, tempo changes, pedal markings, and free-text or symbolic
 directions attached to a score region.
 
+### `ClefIR`
+
+Represents a clef declaration tied to a staff and measure. This supports
+notation features such as clef changes and ledger-line burden without making
+extractors parse raw MusicXML.
+
 ### `OnsetGroupIR`
 
 Represents a simultaneity or near-simultaneity grouping used by span, texture,
@@ -64,4 +70,3 @@ validation failures.
   ad hoc inside every extractor.
 - Hand labels should be stored separately from staff labels and should support
   confidence levels.
-
