@@ -1,0 +1,13 @@
+catalog_index,filename,repo_relative_path,oktav_code,difficulty_numeric,cluster
+1,piece_001.musicxml,music/demo/piece_001.musicxml,OK00001,1,3
+2,piece_002.musicxml,music/demo/piece_002.musicxml,OK00002,1,3
+3,piece_003.musicxml,music/demo/piece_003.musicxml,OK00003,1,3
+4,piece_004.musicxml,music/demo/piece_004.musicxml,OK00004,2,2
+5,piece_005.musicxml,music/demo/piece_005.musicxml,OK00005,2,2
+6,piece_006.musicxml,music/demo/piece_006.musicxml,OK00006,2,2
+7,piece_007.musicxml,music/demo/piece_007.musicxml,OK00007,3,1
+8,piece_008.musicxml,music/demo/piece_008.musicxml,OK00008,3,1
+9,piece_009.musicxml,music/demo/piece_009.musicxml,OK00009,3,1
+10,piece_010.musicxml,music/demo/piece_010.musicxml,OK00010,4,1
+11,piece_011.musicxml,music/demo/piece_011.musicxml,OK00011,4,1
+12,piece_012.musicxml,music/demo/piece_012.musicxml,OK00012,4,1

@@ -1,0 +1,19 @@
+experiment_name: oktav-sebastien-9features-k3
+dataset_name: oktav
+input_matrix_path: tests/artifacts/oktav_dataset/og_export/full_run/og_full_dataset.csv
+id_columns: [source_row_index, filename, dataset_relative_path]
+label_column: difficulty_numeric
+feature_set: sebastien_clustering
+preprocessing:
+  missing_feature_strategy: median
+  scaler: standard
+pca:
+  n_components: 2
+clustering:
+  method: ward
+  n_clusters: 3
+  random_state: 42
+  n_init: 20
+output_options:
+  run_name: oktav-sebastien-9features-k3
+

@@ -14,3 +14,13 @@ Current implemented coverage:
 - MusicXML / MXL loader boundary tests
 
 The broader normalization, integration, and regression layers are still pending.
+
+The test-scoped research lanes currently include:
+
+- `tests/harness/scoreanalyzer/`: parity and forensic harnesses
+- `tests/harness/yan2023/`: Yan-inspired experiments
+- `tests/harness/oktav_dataset/`: thesis-scoped dataset operations
+- `tests/harness/difficulty_prediction/`: supervised experiments over exported
+  feature matrices
+- `tests/harness/difficulty_clustering/`: unsupervised PCA-plus-clustering
+  experiments over exported feature matrices

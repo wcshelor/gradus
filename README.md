@@ -17,6 +17,30 @@ The goal is to build a pipeline that:
 - exports explainable structured outputs for later pedagogy, heuristics, and
   machine-learning work.
 
+## Analysis lanes
+
+This repository intentionally keeps different research goals in separate lanes:
+
+- ScoreAnalyzer parity:
+  `tests/harness/scoreanalyzer/`, `tests/scripts/run_scoreanalyzer_*.py`, and
+  `tests/artifacts/scoreanalyzer_parity/`
+- Yan-inspired repo experiments:
+  `tests/harness/yan2023/`
+- Oktav thesis dataset lane:
+  `tests/harness/oktav_dataset/`
+- Difficulty prediction experiments:
+  `tests/harness/difficulty_prediction/`,
+  `tests/scripts/run_difficulty_prediction.py`,
+  `tests/artifacts/difficulty_prediction/`
+- Difficulty clustering experiments:
+  `tests/harness/difficulty_clustering/`,
+  `tests/scripts/run_difficulty_clustering.py`,
+  `tests/artifacts/difficulty_clustering/`
+
+The difficulty-clustering lane is intentionally unsupervised: labels may be
+used to interpret clusters after PCA and clustering, but not during model
+fitting.
+
 ## Project status
 
 The repository is partially implemented. The codebase now has its core data
@@ -301,7 +325,7 @@ dependencies change. In particular, coding agents should update:
 - `evaluation_scores/`: real repertoire for labeled evaluation and manual
   inspection, kept separate from strict test fixtures
 - `tests/`: fixtures, regression snapshots, and test scaffolding
-- `docs/`: design notes and roadmap material
+- `docs/`: design notes, roadmap material, and recovery lists
 
 ## Fixtures and regression coverage
 
@@ -346,6 +370,7 @@ Keep `tests/fixtures/` reserved for tiny deterministic automated-test assets.
 - [Data model](docs/data_model.md)
 - [Core feature registry](docs/core_feature_registry.md)
 - [Roadmap](docs/roadmap.md)
+- [Recovery list](docs/recovery_list.md)
 - [Working extraction plan](piano_difficulty_extractor_plan.md)
 
 ## Near-term focus

@@ -13,6 +13,26 @@ that normalizes into `ScoreIR`, extracts direct v0 descriptors, and can layer a
 reference-profile difficulty analysis on top.
 """
 
-from .pipeline import AnalysisResult, ExtractionResult, analyze_score, extract_score
+from __future__ import annotations
+
+from typing import TYPE_CHECKING, Any
 
 __all__ = ["AnalysisResult", "ExtractionResult", "analyze_score", "extract_score"]
+
+if TYPE_CHECKING:
+    from .pipeline import AnalysisResult, ExtractionResult, analyze_score, extract_score
+
+
+def __getattr__(name: str) -> Any:
+    if name in {"AnalysisResult", "ExtractionResult", "analyze_score", "extract_score"}:
+        from .pipeline import AnalysisResult, ExtractionResult, analyze_score, extract_score
+
+        exports = {
+            "AnalysisResult": AnalysisResult,
+            "ExtractionResult": ExtractionResult,
+            "analyze_score": analyze_score,
+            "extract_score": extract_score,
+        }
+        return exports[name]
+
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

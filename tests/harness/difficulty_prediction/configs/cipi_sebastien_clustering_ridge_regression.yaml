@@ -1,0 +1,26 @@
+experiment_name: cipi-sebastien-clustering-ridge-regression
+dataset_name: cipi
+input_matrix_path: tests/artifacts/retired/cipi_og_export/full_cipi_run/og_full_dataset.csv
+id_columns: [source_row_index, filename, dataset_relative_path]
+target_column: overallDifficulty
+target_scheme:
+  kind: continuous
+feature_set: sebastien_clustering
+preprocessing:
+  imputer_strategy: median
+  scaler: standard
+model_family: ridge_regression
+model_parameters:
+  alpha: 1.0
+cross_validation:
+  kind: kfold
+  folds: 5
+  shuffle: true
+  random_state: 42
+output_options:
+  run_name: cipi-sebastien-clustering-ridge-regression
+  primary_metric: r2
+  save_predictions: true
+  save_confusion_matrix: false
+  save_feature_importance: true
+

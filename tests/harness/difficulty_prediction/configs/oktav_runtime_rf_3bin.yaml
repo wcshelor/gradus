@@ -1,0 +1,28 @@
+experiment_name: oktav-runtime-rf-3bin
+dataset_name: oktav
+input_matrix_path: tests/artifacts/oktav_dataset/og_export/full_run/og_full_dataset.csv
+id_columns: [source_row_index, filename, dataset_relative_path]
+target_column: difficulty_numeric
+target_scheme:
+  kind: quantile_bins
+  bins: 3
+feature_set: runtime_all
+preprocessing:
+  imputer_strategy: median
+  scaler: null
+model_family: random_forest_classifier
+model_parameters:
+  n_estimators: 200
+  max_depth: 8
+cross_validation:
+  kind: stratified
+  folds: 5
+  shuffle: true
+  random_state: 42
+output_options:
+  run_name: oktav-runtime-rf-3bin
+  primary_metric: balanced_accuracy
+  save_predictions: true
+  save_confusion_matrix: true
+  save_feature_importance: true
+
