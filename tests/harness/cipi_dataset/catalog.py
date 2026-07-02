@@ -174,6 +174,25 @@ def _resolve_score_path(dataset_index: dict[str, Path], record: dict[str, Any]) 
     return best_path
 
 
+def resolve_score_path(
+    record: dict[str, Any],
+    *,
+    dataset_root: str | Path,
+    repo_root: str | Path | None = None,
+) -> Path | None:
+    dataset_root_path = Path(dataset_root).expanduser().resolve()
+    repo_root_path = Path(repo_root or REPO_ROOT).expanduser().resolve()
+    dataset_index = _build_dataset_index(dataset_root_path)
+    resolved_path = _resolve_score_path(dataset_index, record)
+    if resolved_path is None:
+        return None
+    if resolved_path.is_relative_to(dataset_root_path):
+        return resolved_path.resolve()
+    if resolved_path.is_relative_to(repo_root_path):
+        return resolved_path.resolve()
+    return resolved_path.resolve()
+
+
 def _relative_path(path: Path, root: Path) -> str:
     try:
         return path.resolve().relative_to(root.resolve()).as_posix()
@@ -196,4 +215,3 @@ def _token_overlap_score(left: str, right: str) -> int:
     left_tokens = set(left.split())
     right_tokens = set(right.split())
     return len(left_tokens & right_tokens)
-

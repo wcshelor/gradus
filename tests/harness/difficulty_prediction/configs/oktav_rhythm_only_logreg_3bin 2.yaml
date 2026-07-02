@@ -1,0 +1,32 @@
+experiment_name: oktav_rhythm_only_logreg_3bin
+dataset_name: oktav
+input_matrix_path: tests/artifacts/oktav_dataset/python_analysis/full_run/oktav_labeled_feature_matrix.csv
+id_columns:
+  - catalog_index
+  - catalog_key
+  - filename
+  - repo_relative_path
+target_column: difficulty_numeric
+target_scheme:
+  kind: quantile_bins
+  bins: 3
+feature_set: rhythm_only
+excluded_columns:
+  - overallDifficulty
+preprocessing:
+  imputer_strategy: median
+  scaler: standard
+model_family: logistic_regression
+model_parameters:
+  max_iter: 2000
+  class_weight: balanced
+cross_validation:
+  kind: stratified_kfold
+  folds: 5
+  shuffle: true
+  random_state: 42
+output_options:
+  primary_metric: balanced_accuracy
+  save_predictions: true
+  save_confusion_matrix: true
+  save_feature_importance: true

@@ -64,7 +64,8 @@ Authoritative locations:
 - harness: `tests/harness/oktav_dataset/`
 - thin runners:
   `tests/scripts/build_oktav_dataset_catalog.py`,
-  `tests/scripts/run_oktav_og_export.py`
+  `tests/scripts/run_oktav_og_export.py`,
+  `tests/scripts/run_cipi_og_export.py`
 - local-only raw corpus: `evaluation_scores/ad_hoc/oktav_starting_dataset/`
 - committed manifests: `evaluation_scores/manifests/`
 - evidence: `tests/artifacts/oktav_dataset/`

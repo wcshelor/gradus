@@ -1,0 +1,29 @@
+experiment_name: oktav_sebastien_clustering_dummy_regression
+dataset_name: oktav
+input_matrix_path: tests/artifacts/oktav_dataset/og_export/full_run/og_full_dataset.csv
+id_columns:
+  - catalog_index
+  - filename
+  - repo_relative_path
+  - oktav_code
+target_column: difficulty_numeric
+target_scheme:
+  kind: continuous
+feature_set: sebastien_clustering
+excluded_columns:
+  - overallDifficulty
+preprocessing:
+  imputer_strategy: median
+  scaler: standard
+model_family: dummy_regressor
+model_parameters: {}
+cross_validation:
+  kind: kfold
+  folds: 5
+  shuffle: true
+  random_state: 42
+output_options:
+  primary_metric: rmse
+  save_predictions: true
+  save_confusion_matrix: false
+  save_feature_importance: false

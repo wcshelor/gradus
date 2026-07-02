@@ -19,7 +19,9 @@ The test-scoped research lanes currently include:
 
 - `tests/harness/scoreanalyzer/`: parity and forensic harnesses
 - `tests/harness/yan2023/`: Yan-inspired experiments
-- `tests/harness/oktav_dataset/`: thesis-scoped dataset operations
+- `tests/harness/oktav_dataset/`: thesis-scoped dataset operations and
+  ScoreAnalyzer OG export
+- `tests/harness/cipi_dataset/`: CIPI catalog and ScoreAnalyzer export helpers
 - `tests/harness/difficulty_prediction/`: supervised experiments over exported
   feature matrices
 - `tests/harness/difficulty_clustering/`: unsupervised PCA-plus-clustering
