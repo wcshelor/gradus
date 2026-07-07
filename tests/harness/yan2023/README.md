@@ -19,10 +19,28 @@ The running feature ledger is
 Update those docs as passes advance, feature statuses change, or new blockers
 are discovered.
 
+Ambiguous Yan features are treated as switchable formula families, not as
+single frozen definitions. The harness should keep plausible candidates
+explicit so we can compare them and later optimize over the options rather than
+hard-coding the first usable proxy.
+
+The variability family gets a shared candidate bank in particular. For score
+data, the default menu should include adjacent normalized variability,
+coefficient of variation, normalized range, and mean absolute step variability,
+with the chosen formula recorded per run.
+
+The MXL-native rate family should do the same with written-note, logical-note,
+onset-based, and duration-weighted ratios for black-key, polyphony, staccato,
+and dotted-note measures.
+
+Local movement proxies like `hand_displacement_rate` should use thresholded
+same-hand attack transitions with explicit noticeable/difficult leap cutoffs,
+a long-rest filter, and a gap-weighted severity score.
+
 Current machine-readable entry points:
 
 - `slot_inventory.py` records the working paper-first slot ledger
-- `paper_inventory.py` records the current paper-facing 73-slot hypothesis
+- `paper_inventory.py` records the frozen paper-facing 73-slot inventory
 - `implementation_audit.py` records the strict audit metadata for currently
   implemented slots
 - `extractor.py` computes the current first-pass recoverable subset
@@ -36,6 +54,8 @@ Current machine-readable entry points:
 - MusicXML-first implementations of paper-described Yan features
 - feature inventories and computability audits
 - explicit proxy definitions for score-derived Yan paper features
+- multiple candidate formulas for ambiguous features, kept as switchable
+  options
 - ablation studies or baseline classifiers that use repo-native assets
 - the 5-pass paper-first reconstruction plan tracked in
   `docs/yan2023_feature_plan.md`

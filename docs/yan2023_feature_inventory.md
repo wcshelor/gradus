@@ -53,7 +53,7 @@ Until that happens, this document tracks:
   PDF, rather than inferred from the unlabeled snapshot
 - the machine-readable working slot ledger in
   `tests/harness/yan2023/slot_inventory.py`
-- the machine-readable paper-facing 73-slot hypothesis in
+- the machine-readable paper-facing 73-slot inventory in
   `tests/harness/yan2023/paper_inventory.py`
 - the strict implemented-slot audit metadata in
   `tests/harness/yan2023/implementation_audit.py`
@@ -65,6 +65,53 @@ Until that happens, this document tracks:
 - `proxyable`: likely reconstructable from MusicXML / score geometry, but the
   exact paper formula is still ambiguous
 - `blocked`: likely needs performance/MIDI data or an unrecovered formula
+
+## Formula Variants
+
+For ambiguous features, a single ledger row may correspond to several candidate
+math definitions. The lane should preserve those candidates as switchable
+options, not collapse them into one early guess.
+
+Guidelines:
+
+- treat the paper feature name as the contract, and the math as an experiment
+  family when the paper does not fully specify it
+- keep candidate implementations explicit so they can be toggled during
+  extraction and evaluation
+- prefer adding a new candidate over overwriting the existing one when a
+  different plausible formula appears
+- record why a candidate exists, what it measures, and what would disqualify it
+- let downstream prediction results decide which candidate is best for a given
+  experimental run
+
+### Shared Variability Bank
+
+The variability family should reuse one shared candidate bank across any
+variability-style Yan feature we can express on MusicXML. The first-pass bank
+should stay small and score-native:
+
+- adjacent normalized successive-difference variability
+- coefficient of variation
+- normalized range
+- mean absolute step variability
+
+That shared bank is especially relevant for `pitch_variability`,
+`note_duration_variability`, and `playing_speed_variation`, but the same menu
+can be reused for any future score-derived variability proxy.
+
+### Shared Rate Bank
+
+The MXL-native rate family should also keep multiple explicit counting
+conventions available. The current first-pass bank is intentionally small and
+score-native:
+
+- written-note ratio
+- logical-note ratio
+- onset ratio
+- duration-weighted ratio
+
+That bank is especially relevant for `black_key_rate`, `polyphony_rate`,
+`staccato_rate`, and `dotted_note_rate`.
 
 ## Named feature ledger
 
@@ -85,17 +132,17 @@ Until that happens, this document tracks:
 | `duration_std` | legacy | implemented | Basic duration dispersion. |
 | `tempo` | other | implemented | Score tempo metadata. |
 | `key_signature` | other | implemented | Score key metadata. |
-| `black_key_rate` | legacy | implemented | Pitch-class derived. |
-| `playing_speed` | legacy | proxyable | Current proxy uses attacks per quarter. |
-| `polyphony_rate` | legacy | implemented | Reconstructed as multi-note same-onset ratio. |
+| `black_key_rate` | legacy | implemented | Wired to a shared score-native rate bank; the default is written-note ratio. |
+| `playing_speed` | legacy | proxyable | Current proxy uses attack rate (attacks per quarter, not note count). |
+| `polyphony_rate` | legacy | implemented | Wired to a shared score-native rate bank; the default is polyphonic-onset ratio. |
 | `distinct_stroke_rate` | legacy | proxyable | Stroke identity rule is not fully published. |
 | `irregular_rhythm` | legacy | proxyable | Exact irregularity formula is not fully published. |
-| `pitch_variability` | new | implemented | Table 3 adjacent-note normalized variability formula is now wired. |
-| `note_duration_variability` | new | implemented | Table 3 adjacent-note normalized variability formula is now wired. |
-| `playing_speed_variation` | new | implemented | Table 3 tempo-variation ratio is now wired. |
-| `dotted_note_rate` | new | proxyable | Needs exact numerator/denominator convention. |
-| `staccato_rate` | new | implemented | Direct articulation-rate reconstruction from written-note articulations. |
-| `hand_displacement_rate` | legacy | proxyable | Likely recoverable from score geometry. |
+| `pitch_variability` | new | implemented | Wired to a shared score-sequence variability bank; the default is adjacent-normalized variation. |
+| `note_duration_variability` | new | implemented | Wired to a shared score-sequence variability bank; the default is adjacent-normalized variation. |
+| `playing_speed_variation` | new | implemented | Current contract is a tempo-variation ratio; it is tracked separately from the shared score-sequence variability bank for now. |
+| `dotted_note_rate` | new | proxyable | Wired to a shared score-native rate bank; the default is heuristic-any dotted-note ratio. |
+| `staccato_rate` | new | implemented | Wired to a shared score-native rate bank; the default is written-note ratio from explicit articulations. |
+| `hand_displacement_rate` | legacy | proxyable | Repo currently uses a gap-weighted same-hand attack proxy with noticeable/difficult thresholds and a long-rest filter. |
 | `hand_stretch` | legacy | proxyable | Requires a precise hand model. |
 | `pressing_velocity_entropy` | new | blocked | Likely needs performance/MIDI data. |
 | `pressing_velocity_variability` | new | blocked | Likely needs performance/MIDI data. |
@@ -121,9 +168,9 @@ exact recovery of the paper's final 73-column matrix. Some scope expansions or
 slot splits may collapse once the exact paper-to-matrix mapping is better
 recovered.
 
-## Paper-facing 73-slot hypothesis
+## Paper-facing 73-slot inventory
 
-The harness now also carries a paper-facing 73-slot hypothesis in
+The harness now also carries a frozen paper-facing 73-slot inventory in
 `tests/harness/yan2023/paper_inventory.py`.
 
 Current paper-facing counts:
@@ -142,8 +189,9 @@ Current paper-facing scope overrides relative to the 78-slot working ledger:
 - `pressing_velocity_entropy`: collapse scoped working variants to one global
   slot because Table 3 defines PVE on a whole-score probability distribution
 
-This 73-slot registry should be treated as an auditable paper hypothesis, not
-as a verified released-matrix column contract.
+This 73-slot registry is the locked auditable contract for the lane. It is not
+yet a verified released-matrix column contract, but its scope and count are
+frozen unless the paper evidence changes.
 
 ## Implementation audit
 
@@ -161,8 +209,8 @@ whose current code is real but whose Yan-specific contract is still ambiguous.
 - implemented: 21
 - proxyable: 6
 - blocked: 5
-- exact 73-slot mapping: now tracked as a paper-facing hypothesis, still not
-  release-aligned or fully verified
+- exact 73-slot mapping: now tracked as a frozen paper-facing contract, still
+  not release-aligned or fully verified
 
 ## Next update rule
 
@@ -170,6 +218,6 @@ When a feature implementation lands, update both this ledger and
 `tests/harness/yan2023/boundary.py` in the same change. When the exact paper
 slot naming is recovered, append the recovered names here instead of replacing
 the existing rows. Keep the machine-readable slot ledger in
-`tests/harness/yan2023/slot_inventory.py` and the paper-facing hypothesis in
+`tests/harness/yan2023/slot_inventory.py` and the paper-facing inventory in
 `tests/harness/yan2023/paper_inventory.py` aligned with that update. Treat the
 paper as primary evidence and the archived snapshot as secondary evidence only.

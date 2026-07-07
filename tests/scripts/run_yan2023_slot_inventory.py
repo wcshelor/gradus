@@ -45,7 +45,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     if args.inventory == "paper73":
-        inventory_name = "paper-73 hypothesis"
+        inventory_name = "paper-73 inventory"
         slots = PAPER_73_FEATURE_SLOTS
         status_counts = paper_slot_status_counts()
         scope_counts = paper_slot_scope_counts()

@@ -20,6 +20,56 @@ The working goal is to:
 - keep all Yan work out of `src/` until the feature math is stable enough to
   promote
 
+## Formula Policy
+
+Many Yan feature names are mathematically under-specified in the paper. For
+those features, the lane should treat the name as a feature family, not a single
+frozen formula. The default stance is to preserve multiple candidate
+implementations where the paper does not uniquely determine the math, then
+switch among those candidates during evaluation and optimization.
+
+That means:
+
+- keep candidate formulas explicit and named instead of baking in one hidden
+  convention
+- allow several implementations to coexist for the same paper feature when the
+  contract is ambiguous
+- mark such features as `proxyable` or `blocked` until the best candidate is
+  selected
+- use downstream optimization against predictive performance to decide which
+  candidate becomes the preferred extractor for a given experiment
+- document the candidate set, the selection rule, and the evidence for each
+  choice in the Yan lane docs rather than only in code
+
+For the variability family specifically, the default workflow should keep a
+shared menu of score-native candidates available across pitch variability,
+duration variability, and related variation features. A small starting bank is
+enough:
+
+- adjacent normalized successive-difference variability
+- coefficient of variation
+- normalized range
+- mean absolute step variability
+
+Those candidates are all sheet-music friendly, easy to swap, and easy to score
+against predictive performance later.
+
+For the MXL-native rate family, keep the same mindset:
+
+- `black_key_rate`, `polyphony_rate`, `staccato_rate`, and `dotted_note_rate`
+  should each expose several explicit counting conventions
+- prefer switching between written-note, logical-note, onset-based, and
+  duration-weighted ratios rather than hiding one counting rule inside the
+  extractor
+- keep the default formula conservative, but preserve the alternatives for
+  later optimization and comparison
+
+For local movement proxies like `hand_displacement_rate`, prefer a
+thresholded same-hand attack transition model with explicit noticeable and
+difficult leap cutoffs, a long-rest filter, and a gap-weighted severity score.
+That keeps the proxy closer to leap behavior without making it collapse into
+the global `playing_speed` feature.
+
 ## What We Already Know
 
 - The paper describes a 73-dimensional feature set.
@@ -69,7 +119,7 @@ not use external Yan code or unlabeled outputs as the source of feature names.
 
 | Pass | Status | Goal | Exit criteria |
 | --- | --- | --- | --- |
-| 1. Inventory and taxonomy | In progress | Build the canonical paper-derived Yan feature list and classify each item as `implemented`, `proxyable`, or `blocked`. | Every paper feature has a tracked status and notes. |
+| 1. Inventory and taxonomy | Completed | Build the canonical paper-derived Yan feature list and classify each item as `implemented`, `proxyable`, or `blocked`. | Every paper feature has a tracked status and notes. |
 | 2. Recoverable extraction | In progress | Implement the feature extractors we can compute from repo-native score data. | A stable feature vector schema runs over a sample corpus. |
 | 3. Reference comparison | Not started | Compare our vectors with any released Yan feature values or matrices. | Each mismatch is reproducible and labeled by failure class. |
 | 4. Ambiguity resolution | Not started | Write targeted probes for preprocessing, scope, or formula ambiguities. | Every remaining mismatch is either explained or explicitly blocked. |
@@ -85,7 +135,7 @@ not use external Yan code or unlabeled outputs as the source of feature names.
   running feature ledger for the paper inventory.
 - Keep the machine-readable working slot ledger in
   `tests/harness/yan2023/slot_inventory.py`, the paper-facing 73-slot
-  hypothesis in `tests/harness/yan2023/paper_inventory.py`, and the first-pass
+  inventory in `tests/harness/yan2023/paper_inventory.py`, and the first-pass
   extractor in `tests/harness/yan2023/extractor.py`.
 - Treat the paper as the primary source; treat the unlabeled archived snapshot
   as a secondary reference only.
@@ -101,7 +151,7 @@ The harness now has two concrete artifacts:
 
 - a machine-readable working slot ledger in
   `tests/harness/yan2023/slot_inventory.py`
-- a machine-readable paper-facing 73-slot hypothesis in
+- a machine-readable paper-facing 73-slot inventory in
   `tests/harness/yan2023/paper_inventory.py`
 - a first-pass extractor in `tests/harness/yan2023/extractor.py`
 
@@ -111,18 +161,19 @@ yet be treated as a claimed exact recovery of the paper's final 73-column
 matrix. Some slots are direct figure/table recoveries and some are systematic
 scope expansions that may collapse later.
 
-The lane now also carries a paper-facing 73-slot hypothesis. It keeps the
+The lane now also carries a frozen paper-facing 73-slot inventory. It keeps the
 overcomplete 78-slot implementation ledger intact, but collapses three scope
 patterns to match the paper count:
 
-- `hand_stretch`: current paper-facing hypothesis keeps one unsuffixed slot
+- `hand_stretch`: current paper-facing inventory keeps one unsuffixed slot
   because Figure 6 shows `hand stretch` without `es` / `bs` / `ts`
-- `playing_speed`: current paper-facing hypothesis keeps one unsuffixed slot
+- `playing_speed`: current paper-facing inventory keeps one unsuffixed slot
   because Figure 6 shows `playing speed` without `es` / `bs` / `ts`
-- `pressing_velocity_entropy`: current paper-facing hypothesis keeps one global
+- `pressing_velocity_entropy`: current paper-facing inventory keeps one global
   slot because Table 3 defines PVE on a whole-score probability distribution
 
-This 73-slot map is still a hypothesis, not a verified release-aligned matrix.
+This 73-slot map is the locked lane contract. It is not yet a verified
+release-aligned matrix, but the scope and count are now frozen for the lane.
 
 | Feature | Status | Notes |
 | --- | --- | --- |
@@ -161,9 +212,8 @@ This 73-slot map is still a hypothesis, not a verified release-aligned matrix.
 
 ## Next Updates To Make
 
-1. validate or refute the current 73-slot hypothesis, especially the scope
-   collapse for `hand_stretch`, `playing_speed`, and
-   `pressing_velocity_entropy`
+1. keep the locked 73-slot inventory synchronized if new paper evidence
+   requires a revision
 2. decide whether `dotted_note_rate`, `playing_speed`,
    `distinct_stroke_rate`, and `irregular_rhythm` should stay proxy features or
    get stricter formulas

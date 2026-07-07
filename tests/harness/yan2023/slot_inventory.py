@@ -86,7 +86,7 @@ _SCOPED_FEATURE_SPECS: tuple[_ScopedFeatureSpec, ...] = (
         base_feature="hand_displacement_rate",
         family="legacy_pitch",
         status="proxyable",
-        notes="Paper names the feature, but the exact thresholding and aggregation remain ambiguous.",
+        notes="Paper names the feature, but the repo currently uses a gap-weighted same-hand attack proxy with noticeable/difficult thresholds and a long-rest filter.",
         source_kinds=("paper_text", "figure6_visible"),
     ),
     _ScopedFeatureSpec(
@@ -108,7 +108,7 @@ _SCOPED_FEATURE_SPECS: tuple[_ScopedFeatureSpec, ...] = (
         base_feature="black_key_rate",
         family="legacy_pitch",
         status="implemented",
-        notes="Paper pitch-content feature; direct pitch-class rate.",
+        notes="Paper pitch-content feature; repo exposes a shared rate bank with written-note, logical-note, onset-based, and duration-weighted candidates.",
         source_kinds=("paper_text", "figure6_visible", "paper_scope_expansion"),
     ),
     _ScopedFeatureSpec(
@@ -129,14 +129,14 @@ _SCOPED_FEATURE_SPECS: tuple[_ScopedFeatureSpec, ...] = (
         base_feature="playing_speed",
         family="legacy_rhythm",
         status="proxyable",
-        notes="Paper names the feature, but the exact formula is not fully published; repo uses attacks per quarter as a proxy.",
+        notes="Paper names the feature, but the exact formula is not fully published; repo uses attack rate (attacks per quarter, not note count) as a proxy.",
         source_kinds=("paper_text", "figure6_visible", "paper_scope_expansion"),
     ),
     _ScopedFeatureSpec(
         base_feature="polyphony_rate",
         family="legacy_rhythm",
         status="implemented",
-        notes="Paper rhythmic-content feature; direct same-onset multi-note ratio.",
+        notes="Paper rhythmic-content feature; repo exposes a shared rate bank with onset-based, note-based, extra-note, and duration-weighted candidates.",
         source_kinds=("paper_text", "paper_scope_expansion"),
     ),
     _ScopedFeatureSpec(
@@ -171,14 +171,14 @@ _SCOPED_FEATURE_SPECS: tuple[_ScopedFeatureSpec, ...] = (
         base_feature="pitch_variability",
         family="new_contour",
         status="implemented",
-        notes="Table 3 publishes an adjacent-note normalized variability formula.",
+        notes="Table 3 publishes a variability family; repo exposes a shared selectable formula bank for this slot.",
         source_kinds=("table3", "figure6_visible", "paper_scope_expansion"),
     ),
     _ScopedFeatureSpec(
         base_feature="note_duration_variability",
         family="new_contour",
         status="implemented",
-        notes="Table 3 publishes an adjacent-note normalized variability formula.",
+        notes="Table 3 publishes a variability family; repo exposes a shared selectable formula bank for this slot.",
         source_kinds=("table3", "figure6_visible", "paper_scope_expansion"),
     ),
     _ScopedFeatureSpec(
@@ -213,14 +213,14 @@ _SCOPED_FEATURE_SPECS: tuple[_ScopedFeatureSpec, ...] = (
         base_feature="staccato_rate",
         family="new_particular_notes",
         status="implemented",
-        notes="Table 3 publishes a direct note-rate definition.",
+        notes="Table 3 publishes a direct note-rate definition; repo exposes a shared rate bank with written-note, logical-note, onset-based, and duration-weighted candidates.",
         source_kinds=("table3", "paper_scope_expansion"),
     ),
     _ScopedFeatureSpec(
         base_feature="dotted_note_rate",
         family="new_particular_notes",
         status="proxyable",
-        notes="Table 3 publishes a direct note-rate definition, but ScoreIR currently needs heuristic dot recovery from duration values.",
+        notes="Table 3 publishes a direct note-rate definition; repo exposes a shared heuristic rate bank with any-dot, dotted-eighth, dotted-double, and duration-weighted candidates.",
         source_kinds=("table3", "paper_scope_expansion"),
     ),
 )
@@ -251,7 +251,7 @@ _GLOBAL_FEATURE_SPECS: tuple[_GlobalFeatureSpec, ...] = (
         base_feature="playing_speed_variation",
         family="new_speed",
         status="implemented",
-        notes="Table 3 publishes a tempo-variation ratio formula.",
+        notes="Table 3 publishes a tempo-variation ratio formula; the same variability bank can be reused later if the lane chooses to normalize this feature into the shared option family.",
         source_kinds=("table3",),
     ),
     _GlobalFeatureSpec(

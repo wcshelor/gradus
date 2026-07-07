@@ -1,7 +1,7 @@
-"""Paper-facing 73-slot hypothesis for the Yan 2023 lane.
+"""Frozen paper-facing 73-slot inventory for the Yan 2023 lane.
 
 This module keeps the implementation-friendly 78-slot working inventory intact,
-but also records a paper-facing 73-slot hypothesis driven by Figure 6 and
+but also records a paper-facing 73-slot inventory driven by Figure 6 and
 Table 3 evidence from Yan et al. (2023).
 """
 
@@ -24,10 +24,29 @@ PaperScopeEvidence = Literal[
     "table3_global_formula",
 ]
 
+PAPER_73_INVENTORY_LOCKED = True
+PAPER_73_INVENTORY_SIZE = 73
+EXPECTED_PAPER_73_SCOPE_OVERRIDES: dict[str, tuple[ScopeCode, ...]] = {
+    "hand_stretch": ("global",),
+    "playing_speed": ("global",),
+    "pressing_velocity_entropy": ("global",),
+}
+EXPECTED_PAPER_73_SCOPE_COUNTS: dict[ScopeCode, int] = {
+    "es": 21,
+    "bs": 21,
+    "ts": 21,
+    "global": 10,
+}
+EXPECTED_PAPER_73_STATUS_COUNTS: dict[FeatureStatus, int] = {
+    "implemented": 52,
+    "proxyable": 14,
+    "blocked": 7,
+}
+
 
 @dataclass(frozen=True, slots=True)
 class Yan2023PaperSlot:
-    """One slot in the paper-facing 73-slot hypothesis."""
+    """One slot in the paper-facing 73-slot inventory."""
 
     slot_id: str
     base_feature: str
@@ -54,15 +73,15 @@ _PAPER_SCOPE_EVIDENCE: dict[str, PaperScopeEvidence] = {
 _PAPER_SCOPE_NOTES: dict[str, str] = {
     "hand_stretch": (
         "Figure 6 shows an unsuffixed `hand stretch` label, so the paper-73 "
-        "hypothesis collapses staff variants to one paper-facing slot."
+        "inventory collapses staff variants to one paper-facing slot."
     ),
     "playing_speed": (
         "Figure 6 shows an unsuffixed `playing speed` label, so the paper-73 "
-        "hypothesis collapses staff variants to one paper-facing slot."
+        "inventory collapses staff variants to one paper-facing slot."
     ),
     "pressing_velocity_entropy": (
         "Table 3 defines pressing-velocity entropy on the whole-score "
-        "probability distribution, so the paper-73 hypothesis keeps one "
+        "probability distribution, so the paper-73 inventory keeps one "
         "paper-facing slot."
     ),
 }
@@ -75,7 +94,7 @@ def paper_scope_override_map() -> dict[str, tuple[ScopeCode, ...]]:
 
 
 def build_paper_73_slot_inventory() -> tuple[Yan2023PaperSlot, ...]:
-    """Return the paper-facing 73-slot hypothesis inventory."""
+    """Return the locked paper-facing 73-slot inventory."""
 
     grouped: dict[str, list] = {}
     for slot in WORKING_FEATURE_SLOTS:
@@ -115,6 +134,33 @@ def build_paper_73_slot_inventory() -> tuple[Yan2023PaperSlot, ...]:
 
 
 PAPER_73_FEATURE_SLOTS = build_paper_73_slot_inventory()
+
+
+def validate_paper_73_inventory_lock() -> None:
+    """Fail fast if the frozen paper-facing slot contract drifts."""
+
+    if not PAPER_73_INVENTORY_LOCKED:
+        raise RuntimeError("PAPER_73_INVENTORY_LOCKED must remain True.")
+    if len(PAPER_73_FEATURE_SLOTS) != PAPER_73_INVENTORY_SIZE:
+        raise RuntimeError(
+            "Frozen Yan paper-facing inventory must stay at "
+            f"{PAPER_73_INVENTORY_SIZE} slots, got {len(PAPER_73_FEATURE_SLOTS)}."
+        )
+    if paper_scope_override_map() != EXPECTED_PAPER_73_SCOPE_OVERRIDES:
+        raise RuntimeError(
+            "Frozen Yan paper-facing scope overrides drifted from the locked "
+            "73-slot contract."
+        )
+    if paper_slot_scope_counts() != EXPECTED_PAPER_73_SCOPE_COUNTS:
+        raise RuntimeError(
+            "Frozen Yan paper-facing scope counts drifted from the locked "
+            "73-slot contract."
+        )
+    if paper_slot_status_counts() != EXPECTED_PAPER_73_STATUS_COUNTS:
+        raise RuntimeError(
+            "Frozen Yan paper-facing status counts drifted from the locked "
+            "73-slot contract."
+        )
 
 
 def paper_slot_status_counts() -> dict[FeatureStatus, int]:
@@ -167,6 +213,11 @@ def paper_scope_evidence_counts() -> dict[PaperScopeEvidence, int]:
 
 __all__ = [
     "PAPER_73_FEATURE_SLOTS",
+    "PAPER_73_INVENTORY_LOCKED",
+    "PAPER_73_INVENTORY_SIZE",
+    "EXPECTED_PAPER_73_SCOPE_COUNTS",
+    "EXPECTED_PAPER_73_SCOPE_OVERRIDES",
+    "EXPECTED_PAPER_73_STATUS_COUNTS",
     "PaperScopeEvidence",
     "Yan2023PaperSlot",
     "build_paper_73_slot_inventory",
@@ -175,4 +226,8 @@ __all__ = [
     "paper_slot_scope_counts",
     "paper_slot_source_counts",
     "paper_slot_status_counts",
+    "validate_paper_73_inventory_lock",
 ]
+
+
+validate_paper_73_inventory_lock()

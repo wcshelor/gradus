@@ -8,7 +8,6 @@ from fractions import Fraction
 from math import log2, sqrt
 from pathlib import Path
 
-from piano_difficulty.analysis.reference_metrics import compute_reference_metrics
 from piano_difficulty.io.musicxml import load_musicxml_document
 from piano_difficulty.normalize.converters import build_score_ir
 from piano_difficulty.normalize.schema import (
@@ -21,19 +20,28 @@ from piano_difficulty.normalize.schema import (
 )
 
 from tests.harness.yan2023.slot_inventory import FeatureStatus, WORKING_FEATURE_SLOTS
+from tests.harness.yan2023.rate_measures import (
+    DEFAULT_BLACK_KEY_RATE_FORMULA,
+    DEFAULT_DOTTED_NOTE_RATE_FORMULA,
+    DEFAULT_POLYPHONY_RATE_FORMULA,
+    DEFAULT_STACCATO_RATE_FORMULA,
+    BlackKeyRateFormulaName,
+    DottedNoteRateFormulaName,
+    PolyphonyRateFormulaName,
+    StaccatoRateFormulaName,
+    compute_black_key_rate,
+    compute_dotted_note_rate,
+    compute_polyphony_rate,
+    compute_staccato_rate,
+)
+from tests.harness.yan2023.leap_measures import compute_hand_leap_proxy
+from tests.harness.yan2023.variability import (
+    DEFAULT_VARIABILITY_FORMULA,
+    VARIABILITY_FORMULA_NAMES,
+    VariabilityFormulaName,
+    compute_variability_candidates,
+)
 
-_DURATION_TYPE_QUARTERS = {
-    "whole": Fraction(4, 1),
-    "half": Fraction(2, 1),
-    "quarter": Fraction(1, 1),
-    "eighth": Fraction(1, 2),
-    "16th": Fraction(1, 4),
-    "32nd": Fraction(1, 8),
-    "64th": Fraction(1, 16),
-    "128th": Fraction(1, 32),
-    "256th": Fraction(1, 64),
-}
-_BLACK_KEY_CLASSES = {1, 3, 6, 8, 10}
 _SCOPE_TO_STAFF = {"bs": 2, "ts": 1}
 
 
@@ -60,14 +68,20 @@ class _ScopeView:
     chord_events: tuple[OnsetGroupIR, ...]
 
 
-def extract_first_pass(score: ScoreIR) -> list[Yan2023FeatureValue]:
+def extract_first_pass(
+    score: ScoreIR,
+    variability_formula: VariabilityFormulaName = DEFAULT_VARIABILITY_FORMULA,
+    black_key_rate_formula: BlackKeyRateFormulaName = DEFAULT_BLACK_KEY_RATE_FORMULA,
+    polyphony_rate_formula: PolyphonyRateFormulaName = DEFAULT_POLYPHONY_RATE_FORMULA,
+    staccato_rate_formula: StaccatoRateFormulaName = DEFAULT_STACCATO_RATE_FORMULA,
+    dotted_note_rate_formula: DottedNoteRateFormulaName = DEFAULT_DOTTED_NOTE_RATE_FORMULA,
+) -> list[Yan2023FeatureValue]:
     """Extract the current supported working subset of paper-derived slots."""
 
     duration = _score_duration_quarters(score)
     scope_views = _build_scope_views(score)
     logical_lookup = {note.note_id: note for note in score.logical_notes}
     written_lookup = {note.note_id: note for note in score.written_notes}
-    metrics = compute_reference_metrics(score)
 
     values: dict[str, Yan2023FeatureValue] = {}
     for _scope_code, view in scope_views.items():
@@ -77,7 +91,11 @@ def extract_first_pass(score: ScoreIR) -> list[Yan2023FeatureValue]:
                 score_duration=duration,
                 logical_lookup=logical_lookup,
                 written_lookup=written_lookup,
-                metrics=metrics,
+                variability_formula=variability_formula,
+                black_key_rate_formula=black_key_rate_formula,
+                polyphony_rate_formula=polyphony_rate_formula,
+                staccato_rate_formula=staccato_rate_formula,
+                dotted_note_rate_formula=dotted_note_rate_formula,
             )
         )
 
@@ -93,12 +111,24 @@ def extract_first_pass(score: ScoreIR) -> list[Yan2023FeatureValue]:
 
 def extract_first_pass_from_path(
     path: str | Path,
+    variability_formula: VariabilityFormulaName = DEFAULT_VARIABILITY_FORMULA,
+    black_key_rate_formula: BlackKeyRateFormulaName = DEFAULT_BLACK_KEY_RATE_FORMULA,
+    polyphony_rate_formula: PolyphonyRateFormulaName = DEFAULT_POLYPHONY_RATE_FORMULA,
+    staccato_rate_formula: StaccatoRateFormulaName = DEFAULT_STACCATO_RATE_FORMULA,
+    dotted_note_rate_formula: DottedNoteRateFormulaName = DEFAULT_DOTTED_NOTE_RATE_FORMULA,
 ) -> tuple[ScoreIR, list[Yan2023FeatureValue]]:
     """Load one MusicXML-family file and run the first-pass Yan extractor."""
 
     document = load_musicxml_document(path)
     score = build_score_ir(document)
-    return score, extract_first_pass(score)
+    return score, extract_first_pass(
+        score,
+        variability_formula=variability_formula,
+        black_key_rate_formula=black_key_rate_formula,
+        polyphony_rate_formula=polyphony_rate_formula,
+        staccato_rate_formula=staccato_rate_formula,
+        dotted_note_rate_formula=dotted_note_rate_formula,
+    )
 
 
 def _build_scope_views(score: ScoreIR) -> dict[str, _ScopeView]:
@@ -133,7 +163,11 @@ def _extract_scope_values(
     score_duration: Fraction,
     logical_lookup: dict[str, LogicalNoteIR],
     written_lookup: dict[str, WrittenNoteIR],
-    metrics: object,
+    variability_formula: VariabilityFormulaName,
+    black_key_rate_formula: BlackKeyRateFormulaName,
+    polyphony_rate_formula: PolyphonyRateFormulaName,
+    staccato_rate_formula: StaccatoRateFormulaName,
+    dotted_note_rate_formula: DottedNoteRateFormulaName,
 ) -> dict[str, Yan2023FeatureValue]:
     values: dict[str, Yan2023FeatureValue] = {}
     logical_notes = list(view.logical_notes)
@@ -171,14 +205,17 @@ def _extract_scope_values(
         "semitones",
         status="implemented",
     )
+    black_key_rate_value, black_key_rate_diagnostics = compute_black_key_rate(
+        written_notes,
+        logical_notes,
+        black_key_rate_formula,
+    )
     values[f"black_key_rate_{view.code}"] = _value(
         f"black_key_rate_{view.code}",
-        _ratio(
-            sum(1 for pitch in pitch_values if pitch % 12 in _BLACK_KEY_CLASSES),
-            len(pitch_values),
-        ),
+        black_key_rate_value,
         "ratio",
         status="implemented",
+        diagnostics=black_key_rate_diagnostics,
     )
     values[f"mean_of_note_duration_{view.code}"] = _value(
         f"mean_of_note_duration_{view.code}",
@@ -198,40 +235,55 @@ def _extract_scope_values(
         "notes_per_quarter",
         status="implemented",
     )
+    pitch_variability_value, pitch_variability_diagnostics = _variability_value(
+        [note.pitch_midi for note in _ordered_written_notes(written_notes)],
+        variability_formula,
+    )
     values[f"pitch_variability_{view.code}"] = _value(
         f"pitch_variability_{view.code}",
-        _adjacent_normalized_variability(
-            [note.pitch_midi for note in _ordered_written_notes(written_notes)]
-        ),
+        pitch_variability_value,
         "ratio",
         status="implemented",
+        diagnostics=pitch_variability_diagnostics,
+    )
+    note_duration_variability_value, note_duration_variability_diagnostics = (
+        _variability_value(
+            [float(note.duration) for note in _ordered_written_notes(written_notes)],
+            variability_formula,
+        )
     )
     values[f"note_duration_variability_{view.code}"] = _value(
         f"note_duration_variability_{view.code}",
-        _adjacent_normalized_variability(
-            [float(note.duration) for note in _ordered_written_notes(written_notes)]
-        ),
+        note_duration_variability_value,
         "ratio",
         status="implemented",
+        diagnostics=note_duration_variability_diagnostics,
+    )
+    staccato_rate_value, staccato_rate_diagnostics = compute_staccato_rate(
+        written_notes,
+        logical_notes,
+        staccato_rate_formula,
     )
     values[f"staccato_rate_{view.code}"] = _value(
         f"staccato_rate_{view.code}",
-        _ratio(
-            sum(1 for note in written_notes if "staccato" in note.articulations),
-            len(written_notes),
-        ),
+        staccato_rate_value,
         "ratio",
         status="implemented",
+        diagnostics=staccato_rate_diagnostics,
     )
 
-    dotted_count, dotted_diagnostics = _dotted_note_count(written_notes)
+    dotted_rate_value, dotted_rate_diagnostics = compute_dotted_note_rate(
+        written_notes,
+        logical_notes,
+        dotted_note_rate_formula,
+    )
     values[f"dotted_note_rate_{view.code}"] = Yan2023FeatureValue(
         slot_id=f"dotted_note_rate_{view.code}",
-        value=_ratio(dotted_count, len(written_notes)),
+        value=dotted_rate_value,
         units="ratio",
         status="proxyable",
         reliability="proxy",
-        diagnostics=tuple(dotted_diagnostics),
+        diagnostics=tuple(dotted_rate_diagnostics),
     )
 
     chord_type_counts = _chord_type_counts(view.chord_events, logical_lookup, written_lookup)
@@ -256,21 +308,26 @@ def _extract_scope_values(
 
     onset_groups = _scope_onset_groups(logical_notes)
     attack_count = len(onset_groups)
-    polyphonic_onsets = sum(1 for pitches in onset_groups.values() if len(pitches) > 1)
+    polyphony_rate_value, polyphony_rate_diagnostics = compute_polyphony_rate(
+        logical_notes,
+        polyphony_rate_formula,
+    )
     values[f"polyphony_rate_{view.code}"] = _value(
         f"polyphony_rate_{view.code}",
-        _ratio(polyphonic_onsets, attack_count),
+        polyphony_rate_value,
         "ratio",
         status="implemented",
+        diagnostics=polyphony_rate_diagnostics,
     )
+    playing_speed_value = _ratio(attack_count, float(score_duration))
     values[f"playing_speed_{view.code}"] = Yan2023FeatureValue(
         slot_id=f"playing_speed_{view.code}",
-        value=_ratio(attack_count, float(score_duration)),
+        value=playing_speed_value,
         units="attacks_per_quarter",
         status="proxyable",
         reliability="proxy",
         diagnostics=(
-            "Proxy uses attack density because the paper does not fully publish the playing-speed formula.",
+            "Proxy uses attack rate (attacks per quarter), not note count, because the paper does not fully publish the playing-speed formula.",
         ),
     )
     values[f"distinct_stroke_rate_{view.code}"] = Yan2023FeatureValue(
@@ -294,19 +351,33 @@ def _extract_scope_values(
         ),
     )
 
-    if view.code in {"bs", "ts"}:
-        hand = "left" if view.code == "bs" else "right"
-        hand_metrics = metrics.hand_metrics[hand]
+    if view.code in {"es", "bs", "ts"}:
+        if view.code == "es":
+            left_rate, left_diagnostics = compute_hand_leap_proxy(logical_notes, "left")
+            right_rate, right_diagnostics = compute_hand_leap_proxy(logical_notes, "right")
+            hand_leap_rate = max(left_rate, right_rate)
+            hand_leap_diagnostics = (
+                "Proxy uses a gap-weighted same-hand attack proxy with noticeable/difficult thresholds and a long-rest filter.",
+                f"hand_leap_scope={view.code}",
+                f"hand_leap_whole_score_aggregate=max({left_rate:.6f},{right_rate:.6f})",
+                *left_diagnostics,
+                *right_diagnostics,
+            )
+        else:
+            hand = "left" if view.code == "bs" else "right"
+            hand_leap_rate, hand_leap_diagnostics = compute_hand_leap_proxy(
+                logical_notes,
+                hand,
+            )
         values[f"hand_displacement_rate_{view.code}"] = Yan2023FeatureValue(
             slot_id=f"hand_displacement_rate_{view.code}",
-            value=hand_metrics.timed_difficult_displacement_ratio,
+            value=hand_leap_rate,
             units="ratio",
             status="proxyable",
             reliability="proxy",
-            diagnostics=(
-                "Proxy uses repo timed-difficult-displacement ratio, not the unpublished Yan hand-displacement contract.",
-            ),
+            diagnostics=hand_leap_diagnostics,
         )
+    if view.code in {"bs", "ts"}:
         values[f"hand_stretch_{view.code}"] = Yan2023FeatureValue(
             slot_id=f"hand_stretch_{view.code}",
             value=_max_vertical_span(logical_notes, onset_groups),
@@ -360,6 +431,7 @@ def _value(
     units: str | None,
     *,
     status: FeatureStatus,
+    diagnostics: tuple[str, ...] = (),
 ) -> Yan2023FeatureValue:
     return Yan2023FeatureValue(
         slot_id=slot_id,
@@ -367,6 +439,7 @@ def _value(
         units=units,
         status=status,
         reliability="direct" if status == "implemented" else "proxy",
+        diagnostics=diagnostics,
     )
 
 
@@ -426,37 +499,16 @@ def _ordered_written_notes(written_notes: list[WrittenNoteIR]) -> list[WrittenNo
     )
 
 
-def _adjacent_normalized_variability(values: list[float | int]) -> float:
-    if len(values) < 2:
-        return 0.0
-    terms: list[float] = []
-    for left, right in zip(values, values[1:]):
-        denominator = (abs(float(left)) + abs(float(right))) / 2
-        if denominator == 0:
-            continue
-        terms.append(abs(float(left) - float(right)) / denominator)
-    return _mean(terms)
-
-
-def _dotted_note_count(written_notes: list[WrittenNoteIR]) -> tuple[int, list[str]]:
-    dotted_count = 0
-    diagnostics: list[str] = []
-    for note in written_notes:
-        if note.tuplet_actual is not None:
-            diagnostics.append(
-                "Ignored tuplet note while heuristically recovering dotted-note rate."
-            )
-            continue
-        base_duration = _DURATION_TYPE_QUARTERS.get(note.duration_type or "")
-        if base_duration is None or base_duration <= 0:
-            diagnostics.append(
-                "Skipped note without recoverable duration type while estimating dotted-note rate."
-            )
-            continue
-        ratio = float(note.duration / base_duration)
-        if abs(ratio - 1.5) < 1e-6 or abs(ratio - 1.75) < 1e-6:
-            dotted_count += 1
-    return dotted_count, sorted(set(diagnostics))
+def _variability_value(
+    values: list[float | int],
+    formula: VariabilityFormulaName,
+) -> tuple[float, tuple[str, ...]]:
+    candidate_values = compute_variability_candidates(values)
+    diagnostics = (
+        f"variability_formula={formula}",
+        f"variability_candidates={','.join(VARIABILITY_FORMULA_NAMES)}",
+    )
+    return candidate_values[formula], diagnostics
 
 
 def _chord_type_counts(
