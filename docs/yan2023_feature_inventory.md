@@ -221,3 +221,11 @@ the existing rows. Keep the machine-readable slot ledger in
 `tests/harness/yan2023/slot_inventory.py` and the paper-facing inventory in
 `tests/harness/yan2023/paper_inventory.py` aligned with that update. Treat the
 paper as primary evidence and the archived snapshot as secondary evidence only.
+
+## Status Legend
+
+| Status | Meaning |
+| --- | --- |
+| Done | The feature is implemented directly. |
+| Proxyable | The feature is not implemented directly yet, but has a defined proxy. |
+| Blocked | The feature still needs a modeling decision or implementation work. |
