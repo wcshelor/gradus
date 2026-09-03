@@ -115,7 +115,7 @@ license, submodule, or migration failure blocks implementation.
 
 ## Milestone 1 — Stable score and passage contracts (WP-01–WP-02, gate G1)
 
-- [ ] **T01.1 Add exact-time value objects.** Depends on: T00.5. Scope: implement
+- [x] **T01.1 Add exact-time value objects.** Depends on: T00.5. Scope: implement
   score position and strict non-empty half-open interval validation with exact
   fraction serialization. Tests: fraction round-trip, negative/zero interval,
   boundary equality, unsupported schema version. Limit: no passage selection.
