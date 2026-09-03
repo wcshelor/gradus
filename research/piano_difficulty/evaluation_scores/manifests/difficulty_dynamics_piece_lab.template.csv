@@ -1,0 +1,2 @@
+score_id,title,composer,score_path,learned_by_user,known_hard_measures,notes
+example-piece,Example Piece,Example Composer,music/example_piece.musicxml,yes,"12-16; 41-48",Replace this row with pieces you have learned locally.

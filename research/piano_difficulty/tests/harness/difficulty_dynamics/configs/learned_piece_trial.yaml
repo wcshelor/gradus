@@ -1,0 +1,70 @@
+{
+  "experiment_name": "difficulty_dynamics_learned_piece_trial",
+  "score_path": "tests/fixtures/feature_fixture.musicxml",
+  "feature_ids": [
+    "rhythm.note_density",
+    "leaps.mean_melodic_leap",
+    "pitch_geometry.register_range",
+    "texture.notes_per_onset",
+    "texture.vertical_density_proxy",
+    "coordination.subdivision_mismatch_proxy",
+    "notation.accidental_density"
+  ],
+  "hand_mode": "both",
+  "score_id": "learned_piece_trial",
+  "window": {
+    "kind": "measure",
+    "size": 4,
+    "step": 1,
+    "final_window_behavior": "include"
+  },
+  "normalization": {
+    "method": "min_max"
+  },
+  "smoothing": {
+    "method": "moving_average",
+    "window_size": 3,
+    "centered": true
+  },
+  "composite": {
+    "enabled": true,
+    "feature_ids": [
+      "rhythm.note_density",
+      "leaps.mean_melodic_leap",
+      "pitch_geometry.register_range",
+      "texture.notes_per_onset",
+      "texture.vertical_density_proxy",
+      "coordination.subdivision_mismatch_proxy",
+      "notation.accidental_density"
+    ],
+    "weights": {
+      "rhythm.note_density": 1.0,
+      "leaps.mean_melodic_leap": 1.0,
+      "pitch_geometry.register_range": 1.0,
+      "texture.notes_per_onset": 1.0,
+      "texture.vertical_density_proxy": 1.0,
+      "coordination.subdivision_mismatch_proxy": 1.0,
+      "notation.accidental_density": 1.0
+    },
+    "minimum_valid_features": 1,
+    "exclude_missing": true,
+    "output_feature_id": "composite.difficulty"
+  },
+  "peaks": {
+    "method": "top_n",
+    "top_n": 3,
+    "percentile": 0.9,
+    "minimum_separation": 2
+  },
+  "export": {
+    "output_root": "tests/artifacts/difficulty_dynamics/learned_piece_trial",
+    "run_name": "learned_piece_trial",
+    "json_filename": "difficulty_profile.json",
+    "csv_filename": "difficulty_profile.csv",
+    "peaks_filename": "difficulty_peaks.json",
+    "hotspots_filename": "difficulty_hotspots.csv",
+    "report_filename": "difficulty_summary.md",
+    "plot_filename": "difficulty_profile.png",
+    "write_plot": true
+  }
+}

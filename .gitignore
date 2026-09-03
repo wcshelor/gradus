@@ -1,3 +1,5 @@
+.DS_Store
+
 .pytest_cache/
 __pycache__/
 .mypy_cache/
@@ -7,6 +9,21 @@ build/
 dist/
 *.egg-info/
 reference_code/
-evaluation_scores/ad_hoc/*
-!evaluation_scores/ad_hoc/README.md
-external/ScoreAnalyzer
+research/piano_difficulty/evaluation_scores/ad_hoc/*
+!research/piano_difficulty/evaluation_scores/ad_hoc/README.md
+research/piano_difficulty/external/ScoreAnalyzer
+literature/papers/*
+!literature/papers/README.md
+# Bulk generated artifacts - do not commit timestamped or dataset export bulk directories
+research/piano_difficulty/tests/artifacts/yan2023/dataset_exports/*
+research/piano_difficulty/tests/artifacts/difficulty_clustering/runs/*
+research/piano_difficulty/tests/artifacts/difficulty_dynamics/learned_piece_trial/*
+research/piano_difficulty/tests/artifacts/difficulty_prediction/comparisons/*
+research/piano_difficulty/tests/artifacts/difficulty_prediction/oktav/*
+research/piano_difficulty/tests/artifacts/difficulty_prediction/oktav_henle_9bin/*
+research/piano_difficulty/tests/artifacts/oktav_dataset/*
+research/piano_difficulty/tests/artifacts/**/20[0-9][0-9][0-9][0-9][0-9][0-9]T[0-9][0-9][0-9][0-9][0-9][0-9]Z*
+tests/artifacts/**/20[0-9][0-9][0-9][0-9][0-9][0-9]T[0-9][0-9][0-9][0-9][0-9][0-9]Z*
+tests/artifacts/yan2023/dataset_exports/*
+tests/artifacts/difficulty_*/runs/*
+tests/artifacts/difficulty_*/comparisons/*

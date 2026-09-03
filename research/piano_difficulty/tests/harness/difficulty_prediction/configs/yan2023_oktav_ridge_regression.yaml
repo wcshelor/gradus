@@ -1,0 +1,25 @@
+experiment_name: yan2023-oktav-ridge-regression
+dataset_name: oktav
+input_matrix_path: tests/artifacts/oktav_dataset/python_analysis/full_run/oktav_labeled_feature_matrix.csv
+id_columns: [source_row_index, filename, dataset_relative_path]
+target_column: difficulty_numeric
+target_scheme:
+  kind: continuous
+feature_set: yan2023_observed
+preprocessing:
+  imputer_strategy: median
+  scaler: standard
+model_family: ridge_regression
+model_parameters:
+  alpha: 1.0
+cross_validation:
+  kind: kfold
+  folds: 5
+  shuffle: true
+  random_state: 42
+output_options:
+  run_name: yan2023-oktav-ridge-regression
+  primary_metric: r2
+  save_predictions: true
+  save_confusion_matrix: false
+  save_feature_importance: true

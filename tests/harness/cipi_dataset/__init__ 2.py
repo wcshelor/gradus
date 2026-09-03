@@ -1,2 +1,0 @@
-"""CIPI dataset harness helpers."""
-

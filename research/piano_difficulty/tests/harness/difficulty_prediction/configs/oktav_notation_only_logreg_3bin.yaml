@@ -1,0 +1,25 @@
+experiment_name: oktav-notation-only-logreg-3bin
+dataset_name: oktav
+input_matrix_path: tests/artifacts/oktav_dataset/python_analysis/full_run/oktav_labeled_feature_matrix.csv
+id_columns: [source_row_index, filename, dataset_relative_path]
+target_column: difficulty_numeric
+target_scheme:
+  kind: quantile_bins
+  bins: 3
+feature_set: notation_only
+preprocessing:
+  imputer_strategy: median
+  scaler: standard
+model_family: logistic_regression
+model_parameters: {}
+cross_validation:
+  kind: stratified
+  folds: 5
+  shuffle: true
+  random_state: 42
+output_options:
+  run_name: oktav-notation-only-logreg-3bin
+  primary_metric: balanced_accuracy
+  save_predictions: true
+  save_confusion_matrix: true
+  save_feature_importance: true

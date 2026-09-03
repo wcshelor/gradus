@@ -1,0 +1,6 @@
+[submodule "research/piano_difficulty/external/1.1"]
+	path = research/piano_difficulty/external/1.1
+	url = https://github.com/miditoolbox/1.1.git
+[submodule "research/piano_difficulty/external/mxl-predict"]
+	path = research/piano_difficulty/external/mxl-predict
+	url = https://github.com/wcshelor/mxl-predict.git

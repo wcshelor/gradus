@@ -1,0 +1,40 @@
+experiment_name: difficulty_dynamics_beat_demo
+score_path: tests/fixtures/feature_fixture.musicxml
+feature_ids:
+  - rhythm.note_density
+  - leaps.mean_melodic_leap
+hand_mode: both
+score_id: feature_fixture_beat_demo
+window:
+  kind: beat
+  beat_size: 3
+  beat_step: 3
+  final_window_behavior: include
+normalization:
+  method: min_max
+smoothing:
+  method: none
+composite:
+  enabled: true
+  feature_ids:
+    - rhythm.note_density
+    - leaps.mean_melodic_leap
+  weights:
+    rhythm.note_density: 1.0
+    leaps.mean_melodic_leap: 1.0
+  minimum_valid_features: 1
+  exclude_missing: true
+  output_feature_id: composite.difficulty
+peaks:
+  method: top_n
+  top_n: 2
+  percentile: 0.9
+  minimum_separation: 1
+export:
+  output_root: tests/artifacts/difficulty_dynamics
+  run_name: feature_fixture_beat_demo
+  json_filename: difficulty_profile.json
+  csv_filename: difficulty_profile.csv
+  peaks_filename: difficulty_peaks.json
+  plot_filename: difficulty_profile.png
+  write_plot: false
