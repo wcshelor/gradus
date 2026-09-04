@@ -120,7 +120,7 @@ license, submodule, or migration failure blocks implementation.
   fraction serialization. Tests: fraction round-trip, negative/zero interval,
   boundary equality, unsupported schema version. Limit: no passage selection.
 
-- [ ] **T01.2 Decide and implement source identity primitives.** Depends on:
+- [x] **T01.2 Decide and implement source identity primitives.** Depends on:
   T01.1. Scope: inspect existing `ScoreIR` IDs, propose Q-001, then implement
   the smallest stable source-reference type and resolver. Tests: uniqueness,
   deterministic regeneration, resolvable/missing references. Limit: no XML

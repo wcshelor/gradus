@@ -90,6 +90,33 @@ engine can identify which events drove a window value.
 Source claims, formalized heuristics, and executable strategies are independently
 versioned and reviewed.
 
+### D-011 — Stable source identity via normalized IDs + kind
+
+- **Status:** accepted
+- **Date:** 2026-09-03
+- **Deciders:** T01.2 implementer (muse-spark), lead review pending
+- **Affected work packages:** WP-01, WP-02, WP-03, WP-06, WP-07, WP-09
+
+Context: ScoreIR generates deterministic IDs — `WrittenNoteIR.note_id = @id or f"n{xml_order}"`,
+`RestEventIR.rest_id = @id or f"r{xml_order}"`, `LogicalNoteIR.note_id` reuses first written id
+and keeps `source_note_ids`. Alternatives were XML paths, retained node handles, or pure @id.
+
+Decision: Canonical references are `SourceRef(id, kind)` where `id` is the normalized
+ScoreIR id and `kind` is a discrete `SourceKind` (written_note, logical_note, rest, measure,
+direction, clef). Explicit MusicXML @id is preserved when present via ScoreIR generation, but
+no XML parsing or mutation is performed by the resolver; resolver is a pure lookup over
+ScoreIR collections. No composite locator; no node identity.
+
+Alternatives considered: XML-path locator (brittle across renders), retained Element handles
+(not serializable), @id-only (collides across kinds and missing for many notes).
+
+Consequences: Uniqueness and deterministic regeneration inherited from ScoreIR xml_order;
+selection can store only (kind,id) and re-resolve against the same ScoreIR without drift;
+missing refs are explicit None, not silent.
+
+Required tests or migration: `tests/unit/test_source.py` covers uniqueness, deterministic
+regeneration, resolvable/missing, serialization round-trip, and unsupported version.
+
 ## Open questions requiring decisions during implementation
 
 ### Q-001 — Stable source identity mechanism
@@ -97,6 +124,8 @@ versioned and reviewed.
 Should source references use normalized generated IDs, XML paths, retained node
 identities, explicit MusicXML IDs when available, or a composite locator? WP-01
 must propose a strategy that survives selection and serialization tests.
+
+→ Resolved by D-011 above.
 
 ### Q-002 — Ownership of generic passage types
 
