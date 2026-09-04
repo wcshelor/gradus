@@ -126,12 +126,12 @@ license, submodule, or migration failure blocks implementation.
   deterministic regeneration, resolvable/missing references. Limit: no XML
   mutation and no identity scheme justified only by one fixture.
 
-- [ ] **T01.3 Add shared diagnostics and provenance references.** Depends on:
+- [x] **T01.3 Add shared diagnostics and provenance references.** Depends on:
   T01.2. Scope: immutable severity/code/context and source-reference containers.
   Tests: deterministic order, JSON round-trip, missing optional context, invalid
   reference. Limit: no layer-specific diagnostic catalogs yet.
 
-- [ ] **T01.4 Add minimal versioned passage/view containers.** Depends on:
+- [x] **T01.4 Add minimal versioned passage/view containers.** Depends on:
   T01.3. Scope: only fields required by WP-02 and WP-03, including passage ID,
   purpose, parent, event references, method metadata, and omissions. Tests:
   frozen compact JSON, deterministic serialization, invalid enum/version/ID.
