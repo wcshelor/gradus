@@ -127,11 +127,65 @@ must propose a strategy that survives selection and serialization tests.
 
 → Resolved by D-011 above.
 
+### D-012 — Keep generic region primitive in passage practice for v1
+
+- **Status:** accepted
+- **Date:** 2026-09-03
+- **Deciders:** T02.1 implementer (muse-spark), lead review pending
+- **Affected work packages:** WP-01, WP-02, WP-03, WP-09
+
+Context: T01.1–T01.4 added `ScorePosition`/`ScoreInterval`/`SourceRef`/`Passage`/`View`
+in `research/learning_support/passage_practice/src/passage_practice/models/`.
+Existing `research/piano_difficulty` consumers use distinct types:
+- `research/piano_difficulty/src/piano_difficulty/temporal/windows.py:18` `ScoreRegion`
+  (measure_start/end + Fraction start_offset/end_offset and beat fields) for
+  measure/beat windowing and plotting;
+- `research/piano_difficulty/src/piano_difficulty/normalize/schema.py:27` `MeasureIR`
+  (measure_index, start/end as Fraction) for score facts.
+No `piano_difficulty` consumer imports or needs `ScorePosition` (which adds
+measure_number, offset_in_measure, voice/staff/hand qualifiers and half-open
+validation). No `piano_difficulty` consumer needs `PassagePurpose` or
+`ViewType`. `research/learning_support/passage_practice/tests/unit/test_passage.py`
+is the only current consumer of `Passage`.
+
+Decision: Keep the most generic exact-region type (`ScoreInterval`/`ScorePosition`
+and derived `Passage`) inside `research/learning_support/passage_practice` for v1.
+`research/piano_difficulty` retains its own `ScoreRegion`/`MeasureIR` for
+windowing. Passage-practice depends on piano_difficulty (`ScoreIR` for building
+passages), not vice versa. No code moves to `research/shared/` and no new
+generic type is added to `research/piano_difficulty`.
+
+Alternatives considered:
+- Move `ScoreInterval` to `research/piano_difficulty/src/piano_difficulty/temporal/` and
+  re-export from passage practice — would require `piano_difficulty` to own a
+  stable half-open interval contract it does not yet need, and would invert
+  the current dependency direction while adding cross-package review cost.
+- Promote to `research/shared/` — explicitly deferred per `research/learning_support/passage_practice/AGENTS.md`
+  and `research/learning_support/passage_practice/docs/architecture.md` (shared only after
+  multiple research areas use it).
+
+Consequences:
+- Import direction remains `passage_practice -> piano_difficulty` (via `ScoreIR`
+  at selection time); `piano_difficulty` never imports from `passage_practice`.
+- `ScoreInterval`/`Passage` remain passage-specific; if later `piano_difficulty`
+  needs exact quarter-time intervals beyond `ScoreRegion`, a follow-up D-xxx can
+  promote a minimal interval to `piano_difficulty` or `shared` after at least one
+  concrete consumer is demonstrated.
+- No migration: `Passage` stays in `passage_practice/models/passage.py`; `ScoreRegion`
+  stays in `piano_difficulty/temporal/windows.py`.
+
+Required tests or migration: No code move; `tests/unit/test_time.py` and
+`tests/unit/test_passage.py` already cover `ScoreInterval`/`Passage` round-trips;
+`research/piano_difficulty/tests/unit/test_difficulty_dynamics.py` still covers
+`ScoreRegion` windowing.
+
 ### Q-002 — Ownership of generic passage types
 
 Should the most generic exact-region type live in `piano_difficulty`, with
 passage-practice semantics layered above it, or should v1 keep all new contracts
 inside passage practice? Resolve only after inspecting actual consumers.
+
+→ Resolved by D-012 above.
 
 ### Q-003 — Boundary handling for partial measures
 

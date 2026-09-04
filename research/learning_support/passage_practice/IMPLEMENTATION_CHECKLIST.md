@@ -137,7 +137,7 @@ license, submodule, or migration failure blocks implementation.
   frozen compact JSON, deterministic serialization, invalid enum/version/ID.
   Limit: no speculative diagnosis, strategy, or transformation model tree.
 
-- [ ] **T02.1 Decide ownership of the generic region primitive.** Depends on:
+- [x] **T02.1 Decide ownership of the generic region primitive.** Depends on:
   T01.4. Scope: inspect actual consumers and resolve Q-002. Evidence: dated
   decision naming package/import direction and migration consequence. Limit:
   do not move anything to `research/shared/`.
