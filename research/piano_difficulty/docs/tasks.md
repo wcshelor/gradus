@@ -1,5 +1,10 @@
 # Piano Difficulty - Implementation Task Breakdown
 
+> Historical task proposal, retained for research context. Superseded by
+> [roadmap.md](roadmap.md) and [consolidation.md](consolidation.md).
+> Many tasks below describe behavior that already exists. Do not use this file
+> as an active implementation queue or a completion record.
+
 > Each task below is designed to be carried out one at a time by a coding agent. Every task is small, testable, and contains enough context for an agent to understand what to build and how to verify it.
 
 ---

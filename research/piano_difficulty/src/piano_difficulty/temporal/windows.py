@@ -157,7 +157,7 @@ def build_beat_regions(
             if measure.start < window_end and measure.end > window_start
         ]
         if overlapping:
-            if len(overlapping) == 1 and window_end - window_start < window_size and spec.final_window_behavior == "drop":
+            if window_end - window_start < window_size and spec.final_window_behavior == "drop":
                 break
             start_measure = overlapping[0]
             end_measure = overlapping[-1]

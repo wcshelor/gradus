@@ -16,6 +16,9 @@ def render_markdown_report(payload: dict[str, object], *, profile_id: str | None
             break
     if selected_profile is None:
         raise ValueError("No analysis profile is available for Markdown rendering.")
+    if selected_profile.get("profile_id") == "difficulty_overview":
+        from piano_difficulty.output.overview import render_overview
+        return render_overview(payload, selected_profile)
 
     score = payload.get("score", {})
     source = payload.get("source", {})

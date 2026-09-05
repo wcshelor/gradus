@@ -4,5 +4,6 @@ channels:
 dependencies:
   - python=3.12
   - pip
-  - pip:
-      - -e .[dev]
+# Install from the repository root after creation:
+# conda run -n piano-difficulty python -m pip install -e 'research/piano_difficulty[dev]'
+# Keeping the editable path out of this file makes creation independent of cwd.

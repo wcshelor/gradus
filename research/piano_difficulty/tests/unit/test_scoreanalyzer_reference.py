@@ -54,7 +54,7 @@ def test_scoreanalyzer_reference_threshold_boundaries() -> None:
 
 
 def test_analyze_score_emits_scoreanalyzer_reference_payload(tmp_path: Path) -> None:
-    payload = analyze_score(FEATURE_FIXTURE_PATH).to_json_payload()
+    payload = analyze_score(FEATURE_FIXTURE_PATH, profile_ids=("scoreanalyzer_reference",)).to_json_payload()
 
     assert payload["analysis_profiles"]
     profile = payload["analysis_profiles"][0]
@@ -74,7 +74,7 @@ def test_analyze_score_emits_scoreanalyzer_reference_payload(tmp_path: Path) -> 
 
 
 def test_markdown_report_renders_from_saved_payload(tmp_path: Path) -> None:
-    payload = analyze_score(FEATURE_FIXTURE_PATH).to_json_payload()
+    payload = analyze_score(FEATURE_FIXTURE_PATH, profile_ids=("scoreanalyzer_reference",)).to_json_payload()
     report = render_markdown_report(payload, profile_id="scoreanalyzer_reference")
 
     assert "## Overview" in report

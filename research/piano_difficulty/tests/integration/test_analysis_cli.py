@@ -22,7 +22,7 @@ def test_cli_analyze_json_and_markdown(tmp_path: Path, monkeypatch, capsys) -> N
     )
     assert main() == 0
     json_payload = json.loads(capsys.readouterr().out)
-    assert json_payload["analysis_profiles"][0]["profile_id"] == "scoreanalyzer_reference"
+    assert json_payload["analysis_profiles"][0]["profile_id"] == "difficulty_overview"
 
     monkeypatch.setattr(
         "sys.argv",
@@ -30,8 +30,8 @@ def test_cli_analyze_json_and_markdown(tmp_path: Path, monkeypatch, capsys) -> N
     )
     assert main() == 0
     markdown = capsys.readouterr().out
-    assert "## Overview" in markdown
-    assert "## Speed" in markdown
+    assert "## Dominant factors" in markdown
+    assert "## Candidate high-demand sections" in markdown
 
 
 def test_cli_analyze_batch_writes_outputs(tmp_path: Path, monkeypatch, capsys) -> None:
@@ -138,3 +138,31 @@ def test_analyze_batch_returns_failures_instead_of_raising(tmp_path: Path) -> No
     assert batch.failures[0].source_path == malformed
     assert batch.failures[0].error_type == "ValueError"
     assert batch.errors_csv_path == out_dir / "errors.csv"
+
+
+def test_explicit_profile_replaces_default_and_output_files_match(tmp_path, monkeypatch, capsys):
+    monkeypatch.setattr("sys.argv", ["piano-difficulty", "analyze", str(FEATURE_FIXTURE_PATH),
+                                    "--profile", "scoreanalyzer_reference", "--format", "json"])
+    assert main() == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert [p["profile_id"] for p in payload["analysis_profiles"]] == ["scoreanalyzer_reference"]
+    monkeypatch.setattr("sys.argv", ["piano-difficulty", "analyze", str(FEATURE_FIXTURE_PATH),
+                                    "--out-dir", str(tmp_path), "--window", "beat",
+                                    "--window-size", "1", "--hand", "right"])
+    assert main() == 0
+    assert "Candidate high-demand sections" in capsys.readouterr().out
+    saved = json.loads((tmp_path / "analysis.json").read_text())
+    assert saved["analysis_profiles"][0]["hand_mode"] == "right"
+    assert (tmp_path / "analysis.html").is_file()
+    assert (tmp_path / "analysis.csv").is_file()
+
+
+def test_batch_slug_collisions_preserve_all_results(tmp_path):
+    inputs = tmp_path / "scores"
+    inputs.mkdir()
+    for name in ("a.xml", "a.musicxml", "a-2.xml", "corpus_summary.xml"):
+        (inputs / name).write_text(FEATURE_FIXTURE_PATH.read_text())
+    result = analyze_batch(inputs, out_dir=tmp_path / "reports")
+    assert len(set(result.payload_paths)) == 4
+    assert result.corpus_summary_path not in result.payload_paths
+    assert all(json.loads(path.read_text())["analysis_profiles"] for path in result.payload_paths)

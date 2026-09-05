@@ -82,6 +82,9 @@ def render_verbose_report(payload: dict[str, object]) -> str:
     )
     for profile in analysis_profiles:
         lines.extend(_render_profile(profile))
+        if profile.get("profile_id") == "difficulty_overview":
+            from piano_difficulty.output.overview import render_overview
+            lines.extend(render_overview(payload, profile).splitlines())
     lines.append("")
 
     lines.extend(

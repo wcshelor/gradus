@@ -243,7 +243,8 @@ Dynamics fixture or a minimal new fixture.
 ### WP-06 — Event attribution and region refinement
 
 **Goal:** identify which observations and events materially drove each hotspot
-dimension, then derive the evidence region.
+dimension — or, for a user-selected root with no hotspot dimensions, the
+baseline observations under investigation — then derive the evidence region.
 
 **Scope:**
 

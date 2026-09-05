@@ -39,6 +39,7 @@ changes or gains a new implementation path.
 |---|---|---|---|---|
 | Parse | committed fixture | `ScoreIR` | existing piano-difficulty schema | existing system |
 | Detect | score and window config | difficulty hotspot | existing Difficulty Dynamics profile | existing system |
+| Detect (controlled twin) | exact region and optional hand | root `Passage` with manual origin, no profile | manual selection API | WP-02, WP-05 |
 | Adapt | hotspot plus score | investigation request | `HotspotInvestigation` | WP-05 |
 | Select | investigation region | exact passage | `PassageSelection` | WP-02 |
 | Observe | passage views | feature evidence | `FeatureEvidence` | WP-03, WP-04 |

@@ -18,6 +18,7 @@ literature/papers/*
 research/piano_difficulty/tests/artifacts/yan2023/dataset_exports/*
 research/piano_difficulty/tests/artifacts/difficulty_clustering/runs/*
 research/piano_difficulty/tests/artifacts/difficulty_dynamics/learned_piece_trial/*
+research/piano_difficulty/tests/artifacts/difficulty_dynamics/previews/
 research/piano_difficulty/tests/artifacts/difficulty_prediction/comparisons/*
 research/piano_difficulty/tests/artifacts/difficulty_prediction/oktav/*
 research/piano_difficulty/tests/artifacts/difficulty_prediction/oktav_henle_9bin/*

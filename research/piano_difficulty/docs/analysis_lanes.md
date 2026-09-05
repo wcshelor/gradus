@@ -74,6 +74,12 @@ Rules:
 
 ## Lane 4: Difficulty Dynamics
 
+Promotion status (2026-09-05): the core/models are now owned by
+`src/piano_difficulty/difficulty_analysis/dynamics/`; export helpers are in
+`src/piano_difficulty/output/dynamics.py`. Existing harness imports delegate
+to runtime. The public `difficulty_overview` profile adds exact selection,
+reviewed factors and merged candidate sections.
+
 Purpose:
 - generate time-varying difficulty profiles from symbolic piano scores
 - reuse the existing score feature extractors over bounded regions
@@ -87,7 +93,8 @@ Authoritative locations:
 - evidence: `tests/artifacts/difficulty_dynamics/`
 
 Rules:
-- this lane stays test-scoped until a promotion decision is explicit
+- configs, runners, piece labs and plotting experiments stay test-scoped;
+  stabilized computations are promoted as recorded in docs/decisions.md
 - regional feature computation must be represented as a temporal adaptation of
   existing feature definitions, not as a silent rewrite of the original math
 - within-piece normalization is descriptive inside one score only and does not
@@ -137,7 +144,8 @@ Work may move inward only in this order:
 1. experiment in `tests/harness/*`
 2. stabilize definitions, outputs, and diagnostics
 3. decide whether the behavior belongs in runtime code
-4. add a new runtime profile explicitly
+4. add a new runtime profile explicitly (difficulty_overview is the first
+   promoted temporal overview)
 
 Until step 4 happens, the matrix-evaluation lanes remain test-scoped and
 consume exported matrices rather than raw corpus files.

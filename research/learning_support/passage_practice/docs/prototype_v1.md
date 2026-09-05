@@ -42,7 +42,9 @@ The pipeline supports two equivalent entry paths after score normalization:
    hand.
 
 The controlled path isolates pattern, diagnosis, and transformation quality
-from hotspot-detection quality and is required for testing.
+from hotspot-detection quality and is required for testing. It requires no
+hotspot ID, difficulty score, or profile: an exact region plus optional target
+hand is a complete investigation input (see `docs/entry_points.md`).
 
 ## Candidate hotspot triggers
 
@@ -222,7 +224,9 @@ learner-specific conclusions.
 Given a small fixture containing an ordinary opening window and a later
 right-hand broken-chord window:
 
-1. Difficulty Dynamics ranks the latter as a hotspot using configured features.
+1. Difficulty Dynamics ranks the latter as a hotspot using configured features
+   (automatic entry). The controlled twin starts instead from the same exact
+   region with no profile computed.
 2. Attribution names the target-hand transitions and attacks responsible for
    the elevated values.
 3. The broken-chord detector covers the intended groups and excludes surrounding

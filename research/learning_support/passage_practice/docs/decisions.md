@@ -179,6 +179,41 @@ Required tests or migration: No code move; `tests/unit/test_time.py` and
 `research/piano_difficulty/tests/unit/test_difficulty_dynamics.py` still covers
 `ScoreRegion` windowing.
 
+### D-013 — User-selected regions reuse Passage with recorded manual origin
+
+- **Status:** proposed
+- **Date:** 2026-09-05
+- **Deciders:** LS-02 implementer (muse-spark), lead review pending
+- **Affected work packages:** WP-02 (T02.5), WP-05 (T05.3), WP-06, WP-08, WP-15
+
+Context: LS-01 scenarios S1–S5 require assistance from a user-selected exact
+region without a difficulty profile or hotspot ID. Implemented contracts
+(`Passage` with `PassagePurpose` detection/evidence/pattern/practice, method
+metadata, `parent_id` lineage, diagnostics) can already express such a root;
+planned contracts (`HotspotInvestigation`, `AttributedSignal`, passage
+`PassageDiagnosis` hotspot IDs) still assume analyzer-suggested entry. Full
+design in `docs/entry_points.md`.
+
+Decision (proposed): the smallest adapter builds a root `Passage` with
+`purpose=DETECTION` (“region under investigation”), `method_id` naming manual
+selection, a `Diagnostic` recording user-selected vs. analyzer-suggested
+origin, `parent_id=None`, and optionally attached (never invented) difficulty
+evidence. No new enum value, no new shared type, no separate downstream
+pipeline. Making diagnosis/attribution hotspot references explicitly optional
+is deferred to LS-03 contract work.
+
+Alternatives considered: new `PassagePurpose` value (contract churn, no new
+semantics); new shared region type (rejected by D-012); separate manual-region
+pipeline (duplicates stages, violates dependency direction).
+
+Consequences: T05.3 implements this adapter; WP-06/WP-08 rules accept
+controlled-baseline observations; T15.1 accepts a user-selection reason;
+hotspot route and regressions unchanged.
+
+Required tests or migration: T05.3 manual-region equivalence, T06.x baseline
+attribution on both entries, T08.3 controlled-baseline diagnosis, T14.2/T14.3
+both orchestrations; no migration (no contract fields change in LS-02).
+
 ### Q-002 — Ownership of generic passage types
 
 Should the most generic exact-region type live in `piano_difficulty`, with

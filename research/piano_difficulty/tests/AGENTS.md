@@ -9,6 +9,9 @@ Rules for work here:
   work and must not be used for Sebastien parity.
 - `tests/harness/difficulty_dynamics/` is the temporal difficulty profiling
   box for windowed score analysis and hotspot ranking.
+  Its core/models/exports modules are compatibility imports from runtime.
+  Add new calculation behavior to the canonical runtime owner; retain configs,
+  plotting experiments and dataset loops in this harness.
 - `tests/harness/oktav_dataset/` is the thesis-scoped local dataset box for
   Oktav catalog and OG export work and must not be described as parity.
 - `tests/harness/omr_pipeline/` is the OMR prototyping box for rendered score

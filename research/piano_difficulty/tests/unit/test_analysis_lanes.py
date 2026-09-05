@@ -10,8 +10,8 @@ from tests.harness.yan2023.boundary import (
 )
 
 
-def test_scoreanalyzer_reference_is_only_runtime_profile() -> None:
-    assert set(PROFILE_REGISTRY) == {"scoreanalyzer_reference"}
+def test_overview_and_explicit_legacy_runtime_profiles() -> None:
+    assert set(PROFILE_REGISTRY) == {"difficulty_overview", "scoreanalyzer_reference"}
 
 
 def test_yan2023_lane_is_not_registered_as_runtime_profile() -> None:

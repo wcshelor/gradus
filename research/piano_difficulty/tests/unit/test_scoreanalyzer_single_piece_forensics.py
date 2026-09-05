@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import pytest
 
 from piano_difficulty.comparison.scoreanalyzer_parity import run_replica_metrics
 from piano_difficulty.comparison.scoreanalyzer_single_piece_forensics import (
@@ -11,8 +12,10 @@ from piano_difficulty.io.musicxml import load_musicxml_document
 from piano_difficulty.normalize.converters import build_score_ir
 
 
-ALLA_TURCA_PATH = Path("external/ScoreAnalyzer/pieces/AllaTurca_Mozart/Alla_Turca.xml")
-PARITY_PROBE_PATH = Path("tests/fixtures/parity_feature_probe.musicxml")
+ALLA_TURCA_PATH = Path(__file__).resolve().parents[2] / "external/ScoreAnalyzer/pieces/AllaTurca_Mozart/Alla_Turca.xml"
+PARITY_PROBE_PATH = Path(__file__).resolve().parents[1] / "fixtures/parity_feature_probe.musicxml"
+requires_local_corpus = pytest.mark.skipif(
+    not ALLA_TURCA_PATH.is_file(), reason="Optional local Alla Turca corpus is not installed.")
 
 
 def _mutated_og_for_metric(metric: str, replica_metrics: dict[str, object]) -> dict[str, object]:
@@ -27,6 +30,7 @@ def _mutated_og_for_metric(metric: str, replica_metrics: dict[str, object]) -> d
     return og_metrics
 
 
+@requires_local_corpus
 def test_metric_family_locators_emit_expected_reason_codes() -> None:
     score = build_score_ir(load_musicxml_document(ALLA_TURCA_PATH))
     forensic_index = build_forensic_index(score)
@@ -73,6 +77,7 @@ def test_rhythm_locator_emits_measure_and_note_on_probe_fixture() -> None:
     assert rows[0].measure_number != ""
 
 
+@requires_local_corpus
 def test_measure_identifiers_include_index_and_number() -> None:
     score = build_score_ir(load_musicxml_document(ALLA_TURCA_PATH))
     forensic_index = build_forensic_index(score)
@@ -93,6 +98,7 @@ def test_measure_identifiers_include_index_and_number() -> None:
     assert rows[0].measure_number != ""
 
 
+@requires_local_corpus
 def test_suspect_cap_is_enforced() -> None:
     score = build_score_ir(load_musicxml_document(ALLA_TURCA_PATH))
     forensic_index = build_forensic_index(score)

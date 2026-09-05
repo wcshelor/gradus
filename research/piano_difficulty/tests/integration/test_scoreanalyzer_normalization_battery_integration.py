@@ -17,7 +17,7 @@ from piano_difficulty.comparison.scoreanalyzer_parity import CANONICAL_METRICS
 def test_normalization_battery_writes_artifacts_and_ranking_with_mocked_og(
     tmp_path: Path,
 ) -> None:
-    pieces_root = Path("tests/fixtures")
+    pieces_root = Path(__file__).resolve().parents[1] / "fixtures"
     piece_relpath = "parity_feature_probe.musicxml"
     out_dir = tmp_path / "battery"
     selected_variants = (
@@ -76,7 +76,7 @@ def test_normalization_battery_real_alla_turca_smoke(tmp_path: Path) -> None:
     if not php:
         pytest.skip("php executable is not available in this environment.")
 
-    pieces_root = Path("external/ScoreAnalyzer/pieces")
+    pieces_root = Path(__file__).resolve().parents[2] / "external/ScoreAnalyzer/pieces"
     piece_relpath = "AllaTurca_Mozart/Alla_Turca.xml"
     if not (pieces_root / piece_relpath).exists():
         pytest.skip("Alla Turca fixture is not available in this workspace.")
@@ -105,4 +105,3 @@ def test_normalization_battery_real_alla_turca_smoke(tmp_path: Path) -> None:
 def test_default_variant_registry_matches_expected_contract() -> None:
     assert "baseline_current" in DEFAULT_VARIANT_IDS
     assert "combined_og_compat_core" in DEFAULT_VARIANT_IDS
-

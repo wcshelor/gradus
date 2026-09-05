@@ -7,13 +7,16 @@ The repository should eventually include:
 - `integration/`: end-to-end extractor tests
 - `regression/`: frozen output baselines for representative fixtures
 
-Current implemented coverage:
+Current coverage includes raw MusicXML/MXL parsing, normalization, all runtime
+feature families, explicit legacy profile regression, the public overview,
+exact temporal selection, CLI/report/batch integration, and research harnesses.
+The overview has both musical invariant tests and a compact frozen public
+contract example.
 
-- import bootstrap for the `src/` layout in `tests/conftest.py`
-- CLI shape smoke test
-- MusicXML / MXL loader boundary tests
-
-The broader normalization, integration, and regression layers are still pending.
+Run `conda run -n piano-difficulty python -m pytest -q` from the Gradus root
+to include both difficulty and passage-contract suites. The same command from
+this subproject runs its own suite. Install the declared dev extra first;
+optional PHP/local-corpus checks report skips with explicit reasons.
 
 The test-scoped research lanes currently include:
 

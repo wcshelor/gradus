@@ -1,5 +1,18 @@
 # Difficulty Dynamics Harness
 
+The profile engine and typed contracts are now implemented in
+`piano_difficulty.difficulty_analysis.dynamics`; exporters are in
+`piano_difficulty.output.dynamics`. The local core/models/exports modules
+preserve old import paths. This harness owns configurations, experiment runners,
+plots and the manifest-driven piece lab.
+
+For normal piece analysis, use `piano-difficulty analyze piece.mxl --out-dir analysis`.
+The public overview has exact attack selection, reviewed factor defaults,
+separate hand views and merged candidate sections. Existing experiments preserve
+whole-overlapping-measure selection and their previous raw values; the output
+metadata now states that policy. Do not treat legacy beat windows as exact
+event selection.
+
 This lane builds time-varying difficulty profiles over symbolic piano scores.
 
 ## Purpose
@@ -40,7 +53,7 @@ This lane builds time-varying difficulty profiles over symbolic piano scores.
 - local maxima are intentionally simple and interpretable
 - hotspot tags are consensus summaries over the raw per-series peaks, not a replacement for them
 - feature attribution is explanation scaffolding; it identifies the strongest local signals but does not yet produce prose pedagogy
-- the public runtime surface only promotes the shared region and transform helpers, not the full experimental orchestration
+- the public runtime owns the computation and export helpers; experiment orchestration remains here
 
 ## Working loop
 

@@ -9,6 +9,8 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from piano_difficulty.pipeline import analyze_score
+from piano_difficulty.difficulty_analysis.overview import OverviewOptions
+from piano_difficulty.output.overview import write_analysis_outputs
 
 _SUPPORTED_SUFFIXES = {".musicxml", ".xml", ".mxl"}
 
@@ -33,8 +35,9 @@ def analyze_batch(
     source: str | Path,
     *,
     out_dir: str | Path,
-    profile_ids: tuple[str, ...] = ("scoreanalyzer_reference",),
+    profile_ids: tuple[str, ...] = ("difficulty_overview",),
     write_csv: bool = False,
+    overview_options: OverviewOptions | None = None,
 ) -> BatchAnalysisResult:
     """Analyze a file or directory into deterministic JSON outputs."""
 
@@ -50,7 +53,7 @@ def analyze_batch(
 
     for path, output_path in _iter_output_paths(inputs, output_dir):
         try:
-            result = analyze_score(path, profile_ids=profile_ids)
+            result = analyze_score(path, profile_ids=profile_ids, overview_options=overview_options)
         except Exception as exc:
             failure = BatchFailure(
                 source_path=path,
@@ -70,6 +73,8 @@ def analyze_batch(
 
         payload = result.to_json_payload()
         output_path.write_text(json.dumps(payload, sort_keys=True, indent=2) + "\n")
+        if "difficulty_overview" in profile_ids:
+            write_analysis_outputs(payload, output_dir, stem=output_path.stem, write_csv=write_csv)
         payload_paths.append(output_path)
         feature_rows.extend(_feature_rows(payload))
         analysis_rows.extend(_analysis_rows(payload))
@@ -144,11 +149,17 @@ def _resolve_inputs(source: str | Path) -> list[Path]:
 
 def _iter_output_paths(inputs: list[Path], output_dir: Path):
     used_names: dict[str, int] = {}
+    allocated = {"corpus_summary.json"}
     for path in inputs:
         slug = re.sub(r"[^A-Za-z0-9._-]+", "-", path.stem).strip("-") or "score"
         count = used_names.get(slug, 0) + 1
         used_names[slug] = count
         filename = f"{slug}.json" if count == 1 else f"{slug}-{count}.json"
+        while filename in allocated:
+            count += 1
+            filename = f"{slug}-{count}.json"
+        used_names[slug] = count
+        allocated.add(filename)
         yield path, output_dir / filename
 
 

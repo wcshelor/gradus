@@ -22,6 +22,7 @@ from pathlib import Path
 from piano_difficulty.aggregation.measure_summary import summarize_measures
 from piano_difficulty.aggregation.piece_summary import summarize_piece
 from piano_difficulty.difficulty_analysis.registry import resolve_profiles
+from piano_difficulty.difficulty_analysis.overview import OverviewOptions
 from piano_difficulty.features import extract_all
 from piano_difficulty.features.base import FeatureRecord
 from piano_difficulty.io.musicxml import load_musicxml_document
@@ -99,7 +100,8 @@ def extract_score(path: str | Path) -> ExtractionResult:
 def analyze_score(
     path: str | Path,
     *,
-    profile_ids: tuple[str, ...] = ("scoreanalyzer_reference",),
+    profile_ids: tuple[str, ...] = ("difficulty_overview",),
+    overview_options: OverviewOptions | None = None,
 ) -> AnalysisResult:
     """Extract one score and apply registered difficulty profiles."""
 
@@ -107,5 +109,9 @@ def analyze_score(
     profiles = resolve_profiles(profile_ids)
     return AnalysisResult(
         extraction=extraction,
-        analysis_profiles=[profile.analyze(extraction) for profile in profiles],
+        analysis_profiles=[
+            profile.analyze(extraction, overview_options)
+            if profile.profile_id == "difficulty_overview" else profile.analyze(extraction)
+            for profile in profiles
+        ],
     )

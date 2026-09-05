@@ -874,11 +874,371 @@
       },
       "units": "percent",
       "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulated_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulation_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "articulated_notes_per_quarter",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staccato_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.accent_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.strong_accent_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.tenuto_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulated_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staccato_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.strong_accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.tenuto_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulated_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staccato_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.strong_accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.tenuto_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_marking_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 1,
+        "measure_start": 1
+      },
+      "units": "markings",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_marking_rate",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 1,
+        "measure_start": 1
+      },
+      "units": "markings_per_quarter",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 1,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_range_span",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 1,
+        "measure_start": 1
+      },
+      "units": "ordinal_steps",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.wedge_start_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 1,
+        "measure_start": 1
+      },
+      "units": "wedges",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.crescendo_start_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "wedges",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.diminuendo_start_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "wedges",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staff_specific_dynamic_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 1,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
     }
   ],
   "measure_summaries": [
     {
       "features": [
+        {
+          "feature_id": "expression.dynamic_change_count",
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "changes",
+          "value": 0
+        },
+        {
+          "feature_id": "expression.dynamic_marking_count",
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "markings",
+          "value": 0
+        },
+        {
+          "feature_id": "expression.dynamic_marking_rate",
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "markings_per_quarter",
+          "value": 0.0
+        },
+        {
+          "feature_id": "expression.dynamic_range_span",
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ordinal_steps",
+          "value": 0
+        },
+        {
+          "feature_id": "expression.staff_specific_dynamic_ratio",
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "feature_id": "expression.wedge_start_count",
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "wedges",
+          "value": 0
+        },
         {
           "feature_id": "metadata.tempo_change_count",
           "reliability": "direct",
@@ -921,7 +1281,7 @@
     }
   ],
   "piece_summary": {
-    "feature_count": 58,
+    "feature_count": 82,
     "features": {
       "coordination.aligned_hand_onset_count": {
         "reliability": "direct",
@@ -942,6 +1302,166 @@
         "reliability": "direct",
         "units": "ratio",
         "value": 0.75
+      },
+      "expression.accent_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.articulated_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.articulation_density": {
+        "reliability": "direct",
+        "units": "articulated_notes_per_quarter",
+        "value": 0.0
+      },
+      "expression.crescendo_start_count": {
+        "reliability": "direct",
+        "units": "wedges",
+        "value": 0
+      },
+      "expression.diminuendo_start_count": {
+        "reliability": "direct",
+        "units": "wedges",
+        "value": 0
+      },
+      "expression.dynamic_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "expression.dynamic_marking_count": {
+        "reliability": "direct",
+        "units": "markings",
+        "value": 0
+      },
+      "expression.dynamic_marking_rate": {
+        "reliability": "direct",
+        "units": "markings_per_quarter",
+        "value": 0.0
+      },
+      "expression.dynamic_range_span": {
+        "reliability": "direct",
+        "units": "ordinal_steps",
+        "value": 0
+      },
+      "expression.staccato_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.staff_specific_dynamic_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.0
+      },
+      "expression.strong_accent_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.tenuto_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.wedge_start_count": {
+        "reliability": "direct",
+        "units": "wedges",
+        "value": 0
       },
       "leaps.count_ge_12": [
         {

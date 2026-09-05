@@ -3,6 +3,11 @@
 Working rules scoped to the `research/piano_difficulty/` subproject:
 
 - Treat `src/` as runtime code only.
+- The public difficulty overview owns the promoted Dynamics core/models in
+  `src/piano_difficulty/difficulty_analysis/dynamics/` and exporters in
+  `src/piano_difficulty/output/`. Harness imports are compatibility wrappers;
+  experiment configs, runners, plots and piece labs remain test-scoped.
+- Use `docs/roadmap.md` for current work; `docs/tasks.md` is historical.
 - Treat `tests/harness/scoreanalyzer/` as the OG-parity lab.
 - Treat `tests/harness/yan2023/` as the Yan-inspired experimental lab.
 - Treat `tests/harness/difficulty_dynamics/` as the temporal difficulty
@@ -49,8 +54,8 @@ Working rules scoped to the `research/piano_difficulty/` subproject:
   - Yan-inspired experiments that stay out of runtime until intentionally
     promoted
 - `tests/harness/difficulty_dynamics/`
-  - windowed temporal difficulty profiles and hotspot detection over existing
-    score features
+  - experiments over the promoted runtime temporal engine; compatibility imports
+    preserve historical defaults and configured runs
 - `tests/harness/oktav_dataset/`
   - thesis-scoped local dataset tooling for catalog building and OG batch
     export over the Oktav corpus

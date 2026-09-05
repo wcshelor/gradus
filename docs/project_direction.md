@@ -29,12 +29,51 @@ will become part of the final thesis.
   judging output only by fluency.
 - Keep room for non-AI or hybrid baselines where they clarify what the AI
   component contributes.
+- Let the learner enter, leave, and return at any stage of learning a piece;
+  do not require a prescribed sequence or continuous observation.
+- Treat optional learner reports as contextual evidence, not measured playing
+  ability. Keep score facts, self-reports, and system hypotheses distinct.
+
+## Three complementary areas
+
+1. **Semantic understanding of the piece:** source facts, structure, patterns,
+   relationships, and descriptive demands. Difficulty analysis is one capability
+   here, not the organizing center or a prerequisite for every request.
+2. **Development of pedagogical assistance:** turn supported musical evidence
+   and a learner's stated need into explanations, practice approaches, and other
+   inspectable aids. Generated exercises are one possibility, not the only output.
+3. **Support of flexible interaction:** accept passage selections, questions,
+   optional practice journaling, and information about goals, preferences,
+   self-described habits, and passage-specific difficulties. Help the learner
+   resume without pretending to know what happened between visits.
+
+These are research responsibilities, not a commitment to three new packages,
+services, or a chatbot architecture. A feature set within the company's app or
+an assistant-like interface may expose them; that product boundary remains open.
+
+## Current scope and learner control
+
+No live-playing feedback, microphone analysis, MIDI keyboard requirement, or
+automatic performance tracking is planned in this phase. Assistance starts from
+symbolic score evidence and information the learner chooses to provide.
+
+Journaling is optional. A request must remain useful without a profile, practice
+history, or onboarding questionnaire. Learners may record what they attempted,
+what helped, and what feels difficult at piece, section, or specific-event scope.
+They control whether this context is saved or used later, and can inspect,
+correct, exclude, or delete it. Repeated reports may support a tentative pattern
+for confirmation, never a silently assigned ability/personality label. Absence
+of a journal entry does not imply absence of practice or lack of progress.
+
+Research prototypes use synthetic learner histories first. Real learner data,
+company integration, external model processing, and retention require explicit
+data-handling decisions before implementation with those data.
 
 ## Questions intentionally left open
 
 - Which learner group and learning context should the thesis prioritize?
 - Which forms of assistance are most useful and feasible?
-- What information will be available beyond the symbolic score?
+- Which optional learner inputs are useful enough to justify their collection?
 - Which responsibilities belong to analysis, generation, interaction, or human
   judgment?
 - How should pedagogical grounding be represented and evaluated?
@@ -43,9 +82,22 @@ will become part of the final thesis.
 
 ## Current concrete program
 
+The repository-wide execution direction is recorded in
+[the three-area learning-support plan](Task_list_2026-09-05_flexible_piano_learning_support.md).
+It supersedes the earlier assumption that all learning-support work must wait
+for difficulty consolidation or begin at a difficulty hotspot.
+
+Consolidating the analyzer remains a bounded component milestone: one supported
+score should yield an inspectable factor overview, factor peaks, and candidate
+high-demand sections through one public workflow. Its acceptance is not acceptance
+of the whole learning assistant. Semantic experiments may use a user-selected
+region and existing score contracts without requiring a difficulty ranking.
+
 The first documented learning-support program is maintained in
 `research/learning_support/passage_practice/`. It investigates an explainable
 pipeline from windowed difficulty hotspots through event attribution and
 semantic passage diagnosis to deterministic, source-derived practice exercises.
-This program is a scoped research direction rather than a commitment that every
-planned component will appear in the final thesis or product.
+This program is one scoped research experiment rather than the master workflow.
+Its existing code and contracts are preserved. Reconcile hotspot-first assumptions
+with the new entry points before extending it; do not silently rewrite accepted
+contracts. Not every planned component must appear in the final thesis or product.

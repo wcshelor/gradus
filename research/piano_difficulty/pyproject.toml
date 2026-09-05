@@ -15,6 +15,10 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
   "pytest>=8.0",
+  "PyYAML>=6.0",
+  "scikit-learn>=1.4",
+  "pandas>=2.0",
+  "matplotlib>=3.8",
 ]
 
 [project.scripts]
@@ -28,4 +32,3 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-

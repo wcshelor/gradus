@@ -2,6 +2,9 @@
 
 Generated outputs for the Difficulty Dynamics lane belong here.
 
+consolidation_validation.md is the compact named verification record.
+previews/ contains ignored local reports for visual inspection.
+
 Expected run outputs may include:
 
 - `difficulty_profile.json`

@@ -1,0 +1,155 @@
+{
+  "factor_fields": [
+    "availability",
+    "description",
+    "direction",
+    "feature_id",
+    "label",
+    "limitation",
+    "local_max",
+    "local_min",
+    "peak_ids",
+    "piece_value",
+    "profile_contribution",
+    "rank",
+    "scope",
+    "units",
+    "weight"
+  ],
+  "factor_registry_version": "difficulty_factors.v1",
+  "first_section": {
+    "contribution_scope": "representative_window",
+    "contributions": [
+      {
+        "attribution_value": 1.0,
+        "contribution_share": 0.25,
+        "feature_id": "coordination.subdivision_mismatch_proxy",
+        "feature_name": "Coordination Subdivision Mismatch Proxy",
+        "is_peak_support": true,
+        "normalized_value": 1.0,
+        "rank": 1,
+        "raw_value": 0.5,
+        "smoothed_value": 1.0,
+        "weight": 1.0,
+        "weighted_value": 1.0
+      },
+      {
+        "attribution_value": 1.0,
+        "contribution_share": 0.25,
+        "feature_id": "leaps.max_melodic_leap",
+        "feature_name": "Leaps Max Melodic Leap",
+        "is_peak_support": true,
+        "normalized_value": 1.0,
+        "rank": 2,
+        "raw_value": 3.0,
+        "smoothed_value": 1.0,
+        "weight": 1.0,
+        "weighted_value": 1.0
+      },
+      {
+        "attribution_value": 1.0,
+        "contribution_share": 0.25,
+        "feature_id": "pitch_geometry.max_simultaneity_span",
+        "feature_name": "Pitch Geometry Max Simultaneity Span",
+        "is_peak_support": true,
+        "normalized_value": 1.0,
+        "rank": 3,
+        "raw_value": 4.0,
+        "smoothed_value": 1.0,
+        "weight": 1.0,
+        "weighted_value": 1.0
+      },
+      {
+        "attribution_value": 1.0,
+        "contribution_share": 0.25,
+        "feature_id": "rhythm.attack_density",
+        "feature_name": "Rhythm Attack Density",
+        "is_peak_support": true,
+        "normalized_value": 1.0,
+        "rank": 4,
+        "raw_value": 0.42857142857142855,
+        "smoothed_value": 1.0,
+        "weight": 1.0,
+        "weighted_value": 1.0
+      },
+      {
+        "attribution_value": 0.0,
+        "contribution_share": 0.0,
+        "feature_id": "notation.accidental_density",
+        "feature_name": "Notation Accidental Density",
+        "is_peak_support": true,
+        "normalized_value": 0.0,
+        "rank": 5,
+        "raw_value": 0.2,
+        "smoothed_value": 0.0,
+        "weight": 1.0,
+        "weighted_value": 0.0
+      }
+    ],
+    "rank": 1,
+    "region": {
+      "end_beat": "7",
+      "end_offset": "7",
+      "hand": "both",
+      "label": "Measures 1\u20132",
+      "measure_end": 2,
+      "measure_numbers": [
+        "1",
+        "2"
+      ],
+      "measure_start": 1,
+      "position": 3.5,
+      "start_beat": "0",
+      "start_offset": "0",
+      "window_index": 0
+    },
+    "score": 0.8,
+    "supporting_factor_ids": [
+      "coordination.subdivision_mismatch_proxy",
+      "leaps.max_melodic_leap",
+      "notation.accidental_density",
+      "pitch_geometry.max_simultaneity_span",
+      "rhythm.attack_density"
+    ],
+    "supporting_window_indices": [
+      0,
+      1
+    ]
+  },
+  "region_fields": [
+    "end_beat",
+    "end_offset",
+    "hand",
+    "label",
+    "measure_end",
+    "measure_numbers",
+    "measure_start",
+    "position",
+    "score_id",
+    "start_beat",
+    "start_offset",
+    "window_index"
+  ],
+  "schema_version": "difficulty_overview.v1",
+  "top_level_fields": [
+    "candidate_sections",
+    "composite",
+    "composite_peaks",
+    "diagnostics",
+    "factor_peaks",
+    "factor_ranking_method",
+    "factor_registry_version",
+    "factors",
+    "hand_mode",
+    "hand_views",
+    "interpretation",
+    "methods",
+    "profile_id",
+    "profile_version",
+    "region_evidence",
+    "regions",
+    "schema_version",
+    "series",
+    "warnings"
+  ]
+}

@@ -57,6 +57,8 @@ Exercise a few layers together:
 - MusicXML -> `ScoreIR` -> exact passage;
 - passage -> views -> pattern match;
 - hotspot -> attribution -> diagnosis;
+- user-selected exact region -> attribution over baseline observations ->
+  diagnosis (controlled twin; no profile required);
 - diagnosis -> plan -> transformation;
 - generated representation -> MusicXML -> reopened `ScoreIR`.
 

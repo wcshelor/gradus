@@ -142,6 +142,10 @@ passage engine. It contains:
 
 The passage engine must also accept an explicitly selected region so diagnosis
 and transformations can be evaluated independently of hotspot quality.
+`HotspotInvestigation` remains the analyzer-suggested entry only; the
+user-selected entry is a root `Passage` with recorded manual origin plus
+optionally attached (never invented) difficulty evidence, as mapped in
+`docs/entry_points.md` (LS-02). No fields are changed by LS-02.
 
 ## Event attribution
 
@@ -159,6 +163,11 @@ and transformations can be evaluated independently of hotspot quality.
 Exact attribution is preferred for extrema and counts. Aggregate attribution
 may use top observations, threshold exceedances, contiguous clusters, or a
 documented leave-one-group-out delta. The method must be visible in the result.
+
+Interim note (LS-02, no field change): for a user-selected root there are no
+hotspot dimensions to drive; attribution then targets the controlled-baseline
+observations instead. Making the hotspot IDs explicitly optional is deferred
+to LS-03 contract work.
 
 ## Pattern match
 
@@ -201,6 +210,13 @@ Diagnosis text is a label or template-derived summary. Rich natural-language
 explanation is presentation output, not the canonical diagnosis.
 
 The engine may return multiple ranked diagnoses or no supported diagnosis.
+
+Interim note (LS-02, no field change): a user-selected root has no source
+hotspot, so “source hotspot and passage IDs” cannot be satisfied literally on
+that entry. LS-03 contract work must make the hotspot reference optional
+(absent = valid, never fabricated); until then, diagnosis implementation
+tasks (WP-08) proceed against controlled-baseline observations per
+`docs/entry_points.md`.
 
 ## Objective, strategy, and plan
 

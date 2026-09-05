@@ -1,15 +1,16 @@
 # Passage Practice
 
 This research area plans and, in later phases, implements a system that turns
-windowed piano-difficulty hotspots into inspectable passage diagnoses and
-source-derived practice exercises.
+a selected piano passage — reached either through a windowed
+piano-difficulty hotspot or through a directly user-selected exact region —
+into inspectable passage diagnoses and source-derived practice exercises.
 
 The target flow is:
 
 ```text
 MusicXML / MXL
     -> normalized score facts
-    -> windowed difficulty hotspot
+    -> investigation region (difficulty hotspot OR user-selected exact region)
     -> event-level attribution
     -> musical pattern hypotheses
     -> passage diagnosis
@@ -17,6 +18,11 @@ MusicXML / MXL
     -> validated score transformation
     -> MusicXML exercise and grounded explanation
 ```
+
+Hotspot investigation is one bounded entry experiment, not a gate: the
+controlled user-selected path isolates pattern, diagnosis, and transformation
+quality from hotspot-detection quality and is required for testing (see
+`docs/entry_points.md` for the LS-02 reconciliation map).
 
 The system must not collapse these stages into one opaque prediction. A
 difficulty hotspot answers **where to investigate**. A diagnosis answers **what
@@ -26,6 +32,8 @@ separate pedagogical intervention that must state its objective and provenance.
 ## Current status
 
 This directory currently contains plans and contracts, not a working runtime.
+Entry runs either from an analyzer-suggested hotspot or from a user-selected
+exact region; neither entry requires the other (see `docs/entry_points.md`).
 Agents must implement the system through the work packages in
 [`WORK_PACKAGES.md`](WORK_PACKAGES.md). The initial vertical slice is a
 restricted broken-chord passage that produces blocked-chord and rhythmic

@@ -68,7 +68,8 @@ Required demonstrations:
 
 - view payload for one passage;
 - evidence trace rebuilding one aggregate;
-- hotspot-investigation payload;
+- hotspot-investigation payload and its manual-entry twin (root `Passage`
+  with recorded origin, no profile);
 - valid and invalid identity transformation reports;
 - relevant old and new test suites.
 

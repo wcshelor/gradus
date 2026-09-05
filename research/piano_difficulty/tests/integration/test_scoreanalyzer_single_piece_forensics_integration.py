@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import json
 from pathlib import Path
+import pytest
 
 from piano_difficulty.comparison.scoreanalyzer_parity import CANONICAL_METRICS, run_replica_metrics
 from piano_difficulty.comparison.scoreanalyzer_single_piece_forensics import (
@@ -12,7 +13,7 @@ from piano_difficulty.comparison.scoreanalyzer_single_piece_forensics import (
 
 
 def test_single_piece_forensics_writes_all_artifacts_with_mocked_og(tmp_path: Path) -> None:
-    pieces_root = Path("tests/fixtures")
+    pieces_root = Path(__file__).resolve().parents[1] / "fixtures"
     piece_relpath = "feature_fixture.musicxml"
     out_dir = tmp_path / "forensics"
 
@@ -53,8 +54,10 @@ def test_single_piece_forensics_writes_all_artifacts_with_mocked_og(tmp_path: Pa
 
 def test_single_piece_forensics_real_alla_turca_has_event_driven_evidence(tmp_path: Path) -> None:
     piece_relpath = "AllaTurca_Mozart/Alla_Turca.xml"
-    pieces_root = Path("external/ScoreAnalyzer/pieces")
+    pieces_root = Path(__file__).resolve().parents[2] / "external/ScoreAnalyzer/pieces"
     piece_path = pieces_root / piece_relpath
+    if not piece_path.is_file():
+        pytest.skip("Optional local Alla Turca corpus is not installed.")
     replica_metrics = run_replica_metrics(piece_path)
 
     og_metrics = dict(replica_metrics)

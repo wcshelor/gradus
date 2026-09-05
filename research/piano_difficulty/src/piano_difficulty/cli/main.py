@@ -16,6 +16,8 @@ import json
 from piano_difficulty.difficulty_analysis.batch import analyze_batch
 from piano_difficulty.difficulty_analysis.markdown import render_markdown_report
 from piano_difficulty.pipeline import analyze_score, extract_score
+from piano_difficulty.difficulty_analysis.overview import OverviewOptions
+from piano_difficulty.output.overview import render_html, write_analysis_outputs
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -48,13 +50,13 @@ def build_parser() -> argparse.ArgumentParser:
         "--profile",
         dest="profiles",
         action="append",
-        default=["scoreanalyzer_reference"],
+        default=None,
         help="Difficulty profile id. Repeat to analyze with multiple profiles.",
     )
     analyze_parser.add_argument(
         "--format",
-        default="json",
-        choices=["json", "markdown"],
+        default="markdown",
+        choices=["json", "markdown", "html"],
         help="Output format for analyzed scores.",
     )
 
@@ -68,7 +70,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--profile",
         dest="profiles",
         action="append",
-        default=["scoreanalyzer_reference"],
+        default=None,
         help="Difficulty profile id. Repeat to analyze with multiple profiles.",
     )
     batch_parser.add_argument(
@@ -88,6 +90,14 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
     )
 
+    analyze_parser.add_argument("--out-dir", help="Write JSON, Markdown, CSV and an HTML timeline.")
+    for command_parser in (analyze_parser, batch_parser):
+        command_parser.add_argument("--window", choices=["measure", "beat"], default="measure")
+        command_parser.add_argument("--window-size", type=float, default=2)
+        command_parser.add_argument("--stride", type=float, default=1)
+        command_parser.add_argument("--hand", choices=["both", "right", "left"], default="both")
+        command_parser.add_argument("--top-sections", type=int, default=5)
+
     return parser
 
 
@@ -102,21 +112,39 @@ def main() -> int:
         print(json.dumps(result.to_json_payload(), indent=2, sort_keys=True))
         return 0
     if args.command == "analyze":
-        profiles = tuple(dict.fromkeys(args.profiles))
-        result = analyze_score(args.path, profile_ids=profiles)
+        profiles = tuple(dict.fromkeys(args.profiles or ["difficulty_overview"]))
+        try:
+            options = OverviewOptions(window=args.window, window_size=args.window_size,
+                                      stride=args.stride, hand=args.hand, top_sections=args.top_sections)
+            result = analyze_score(args.path, profile_ids=profiles, overview_options=options)
+        except (ValueError, FileNotFoundError) as exc:
+            parser.error(str(exc))
         payload = result.to_json_payload()
+        if args.out_dir:
+            write_analysis_outputs(payload, args.out_dir)
         if args.format == "markdown":
             print(render_markdown_report(payload, profile_id=profiles[0]))
+        elif args.format == "html":
+            overview = next((p for p in payload["analysis_profiles"] if p["profile_id"] == "difficulty_overview"), None)
+            if overview is None:
+                parser.error("HTML requires the difficulty_overview profile.")
+            print(render_html(payload, overview))
         else:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0
     if args.command == "analyze-batch":
-        profiles = tuple(dict.fromkeys(args.profiles))
+        profiles = tuple(dict.fromkeys(args.profiles or ["difficulty_overview"]))
+        try:
+            options = OverviewOptions(window=args.window, window_size=args.window_size,
+                                      stride=args.stride, hand=args.hand, top_sections=args.top_sections)
+        except ValueError as exc:
+            parser.error(str(exc))
         batch = analyze_batch(
             args.source,
             out_dir=args.out_dir,
             profile_ids=profiles,
             write_csv=args.write_csv,
+            overview_options=options,
         )
         print(
             json.dumps(

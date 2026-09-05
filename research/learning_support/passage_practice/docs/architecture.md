@@ -24,8 +24,10 @@ maps a score directly to advice.
 
                   PASSAGE PRACTICE AREA
 
- hotspot + ScoreIR
-       -> passage selection and context expansion
+  hotspot + ScoreIR                    (analyzer-suggested entry)
+        OR
+  exact user-selected region + ScoreIR (controlled entry; see docs/entry_points.md)
+        -> passage selection and context expansion
        -> derived views and event attribution
        -> targeted pattern detectors
        -> diagnostic rule engine
@@ -86,7 +88,8 @@ melody-in-chords, hand-position changes, or rhythmic independence.
 
 ### Layer 5: passage diagnoses
 
-A diagnostic rule combines hotspot triggers, event evidence, and pattern
+A diagnostic rule combines hotspot triggers or controlled-baseline
+observations, event evidence, and pattern
 matches into a qualified hypothesis about a potential challenge. It identifies
 the affected material, narrows the relevant region, states uncertainty, and
 names possible practice objectives.

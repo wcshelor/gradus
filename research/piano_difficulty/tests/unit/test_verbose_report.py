@@ -9,7 +9,7 @@ FEATURE_FIXTURE_PATH = Path(__file__).resolve().parents[1] / "fixtures" / "featu
 
 
 def test_render_verbose_report_includes_feature_and_profile_details() -> None:
-    payload = analyze_score(FEATURE_FIXTURE_PATH).to_json_payload()
+    payload = analyze_score(FEATURE_FIXTURE_PATH, profile_ids=("scoreanalyzer_reference",)).to_json_payload()
 
     report = render_verbose_report(payload)
 
