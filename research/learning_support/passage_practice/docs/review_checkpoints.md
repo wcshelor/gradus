@@ -68,8 +68,9 @@ Required demonstrations:
 
 - view payload for one passage;
 - evidence trace rebuilding one aggregate;
-- hotspot-investigation payload and its manual-entry twin (root `Passage`
-  with recorded origin, no profile);
+- the same `PassageInvestigation` contract for automatic and manual entry,
+  with required passage identity, structured origin, and optional difficulty
+  context; no invented hotspot or attribution in the manual example;
 - valid and invalid identity transformation reports;
 - relevant old and new test suites.
 

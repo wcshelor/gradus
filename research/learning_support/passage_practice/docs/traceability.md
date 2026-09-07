@@ -40,10 +40,10 @@ changes or gains a new implementation path.
 | Parse | committed fixture | `ScoreIR` | existing piano-difficulty schema | existing system |
 | Detect | score and window config | difficulty hotspot | existing Difficulty Dynamics profile | existing system |
 | Detect (controlled twin) | exact region and optional hand | root `Passage` with manual origin, no profile | manual selection API | WP-02, WP-05 |
-| Adapt | hotspot plus score | investigation request | `HotspotInvestigation` | WP-05 |
+| Adapt | suggested or user-selected region plus score | passage-first request, structured origin, optional difficulty context | `PassageInvestigation` (D-013) | LS-03a, WP-05 |
 | Select | investigation region | exact passage | `PassageSelection` | WP-02 |
 | Observe | passage views | feature evidence | `FeatureEvidence` | WP-03, WP-04 |
-| Attribute | hotspot and evidence | attributed signals | `AttributedSignal` | WP-06 |
+| Attribute (optional) | passage observations and real aggregate/hotspot target | attributed signals with validated targets | `AttributedSignal` | WP-06 |
 | Recognize | passage views and signals | pattern matches | `PatternMatch` | WP-07 |
 | Diagnose | triggers, attribution, patterns | diagnoses | `PassageDiagnosis` | WP-08 |
 | Plan | diagnosis and registry | exercise plans | `ExercisePlan` | WP-10 |

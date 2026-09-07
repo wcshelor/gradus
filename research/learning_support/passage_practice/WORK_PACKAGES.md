@@ -22,6 +22,12 @@ status table.
 
 ## Dependency map
 
+D-013 review (2026-09-05): LS-03a from the repository-wide plan owns the minimal
+passage-first investigation contract. It may proceed after LS-02 without waiting
+for WP-05. WP-05 and WP-08 consume it; the detailed T05.3 task additionally requires
+the selection API T02.5. These are design dependencies, not claims that any package
+has passed its review gate. This revision does not change live board statuses.
+
 ```text
 WP-00 Repository baseline
   -> WP-01 Contract models
@@ -58,10 +64,10 @@ contracts stabilize, but it cannot define those contracts itself.
 | WP-02 | Exact passage selection and context | BLOCKED | WP-01 | score-time agent | G1 |
 | WP-03 | Derived view engine | BLOCKED | WP-02 | representation agent | G2 |
 | WP-04 | Feature evidence traces | BLOCKED | WP-03 | difficulty agent | G2 |
-| WP-05 | Hotspot investigation adapter | BLOCKED | WP-04 | integration agent | G2 |
+| WP-05 | Passage investigation adapters | BLOCKED | WP-04, LS-03a | integration agent | G2 |
 | WP-06 | Event attribution and region refinement | BLOCKED | WP-05 | attribution agent | G3 |
 | WP-07 | Restricted broken-chord detector | BLOCKED | WP-03 | music-analysis agent | G3 |
-| WP-08 | Diagnostic registry and rule engine | BLOCKED | WP-06, WP-07 | diagnosis agent | G3 |
+| WP-08 | Diagnostic registry and rule engine | BLOCKED | WP-06, WP-07, LS-03a | diagnosis agent | G3 |
 | WP-09 | Transformation foundation and validators | BLOCKED | WP-02 | transformation agent | G2 |
 | WP-10 | V1 objective and strategy registry | BLOCKED | WP-08 | pedagogy-contract agent | G3 |
 | WP-11 | Blocked-chord transformation | BLOCKED | WP-07, WP-09, WP-10 | transformation agent | G4 |
@@ -217,8 +223,8 @@ breaking the established summary consumer.
 
 ### WP-05 — Hotspot investigation adapter
 
-**Goal:** create the stable boundary from Difficulty Dynamics hotspots to the
-passage-practice engine.
+**Goal:** adapt manual regions and Difficulty Dynamics results to the same
+passage-first investigation boundary specified by LS-03a/D-013.
 
 **Scope:**
 
@@ -226,6 +232,8 @@ passage-practice engine.
 - Resolve available feature-evidence references.
 - Preserve detection method/version and hand mode.
 - Support controlled manual regions using the same downstream interface.
+- Require passage identity and structured selection origin; keep difficulty
+  context optional and retain genuine hotspot IDs only within that context.
 - Do not duplicate hotspot selection logic.
 
 **Tests:**
@@ -242,9 +250,9 @@ Dynamics fixture or a minimal new fixture.
 
 ### WP-06 — Event attribution and region refinement
 
-**Goal:** identify which observations and events materially drove each hotspot
-dimension — or, for a user-selected root with no hotspot dimensions, the
-baseline observations under investigation — then derive the evidence region.
+**Goal:** attribute real aggregate/hotspot targets to supporting observations and
+derive evidence regions. Ordinary passage observations remain valid without an
+attribution target; do not manufacture attribution for manual entry.
 
 **Scope:**
 
@@ -254,6 +262,9 @@ baseline observations under investigation — then derive the evidence region.
 - Contiguous-cluster grouping.
 - Minimal evidence-region calculation.
 - Explicit limitations when a feature cannot be localized.
+- Passage-linked observations and optional attribution are separate inputs;
+  hotspot-specific attribution requires a real hotspot reference, while aggregate
+  attribution names its actual aggregate target without requiring a hotspot.
 
 **Tests:**
 
@@ -301,6 +312,8 @@ qualified diagnoses.
 - V1 `technical.broken_chord.rapid_reconfiguration` rule.
 - Evidence, pattern, and proposed-practice regions.
 - Learner-data caveats.
+- Required passage identity; observations and patterns can support a rule without
+  hotspot IDs, triggered dimensions, or invented contribution records (D-013).
 
 **Tests:**
 

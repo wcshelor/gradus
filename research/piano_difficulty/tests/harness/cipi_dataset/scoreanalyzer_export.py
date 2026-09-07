@@ -34,10 +34,14 @@ def build_export_inputs(
 
     inputs: list[ExportInput] = []
     for record in frame.fillna("").to_dict(orient="records"):
+        piece_id = str(record.get("cipi_id", "") or record.get("score_id", "")).strip()
+        piece_uid = str(
+            record.get("piece_uid", "") or record.get("legacy_piece_uid", "") or piece_id
+        ).strip() or str(record.get("filename", "")).strip()
         metadata = {
-            "piece_id": str(record.get("score_id", "")).strip(),
-            "piece_uid": str(record.get("score_id", "")).strip() or str(record.get("filename", "")).strip(),
-            "title": str(record.get("title", "")).strip(),
+            "piece_id": piece_id,
+            "piece_uid": piece_uid,
+            "title": str(record.get("work_name", "") or record.get("title", "")).strip(),
             "composer": str(record.get("composer", "")).strip(),
             "filename": str(record.get("filename", "")).strip(),
             "dataset_relative_path": str(record.get("dataset_relative_path", "")).strip(),
@@ -126,7 +130,15 @@ def _resolve_catalog_source_path(
 
     dataset_relative_path = str(record.get("dataset_relative_path", "")).strip()
     if dataset_relative_path:
-        return (dataset_root / dataset_relative_path).expanduser()
+        direct = (dataset_root / dataset_relative_path).expanduser()
+        if direct.is_file():
+            return direct
+        legacy_rel = str(record.get("legacy_dataset_relative_path", "") or "").strip()
+        if legacy_rel:
+            legacy_direct = (dataset_root / legacy_rel).expanduser()
+            if legacy_direct.is_file():
+                return legacy_direct
+        return direct
 
     repo_relative_path = str(record.get("repo_relative_path", "")).strip()
     if repo_relative_path:

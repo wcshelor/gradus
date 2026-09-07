@@ -40,7 +40,7 @@ Use constructed in-memory objects when XML syntax is irrelevant.
 Verify boundaries between research areas and pipeline layers:
 
 - `ScoreIR` to `PassageSelection`;
-- Difficulty Dynamics hotspot to `HotspotInvestigation`;
+- manual region and Difficulty Dynamics input to the same `PassageInvestigation`;
 - summary feature to `FeatureEvidence`;
 - attribution and pattern matches to diagnosis;
 - diagnosis to exercise plan;
@@ -49,6 +49,18 @@ Verify boundaries between research areas and pipeline layers:
 
 Contract tests must check schema versions, required IDs, resolvable references,
 units, exact fractions, diagnostics, and deterministic serialization.
+
+D-013 checks: passage ID required; empty difficulty context valid; selection
+origin structured and preserved through round-trip/refinement; enrichment does
+not change origin/identity; mismatched source/version/coverage rejected; no fake
+hotspot IDs or attribution targets. Compare musical observations at equal source,
+region, hand, and settings, not route-specific metadata. Ordinary observations
+need no attribution record; actual hotspot attribution requires a real reference.
+
+Documentation tests should check accepted invariants and local links, not freeze
+a decision as proposed, prohibit completed board statuses, or assume one literal
+sentence proves runtime correctness. Runtime contract/behavior tests remain
+mandatory when their implementations land.
 
 ### Integration tests
 

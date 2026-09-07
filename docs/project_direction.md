@@ -85,7 +85,8 @@ data-handling decisions before implementation with those data.
 The repository-wide execution direction is recorded in
 [the three-area learning-support plan](Task_list_2026-09-05_flexible_piano_learning_support.md).
 It supersedes the earlier assumption that all learning-support work must wait
-for difficulty consolidation or begin at a difficulty hotspot.
+for difficulty consolidation or begin at a difficulty hotspot. LS-01 through
+LS-11 are now implemented and pending lead/human review.
 
 Consolidating the analyzer remains a bounded component milestone: one supported
 score should yield an inspectable factor overview, factor peaks, and candidate
@@ -93,11 +94,18 @@ high-demand sections through one public workflow. Its acceptance is not acceptan
 of the whole learning assistant. Semantic experiments may use a user-selected
 region and existing score contracts without requiring a difficulty ranking.
 
-The first documented learning-support program is maintained in
-`research/learning_support/passage_practice/`. It investigates an explainable
-pipeline from windowed difficulty hotspots through event attribution and
-semantic passage diagnosis to deterministic, source-derived practice exercises.
-This program is one scoped research experiment rather than the master workflow.
-Its existing code and contracts are preserved. Reconcile hotspot-first assumptions
-with the new entry points before extending it; do not silently rewrite accepted
-contracts. Not every planned component must appear in the final thesis or product.
+The first completed learning-support slice is maintained under
+`research/learning_support/`. It demonstrates exact user-selected passage
+selection, optional learner context, one pitch-transition observation family,
+one grounded text-only aid, a deterministic interaction harness, a multi-visit
+synthetic history, and technical evaluation. It is intentionally narrow:
+pedagogical effectiveness is unproven, no real learner data has been collected,
+and no product integration is claimed.
+
+The next selected increment is a thin local CEO walkthrough prototype that makes
+the slice visible alongside the existing difficulty overview and graph outputs.
+That demo should remain a presentation harness over tested components, not the
+new architectural center. The broader `passage_practice/` program still contains
+plans for event attribution, semantic diagnosis, deterministic transformations,
+and generated exercises; not every planned component must appear in the final
+thesis or product.

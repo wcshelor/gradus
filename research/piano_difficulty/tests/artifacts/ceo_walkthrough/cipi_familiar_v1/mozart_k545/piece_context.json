@@ -1,0 +1,38 @@
+{
+  "artifacts": {},
+  "cipi": {
+    "cipi_id": "c-231",
+    "match_status": "matched",
+    "movement": "1",
+    "piece_uid": "pieces_mozart_mozart_1st-movement-allegro-from-piano-sonata-facile-c-major-kv-545-mvt1",
+    "work_name": "1st movement (Allegro) from Piano Sonata (Facile) C major KV 545"
+  },
+  "demo_id": "mozart_k545",
+  "manifest": {
+    "analyzer_led_note": "Inspect how scalic passages and Alberti-style textures separate across factor tracks in the top section.",
+    "caveat_note": "First movement only; Henle label covers the sonata and is not a per-movement grade.",
+    "composer": "Wolfgang Amadeus Mozart",
+    "dataset_relative_path": "pieces/mozart/mozart_1st-movement-allegro-from-piano-sonata-facile-c-major-kv-545-mvt1.musicxml",
+    "demo_role": "classical_texture",
+    "disagreement_note": "A learner calling the opening 'easy' does not overrule a ranking driven by onset density; show both side by side.",
+    "henle": "4",
+    "metadata": {},
+    "recognition_tier": "familiar",
+    "source_row_index": 2,
+    "title": "Piano Sonata \"Facile\" C major KV 545, 1st movement (Allegro)",
+    "user_selected_note": "Walk through the exposition opening to show clean classical texture under manual selection."
+  },
+  "reason": "Score file not found under the CIPI root: pieces/mozart/mozart_1st-movement-allegro-from-piano-sonata-facile-c-major-kv-545-mvt1.musicxml.",
+  "resolution": {
+    "dataset_root": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "pieces_dir_hint": false,
+    "root_detail": "repo-relative fallback: /Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "root_source": "repo_default",
+    "source_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi/pieces/mozart/mozart_1st-movement-allegro-from-piano-sonata-facile-c-major-kv-545-mvt1.musicxml"
+  },
+  "runtime_versions": {
+    "piano-difficulty": "0.1.0"
+  },
+  "status": "missing_source_file",
+  "timestamp": "2026-09-07T20:47:31.587176Z"
+}

@@ -213,6 +213,8 @@ WP-03 and WP-09 may be released independently.
   T03.4. Scope: value, units, region, source group/transition IDs, aggregation
   rule, missingness, reliability, and method metadata. Tests: compact frozen
   payload, missing-not-zero, bad units/reference/version. Limit: no pedagogy.
+  Require a source passage reference; ordinary observations require neither
+  hotspot IDs nor fabricated attribution records (D-013).
 
 - [ ] **T04.2 Trace density and shortest-duration evidence.** Depends on:
   T04.1. Scope: expose ordered observations behind the existing aggregates.
@@ -237,7 +239,9 @@ WP-03 and WP-09 may be released independently.
   feature families.
 
 - [ ] **T05.1 Define the hotspot investigation adapter contract.** Depends on:
-  T04.5. Scope: map score, exact region, score/method, dimensions, values,
+  T04.5, LS-03a (D-013 shared contract). Scope: reuse `PassageInvestigation`,
+  validate analyzer input/context mappings; do not redefine the envelope.
+  Map score, exact region, score/method, dimensions, values,
   contribution ranks, evidence refs, hand mode, and warnings. Tests: schema,
   exact fractions, unknown dimension and missing evidence diagnostics. Limit:
   do not select or rerank hotspots.
@@ -247,10 +251,13 @@ WP-03 and WP-09 may be released independently.
   detection. Tests: both hotspot forms, hand-specific/both-hand mode, warnings,
   reference resolution. Limit: additive changes only in the difficulty area.
 
-- [ ] **T05.3 Add controlled manual-region entry.** Depends on: T05.1. Scope:
-  construct the same downstream investigation interface from an exact region
-  and optional hand. Tests: downstream-equivalent region/hand semantics and
-  absent hotspot-score handling. Limit: do not fabricate feature contributions.
+- [ ] **T05.3 Add controlled manual-region entry.** Depends on: T05.1, T02.5,
+  LS-03a. Scope: construct the same `PassageInvestigation` as T05.2, with the
+  existing selected `Passage`, structured manual origin, optional hand, and empty
+  difficulty context by default. Tests: equivalent observations for equal source,
+  region, hand, and settings; no profile call; absent hotspot/score; origin and
+  identity preserved after adding valid evidence; mismatched evidence rejected.
+  Limit: no placeholder IDs, fabricated contributions, or parallel pipeline.
 
 - [ ] **T05.4 Produce G2 evidence demonstrations.** Depends on: T05.2–T05.3 and
   T09.5. Scope: compact view, reconstructed aggregate, hotspot, and manual-entry
@@ -345,7 +352,9 @@ releases attribution, pattern, diagnosis, and concrete transformation work.
   rather than weaken close negatives.
 
 - [ ] **T08.1 Define the diagnosis registry and rule schema.** Depends on:
-  T06.5, T07.4. Scope: versioned required/supporting/contradictory criteria,
+  T06.5, T07.4, LS-03a. Scope: required passage references, optional difficulty
+  context, ordinary observations distinct from genuine attribution, and
+  versioned required/supporting/contradictory criteria,
   evidence inputs, candidate objectives/strategies, caveats, and no-match.
   Tests: registry duplicates/version, missing criterion, unknown references.
   Limit: canonical text is a label/template summary only.
@@ -360,6 +369,8 @@ releases attribution, pattern, diagnosis, and concrete transformation work.
   `technical.broken_chord.rapid_reconfiguration` exactly from `prototype_v1.md`
   with evidence/pattern/practice regions and learner caveats. Tests: canonical
   positive, scalar negative, missing relocation evidence, controlled baseline.
+  The controlled baseline has no hotspot ID and need not have attribution;
+  musical criteria still require actual observations and pattern evidence.
   Limit: one diagnosis only unless a test needs a synthetic ranking stub.
 
 - [ ] **T08.4 Freeze diagnosis and no-diagnosis payloads.** Depends on: T08.3.
@@ -487,11 +498,14 @@ any end-to-end orchestrator is allowed to call it.
   Scope: call accepted APIs from exact region through validated transformations
   and exports. Tests: canonical positive, scalar no-match, one injected stage
   failure, repeat-run semantic equality. Limit: library API before CLI.
+  Input is the shared passage-first contract, with no required difficulty context.
 
 - [ ] **T14.3 Orchestrate the automatic hotspot path.** Depends on: T14.2. Scope:
   add Difficulty Dynamics entry while preserving its hotspot and warnings.
   Tests: expected later-window rank and downstream stage equivalence after the
   investigation boundary. Limit: do not change hotspot selection here.
+  Compare ordinary observations with equal source/region/hand/settings, not
+  origin-specific metadata or contribution fields. Preserve analyzer provenance.
 
 - [ ] **T14.4 Add explicit multi-candidate selection.** Depends on: T14.3. Scope:
   stable defaults and manual diagnosis/strategy selection when multiple results
@@ -512,6 +526,8 @@ any end-to-end orchestrator is allowed to call it.
 - [ ] **T15.1 Build `ExplanationBrief` from allowed fields.** Depends on: T14.6.
   Scope: bounded labels, observations, pattern claims, confidence/caveats,
   objective, strategy, factual transformation descriptions, audience, and tone.
+  Include structured selection origin separately from optional difficulty reasons;
+  manual selection must not be described as an automatically detected hotspot.
   Tests: source allowlist, missing confidence, no-match, deterministic JSON.
   Limit: no raw MusicXML or unrestricted evidence dump.
 

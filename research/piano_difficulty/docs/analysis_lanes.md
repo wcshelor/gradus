@@ -41,6 +41,9 @@ Authoritative locations:
 - committed manifests: `evaluation_scores/manifests/`
 - evidence: `tests/artifacts/oktav_dataset/`
   - `og_export/full_run/` for legacy matrix export
+  - `python_analysis/full_run/` for active repo-native matrix export
+- evidence: `tests/artifacts/cipi_dataset/python_analysis/full_run/` for
+  active repo-native matrix export
 - retired CIPI export evidence: `tests/artifacts/retired/cipi_og_export/`
 
 Rules:
@@ -48,6 +51,9 @@ Rules:
   to commit
 - dataset helpers should stay dataset-agnostic where possible and should feed
   the shared matrix loader rather than re-implementing staging logic
+- dataset adapters return shared `DatasetRecord` loads with JSON load reports
+  and convert to runtime export inputs; local roots resolve via CLI flags,
+  `GRADUS_*_ROOT` variables, or ignored `.local/datasets.toml`
 - Oktav and CIPI are current examples, not the boundary of the lane
 
 ## Lane 3: OMR pipeline prototyping
@@ -121,6 +127,17 @@ Rules:
 - labels may be used for supervised targets or post-hoc interpretation, but
   clustering must remain label-free during fitting
 - feature selection and matrix loading should be shared wherever possible
+
+## Demo surface: CEO CIPI walkthrough (not a lane)
+
+- Curated demo-evidence harness over the existing difficulty overview:
+  `tests/harness/ceo_walkthrough/`, thin runner
+  `tests/scripts/run_ceo_cipi_walkthrough.py`, curated manifest
+  `evaluation_scores/manifests/ceo_walkthrough/cipi_familiar_v1.csv`,
+  generated evidence under `tests/artifacts/ceo_walkthrough/cipi_familiar_v1/`.
+- This is a review surface, not a research lane: it owns no difficulty math
+  and reuses CIPI dataset-root resolution plus the runtime analysis/export
+  path. Do not add lane-style experiments here.
 
 ## Legacy archive: ScoreAnalyzer parity
 

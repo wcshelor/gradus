@@ -1,0 +1,145 @@
+{
+  "failure_count": 8,
+  "manifest_csv": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/manifests/ceo_walkthrough/cipi_familiar_v1.csv",
+  "output_root": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1",
+  "piece_count": 8,
+  "pieces": [
+    {
+      "artifacts": {
+        "analysis.csv": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_fur_elise/analysis.csv",
+        "analysis.html": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_fur_elise/analysis.html",
+        "analysis.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_fur_elise/analysis.json",
+        "analysis.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_fur_elise/analysis.md",
+        "demo_notes.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_fur_elise/demo_notes.md",
+        "dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_fur_elise",
+        "piece_context.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_fur_elise/piece_context.json"
+      },
+      "composer": "Ludwig van Beethoven",
+      "demo_id": "beethoven_fur_elise",
+      "piece_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_fur_elise",
+      "reason": "Score file not found under the CIPI root: pieces/beethoven/beethoven_bagatelle-fu\u0308r-elise-a-minor-woo-59-mvt1.musicxml.",
+      "status": "missing_source_file",
+      "title": "Bagatelle \"F\u00fcr Elise\" a minor WoO 59"
+    },
+    {
+      "artifacts": {
+        "analysis.csv": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_bagatelle_119_10/analysis.csv",
+        "analysis.html": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_bagatelle_119_10/analysis.html",
+        "analysis.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_bagatelle_119_10/analysis.json",
+        "analysis.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_bagatelle_119_10/analysis.md",
+        "demo_notes.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_bagatelle_119_10/demo_notes.md",
+        "dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_bagatelle_119_10",
+        "piece_context.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_bagatelle_119_10/piece_context.json"
+      },
+      "composer": "Ludwig van Beethoven",
+      "demo_id": "beethoven_bagatelle_119_10",
+      "piece_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/beethoven_bagatelle_119_10",
+      "reason": "Score file not found under the CIPI root: pieces/beethoven/beethoven_bagatelle-a-major-op.-119,10-mvt1.musicxml.",
+      "status": "missing_source_file",
+      "title": "Bagatelle A major op. 119 no. 10"
+    },
+    {
+      "artifacts": {
+        "analysis.csv": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/mozart_k545/analysis.csv",
+        "analysis.html": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/mozart_k545/analysis.html",
+        "analysis.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/mozart_k545/analysis.json",
+        "analysis.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/mozart_k545/analysis.md",
+        "demo_notes.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/mozart_k545/demo_notes.md",
+        "dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/mozart_k545",
+        "piece_context.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/mozart_k545/piece_context.json"
+      },
+      "composer": "Wolfgang Amadeus Mozart",
+      "demo_id": "mozart_k545",
+      "piece_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/mozart_k545",
+      "reason": "Score file not found under the CIPI root: pieces/mozart/mozart_1st-movement-allegro-from-piano-sonata-facile-c-major-kv-545-mvt1.musicxml.",
+      "status": "missing_source_file",
+      "title": "Piano Sonata \"Facile\" C major KV 545, 1st movement (Allegro)"
+    },
+    {
+      "artifacts": {
+        "analysis.csv": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_waltz_a_minor_kk_ivb_11/analysis.csv",
+        "analysis.html": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_waltz_a_minor_kk_ivb_11/analysis.html",
+        "analysis.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_waltz_a_minor_kk_ivb_11/analysis.json",
+        "analysis.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_waltz_a_minor_kk_ivb_11/analysis.md",
+        "demo_notes.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_waltz_a_minor_kk_ivb_11/demo_notes.md",
+        "dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_waltz_a_minor_kk_ivb_11",
+        "piece_context.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_waltz_a_minor_kk_ivb_11/piece_context.json"
+      },
+      "composer": "Fr\u00e9d\u00e9ric Chopin",
+      "demo_id": "chopin_waltz_a_minor_kk_ivb_11",
+      "piece_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_waltz_a_minor_kk_ivb_11",
+      "reason": "Score file not found under the CIPI root: pieces/chopin/chopin_waltz-a-minor-kk-ivb,11-mvt1.musicxml.",
+      "status": "missing_source_file",
+      "title": "Waltz a minor KK IVb,11"
+    },
+    {
+      "artifacts": {
+        "analysis.csv": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_e_minor_28_4/analysis.csv",
+        "analysis.html": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_e_minor_28_4/analysis.html",
+        "analysis.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_e_minor_28_4/analysis.json",
+        "analysis.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_e_minor_28_4/analysis.md",
+        "demo_notes.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_e_minor_28_4/demo_notes.md",
+        "dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_e_minor_28_4",
+        "piece_context.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_e_minor_28_4/piece_context.json"
+      },
+      "composer": "Fr\u00e9d\u00e9ric Chopin",
+      "demo_id": "chopin_prelude_e_minor_28_4",
+      "piece_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_e_minor_28_4",
+      "reason": "Score file not found under the CIPI root: pieces/chopin/chopin_prelude-e-minor-op.-28,4-mvt1.musicxml.",
+      "status": "missing_source_file",
+      "title": "Prelude e minor op. 28 no. 4"
+    },
+    {
+      "artifacts": {
+        "analysis.csv": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_a_major_28_7/analysis.csv",
+        "analysis.html": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_a_major_28_7/analysis.html",
+        "analysis.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_a_major_28_7/analysis.json",
+        "analysis.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_a_major_28_7/analysis.md",
+        "demo_notes.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_a_major_28_7/demo_notes.md",
+        "dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_a_major_28_7",
+        "piece_context.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_a_major_28_7/piece_context.json"
+      },
+      "composer": "Fr\u00e9d\u00e9ric Chopin",
+      "demo_id": "chopin_prelude_a_major_28_7",
+      "piece_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/chopin_prelude_a_major_28_7",
+      "reason": "Score file not found under the CIPI root: pieces/chopin/chopin_prelude-a-major-op.-28,7-mvt1.musicxml.",
+      "status": "missing_source_file",
+      "title": "Prelude A major op. 28 no. 7"
+    },
+    {
+      "artifacts": {
+        "analysis.csv": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/debussy_arabesque_1/analysis.csv",
+        "analysis.html": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/debussy_arabesque_1/analysis.html",
+        "analysis.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/debussy_arabesque_1/analysis.json",
+        "analysis.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/debussy_arabesque_1/analysis.md",
+        "demo_notes.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/debussy_arabesque_1/demo_notes.md",
+        "dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/debussy_arabesque_1",
+        "piece_context.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/debussy_arabesque_1/piece_context.json"
+      },
+      "composer": "Claude Debussy",
+      "demo_id": "debussy_arabesque_1",
+      "piece_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/debussy_arabesque_1",
+      "reason": "Score file not found under the CIPI root: pieces/debussy/debussy_arabesque-no.-1-mvt1.musicxml.",
+      "status": "missing_source_file",
+      "title": "Arabesque no. 1"
+    },
+    {
+      "artifacts": {
+        "analysis.csv": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/satie_gymnopedie_1/analysis.csv",
+        "analysis.html": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/satie_gymnopedie_1/analysis.html",
+        "analysis.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/satie_gymnopedie_1/analysis.json",
+        "analysis.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/satie_gymnopedie_1/analysis.md",
+        "demo_notes.md": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/satie_gymnopedie_1/demo_notes.md",
+        "dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/satie_gymnopedie_1",
+        "piece_context.json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/satie_gymnopedie_1/piece_context.json"
+      },
+      "composer": "Erik Satie",
+      "demo_id": "satie_gymnopedie_1",
+      "piece_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/ceo_walkthrough/cipi_familiar_v1/satie_gymnopedie_1",
+      "reason": "Score file not found under the CIPI root: pieces/satie/satie_gymnope\u0301die-no.-1-mvt1.musicxml.",
+      "status": "missing_source_file",
+      "title": "Gymnop\u00e9die no. 1"
+    }
+  ],
+  "success_count": 0
+}

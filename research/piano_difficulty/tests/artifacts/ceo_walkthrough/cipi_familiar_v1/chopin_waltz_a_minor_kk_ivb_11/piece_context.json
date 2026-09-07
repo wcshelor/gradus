@@ -1,0 +1,38 @@
+{
+  "artifacts": {},
+  "cipi": {
+    "cipi_id": "x-213",
+    "match_status": "matched",
+    "movement": "1",
+    "piece_uid": "pieces_chopin_chopin_waltz-a-minor-kk-ivb_11-mvt1",
+    "work_name": "Waltz a minor KK IVb,11"
+  },
+  "demo_id": "chopin_waltz_a_minor_kk_ivb_11",
+  "manifest": {
+    "analyzer_led_note": "Check whether the left-hand waltz pattern or the cantabile line dominates the top ranked section.",
+    "caveat_note": "Posthumous salon piece; edition differences may shift measure numbers against other sources.",
+    "composer": "Fr\u00e9d\u00e9ric Chopin",
+    "dataset_relative_path": "pieces/chopin/chopin_waltz-a-minor-kk-ivb,11-mvt1.musicxml",
+    "demo_role": "easy_chopin",
+    "disagreement_note": "Use this piece to rehearse the line: the system shows measured demands, the learner decides what is hard.",
+    "henle": "3",
+    "metadata": {},
+    "recognition_tier": "familiar",
+    "source_row_index": 3,
+    "title": "Waltz a minor KK IVb,11",
+    "user_selected_note": "Select the returning main theme to frame a help request on phrasing over a steady accompaniment."
+  },
+  "reason": "Score file not found under the CIPI root: pieces/chopin/chopin_waltz-a-minor-kk-ivb,11-mvt1.musicxml.",
+  "resolution": {
+    "dataset_root": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "pieces_dir_hint": false,
+    "root_detail": "repo-relative fallback: /Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "root_source": "repo_default",
+    "source_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi/pieces/chopin/chopin_waltz-a-minor-kk-ivb,11-mvt1.musicxml"
+  },
+  "runtime_versions": {
+    "piano-difficulty": "0.1.0"
+  },
+  "status": "missing_source_file",
+  "timestamp": "2026-09-07T20:47:31.587176Z"
+}

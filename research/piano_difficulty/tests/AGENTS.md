@@ -14,6 +14,9 @@ Rules for work here:
   plotting experiments and dataset loops in this harness.
 - `tests/harness/oktav_dataset/` is the thesis-scoped local dataset box for
   Oktav catalog and OG export work and must not be described as parity.
+- `tests/harness/cipi_dataset/` is the thesis-scoped local dataset box for
+  CIPI movement-manifest catalog and repo-native runtime export work and must
+  not be described as parity.
 - `tests/harness/omr_pipeline/` is the OMR prototyping box for rendered score
   pages and downstream readback experiments.
 - `tests/harness/difficulty_prediction/` is the reusable supervised modeling
@@ -32,5 +35,7 @@ Rules for work here:
   lane.
 - Reserve `oktav_*` names for the Oktav thesis lane and keep its raw corpus
   under `evaluation_scores/ad_hoc/`, not inside `tests/`.
+- Reserve `cipi_*` names for the CIPI thesis lane and keep its raw corpus
+  outside the repository, resolving manifest paths against a local root.
 - Reserve `omr_*` names for the OMR prototyping lane and keep its rendered
   score evidence under `tests/artifacts/omr_pipeline/`.

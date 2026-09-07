@@ -6,6 +6,22 @@ adds passage/view containers.
 """
 
 from .diagnostics import DIAGNOSTIC_SCHEMA_VERSION, Diagnostic, Severity
+from .investigation import (
+    CONTRIBUTION_SCHEMA_VERSION,
+    DIFFICULTY_EVIDENCE_SCHEMA_VERSION,
+    PASSAGE_INVESTIGATION_SCHEMA_VERSION,
+    Contribution,
+    DifficultyEvidence,
+    PassageInvestigation,
+    SelectionOrigin,
+)
+from .observations import (
+    OBSERVATION_RESULT_SCHEMA_VERSION,
+    OBSERVATION_SCHEMA_VERSION,
+    Observation,
+    ObservationBasis,
+    ObservationResult,
+)
 from .passage import PASSAGE_SCHEMA_VERSION, VIEW_SCHEMA_VERSION, Passage, PassagePurpose, View, ViewType
 from .source import (
     SOURCE_REF_SCHEMA_VERSION,
@@ -25,17 +41,29 @@ from .time import (
 )
 
 __all__ = [
+    "CONTRIBUTION_SCHEMA_VERSION",
+    "DIFFICULTY_EVIDENCE_SCHEMA_VERSION",
+    "PASSAGE_INVESTIGATION_SCHEMA_VERSION",
+    "Contribution",
     "DIAGNOSTIC_SCHEMA_VERSION",
     "Diagnostic",
+    "DifficultyEvidence",
+    "OBSERVATION_RESULT_SCHEMA_VERSION",
+    "OBSERVATION_SCHEMA_VERSION",
+    "Observation",
+    "ObservationBasis",
+    "ObservationResult",
     "PASSAGE_SCHEMA_VERSION",
     "VIEW_SCHEMA_VERSION",
     "Passage",
+    "PassageInvestigation",
     "PassagePurpose",
     "SCORE_INTERVAL_SCHEMA_VERSION",
     "SCORE_POSITION_SCHEMA_VERSION",
     "SOURCE_REF_SCHEMA_VERSION",
     "ScoreInterval",
     "ScorePosition",
+    "SelectionOrigin",
     "Severity",
     "SourceKind",
     "SourceRef",

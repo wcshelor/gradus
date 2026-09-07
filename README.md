@@ -15,9 +15,12 @@ AI technique or product design too early.
   as a self-contained research subproject, including its code, tests, datasets,
   documentation, and generated evidence.
 - `research/learning_support/` is the staging area for experiments that help a
-  pianist learn a particular piece. Its `passage_practice/` program specifies a
-  test-driven experiment from difficulty hotspots to diagnoses and generated
-  practice exercises; it is one route to assistance, not the mandatory workflow.
+  pianist learn a particular piece. It now contains the completed LS-01–LS-11
+  first research slice: optional learner context, exact passage selection,
+  bounded semantic observations, one grounded text aid, a deterministic
+  interaction harness, evaluation evidence, and the next CEO-demo milestone
+  plan. Its `passage_practice/` program remains one route to assistance, not
+  the mandatory workflow.
 - `research/shared/` is reserved for concepts or utilities that are genuinely
   shared by more than one research area.
 - `brainstorm/` collects possibilities, questions, sketches, and unresolved
@@ -43,6 +46,23 @@ See [project direction](docs/project_direction.md) and
 [the three-area implementation plan](docs/Task_list_2026-09-05_flexible_piano_learning_support.md).
 These describe the broader program; difficulty analysis is one reusable capability.
 
+As of 2026-09-06, LS-01 through LS-11 are implemented and pending lead/human
+review. The current learning-support slice can:
+
+- select exact user passages or whole-piece ranges from symbolic score data;
+- save, inspect, correct, exclude, delete, and optionally ignore learner notes;
+- produce one bounded semantic observation family over pitch transitions;
+- generate one traceable text-only practice aid when the evidence supports it;
+- replay multi-visit synthetic histories without inferring progress, traits, or
+  playing ability; and
+- evaluate the slice through a reproducible technical report.
+
+The next selected increment is a thin local
+[CEO walkthrough prototype](research/learning_support/ceo_demo_milestone_2026-09-06.md),
+planned but not yet built. It should make the existing capabilities visible,
+including the difficulty graph, learner notes, manual measure ranges, and
+score-only versus score-plus-report comparisons.
+
 Difficulty-analysis consolidation remains a component milestone. Its public
 workflow now produces factor summaries, local peaks, candidate high-demand sections,
 hand views, and JSON/Markdown/CSV/HTML reports:
@@ -53,23 +73,16 @@ conda run -n piano-difficulty piano-difficulty analyze piece.mxl --out-dir analy
 
 See [the analyzer README](research/piano_difficulty/README.md) and
 [the consolidation record](research/piano_difficulty/docs/consolidation.md).
-The passage-practice contracts and plans remain available for semantic-analysis
-experiments, including a planned user-selected-passage entry point independent
-of hotspot detection.
-
-The most developed part of the repository is the difficulty-analysis
-subproject. It can identify and describe score-level and passage-level demands.
-The documentation-first passage-practice program now defines how agents can
-extend that foundation into event attribution, semantic diagnosis, controlled
-score transformations, and evaluation while keeping pedagogical claims
-inspectable.
+The learning-support slice uses difficulty analysis as a modular evidence source:
+auto-detected high-demand sections can suggest where to look, but user-selected
+regions and learner notes do not depend on hotspot detection.
 
 To work on or run the existing Python project, begin in
 `research/piano_difficulty/` and follow its README.
 
-To implement the passage-practice program, begin with
-`research/learning_support/passage_practice/README.md` and its scoped
-`AGENTS.md`.
+To continue learning-support work, begin with
+`research/learning_support/README.md`, the CEO milestone document, and any scoped
+`AGENTS.md` files for the area being edited.
 
 ## Setup (fresh clone)
 

@@ -24,7 +24,9 @@ Special CIPI behavior:
 
 - when a config asks for `label_column: henle` and the matrix does not already
   include `henle`, the runner joins it post hoc from
-  `evaluation_scores/manifests/cipi_dataset_catalog.csv`
+  `evaluation_scores/manifests/cipi/cipi_movement_manifest.csv`
+  (the retired `evaluation_scores/manifests/cipi_dataset_catalog.csv` path is
+  kept only as a named legacy constant and is not an active default)
 - the join uses normalized `dataset_relative_path` first and a controlled
   filename fallback second
 - `piece_coordinates.csv` preserves provenance columns such as

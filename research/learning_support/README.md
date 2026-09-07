@@ -1,9 +1,10 @@
 # Learning support
 
-This area is reserved for exploratory systems that may help someone learn a
-piano piece. Its eventual contents may draw on score analysis, pedagogical
-knowledge, learner input, generated material, interaction, feedback, or other
-forms of assistance.
+This area contains exploratory systems that may help someone learn a piano
+piece. The current implementation is a bounded, deterministic research slice:
+score-derived passage selection, optional learner context, one semantic
+observation family, one grounded text aid, a local interaction harness, and
+evaluation documentation.
 
 No particular AI mechanism or application architecture is assumed here. Early
 work should begin with a clear learning problem, the information available to
@@ -22,15 +23,18 @@ Possible questions include:
   convincing?
 
 Experiments should create their own documented subfolder when they become
-concrete. Until then, ideas belong in the repository's `brainstorm/` area.
+concrete. Broader ideas still belong in the repository's `brainstorm/` area
+until they are promoted into a scoped plan.
 
 ## Active experiments
 
 Use the repository-wide
 [three-area plan](../../docs/Task_list_2026-09-05_flexible_piano_learning_support.md)
-for sequencing. This area develops pedagogical assistance and flexible interaction,
-and currently houses passage-specific semantic experiments. These responsibilities
-do not require new top-level packages or moving the existing analyzer.
+for historical sequencing and status. LS-01 through LS-11 are implemented and
+pending lead/human review. This area develops pedagogical assistance and
+flexible interaction, and houses passage-specific semantic experiments. These
+responsibilities do not require new top-level packages or moving the existing
+analyzer.
 
 Supported planning entry points are a whole-piece request, a user-selected
 passage, a question, an optional journal entry, or an analyzer-suggested region.
@@ -40,23 +44,36 @@ what feels difficult in a section. Reports remain distinct from score facts and
 unverified system hypotheses; no live-playing feedback or MIDI/audio capture is
 part of this phase.
 
-The plan starts learner-context experiments with synthetic data and explicit
-save/use/correction/deletion behavior. No learner-context runtime, persistent
-memory, or app integration is claimed to exist yet.
+The implemented slice uses synthetic data and explicit
+save/use/correction/deletion behavior. It includes in-memory learner-context
+runtime and a deterministic local interaction harness, but no app integration,
+real learner data, external model processing, or product persistence.
 
 - `passage_practice/` defines the documentation-first program for turning
   difficulty hotspots into traceable passage diagnoses and generated practice
-  exercises. Its implementation is intentionally phased so score facts,
-  musical inference, pedagogical claims, and notation transformations remain
-  independently testable.
+  exercises. It also now contains the LS passage-selection, investigation,
+  observation, and text-aid modules used by the current learning-support slice.
+  Its implementation remains phased so score facts, musical inference,
+  pedagogical claims, and notation transformations stay independently testable.
+- `learner_context/` contains minimal request, journal, permission, summary,
+  assistance-result, and context-store contracts.
+- `interaction/` contains `InteractionSession`, the local deterministic harness
+  that composes context, passage selection, observations, and the text aid.
 - `first_slice.md` specifies the bounded LS-01 slice: one-hand broken-chord
   help from user-selected or whole-piece entry, journal-only and returning
   scenarios, disagreement handling, abstention, exclusions, and a reviewable
-  success rubric. Planned, not implemented.
+  success rubric.
+- `evaluation_ls10.md` is the reproducible technical evaluation of the first
+  slice. It explicitly states that pedagogical effectiveness is unproven and
+  no real learner data has been used.
+- `ceo_demo_milestone_2026-09-06.md` selects the next increment: a thin local
+  CEO walkthrough prototype. Planning is complete; demo implementation has not
+  started.
 
 The existing passage-practice program is preserved as a bounded experiment, not
-the complete learning-support architecture. Its local plans contain hotspot-first
-assumptions and some historical status text; reconcile them against actual source,
-tests, and the new entry points before extending the program (LS-02 in the
-repository-wide plan). Difficulty component hardening can proceed alongside
-independent semantic and interaction design; it is not a global prerequisite.
+the complete learning-support architecture. Difficulty component hardening can
+proceed alongside independent semantic and interaction design; it is not a
+global prerequisite.
+
+Current verified baseline after LS-11: full suite `353 passed, 7 skipped`
+with optional local-corpus skips unchanged.

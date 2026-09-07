@@ -105,6 +105,7 @@ the observations from which it was calculated.
 An `Observation` contains:
 
 - stable observation ID and type;
+- required source passage ID (resolvable in the request/result context);
 - exact value and units;
 - source event, group, or transition IDs;
 - exact region;
@@ -125,10 +126,48 @@ observations:
 
 Feature evidence must not contain a pedagogical diagnosis.
 
-## Hotspot investigation request
+## Passage investigation request — D-013
 
-`HotspotInvestigation` is the boundary between the difficulty analyzer and the
-passage engine. It contains:
+Both entry adapters produce the same versioned `PassageInvestigation`. This is
+a small envelope over the existing `Passage`, not a replacement region model:
+
+- required `passage`: the existing object with score identity, exact interval,
+  event references, and lineage;
+- required `selection_origin`: `user_selected` or `analyzer_suggested`;
+- optional requested hand, with declared unknown/unsupported handling;
+- `difficulty_context`: zero or more validated evidence/context records or
+  resolvable references; an empty collection is valid;
+- producer method/version and diagnostics.
+
+Difficulty context identifies its source score/version, covered region, method,
+and actual feature/evidence references. A hotspot reference and its available
+score/contributions occur only when supplied by a real analysis result. An
+unscored region suggestion can have analyzer origin without a hotspot reference.
+Unavailable values remain unavailable, not fabricated zeros. Validate source and
+coverage compatibility; unrelated evidence must not silently become local support.
+
+Selection origin records why this investigation began. Method metadata records
+how it was produced. Neither `PassagePurpose.DETECTION` nor `parent_id=None`
+implies analyzer selection. Keep origin structured through serialization and
+refinement, in the investigation context linked to the root passage. Enrichment
+with difficulty evidence does not change manual origin or passage identity.
+
+Downstream observations, patterns, and diagnoses refer to passages. They must
+not use a hotspot ID as their primary subject. Separate requests can have
+different provenance; equivalence tests compare musical observations for matching
+source, region, hand, and analysis settings, not whole-payload byte equality.
+
+LS-03a implements this minimal contract and fixtures before entry adapters. It
+must not require full evidence/diagnosis model trees: use validated references
+where their owners have not implemented those contracts yet.
+
+Implemented 2026-09-05 in `src/passage_practice/models/investigation.py`
+(`passage_investigation.v1`, `difficulty_evidence.v1`, `contribution.v1`); no
+adapter-equivalence claim follows from these contract fixtures (see T05.3).
+
+### Analyzer-specific input
+
+`HotspotInvestigation`, if retained as an analyzer-specific input, contains:
 
 - source score ID;
 - detection region;
@@ -140,18 +179,18 @@ passage engine. It contains:
 - requested hand mode; and
 - warnings inherited from hotspot analysis.
 
-The passage engine must also accept an explicitly selected region so diagnosis
-and transformations can be evaluated independently of hotspot quality.
-`HotspotInvestigation` remains the analyzer-suggested entry only; the
-user-selected entry is a root `Passage` with recorded manual origin plus
-optionally attached (never invented) difficulty evidence, as mapped in
-`docs/entry_points.md` (LS-02). No fields are changed by LS-02.
+T05.2 translates this input to `PassageInvestigation`; T05.3 translates a manual
+selection to the same contract. No downstream consumer must accept two different
+request shapes. Preserve real analyzer metadata without duplicating detection.
 
 ## Event attribution
 
 `AttributedSignal` contains:
 
-- hotspot and feature IDs;
+- required source passage ID and feature ID;
+- attribution target kind and resolvable target reference: an actual aggregate
+  for aggregate attribution, or an actual hotspot/dimension for hotspot attribution;
+- optional hotspot reference for aggregate attribution; required for hotspot attribution;
 - ranked observation IDs;
 - supporting source event IDs;
 - contribution method;
@@ -164,16 +203,17 @@ Exact attribution is preferred for extrema and counts. Aggregate attribution
 may use top observations, threshold exceedances, contiguous clusters, or a
 documented leave-one-group-out delta. The method must be visible in the result.
 
-Interim note (LS-02, no field change): for a user-selected root there are no
-hotspot dimensions to drive; attribution then targets the controlled-baseline
-observations instead. Making the hotspot IDs explicitly optional is deferred
-to LS-03 contract work.
+An ordinary passage observation does not require an `AttributedSignal`. Without
+a real attribution target, emit observations and leave attribution empty. Merely
+making hotspot IDs nullable does not justify inventing contribution values or
+target ranks. Manual requests may have real aggregate attribution when available.
 
 ## Pattern match
 
 `PatternMatch` contains:
 
 - stable pattern ID;
+- required source passage ID;
 - detector method/version;
 - covered region and source event IDs;
 - optional groups within the pattern;
@@ -193,11 +233,11 @@ rapid repositioning.
 `PassageDiagnosis` contains:
 
 - stable diagnosis ID and schema version;
-- source hotspot and passage IDs;
+- required source passage ID and optional validated difficulty-context references;
 - affected event IDs, hand, and voices;
 - evidence, pattern, and proposed practice regions;
-- supporting triggered dimensions;
-- attributed signals and pattern matches;
+- supporting dimensions when actually measured (may be empty);
+- supporting observation references, optional attributed signals, and pattern matches;
 - satisfied, missing, and contradictory criteria;
 - confidence and confidence method;
 - uncertainties and learner-dependent caveats;
@@ -211,12 +251,11 @@ explanation is presentation output, not the canonical diagnosis.
 
 The engine may return multiple ranked diagnoses or no supported diagnosis.
 
-Interim note (LS-02, no field change): a user-selected root has no source
-hotspot, so “source hotspot and passage IDs” cannot be satisfied literally on
-that entry. LS-03 contract work must make the hotspot reference optional
-(absent = valid, never fabricated); until then, diagnosis implementation
-tasks (WP-08) proceed against controlled-baseline observations per
-`docs/entry_points.md`.
+A diagnosis can be supported by passage observations and rule criteria without
+any hotspot or attribution record. Individual rules must still satisfy their
+musical evidence requirements; absence of a hotspot neither establishes a
+diagnosis nor disqualifies a passage. Optional context preserves real hotspot
+references for traceability, never substitutes for passage identity.
 
 ## Objective, strategy, and plan
 
@@ -289,6 +328,7 @@ evidence. One Boolean alone is insufficient for research diagnostics.
 renderer needs. It contains:
 
 - bounded score and passage labels;
+- structured selection origin and optional difficulty reasons, kept separate;
 - diagnosis label, confidence, and caveats;
 - a compact allowlist of supported observations and pattern claims;
 - selected objective and strategy;

@@ -34,7 +34,27 @@ evaluation_scores/
     README.md
   manifests/
     score_catalog.template.csv
+    cipi/
+      cipi_movement_manifest.csv
+      metadata/
 ```
+
+## Local corpora and manifests
+
+Large or licensed corpora (Oktav, full CIPI) stay outside git. Configure
+their local roots with `--dataset-root`, `GRADUS_OKTAV_ROOT` /
+`GRADUS_CIPI_ROOT`, or the ignored
+`research/piano_difficulty/.local/datasets.toml` (see
+`.local/datasets.example.toml`); never commit real absolute paths.
+
+Committed manifests describe datasets without embedding licensed scores:
+
+- `manifests/cipi/cipi_movement_manifest.csv` is the canonical CIPI
+  movement-level catalog (744 movement rows from 652 work records); its
+  `dataset_relative_path` values resolve against a CIPI root containing
+  `metadata/` and `pieces/`.
+- `known_levels/cipi/` holds only a small commit-safe score subset, not the
+  full corpus.
 
 ## Subdirectories
 

@@ -1,0 +1,38 @@
+{
+  "artifacts": {},
+  "cipi": {
+    "cipi_id": "x-31",
+    "match_status": "matched",
+    "movement": "1",
+    "piece_uid": "pieces_beethoven_beethoven_bagatelle-a-major-op.-119_10-mvt1",
+    "work_name": "Bagatelle A major op. 119,10"
+  },
+  "demo_id": "beethoven_bagatelle_119_10",
+  "manifest": {
+    "analyzer_led_note": "Compare the analyzer-selected sections against the existing preview previously shown for this piece.",
+    "caveat_note": "Short bagatelle; few windows means peaks are suggestive, not statistically strong.",
+    "composer": "Ludwig van Beethoven",
+    "dataset_relative_path": "pieces/beethoven/beethoven_bagatelle-a-major-op.-119,10-mvt1.musicxml",
+    "demo_role": "existing_preview_anchor",
+    "disagreement_note": "If the reviewer expects this to feel easy, keep the system ranking separate from any learner self-report.",
+    "henle": "3",
+    "metadata": {},
+    "recognition_tier": "useful_control",
+    "source_row_index": 1,
+    "title": "Bagatelle A major op. 119 no. 10",
+    "user_selected_note": "Select a short phrase manually to demonstrate that user regions work with or without a computed hotspot."
+  },
+  "reason": "Score file not found under the CIPI root: pieces/beethoven/beethoven_bagatelle-a-major-op.-119,10-mvt1.musicxml.",
+  "resolution": {
+    "dataset_root": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "pieces_dir_hint": false,
+    "root_detail": "repo-relative fallback: /Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "root_source": "repo_default",
+    "source_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi/pieces/beethoven/beethoven_bagatelle-a-major-op.-119,10-mvt1.musicxml"
+  },
+  "runtime_versions": {
+    "piano-difficulty": "0.1.0"
+  },
+  "status": "missing_source_file",
+  "timestamp": "2026-09-07T20:47:31.587176Z"
+}

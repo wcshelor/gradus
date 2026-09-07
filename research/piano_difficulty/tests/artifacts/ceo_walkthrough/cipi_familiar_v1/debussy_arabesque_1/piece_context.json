@@ -1,0 +1,38 @@
+{
+  "artifacts": {},
+  "cipi": {
+    "cipi_id": "x-336",
+    "match_status": "matched",
+    "movement": "1",
+    "piece_uid": "pieces_debussy_debussy_arabesque-no.-1-mvt1",
+    "work_name": "Arabesque no. 1"
+  },
+  "demo_id": "debussy_arabesque_1",
+  "manifest": {
+    "analyzer_led_note": "Inspect the flowing triplet/arpeggiated sections for onset-density and span contributions.",
+    "caveat_note": "Ornamental timing is approximate in symbolic data; rubato and tone are out of scope.",
+    "composer": "Claude Debussy",
+    "dataset_relative_path": "pieces/debussy/debussy_arabesque-no.-1-mvt1.musicxml",
+    "demo_role": "flowing_arpeggiation",
+    "disagreement_note": "A learner fluent in arpeggiation may disagree with a density-driven ranking; keep the report framing verbatim.",
+    "henle": "4",
+    "metadata": {},
+    "recognition_tier": "very_familiar",
+    "source_row_index": 6,
+    "title": "Arabesque no. 1",
+    "user_selected_note": "Walk through the opening arpeggiation to show continuous-texture material under manual selection."
+  },
+  "reason": "Score file not found under the CIPI root: pieces/debussy/debussy_arabesque-no.-1-mvt1.musicxml.",
+  "resolution": {
+    "dataset_root": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "pieces_dir_hint": false,
+    "root_detail": "repo-relative fallback: /Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "root_source": "repo_default",
+    "source_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi/pieces/debussy/debussy_arabesque-no.-1-mvt1.musicxml"
+  },
+  "runtime_versions": {
+    "piano-difficulty": "0.1.0"
+  },
+  "status": "missing_source_file",
+  "timestamp": "2026-09-07T20:47:31.587176Z"
+}

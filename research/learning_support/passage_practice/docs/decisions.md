@@ -179,11 +179,14 @@ Required tests or migration: No code move; `tests/unit/test_time.py` and
 `research/piano_difficulty/tests/unit/test_difficulty_dynamics.py` still covers
 `ScoreRegion` windowing.
 
-### D-013 — User-selected regions reuse Passage with recorded manual origin
+### D-013 — Passage-first investigation with independent selection origin
 
-- **Status:** proposed
+- **Status:** accepted; minimal LS runtime boundary implemented
 - **Date:** 2026-09-05
-- **Deciders:** LS-02 implementer (muse-spark), lead review pending
+- **Deciders:** project owner accepted passage-first direction; lead incorporated
+  the contract review on 2026-09-05. Runtime subset implemented by LS-03a/LS-05;
+  this is not acceptance of broader WP analyzer translation, attribution,
+  diagnosis, or transformation work.
 - **Affected work packages:** WP-02 (T02.5), WP-05 (T05.3), WP-06, WP-08, WP-15
 
 Context: LS-01 scenarios S1–S5 require assistance from a user-selected exact
@@ -194,25 +197,47 @@ planned contracts (`HotspotInvestigation`, `AttributedSignal`, passage
 `PassageDiagnosis` hotspot IDs) still assume analyzer-suggested entry. Full
 design in `docs/entry_points.md`.
 
-Decision (proposed): the smallest adapter builds a root `Passage` with
-`purpose=DETECTION` (“region under investigation”), `method_id` naming manual
-selection, a `Diagnostic` recording user-selected vs. analyzer-suggested
-origin, `parent_id=None`, and optionally attached (never invented) difficulty
-evidence. No new enum value, no new shared type, no separate downstream
-pipeline. Making diagnosis/attribution hotspot references explicitly optional
-is deferred to LS-03 contract work.
+Decision: reuse the existing `Passage` as the musical subject. Both routes
+produce one `PassageInvestigation` contract containing a required passage,
+explicit structured `selection_origin`, optional requested hand, and an optional
+difficulty-context collection (empty is valid). See `docs/contracts.md` for its
+invariants. This envelope does not introduce another score or region model.
+
+The root may retain `purpose=DETECTION` meaning “region under investigation,”
+with producer method/version and `parent_id=None`. Origin belongs in a validated
+field, not only in diagnostics or inferred from the parent ID. Adding difficulty
+context to a manual request never changes its origin or passage identity.
+
+Observations and diagnoses require passage references, not hotspot IDs.
+Attribution requires a real named target and supporting observations: aggregate
+attribution can exist without a hotspot; hotspot attribution requires a real
+hotspot reference. Ordinary observations are not fake attribution records.
+Never manufacture a hotspot, score, contribution, or sentinel ID for manual entry.
+
+LS-03a specifies/tests the shared boundary; LS-05 implements the manual
+user-selected adapter over the WP-02 selection API. LS-03b adds the separate
+learner request/journal/context contracts. The remaining analyzer translation
+and diagnosis consumers can depend on this boundary without creating a
+dependency loop; no dependency loop is introduced by the LS split.
 
 Alternatives considered: new `PassagePurpose` value (contract churn, no new
 semantics); new shared region type (rejected by D-012); separate manual-region
 pipeline (duplicates stages, violates dependency direction).
 
-Consequences: T05.3 implements this adapter; WP-06/WP-08 rules accept
-controlled-baseline observations; T15.1 accepts a user-selection reason;
-hotspot route and regressions unchanged.
+Consequences: T05.1 reuses/validates the shared contract rather than redefining
+it; T05.2 still adapts automatic analyzer inputs to that contract, while the LS
+manual path is implemented in `passages/investigate.py`. WP-06/WP-08 accept
+passage observations without requiring attribution; T15.1 exposes selection
+origin separately from optional difficulty evidence. Existing detector behavior
+and regressions are preserved.
 
-Required tests or migration: T05.3 manual-region equivalence, T06.x baseline
-attribution on both entries, T08.3 controlled-baseline diagnosis, T14.2/T14.3
-both orchestrations; no migration (no contract fields change in LS-02).
+Required tests or migration: versioned LS-03a examples for both origins, absent
+context, origin preservation after enrichment, invalid references, and exact time
+are implemented. LS-05/LS-06 cover manual observation equivalence for the same
+source/region/settings. Remaining work: T05.2 automatic analyzer translation,
+T06.x no invented attribution, T08.3 manual diagnosis, and T14.2/T14.3
+orchestrations. Reuse existing runtime models and version any genuinely changed
+public schema; no detector rewrite or shared move.
 
 ### Q-002 — Ownership of generic passage types
 
@@ -221,6 +246,32 @@ passage-practice semantics layered above it, or should v1 keep all new contracts
 inside passage practice? Resolve only after inspecting actual consumers.
 
 → Resolved by D-012 above.
+
+### D-014 — Selection-side partial-measure policy (Q-003 proposal)
+
+- **Status:** proposed
+- **Date:** 2026-09-05
+- **Deciders:** WP-02 implementer (muse-spark), lead review pending
+- **Affected work packages:** WP-02 (T02.5), WP-13 (T13.1 finalizes)
+
+Context: Q-003 asks whether exercise export should preserve partial measures,
+pad with rests, or rebar. Selection (T02.5) must state its side first.
+
+Decision (proposed): selection keeps the exact requested interval with no
+padding or rebarring; partial-measure endings are preserved with inherited
+context (`whole_piece_range` covers full measures only for whole-piece
+requests). Padding, rest-filling, and rebarring are export concerns for the
+T13.1 writer decision (Q-008), which finalizes Q-003.
+
+Alternatives considered: pad-at-selection (hides boundary truth from
+attribution); rebar-at-selection (rewrites measure identity the diagnosis
+references).
+
+Consequences: `select_passage`/`refine_selection` never synthesize rests;
+`T13.5` parse-after-write tests judge the export policy, not selection.
+
+Required tests or migration: partial-measure selection tests in
+`test_selection.py`; no migration (no prior behavior existed).
 
 ### Q-003 — Boundary handling for partial measures
 

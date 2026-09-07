@@ -14,6 +14,10 @@ research/piano_difficulty/evaluation_scores/ad_hoc/*
 research/piano_difficulty/external/ScoreAnalyzer
 literature/papers/*
 !literature/papers/README.md
+# Local machine-specific dataset roots - never commit real paths
+research/piano_difficulty/.local/*
+!research/piano_difficulty/.local/datasets.example.toml
+!research/piano_difficulty/.local/README.md
 # Bulk generated artifacts - do not commit timestamped or dataset export bulk directories
 research/piano_difficulty/tests/artifacts/yan2023/dataset_exports/*
 research/piano_difficulty/tests/artifacts/difficulty_clustering/runs/*

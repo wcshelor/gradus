@@ -1,5 +1,36 @@
 """Shared helpers for matrix-backed experiment harnesses."""
 
+from .dataset_config import (
+    CONFIG_ENV_VAR,
+    DATASET_ENV_VARS,
+    DEFAULT_LOCAL_CONFIG_PATH,
+    SUPPORTED_SCORE_SUFFIXES,
+    DatasetRootResolution,
+    DatasetSpec,
+    dataset_env_var,
+    parse_dataset_config_file,
+    resolve_dataset_root,
+)
+from .dataset_discovery import (
+    DEFAULT_SCORE_SUFFIXES,
+    dataset_relative_path,
+    discover_score_files,
+    find_unsupported_files,
+    is_supported_score_file,
+    normalize_filename,
+    partition_directory_entries,
+    repo_relative_path,
+)
+from .dataset_records import DatasetLoadResult, DatasetRecord, to_runtime_export_input
+from .dataset_validation import (
+    build_load_summary,
+    compare_manifest_paths_to_discovered,
+    duplicate_piece_ids,
+    duplicate_piece_uids,
+    find_duplicate_record_values,
+    find_duplicate_values,
+)
+
 from .matrix_data import LoadedMatrix, MatrixLoadOptions, load_dataset_matrix, load_matrix
 from .matrix_features import (
     DEFAULT_METADATA_COLUMNS,
@@ -20,12 +51,21 @@ from .runtime_matrix_export import (
 )
 
 __all__ = [
+    "CONFIG_ENV_VAR",
+    "DATASET_ENV_VARS",
+    "DEFAULT_LOCAL_CONFIG_PATH",
     "DEFAULT_METADATA_COLUMNS",
+    "DEFAULT_SCORE_SUFFIXES",
     "FEATURE_SET_SPECS",
     "MATRIX_METADATA_COLUMNS",
     "OG_PHP_FEATURES",
     "RUNTIME_FAMILY_PREFIXES",
     "SEBASTIEN_CLUSTERING_FEATURES",
+    "SUPPORTED_SCORE_SUFFIXES",
+    "DatasetLoadResult",
+    "DatasetRecord",
+    "DatasetRootResolution",
+    "DatasetSpec",
     "FeatureSelectionReport",
     "FeatureSetSpec",
     "LoadedMatrix",
@@ -33,8 +73,25 @@ __all__ = [
     "RuntimeExportInput",
     "RuntimeMatrixExportResult",
     "RuntimePieceExportResult",
+    "build_load_summary",
+    "compare_manifest_paths_to_discovered",
+    "dataset_env_var",
+    "dataset_relative_path",
+    "discover_score_files",
+    "duplicate_piece_ids",
+    "duplicate_piece_uids",
+    "find_duplicate_record_values",
+    "find_duplicate_values",
+    "find_unsupported_files",
+    "is_supported_score_file",
     "load_dataset_matrix",
     "load_matrix",
+    "normalize_filename",
+    "parse_dataset_config_file",
+    "partition_directory_entries",
+    "repo_relative_path",
+    "resolve_dataset_root",
     "run_runtime_matrix_export",
     "select_feature_columns",
+    "to_runtime_export_input",
 ]

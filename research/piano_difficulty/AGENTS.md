@@ -13,6 +13,7 @@ Working rules scoped to the `research/piano_difficulty/` subproject:
 - Treat `tests/harness/difficulty_dynamics/` as the temporal difficulty
   profiling lab.
 - Treat `tests/harness/oktav_dataset/` as the thesis-scoped Oktav dataset lab.
+- Treat `tests/harness/cipi_dataset/` as the thesis-scoped CIPI dataset lab.
 - Treat `tests/harness/omr_pipeline/` as the OMR prototyping lab for rendered
   score-page and readback experiments.
 - Treat `tests/harness/difficulty_prediction/` as the reusable prediction lab.
@@ -35,6 +36,7 @@ Working rules scoped to the `research/piano_difficulty/` subproject:
   - temporal difficulty profiling belongs in
     `tests/harness/difficulty_dynamics/`
   - Oktav thesis dataset mechanics belong in `tests/harness/oktav_dataset/`
+  - CIPI thesis dataset mechanics belong in `tests/harness/cipi_dataset/`
   - OMR prototyping belongs in `tests/harness/omr_pipeline/`
   - reusable difficulty-prediction experiments belong in
     `tests/harness/difficulty_prediction/`
@@ -59,6 +61,9 @@ Working rules scoped to the `research/piano_difficulty/` subproject:
 - `tests/harness/oktav_dataset/`
   - thesis-scoped local dataset tooling for catalog building and OG batch
     export over the Oktav corpus
+- `tests/harness/cipi_dataset/`
+  - thesis-scoped local dataset tooling for movement-manifest catalog checks
+    and repo-native runtime export over the CIPI corpus
 - `tests/harness/omr_pipeline/`
   - small OMR prototyping workflow for rendered score pages and readback
     experiments

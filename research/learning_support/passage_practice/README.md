@@ -1,6 +1,6 @@
 # Passage Practice
 
-This research area plans and, in later phases, implements a system that turns
+This research area plans and incrementally implements a system that turns
 a selected piano passage — reached either through a windowed
 piano-difficulty hotspot or through a directly user-selected exact region —
 into inspectable passage diagnoses and source-derived practice exercises.
@@ -31,9 +31,17 @@ separate pedagogical intervention that must state its objective and provenance.
 
 ## Current status
 
-This directory currently contains plans and contracts, not a working runtime.
-Entry runs either from an analyzer-suggested hotspot or from a user-selected
-exact region; neither entry requires the other (see `docs/entry_points.md`).
+This directory contains implemented source/time/passage contract models and tests,
+plus the LS-05–LS-07 runtime subset used by the current learning-support slice.
+It is not yet the full hotspot-to-diagnosis-to-exercise system described below.
+Implemented entry runs include user-selected exact regions and whole-piece
+ranges; analyzer-suggested regions share the same `PassageInvestigation`
+contract but the full T05.2 analyzer translation remains pending. Neither entry
+requires the other (see `docs/entry_points.md`). The implemented LS subset
+includes exact passage selection, explicit `PassageInvestigation` origin,
+optional difficulty context, pitch-transition observations, and one text-only
+transition-practice aid. Diagnosis rules, strategy registries, deterministic
+transformations, and MusicXML exercise export remain planned work.
 Agents must implement the system through the work packages in
 [`WORK_PACKAGES.md`](WORK_PACKAGES.md). The initial vertical slice is a
 restricted broken-chord passage that produces blocked-chord and rhythmic

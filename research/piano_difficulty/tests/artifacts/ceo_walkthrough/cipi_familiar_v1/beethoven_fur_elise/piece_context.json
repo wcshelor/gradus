@@ -1,0 +1,38 @@
+{
+  "artifacts": {},
+  "cipi": {
+    "cipi_id": "x-386",
+    "match_status": "matched",
+    "movement": "1",
+    "piece_uid": "pieces_beethoven_beethoven_bagatelle-fu_r-elise-a-minor-woo-59-mvt1",
+    "work_name": "Bagatelle (F\u00fcr Elise) a minor WoO 59"
+  },
+  "demo_id": "beethoven_fur_elise",
+  "manifest": {
+    "analyzer_led_note": "Inspect the top analyzer-selected section for repeated accompaniment figuration against the familiar melody.",
+    "caveat_note": "Within-piece ranks only; familiarity with the tune is not evidence of playing ease.",
+    "composer": "Ludwig van Beethoven",
+    "dataset_relative_path": "pieces/beethoven/beethoven_bagatelle-fu\u0308r-elise-a-minor-woo-59-mvt1.musicxml",
+    "demo_role": "famous_easy",
+    "disagreement_note": "If the reviewer finds the opening easy but the ranking highlights it, frame the ranking as relative within-piece demand, not a learner grade.",
+    "henle": "3",
+    "metadata": {},
+    "recognition_tier": "very_familiar",
+    "source_row_index": 0,
+    "title": "Bagatelle \"F\u00fcr Elise\" a minor WoO 59",
+    "user_selected_note": "Walk through the opening 16 bars by hand to show manual passage selection on material the reviewer already knows."
+  },
+  "reason": "Score file not found under the CIPI root: pieces/beethoven/beethoven_bagatelle-fu\u0308r-elise-a-minor-woo-59-mvt1.musicxml.",
+  "resolution": {
+    "dataset_root": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "pieces_dir_hint": false,
+    "root_detail": "repo-relative fallback: /Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "root_source": "repo_default",
+    "source_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi/pieces/beethoven/beethoven_bagatelle-fu\u0308r-elise-a-minor-woo-59-mvt1.musicxml"
+  },
+  "runtime_versions": {
+    "piano-difficulty": "0.1.0"
+  },
+  "status": "missing_source_file",
+  "timestamp": "2026-09-07T20:47:31.587176Z"
+}

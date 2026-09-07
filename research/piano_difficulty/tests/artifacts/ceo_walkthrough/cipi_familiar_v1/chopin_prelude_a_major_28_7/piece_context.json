@@ -1,0 +1,38 @@
+{
+  "artifacts": {},
+  "cipi": {
+    "cipi_id": "c-340",
+    "match_status": "matched",
+    "movement": "1",
+    "piece_uid": "pieces_chopin_chopin_prelude-a-major-op.-28_7-mvt1",
+    "work_name": "Prelude A major op. 28,7"
+  },
+  "demo_id": "chopin_prelude_a_major_28_7",
+  "manifest": {
+    "analyzer_led_note": "Use this very short prelude as a control: check that few windows still yield a readable summary.",
+    "caveat_note": "Only 16 bars; candidate sections are illustrative and sensitive to window settings.",
+    "composer": "Fr\u00e9d\u00e9ric Chopin",
+    "dataset_relative_path": "pieces/chopin/chopin_prelude-a-major-op.-28,7-mvt1.musicxml",
+    "demo_role": "short_control",
+    "disagreement_note": "Any mismatch between reviewer expectation and ranking here illustrates window-count limits, not learner error.",
+    "henle": "4",
+    "metadata": {},
+    "recognition_tier": "familiar",
+    "source_row_index": 5,
+    "title": "Prelude A major op. 28 no. 7",
+    "user_selected_note": "Select the whole piece manually to show manual-region help on miniature material."
+  },
+  "reason": "Score file not found under the CIPI root: pieces/chopin/chopin_prelude-a-major-op.-28,7-mvt1.musicxml.",
+  "resolution": {
+    "dataset_root": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "pieces_dir_hint": false,
+    "root_detail": "repo-relative fallback: /Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "root_source": "repo_default",
+    "source_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi/pieces/chopin/chopin_prelude-a-major-op.-28,7-mvt1.musicxml"
+  },
+  "runtime_versions": {
+    "piano-difficulty": "0.1.0"
+  },
+  "status": "missing_source_file",
+  "timestamp": "2026-09-07T20:47:31.587176Z"
+}

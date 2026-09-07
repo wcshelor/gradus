@@ -2,11 +2,10 @@
 
 ## Architectural objective
 
-Build an explainable, coarse-to-fine pipeline that uses the established
-difficulty system to decide where to investigate, then uses a separate passage
-engine to determine which events created the signal, recognize relevant musical
-patterns, propose qualified diagnoses, and generate controlled practice
-material.
+Build an explainable passage-first pipeline that accepts a learner-selected
+region or a suggestion from the established difficulty system. A separate passage
+engine measures events, attributes real signals when available, recognizes musical
+patterns, proposes qualified diagnoses, and generates controlled practice material.
 
 The architecture favors independently testable stages over a single model that
 maps a score directly to advice.
@@ -36,6 +35,12 @@ maps a score directly to advice.
        -> exercise validation and MusicXML export
        -> structured explanation input
 ```
+
+Both entry adapters produce `PassageInvestigation` over the existing `Passage`,
+with structured selection origin and optional difficulty context (D-013). Musical
+observations require passage identity, not a hotspot ID. Adding difficulty context
+to a user selection does not change its origin. Ordinary observations are distinct
+from attribution to an actual aggregate or hotspot target.
 
 The difficulty area remains useful without the passage-practice area. Passage
 practice consumes its outputs but does not redefine difficulty extraction.
@@ -150,7 +155,7 @@ Whole-score analysis should remain comparatively cheap:
 3. Detect and rank hotspots.
 4. Carry forward the dimensions responsible for each candidate.
 
-Only selected candidates receive more expensive analysis:
+Selected candidates or learner-selected regions receive more expensive analysis:
 
 1. Build an exact passage and neighboring context.
 2. retrieve or calculate event-level feature evidence;
@@ -166,7 +171,8 @@ run as a fallback when evidence is ambiguous.
 
 The system distinguishes four regions:
 
-- **Detection region**: the original difficulty window.
+- **Detection region**: the initial region under investigation, either a difficulty
+  window or user-selected interval; the existing enum does not encode origin.
 - **Evidence region**: the minimal event range materially contributing to its
   signals.
 - **Pattern region**: the complete recognized musical figure, which may cross

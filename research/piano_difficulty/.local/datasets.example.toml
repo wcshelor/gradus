@@ -1,0 +1,17 @@
+# Local dataset roots for piano-difficulty corpus work.
+#
+# Copy this file to `datasets.toml` in the same directory and fill in the
+# paths for your machine. `datasets.toml` is git-ignored; this example file
+# is committed. Do not put real absolute paths in this example.
+#
+# Precedence for dataset roots:
+#   1. explicit `--dataset-root` CLI argument
+#   2. `GRADUS_OKTAV_ROOT` / `GRADUS_CIPI_ROOT` environment variables
+#   3. `GRADUS_DATASETS_CONFIG` explicit config path, or this `.local/datasets.toml`
+#   4. adapter repo-relative fallback (fixtures / explicitly ignored staging only)
+
+[oktav]
+root = "/path/to/oktav-starting-dataset"
+
+[cipi]
+root = "/path/to/cipi"

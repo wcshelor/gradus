@@ -1,8 +1,8 @@
 """LS-01 acceptance checks for the first learning-support slice.
 
-Documentation-only task: verify links resolve, required scenario coverage is
-present, exclusions are explicit, and the success rubric is reviewable. No
-runtime behavior is introduced or asserted here.
+Verify links resolve, required scenario coverage is present, exclusions are
+explicit, the success rubric is reviewable, and the document distinguishes the
+original specification from later LS implementation/evaluation work.
 """
 
 from __future__ import annotations
@@ -32,9 +32,11 @@ def _text(path: Path) -> str:
     return path.read_text()
 
 
-def test_slice_doc_declares_planned_not_implemented() -> None:
+def test_slice_doc_declares_original_spec_and_later_implementation() -> None:
     text = _text(SLICE_DOC)
-    assert "planned, not implemented" in text
+    assert "original LS-01 specification" in text
+    assert "later implemented and evaluated" in text
+    assert "evaluation_ls10.md" in text
     assert "LS-01" in text
 
 

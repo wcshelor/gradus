@@ -88,6 +88,8 @@ for the complete method and limitations.
 - [Factor registry](docs/feature_registry.md): selected factors and retained descriptors.
 - [Research lanes](docs/analysis_lanes.md): Yan reconstruction, datasets, OMR,
   Difficulty Dynamics experiments, matrix evaluation, and legacy parity.
+- [Dataset adapter cleanup task plan](docs/dataset_adapters_cleanup_task_plan.md):
+  focused cleanup tasks after the external dataset adapter implementation.
 - [Consolidation record](docs/consolidation.md): preservation map and migration evidence.
 - [Evaluation](docs/evaluation.md): automated checks and remaining expert review.
 - [Roadmap](docs/roadmap.md): current follow-up work.

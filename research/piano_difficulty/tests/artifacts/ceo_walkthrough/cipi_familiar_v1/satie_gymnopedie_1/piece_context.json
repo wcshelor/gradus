@@ -1,0 +1,38 @@
+{
+  "artifacts": {},
+  "cipi": {
+    "cipi_id": "x-372",
+    "match_status": "matched",
+    "movement": "1",
+    "piece_uid": "pieces_satie_satie_gymnope_die-no.-1-mvt1",
+    "work_name": "Gymnop\u00e9die no. 1"
+  },
+  "demo_id": "satie_gymnopedie_1",
+  "manifest": {
+    "analyzer_led_note": "Use as a sparse baseline: expect low, flat factor tracks and possibly no distinct peaks.",
+    "caveat_note": "Extreme sparseness may yield no candidate sections; that is a valid outcome, not a failure.",
+    "composer": "Erik Satie",
+    "dataset_relative_path": "pieces/satie/satie_gymnope\u0301die-no.-1-mvt1.musicxml",
+    "demo_role": "sparse_baseline",
+    "disagreement_note": "If the reviewer finds sustained chords tiring, note the analyzer does not measure physical sustain effort.",
+    "henle": "2",
+    "metadata": {},
+    "recognition_tier": "very_familiar",
+    "source_row_index": 7,
+    "title": "Gymnop\u00e9die no. 1",
+    "user_selected_note": "Select the opening chords to demonstrate honest abstention when no hotspot supports a claim."
+  },
+  "reason": "Score file not found under the CIPI root: pieces/satie/satie_gymnope\u0301die-no.-1-mvt1.musicxml.",
+  "resolution": {
+    "dataset_root": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "pieces_dir_hint": false,
+    "root_detail": "repo-relative fallback: /Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi",
+    "root_source": "repo_default",
+    "source_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/evaluation_scores/known_levels/cipi/pieces/satie/satie_gymnope\u0301die-no.-1-mvt1.musicxml"
+  },
+  "runtime_versions": {
+    "piano-difficulty": "0.1.0"
+  },
+  "status": "missing_source_file",
+  "timestamp": "2026-09-07T20:47:31.587176Z"
+}

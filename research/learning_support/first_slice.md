@@ -1,11 +1,14 @@
 # LS-01 — First learning-support slice
 
-Status: specification only (planned, not implemented). This document defines
-the bounded first slice required by LS-01 of the
+Status: original LS-01 specification, later implemented and evaluated through
+LS-02–LS-10. This document defines the bounded first slice required by LS-01 of the
 [three-area plan](../../docs/Task_list_2026-09-05_flexible_piano_learning_support.md).
-No runtime code, interface, AI model, or data collection is introduced here.
-Candidate aids are named so their scope can be reviewed; none is implemented
-by this document.
+No runtime code, interface, AI model, or data collection was introduced by this
+document itself. Later LS work implemented a narrower deterministic runtime
+subset: exact passage selection, optional context, pitch-transition observations,
+one text-only aid, interaction tests, and technical evaluation. See
+`evaluation_ls10.md` and `ceo_demo_milestone_2026-09-06.md` for current status
+and next direction.
 
 Authority: [project direction](../../docs/project_direction.md) (three
 complementary areas, learner control, synthetic data first). This slice reuses

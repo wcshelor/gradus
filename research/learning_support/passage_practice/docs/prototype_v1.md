@@ -46,6 +46,12 @@ from hotspot-detection quality and is required for testing. It requires no
 hotspot ID, difficulty score, or profile: an exact region plus optional target
 hand is a complete investigation input (see `docs/entry_points.md`).
 
+Both adapters return `PassageInvestigation` over the existing `Passage` (D-013).
+The automatic input remains supported, but is not the downstream subject type.
+Selection origin and optional difficulty context are separate. Equivalent source,
+region, hand, and observation settings must give equivalent musical observations;
+route-specific IDs, reasons, and attribution context need not be identical.
+
 ## Candidate hotspot triggers
 
 The broken-chord investigation is prioritized when one or more of these signals
@@ -227,8 +233,9 @@ right-hand broken-chord window:
 1. Difficulty Dynamics ranks the latter as a hotspot using configured features
    (automatic entry). The controlled twin starts instead from the same exact
    region with no profile computed.
-2. Attribution names the target-hand transitions and attacks responsible for
-   the elevated values.
+2. Observations name the target-hand transitions and attacks on both routes.
+   Attribution identifies contributions only to real available aggregate/hotspot
+   targets; the controlled twin does not invent a hotspot or contributions.
 3. The broken-chord detector covers the intended groups and excludes surrounding
    scalar or sustained material.
 4. The diagnosis engine returns the stable v1 diagnosis with evidence and

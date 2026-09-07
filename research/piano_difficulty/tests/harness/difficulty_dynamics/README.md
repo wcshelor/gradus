@@ -61,3 +61,7 @@ This lane builds time-varying difficulty profiles over symbolic piano scores.
 - inspect `difficulty_hotspots.csv` and `difficulty_summary.md` in the run directory
 - batch a known-piece manifest with `tests/scripts/run_difficulty_dynamics_piece_lab.py`
 - start from `evaluation_scores/manifests/difficulty_dynamics_piece_lab.template.csv` for your personal piece list
+- for the CEO demo surface over familiar CIPI repertoire (curated manifest,
+  per-piece timelines, reviewer checklist), see
+  `tests/harness/ceo_walkthrough/` — it consumes the promoted overview
+  built on this engine and owns no new difficulty math

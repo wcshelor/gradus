@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Synthetic selection fixture: ties and sustaining boundary notes.
+     Measure 1 (quarters 0-4): C4 quarter, D4 quarter, E4 half starting beat 2
+     (sounds through beat 4 into the barline).
+     Measure 2 (quarters 4-8): G4 quarter tied start at beat 4, G4 quarter tied
+     stop at beat 5 (one logical attack at 4), A4 half at beat 6.
+     Selecting [0,4): attacks C D E; E sustains across the end boundary.
+     Selecting [4,8): attacks G (once) A; E is only incoming context. -->
+<score-partwise version="3.1">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Piano</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>4</divisions>
+        <key><fifths>0</fifths></key>
+        <time><beats>4</beats><beat-type>4</beat-type></time>
+        <staves>1</staves>
+        <clef number="1"><sign>G</sign><line>2</line></clef>
+      </attributes>
+      <note><pitch><step>C</step><octave>4</octave></pitch><duration>4</duration><type>quarter</type><staff>1</staff></note>
+      <note><pitch><step>D</step><octave>4</octave></pitch><duration>4</duration><type>quarter</type><staff>1</staff></note>
+      <note><pitch><step>E</step><octave>4</octave></pitch><duration>8</duration><type>half</type><staff>1</staff></note>
+    </measure>
+    <measure number="2">
+      <note><pitch><step>G</step><octave>4</octave></pitch><duration>4</duration><type>quarter</type><staff>1</staff><tie type="start"/><notations><tied type="start"/></notations></note>
+      <note><pitch><step>G</step><octave>4</octave></pitch><duration>4</duration><type>quarter</type><staff>1</staff><tie type="stop"/><notations><tied type="stop"/></notations></note>
+      <note><pitch><step>A</step><octave>4</octave></pitch><duration>8</duration><type>half</type><staff>1</staff></note>
+    </measure>
+  </part>
+</score-partwise>

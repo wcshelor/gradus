@@ -1,10 +1,9 @@
 """LS-02 acceptance checks: entry-point reconciliation map.
 
-Documentation-only task: verify the implementation map exists with working
-links, identifies reused contracts / missing pieces / affected work packages /
-required tests for both entries, that local plans no longer imply a hotspot
-gate, that the adapter decision is recorded, and that no contract code was
-changed. The hotspot regression itself is verified by the full suite run.
+Verify the implementation map exists with working links, identifies reused
+contracts / remaining pieces / affected work packages / required tests for both
+entries, and records the accepted passage-first design plus later LS runtime
+subset. The hotspot regression is verified by the full suite run.
 """
 
 from __future__ import annotations
@@ -23,10 +22,11 @@ def _text(path: Path) -> str:
     return path.read_text()
 
 
-def test_map_declares_ls02_without_implementation() -> None:
+def test_map_declares_ls02_and_later_runtime_subset() -> None:
     text = _text(MAP_DOC)
     assert "LS-02" in text
-    assert "planned, not implemented" in text
+    assert "LS-03–LS-07 subset now\nimplemented" in text
+    assert "original LS-02 change was\nprose-only" in text
     assert "D-013" in text
 
 
@@ -41,12 +41,12 @@ def test_map_links_resolve() -> None:
         assert resolved.is_file(), f"broken link: {raw}"
 
 
-def test_map_identifies_reused_contracts_missing_pieces_and_owners() -> None:
+def test_map_identifies_reused_contracts_remaining_pieces_and_owners() -> None:
     text = _text(MAP_DOC)
     for contract in ("ScorePosition", "SourceRef", "Passage", "View", "D-012"):
         assert contract in text, f"map must name reused contract: {contract}"
-    for missing in ("T02.5", "T05.3", "LS-03"):
-        assert missing in text, f"map must name missing piece: {missing}"
+    for remaining in ("T05.2", "T05.3", "LS-03a"):
+        assert remaining in text, f"map must name remaining or implemented piece: {remaining}"
     for owner in ("WP-02", "WP-05", "WP-06", "WP-08", "WP-14", "WP-15"):
         assert owner in text, f"map must name affected package: {owner}"
 
@@ -69,32 +69,49 @@ def test_local_plans_no_longer_imply_hotspot_gate() -> None:
     prototype = _text(PASSAGE_PRACTICE / "docs" / "prototype_v1.md")
     assert "requires no" in prototype and "hotspot ID" in prototype
     work_packages = _text(PASSAGE_PRACTICE / "WORK_PACKAGES.md")
-    assert "baseline observations" in work_packages
-    # Status board untouched by LS-02: no package row is marked DONE here
-    # (the word appears only in the status-vocabulary legend).
-    assert not re.search(r"^\| WP-\d+.*\| DONE \|", work_packages, flags=re.MULTILINE)
+    assert "Ordinary passage observations remain valid" in work_packages
+    assert "LS-03a" in work_packages
 
 
-def test_adapter_decision_recorded_as_proposed() -> None:
+def test_adapter_decision_records_accepted_design_and_ls_runtime_note() -> None:
     text = _text(PASSAGE_PRACTICE / "docs" / "decisions.md")
-    assert "D-013" in text
-    assert "proposed" in text
-    assert "lead review pending" in text
+    decision = text.split("### D-013", 1)[1].split("### ", 1)[0]
+    assert "minimal LS runtime boundary implemented" in decision
+    assert "PassageInvestigation" in decision
+    assert "selection_origin" in decision
+    assert "no dependency loop" in decision
+    map_text = _text(MAP_DOC)
+    assert "LS-03a/LS-05 now implement the minimal runtime boundary" in map_text
 
 
-def test_contracts_flag_hotspot_gap_without_changing_fields() -> None:
+def test_contracts_define_passage_identity_and_distinct_attribution() -> None:
     text = _text(PASSAGE_PRACTICE / "docs" / "contracts.md")
-    assert "LS-03" in text
-    assert "no field change" in text.lower() or "No fields are changed" in text
+    assert "Passage investigation request — D-013" in text
+    assert "required `passage`" in text
+    assert "required `selection_origin`" in text
+    assert "an empty collection is valid" in text
+    assert "An ordinary passage observation does not require an `AttributedSignal`" in text
+    diagnosis = text.split("## Diagnosis", 1)[1].split("## Objective", 1)[0]
+    assert "required source passage ID" in diagnosis
+    assert "without\nany hotspot or attribution record" in diagnosis
 
 
-def test_no_contract_code_changed_for_ls02() -> None:
+def test_existing_region_models_remain_entry_agnostic() -> None:
     assert MODELS_DIR.is_dir()
     for module in ("time.py", "source.py", "diagnostics.py", "passage.py"):
         text = _text(MODELS_DIR / module)
         assert "hotspot" not in text.lower(), f"{module} must stay entry-agnostic"
     passage = _text(MODELS_DIR / "passage.py")
-    assert 'PASSAGE_SCHEMA_VERSION = "passage.v1"' in passage
+    assert "class Passage:" in passage
+
+
+def test_adapter_dependencies_name_selection_and_shared_contract() -> None:
+    text = _text(PASSAGE_PRACTICE / "IMPLEMENTATION_CHECKLIST.md")
+    manual = text.split("**T05.3", 1)[1].split("**T05.4", 1)[0]
+    assert "T05.1, T02.5" in manual
+    assert "LS-03a" in manual
+    assert "no profile call" in manual
+    assert "mismatched evidence rejected" in manual
 
 
 def test_map_keeps_hotspot_regression() -> None:

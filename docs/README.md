@@ -9,5 +9,9 @@ Current documents:
 - [Project direction](project_direction.md): purpose, three research areas,
   learner control, scope, and intentionally open questions.
 - [Task list — 2026-09-05 — Flexible piano learning support](Task_list_2026-09-05_flexible_piano_learning_support.md):
-  the cross-area implementation plan, learner-context requirements, milestone
-  dependencies, and relationship to existing component backlogs.
+  the completed LS-01–LS-11 cross-area slice, learner-context requirements,
+  execution evidence, milestone boundaries, and the selected next increment.
+- [CEO walkthrough prototype milestone](../research/learning_support/ceo_demo_milestone_2026-09-06.md):
+  the next planned local demo increment, including graph, measure-range,
+  learner-note, and interaction-flow tasks. Planning only; the demo is not yet
+  built.

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Synthetic selection fixture: two voices on one staff plus context.
+     One 3/4 measure (quarters 0-3), D major, with a "dolce" direction and a
+     metronome mark at beat 0. Voice 1: quarters F#4 G4 A4. Voice 2: dotted
+     half D4. Tests voice separation and inherited key/meter/clef/tempo/
+     direction context at the passage start. -->
+<score-partwise version="3.1">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Piano</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <divisions>4</divisions>
+        <key><fifths>2</fifths><mode>major</mode></key>
+        <time><beats>3</beats><beat-type>4</beat-type></time>
+        <staves>1</staves>
+        <clef number="1"><sign>G</sign><line>2</line></clef>
+      </attributes>
+      <direction placement="above">
+        <direction-type><words>dolce</words></direction-type>
+        <direction-type><metronome><beat-unit>quarter</beat-unit><per-minute>72</per-minute></metronome></direction-type>
+        <staff>1</staff>
+      </direction>
+      <note><pitch><step>F</step><alter>1</alter><octave>4</octave></pitch><duration>4</duration><type>quarter</type><voice>1</voice><staff>1</staff></note>
+      <note><pitch><step>G</step><octave>4</octave></pitch><duration>4</duration><type>quarter</type><voice>1</voice><staff>1</staff></note>
+      <note><pitch><step>A</step><octave>4</octave></pitch><duration>4</duration><type>quarter</type><voice>1</voice><staff>1</staff></note>
+      <backup><duration>12</duration></backup>
+      <note><pitch><step>D</step><octave>4</octave></pitch><duration>12</duration><type>half</type><dot/><voice>2</voice><staff>1</staff></note>
+    </measure>
+  </part>
+</score-partwise>

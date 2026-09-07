@@ -1,7 +1,8 @@
 # Task list — 2026-09-05 — Flexible, piece-centered piano learning support
 
-Status: revised research and implementation plan; new capabilities below are
-planned, not implemented. This revision changes planning only.
+Status: LS-01 through LS-11 are implemented and pending lead/human review.
+The next selected increment is the CEO walkthrough prototype milestone
+(DEMO-01–DEMO-10), planned but not yet built.
 
 ## 1. Purpose and authority
 
@@ -24,11 +25,11 @@ documents remain with their research areas. Read applicable `AGENTS.md` files
 before changes; reconcile local contract conflicts explicitly rather than
 treating this document as permission to bypass them.
 
-The current request authorizes revising plans, not implementing all proposed
-features, collecting real learner data, deploying into the company app, or
-sending data to external models. When implementation is requested, claim a
-bounded task below and record its verification rather than implementing the
-entire capability wishlist at once.
+This plan records implemented research-slice work and its evidence boundaries.
+It does not authorize collecting real learner data, deploying into the company
+app, sending data to external models, or claiming product readiness. New work
+should claim a bounded DEMO or component task and record verification rather
+than expanding the whole capability wishlist at once.
 
 ## 2. Three complementary areas
 
@@ -53,9 +54,8 @@ says is difficult or make other passages ineligible for help.
 - `research/learning_support/passage_practice/` retains its source contracts,
   tests, and plans for passage-specific semantics, diagnoses, and transformations.
   Its hotspot-to-exercise route is one bounded experiment. Do not rebuild it.
-- New learner-context and interaction experiments stay under
-  `research/learning_support/`; choose a documented local boundary during LS-03,
-  not a new top-level application by default.
+- Learner-context and interaction experiments live under
+  `research/learning_support/`, not as a new top-level application.
 - Keep `research/shared/` for demonstrated multiple consumers only. Do not move
   score types or create an umbrella “assistant framework” speculatively.
 - Keep literature provenance in `literature/`, implementation decisions beside
@@ -98,7 +98,7 @@ Free text is sufficient to start. Structured fields are optional refinements,
 not a compulsory form. No mandatory difficulty rating, personality inventory,
 precise ability level, streak, or adherence score is required.
 
-### Minimum conceptual records to specify in LS-03
+### Minimum conceptual records specified in LS-03
 
 These are contract requirements to evaluate against existing models, not a
 prescription for a database or final class names.
@@ -165,12 +165,13 @@ autonomous long-term curriculum, automatic fingering/biomechanical advice,
 unconstrained exercise generation, general learner profiling, production account
 infrastructure, and deployment into the company's app.
 
-## 6. Bounded implementation plan
+## 6. Bounded implementation record
 
-All LS tasks below are pending. Read applicable instructions and actual source
-before implementation; plans do not prove an API exists. Each task should end
-with changed-file notes, tests/evidence, limitations, and a next unblocked step.
-Do not mark human evaluation complete based on automated tests.
+All LS tasks below are implemented and pending lead/human review. Read
+applicable instructions and actual source before continuing with DEMO or
+component work. New implementation steps should update their execution log or
+handoff with changed-file notes, tests/evidence, limitations, and a next
+unblocked step. Do not mark human evaluation complete based on automated tests.
 
 ### LS-01 — Define the first learning-support slice
 
@@ -211,8 +212,33 @@ time, scope, permissions, and unknown values. Decide session-only behavior and
 the smallest explicit local save mechanism for synthetic data. Write representative
 payloads and contract tests, including a free-text-only note and unresolved region.
 
+Execute this task in two bounded substeps (D-013 accepted design):
+
+1. **LS-03a — Passage-first investigation boundary.** Follow passage-practice
+   `docs/contracts.md` and `docs/entry_points.md`: reuse `Passage` in one minimal
+   `PassageInvestigation` envelope for both entries, explicit selection origin,
+   optional hand, and zero-or-more validated difficulty-context references.
+   Require passage identity downstream; never fake hotspot IDs or attribution.
+   Implement only minimal types, validation, versioned examples, and contract
+   tests. Defer adapters/selection to their existing tasks; do not implement the
+   full attribution or diagnosis tree to satisfy this contract task.
+2. **LS-03b — Learner request/journal/context contracts.** Complete the records
+   above using the investigation boundary where a resolved passage exists.
+   Keep unresolved/free-text requests valid without making `Passage` accept
+   invalid intervals. Keep learner data out of score/feature models.
+
+LS-03a depends on LS-01/LS-02, not T05.1/T05.3. The latter consume its contract.
+Verify existing implementations first; no new parser, detector, duplicate region
+type, or shared framework. Tests must cover manual and suggested entry, optional
+context, enrichment without changing origin/identity, source-version mismatch,
+exact serialization, and resolvable evidence. Update stale documentation tests
+that freeze a proposed decision or pending board status, not behavioral assertions.
+
 **Done when:** contracts can express all LS-01 scenarios without a mandatory
 profile, rating, hotspot, model call, or performance recording.
+
+This task completes only when both substeps pass their acceptance tests and the
+full suite. D-013's design review is resolved; runtime review is still required.
 
 ### LS-04 — Implement optional context operations and provenance
 
@@ -340,10 +366,9 @@ repeat completed runtime promotion or discard pending quality work.
 | DC-15–DC-16: review and acceptance | Accept the analyzer's behavior independently of acceptance of pedagogical or interaction experiments. |
 | SB-01–SB-04: semantic follow-up sketch | Refine through LS-02/LS-05–LS-07 and existing passage work packages. Do not implement a duplicate semantic pipeline. |
 
-LS-01–LS-03 can proceed without completion of all DC tasks. LS-05–LS-07 need
-working source/region contracts and their own tests, not universally accepted
-difficulty ranking. If a task exposes a missing upstream capability, create a
-small explicit component dependency rather than a global “finish difficulty first” gate.
+The completed LS slice proceeded without requiring all DC tasks. Future DEMO
+work should follow the same rule: create a small explicit component dependency
+when needed rather than a global “finish difficulty first” gate.
 
 ## 8. Milestones and completion boundaries
 
@@ -354,6 +379,12 @@ small explicit component dependency rather than a global “finish difficulty fi
   performance capture. The semantic subset is clearly limited.
 - **M3 — Evaluated next direction:** LS-10–LS-11 complete, or explicitly pending
   human review. Engineering success and learning benefit are reported separately.
+- **M4 — CEO walkthrough prototype (planned, not built):** DEMO-01–DEMO-10 in
+  [ceo_demo_milestone_2026-09-06](../research/learning_support/ceo_demo_milestone_2026-09-06.md)
+  scope a thin, local, unpolished presentation harness over the M2 slice and
+  the difficulty overview. It comes after the LS research slice, reuses
+  LS-10's limitations/review status, keeps difficulty as one modular source,
+  and claims no product readiness, effectiveness, or integration.
 
 The analyzer retains its own acceptance milestone. None of these milestones
 alone claims a production assistant, support for all levels/material, or measured
@@ -361,8 +392,27 @@ improvement in learning outcomes.
 
 ## 9. Execution log
 
+Current state (2026-09-06): LS-01 through LS-11 are implemented and pending
+lead/human review. The selected next increment is DEMO-01 of the CEO
+walkthrough prototype milestone. Final verified LS baseline: full suite
+`353 passed, 7 skipped`; learning-support doc/link suite `32 passed`;
+`git diff --check` clean. Nothing committed or pushed by these changes.
+
+Earlier rows preserve historical per-step evidence and superseded next-step
+language for auditability.
+
 | Date | Change | Status | Evidence / remaining work |
 | --- | --- | --- | --- |
 | 2026-09-05 | Reframed program into three areas; added optional journaling/context, independent entry routes, and no-live-feedback scope | Planning revision only | Existing code preserved; LS-01–LS-11 pending; local passage-plan reconciliation explicitly assigned to LS-02 |
 | 2026-09-05 | LS-01 complete (specification): first slice in `research/learning_support/first_slice.md` — one-hand broken-chord subset reused from passage-practice `prototype_v1`; needs N1–N3; scenarios S1–S5 positive plus S6–S7 abstention; outputs/abstention/exclusions/success rubric; no runtime, interface, model, or data-collection change | Specification, pending review | Changed: `research/learning_support/first_slice.md` (new), `research/learning_support/README.md` (link), `research/learning_support/tests/unit/test_first_slice.py` (new, 9 link/consistency/acceptance checks), `pytest.ini` (added `research/learning_support/tests` to testpaths). Tests: new file 9 passed; full suite 207 passed, 7 skipped (skips: optional local-corpus/ScoreAnalyzer fixtures, same as baseline). Limitation: rubric is document-reviewable only; automated scenario tests arrive with LS-04–LS-09; pedagogical effectiveness remains unproven | LS-02 next (reconcile passage plans with independent entry points) |
 | 2026-09-05 | LS-02 complete (map + prose): entry reconciliation in `research/learning_support/passage_practice/docs/entry_points.md` — routes (A) analyzer-suggested and (B) user-selected converge at `Passage`; reused contracts verified in source (ScorePosition/Interval, SourceRef, Diagnostic, Passage, View; zero `hotspot` refs in `src/passage_practice/`); missing pieces named (manual selection API T02.5, adapter T05.3, hotspot-optional diagnosis gap for LS-03); smallest adapter documented (root `Passage` purpose=DETECTION, manual method + Diagnostic origin, optional evidence by reference, S7 mismatch behavior); D-013 proposed pending lead review; local prose corrected (README, architecture, contracts interim notes, prototype_v1, testing_strategy, traceability, review_checkpoints, WP-06 goal); no contract/status-board changes; hotspot regression kept | Map + prose, pending review (D-013) | Changed: `docs/entry_points.md` + `tests/unit/test_entry_points_ls02.py` (new, 9 checks); prose-only edits to README/architecture/contracts/prototype_v1/testing_strategy/traceability/review_checkpoints/WORK_PACKAGES/decisions. Tests: LS suites 18 passed; passage-practice 80 passed; overview/CLI/snapshot 23 passed; full suite 216 passed, 7 skipped (same optional-corpus skips). Limitation: adapter awaits T05.3 implementation; hotspot-ID optionality awaits LS-03 | LS-03 next (minimal request, journal, context contracts) |
+| 2026-09-05 | LS-03a complete: shared `PassageInvestigation` contract implemented and tested (`passage_investigation.v1`, `difficulty_evidence.v1`, `contribution.v1`) | Implemented, pending review | Changed: `research/learning_support/passage_practice/src/passage_practice/models/investigation.py` (new: `SelectionOrigin`, `Contribution`, `DifficultyEvidence`, `PassageInvestigation` + `with_evidence` enrichment), `models/__init__.py` (exports), `tests/unit/test_investigation.py` (new, 24 tests: both origins, empty difficulty, enrichment preserves origin/identity, no manufactured hotspots, orphan-score rejection, source/coverage mismatch, exact-time serialization, versions, frozen payloads). Reused `Passage`/`ScoreInterval`/`Diagnostic` unchanged. Tests: focused learning-support suites 123 passed; full suite 241 passed, 7 skipped (same optional-corpus skips). Limitation: contract only; adapters (T05.2/T05.3) and full diagnosis/attribution trees not implemented; no adapter-equivalence claim | LS-03b next (learner request, journal, context contracts) |
+| 2026-09-05 | LS-03b complete: learner contracts implemented and tested in new boundary `research/learning_support/learner_context/` (`assistance_request.v1`, `journal_entry.v1`, `context_permission.v1`, `context_summary.v1`, `assistance_result.v1`) | Implemented, pending review | Changed: `learner_context/README.md` (boundary choice), `src/learner_context/models.py` + `__init__.py` (new), `tests/unit/test_learner_contracts.py` (new, 20 tests: free-text-only notes, scope/region invariants, revision chain, ISO time, permission matrix, summary sources, unresolved requests, evidence/report separation, required rationale+limitations, versions, frozen payloads), `pytest.ini` (learner_context testpaths/pythonpath). Reuses `ScoreInterval`/`Diagnostic`; passages by ID ref only. Tests: new file 20 passed; full suite 261 passed, 7 skipped (same optional-corpus skips). Limitation: contracts only; storage/selection/invalidation arrive in LS-04; no real data | LS-03 done; LS-04 next (optional context operations and provenance) |
+| 2026-09-05 | LS-04 complete: `ContextStore` operations implemented and tested in `research/learning_support/learner_context/src/learner_context/store.py` (`context_store.v1`, `selected_context.v1`) | Implemented, pending review | Changed: `store.py` + `__init__.py` exports (new `ContextStore`/`SelectedContext`: create session-only-by-default, read, correct via `supersedes` revisions, delete with summary cascade, exclude, scope/permission selection, summary currency, JSON save/load of saved records only), `tests/unit/test_context_store.py` (new, 16 tests), `README.md` (operations section). No inference, no external calls. Tests: learner-context files 36 passed; full suite 277 passed, 7 skipped (same optional-corpus skips). Proven: session-only never persisted; excluded/deleted entries never selected and stale/cascade summaries; version warnings on edition-bound entries; empty history valid. Limitation: deletion has no tombstone; cross-session "later request" handling deferred to LS-08; no real data | LS-05 next (user-selected regions independent of difficulty) |
+| 2026-09-05 | LS-05 complete (with WP-02 T02.2–T02.6 dependency built first): exact selection + user-selected entry implemented and tested | Implemented, pending review | Changed: `passage_practice/src/passage_practice/passages/{__init__,selection,investigate}.py` (new: `select_passage`/`refine_selection`/`whole_piece_range`/`locate_measure_by_number`, `SelectedPassage`/`PassageContext`, `UnresolvableRegion`, `manual_investigation`/`whole_piece_investigation`), `tests/fixtures/selection_{two_staff,ties,two_voices}.musicxml` + `manifest.md` (new synthetic), `tests/unit/test_selection.py` (18 tests) + `test_user_selected_entry.py` (7 tests), `docs/decisions.md` (D-014 proposed for Q-003), `docs/entry_points.md` (map status). Reused ScoreIR/loader unchanged; no difficulty imports on the manual path (import-delta test). Proven: low-demand passage investigated with no profile; concern/difficulty/score-evidence distinct; whole-piece explicit; unresolved explicit (reason codes); analyzer origin valid empty/zero with no gate. Tests: full suite 302 passed, 7 skipped (same optional-corpus skips). Limitation: T05.2 analyzer translation still pending; no WP gate released; D-014 needs lead review | LS-06 next (one bounded semantic observation) |
+| 2026-09-05 | LS-06 complete: consecutive-attack pitch-interval observations implemented and tested (`observation.v1`, `observation_result.v1`) | Implemented, pending review | Changed: `passage_practice/src/passage_practice/models/observations.py` (new `Observation`/`ObservationBasis`/`ObservationResult`) + `models/__init__.py` exports, `src/passage_practice/observations/__init__.py` (new `observe_pitch_transitions` via existing source resolver; hand-scoping marked INFERENCE, unscoped FACT; simultaneous pairs omit region with diagnostic; <2 attacks abstain), `tests/unit/test_observations.py` (new, 9 tests). No diagnosis, aid, attribution records, learner concepts, or LLM/UI. Proven: identical values on both entry routes; refs resolve; tie collapse yields no self-transition; empty/single/unknown abstain without learner claims. Tests: passage-practice 138 passed; full suite 311 passed, 7 skipped (same optional-corpus skips). Limitation: single transition family only; hand filter relies on staff-inferred labels; region None for simultaneities | LS-07 next (one grounded pedagogical aid) |
+| 2026-09-05 | LS-07 complete: text-only `transition_practice` aid implemented and tested over LS-06 observations (no new public contract; reuses `AssistanceResult`) | Implemented, pending review | Changed: `passage_practice/src/passage_practice/aids/__init__.py` (new integration layer above observations; deterministic ≥7-semitone rule, `prototype_unvalidated` provenance; reports frame by reference only; region-mismatched reports get a caveat; empty/below-threshold yield aid-shaped abstentions), `tests/unit/test_transition_aid.py` (new, 6 tests: no-history baseline, framed report, conflicting report, empty, below-threshold, bad inputs). Correction: LS-03b prose fields (`text`/`interpretation`/`need`/`rationale`) no longer capped at ID length (new `_check_text`); existing contract tests still pass. Proven: suggestion names grounded moves (+14) with obs/source refs; report never alters score values; rationale+limitations always present; effectiveness unproven stated. Tests: full suite 317 passed, 7 skipped (same optional-corpus skips). Limitation: single heuristic aid; threshold uncalibrated; no diagnosis engine, notation, or UI | LS-08 next (minimal flexible interaction surface) |
+| 2026-09-05 | LS-08 complete: minimal deterministic `InteractionSession` harness implemented and tested over LS-04/LS-05/LS-07 contracts (no UI, no model, no parsing) | Implemented, pending review | Changed: `research/learning_support/interaction/README.md` + `src/interaction/{__init__,session}.py` (new: `InteractionSession` composes `ContextStore.select_context`, `manual/whole_piece_investigation`, `observe_pitch_transitions`, `suggest_transition_practice`; `save_note` journal-only with `JournalConfirmation(aid_generated=False)`; `inspect_context` shows entries/permissions/current summaries only; `correct/delete/set_excluded` delegate to store; `request_help` accepts loaded scores, falls back to `request.region` bounds, sets `investigation_ref`, returns layered `HelpResponse`; missing score/identity/region and `UnresolvableRegion` yield harness-method aid-shaped abstentions), `tests/unit/test_interaction_surface.py` (new, 14 tests: no-history grounded aid, framed report unchanged facts, NONE ignores saved context, region-from-request, journal-only, inspect saved+session, correction revision, delete/exclude, with/without history, missing-score/unresolved/out-of-range/empty abstentions, stray-region caveat), `pytest.ini` (interaction testpaths/pythonpath). Proven: report_refs separate, observation values identical with/without reports, NONE selects empty with saved entries present, superseded never selected, deleted/excluded never selected, abstentions carry explicit diagnostics with no learner-trait claims. Tests: focused interaction+learner-context+observations+aids 65 passed; full suite 331 passed, 7 skipped (same optional-corpus skips); `git diff --check` clean. Limitation: accepts loaded scores only (no file parsing in harness); no new wire contract/serialization; single observation family and single aid inherited from LS-06/LS-07; no chat/CLI polish, onboarding, or live feedback | LS-09 next (return visits, revisions, uncertain context) |
+| 2026-09-05 | LS-09 complete: multi-visit return/revision scenario suite over the LS-08 harness (integration tests only, plus one genuine contract fix) | Implemented, pending review | Changed: `research/learning_support/interaction/tests/unit/test_return_visits.py` (new, 8 staged tests on one synthetic history: V1 first region report saved+used; 9-day gap as timestamps only; V2 correction supersedes with old dated/unselected; V3 stale 2026-08-01 habit report stays verbatim GENERAL context; V4 conflicting region report yields single mismatch caveat with identical suggestion/observations; V5 NONE run matches score-only evidence and is deterministic; V6 exclusion stales then deletion cascades `sum.1`; V7 sparse never-ranked voices passage gets manual USER_SELECTED help with `difficulty == ()`, no hotspot codes, honest below-threshold limitation; aggregate scan forbids progress/improv/inactive/trait/streak/adherence/elapsed/poor/unmotivated/day/week/month/gap/since in all system text), `learner_context/tests/unit/test_learner_contracts.py` (+1 regression test), `learner_context/src/learner_context/models.py` (fix: `AssistanceResult.limitations` now uses new `_check_text_tuple` prose validator instead of the 128-char ID cap — longer caveat sentences crashed construction; same defect class as the LS-07 prose-cap correction). Proven: exact entry/observation/aid refs asserted per stage; superseded/deleted/excluded never selected; NONE yields identical observations with empty report_refs; conflicting/stale reports appear only as refs/caveats; no LS-06/LS-07 semantic changes. Tests: focused interaction+learner-context+observations+aids 74 passed; full suite 340 passed, 7 skipped (same optional-corpus skips); `git diff --check` clean. Limitation: single synthetic history, one fixture family + voices; summary coverage via existing ContextSummary only; no elapsed-time semantics by design | LS-10 next (evaluate areas separately and together) |
+| 2026-09-06 | LS-10 complete: reproducible technical evaluation `research/learning_support/evaluation_ls10.md` (2026-09-06) covering Areas A/B/C separately plus joint comparisons, with evidence table E01–E12 and explicit review status | Implemented, pending review | Changed: `research/learning_support/evaluation_ls10.md` (new: scope/reproduction/commands, fixture+scenario inventory, per-area verdicts with live-verified values [-12,14,2,1] and [-4,5,2], joint table score-only≡score+report/NONE/non-hotspot/conflict/stale/revision, language audit, 6 limitation/risk items incl. personalization risks, review status not-yet-reviewed with walkthrough proposal, Appendix E mapping checks to tests), `research/learning_support/tests/unit/test_evaluation_ls10.py` (new, 7 tests: E01–E12 link presence incl. fixture files, required-guard/forbidden-overclaim phrases with negation-aware and word-boundary matching, live re-verification of score-only≡score+report, NONE, non-hotspot path, correct/delete/abstention spot, forbidden-claim scan). No AI exists so the plan's AI-vs-baseline comparison is recorded N/A; no new observations/aids/UI; no real data; effectiveness unproven stated throughout. Tests: focused evaluation set 81 passed; full suite 347 passed, 7 skipped (same optional-corpus skips); `git diff --check` clean. Two test-side mistakes fixed (evidence-link substring form; overclaim matcher now word-boundary with `prototype_unvalidated` allowed-literal). Limitation: single synthetic history, 3 fixtures, 1 observation family, 1 heuristic aid; human evaluation (usefulness) still requires teacher/owner walkthrough | LS-11 next (select next research increment with owner) |
+| 2026-09-06 | LS-11 complete: next increment selected as CEO walkthrough prototype (planning only; demo not built) | Implemented, pending review | Changed: `research/learning_support/ceo_demo_milestone_2026-09-06.md` (new: why-after-LS-10 rationale, reuse-vs-new table for the owner flow, 5 architecture guardrails incl. thin-harness and difficulty-as-one-source, graph-data boundary over overview payload series/regions/sections/composite, DEMO-01–DEMO-10 atomic tasks with owner/depends/done-when, deferred list, thesis-claim boundary), `research/learning_support/tests/unit/test_ceo_demo_milestone.py` (new, 6 doc tests: planning-only status, link resolution, all DEMO tasks with done criteria, plan reference + LS-11 closure, scope guards without product claims, modularity/not-difficulty-centered), milestones section (new M4 referencing the milestone doc). Proven: all owner flow beats map to existing components (`InteractionSession`, overview payload/SVG/CSV, exact selectors); no GUI/graph code added; no live feedback, real data, or product claims. Tests: new file 6 passed; full suite 353 passed, 7 skipped (same optional-corpus skips); `git diff --check` clean. Limitation: plan only — toolkit choice (stdlib default), demo scores/licenses, and walkthrough approval all deferred to DEMO tasks with owner/lead | DEMO-01 next (demo scores, fixture policy, walkthrough script skeleton; do not start implementation under LS-11) |
