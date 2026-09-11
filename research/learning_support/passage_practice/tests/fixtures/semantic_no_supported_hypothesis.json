@@ -1,0 +1,21 @@
+{
+  "bundle_id": "bundle.empty.1",
+  "diagnostics": [
+    {
+      "code": "no_supported_hypothesis",
+      "message": "no detector met its minimum evidence threshold",
+      "schema_version": "diagnostic.v1",
+      "severity": "info"
+    }
+  ],
+  "hypotheses": [],
+  "method_versions": [
+    "melody_salience@v1",
+    "bass_anchor@v1"
+  ],
+  "observation_refs": [],
+  "ranked_hypothesis_ids": [],
+  "schema_version": "semantic_bundle.v1",
+  "source_passage_id": "passage.empty.1",
+  "view_refs": []
+}

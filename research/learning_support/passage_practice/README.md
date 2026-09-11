@@ -33,7 +33,13 @@ separate pedagogical intervention that must state its objective and provenance.
 
 This directory contains implemented source/time/passage contract models and tests,
 plus the LS-05–LS-07 runtime subset used by the current learning-support slice.
-It is not yet the full hotspot-to-diagnosis-to-exercise system described below.
+It also now contains an active semantic-music-extraction track: semantic
+contracts (`SemanticHypothesis`, `SemanticBundle`), a confidence policy, the
+initial view family (`attack_stream`, `written_stream`, `rhythm_grid`,
+`texture_grid`, `salience_view`), and the fixture family used by the first
+deterministic semantic detectors. It is not yet the full
+hotspot-to-diagnosis-to-exercise system described below.
+
 Implemented entry runs include user-selected exact regions and whole-piece
 ranges; analyzer-suggested regions share the same `PassageInvestigation`
 contract but the full T05.2 analyzer translation remains pending. Neither entry
@@ -42,10 +48,12 @@ includes exact passage selection, explicit `PassageInvestigation` origin,
 optional difficulty context, pitch-transition observations, and one text-only
 transition-practice aid. Diagnosis rules, strategy registries, deterministic
 transformations, and MusicXML exercise export remain planned work.
+
 Agents must implement the system through the work packages in
-[`WORK_PACKAGES.md`](WORK_PACKAGES.md). The initial vertical slice is a
-restricted broken-chord passage that produces blocked-chord and rhythmic
-practice variants.
+[`WORK_PACKAGES.md`](WORK_PACKAGES.md). The semantic track is tracked in
+[`docs/semantic_music_extraction_tasks.md`](docs/semantic_music_extraction_tasks.md).
+The initial vertical slice is a restricted broken-chord passage that produces
+blocked-chord and rhythmic practice variants.
 
 ## Document map
 
@@ -72,17 +80,22 @@ Read these in order before implementation:
    that prevent locally correct changes from drifting architecturally.
 10. [`docs/pedagogy_knowledge_base.md`](docs/pedagogy_knowledge_base.md) — later
    literature-to-diagnosis and diagnosis-to-exercise knowledge work.
-11. [`docs/traceability.md`](docs/traceability.md) — requirements mapped to work
+11. [`docs/semantic_music_extraction_plan.md`](docs/semantic_music_extraction_plan.md)
+    — later architecture plan for probabilistic musical-role, texture, rhythm,
+    phrase, harmony, and learner-feedback semantics.
+12. [`docs/semantic_music_extraction_tasks.md`](docs/semantic_music_extraction_tasks.md)
+    — atomic future task list for implementing the semantic-extraction plan.
+13. [`docs/traceability.md`](docs/traceability.md) — requirements mapped to work
     packages, tests, and review gates.
-12. [`docs/thesis_alignment.md`](docs/thesis_alignment.md) — research questions,
+14. [`docs/thesis_alignment.md`](docs/thesis_alignment.md) — research questions,
     claim boundaries, and evidence needed for the thesis.
-13. [`docs/risks.md`](docs/risks.md) — technical and research risks with trigger
+15. [`docs/risks.md`](docs/risks.md) — technical and research risks with trigger
     conditions and mitigations.
-14. [`docs/agent_prompts.md`](docs/agent_prompts.md) — reusable assignment,
+16. [`docs/agent_prompts.md`](docs/agent_prompts.md) — reusable assignment,
     review, and audit prompts.
-15. [`docs/decisions.md`](docs/decisions.md) — accepted decisions and unresolved
+17. [`docs/decisions.md`](docs/decisions.md) — accepted decisions and unresolved
     questions.
-16. [`handoffs/README.md`](handoffs/README.md) — one-file-per-package completion
+18. [`handoffs/README.md`](handoffs/README.md) — one-file-per-package completion
     records that parallel branches can merge cleanly.
 
 ## Repository boundaries

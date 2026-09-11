@@ -170,3 +170,141 @@ def test_serialization_round_trip_deterministic_and_versioned():
     with pytest.raises(ValueError):
         ObservationResult.from_dict(broken)
     assert Observation.from_dict(data["observations"][0]).basis == ObservationBasis.FACT
+
+
+# --- S2.9 direct pitch and interval observations ---
+
+from passage_practice.observations import (
+    LEAP_METHOD_ID,
+    RANGE_METHOD_ID,
+    REGISTRAL_METHOD_ID,
+    REPEATED_METHOD_ID,
+    observe_leap_frequency,
+    observe_pitch_range,
+    observe_registral_extremes,
+    observe_repeated_notes,
+)
+
+
+def test_pitch_range_spans_extremes():
+    score, inv = _manual()
+    result = observe_pitch_range(inv, score)
+    assert len(result.observations) == 1
+    obs = result.observations[0]
+    assert obs.observation_type == "pitch_range"
+    assert obs.units == "semitones"
+    assert obs.value >= 0
+    assert obs.basis == ObservationBasis.FACT
+    assert obs.method_id == RANGE_METHOD_ID
+    # Source refs must resolve to actual notes.
+    for ref in obs.source_refs:
+        assert resolve_ref(score, ref) is not None
+
+
+def test_pitch_range_is_max_minus_min():
+    score, inv = _manual()
+    result = observe_pitch_range(inv, score)
+    obs = result.observations[0]
+    # Reconstruct from resolved notes.
+    from passage_practice.models.source import resolve_ref as _rr
+    pitches = []
+    for ref in inv.passage.event_refs:
+        note = _rr(score, ref)
+        if note is not None:
+            pitches.append(note.pitch_midi)
+    assert obs.value == max(pitches) - min(pitches)
+
+
+def test_leap_frequency_counts_large_intervals():
+    score, inv = _manual()
+    result = observe_leap_frequency(inv, score)
+    assert len(result.observations) == 1
+    obs = result.observations[0]
+    assert obs.observation_type == "leap_count"
+    assert obs.units == "count"
+    assert obs.value >= 0
+    assert obs.basis == ObservationBasis.FACT
+    assert obs.method_id == LEAP_METHOD_ID
+    for ref in obs.source_refs:
+        assert resolve_ref(score, ref) is not None
+
+
+def test_leap_frequency_matches_transition_threshold():
+    score, inv = _manual()
+    transitions = observe_pitch_transitions(inv, score)
+    leaps = observe_leap_frequency(inv, score)
+    expected = sum(1 for o in transitions.observations if abs(o.value) > 2)
+    assert leaps.observations[0].value == expected
+
+
+def test_repeated_note_count_for_non_repeating_passage():
+    score, inv = _manual()
+    result = observe_repeated_notes(inv, score)
+    assert len(result.observations) == 1
+    obs = result.observations[0]
+    assert obs.observation_type == "repeated_note_count"
+    assert obs.units == "count"
+    assert obs.value == 0  # no repeated pitches in this fixture
+    assert obs.method_id == REPEATED_METHOD_ID
+
+
+def test_registral_extremes_return_high_and_low():
+    score, inv = _manual()
+    result = observe_registral_extremes(inv, score)
+    assert len(result.observations) >= 1
+    types = {o.observation_type for o in result.observations}
+    assert "registral_high" in types
+    high = next(o for o in result.observations if o.observation_type == "registral_high")
+    assert high.units == "midi"
+    assert high.method_id == REGISTRAL_METHOD_ID
+    for ref in high.source_refs:
+        assert resolve_ref(score, ref) is not None
+
+
+def test_registral_extremes_high_gte_low():
+    score, inv = _manual()
+    result = observe_registral_extremes(inv, score)
+    high = next(o for o in result.observations if o.observation_type == "registral_high")
+    lows = [o for o in result.observations if o.observation_type == "registral_low"]
+    if lows:
+        assert high.value >= lows[0].value
+
+
+def test_registral_extremes_match_range_source_refs():
+    score, inv = _manual()
+    range_result = observe_pitch_range(inv, score)
+    extreme_result = observe_registral_extremes(inv, score)
+    range_refs = range_result.observations[0].source_refs
+    extreme_refs = [r for o in extreme_result.observations for r in o.source_refs]
+    # The range refs should be a subset of the extreme refs.
+    for ref in range_refs:
+        assert ref in extreme_refs
+
+
+def test_new_observations_abstain_on_empty_passage():
+    score, _ = _manual()
+    empty_inv = manual_investigation(
+        score, score_id="t", start=Fraction(7, 2), end=Fraction(4, 1),
+        investigation_id="inv.obs.empty2",
+    )
+    for fn in (observe_pitch_range, observe_leap_frequency,
+               observe_repeated_notes, observe_registral_extremes):
+        result = fn(empty_inv, score)
+        assert result.observations == ()
+        assert any(d.code == "insufficient_attacks" for d in result.diagnostics)
+
+
+def test_new_observations_reject_unsupported_hand():
+    score, inv = _manual()
+    for fn in (observe_pitch_range, observe_leap_frequency,
+               observe_repeated_notes, observe_registral_extremes):
+        with pytest.raises(ValueError):
+            fn(inv, score, hand="middle")
+
+
+def test_new_observations_reject_non_investigation():
+    score, _ = _manual()
+    for fn in (observe_pitch_range, observe_leap_frequency,
+               observe_repeated_notes, observe_registral_extremes):
+        with pytest.raises(TypeError):
+            fn("not-an-investigation", score)  # type: ignore

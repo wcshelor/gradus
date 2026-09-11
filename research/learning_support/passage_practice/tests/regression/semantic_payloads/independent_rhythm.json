@@ -1,0 +1,969 @@
+{
+  "bundle_id": "semantic_syncopation.musicxml@[0,4)/detection:semantic_bundle:v1",
+  "diagnostics": [
+    {
+      "code": "ambiguous_texture",
+      "message": "multiple texture classes with similar confidence",
+      "schema_version": "diagnostic.v1",
+      "severity": "info"
+    },
+    {
+      "code": "low_confidence_melody",
+      "message": "melody confidence 0.32 is low; ambiguous or weak salience",
+      "schema_version": "diagnostic.v1",
+      "severity": "info"
+    },
+    {
+      "code": "missing_dynamic_evidence",
+      "message": "8 event(s) have no dynamics-direction evidence at onset; recorded, never zeroed",
+      "schema_version": "diagnostic.v1",
+      "severity": "info",
+      "source_refs": [
+        {
+          "id": "n1",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n2",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n3",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n4",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n5",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n6",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n7",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n8",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        }
+      ]
+    },
+    {
+      "code": "pattern_exclusion_not_available",
+      "message": "accompaniment-pattern detection belongs to the S3.4 detector; no pattern-exclusion markers are computed in this view",
+      "schema_version": "diagnostic.v1",
+      "severity": "info"
+    },
+    {
+      "code": "pattern_exclusion_not_available",
+      "message": "accompaniment-pattern detection belongs to the S3.4 detector; no pattern-exclusion markers are computed in this view",
+      "schema_version": "diagnostic.v1",
+      "severity": "info"
+    },
+    {
+      "code": "pattern_exclusion_not_available",
+      "message": "accompaniment-pattern detection belongs to the S3.4 detector; no pattern-exclusion markers are computed in this view",
+      "schema_version": "diagnostic.v1",
+      "severity": "info"
+    },
+    {
+      "code": "slur_evidence_unavailable",
+      "message": "slur phrase-marking is not supported upstream (gated task U1, D-018); slur salience is unavailable, not zero",
+      "schema_version": "diagnostic.v1",
+      "severity": "info"
+    },
+    {
+      "code": "slur_evidence_unavailable",
+      "message": "slur phrase-marking is not supported upstream (gated task U1, D-018); slur salience is unavailable, not zero",
+      "schema_version": "diagnostic.v1",
+      "severity": "info"
+    },
+    {
+      "code": "slur_evidence_unavailable",
+      "message": "slur phrase-marking is not supported upstream (gated task U1, D-018); slur salience is unavailable, not zero",
+      "schema_version": "diagnostic.v1",
+      "severity": "info"
+    }
+  ],
+  "hypotheses": [
+    {
+      "confidence": 0.82,
+      "confidence_method": "heuristic",
+      "contradictory_criteria": [],
+      "covered_event_ids": [
+        {
+          "id": "n5",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n6",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n7",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n8",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        }
+      ],
+      "covered_region": {
+        "end": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "schema_version": "score_position.v1"
+        },
+        "schema_version": "score_interval.v1",
+        "start": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "schema_version": "score_position.v1"
+        }
+      },
+      "diagnostics": [],
+      "hypothesis_id": "bass_anchor.v1:semantic_syncopation.musicxml@[0,4)/detection:bass:000",
+      "hypothesis_type": "role.bass",
+      "method_id": "bass_anchor.v1",
+      "method_version": "v1",
+      "missing_evidence": [
+        "slur_evidence_unavailable",
+        "pattern_exclusion_not_available"
+      ],
+      "satisfied_criteria": [
+        "hand_longest_duration",
+        "left_hand",
+        "low_register",
+        "lowest_voice",
+        "on_beat",
+        "pitch_class_recurrence"
+      ],
+      "schema_version": "semantic_hypothesis.v1",
+      "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+      "supporting_observation_ids": [],
+      "supporting_pattern_ids": []
+    },
+    {
+      "confidence": 0.73,
+      "confidence_method": "heuristic",
+      "contradictory_criteria": [],
+      "covered_event_ids": [
+        {
+          "id": "n1",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n5",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n2",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n6",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n4",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n8",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        }
+      ],
+      "covered_region": {
+        "end": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "schema_version": "score_position.v1"
+        },
+        "schema_version": "score_interval.v1",
+        "start": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "schema_version": "score_position.v1"
+        }
+      },
+      "diagnostics": [],
+      "hypothesis_id": "rhythm_layer.v1:semantic_syncopation.musicxml@[0,4)/detection:common_attack_skeleton:000",
+      "hypothesis_type": "rhythm.common_attack_skeleton",
+      "method_id": "rhythm_layer.v1",
+      "method_version": "v1",
+      "missing_evidence": [],
+      "satisfied_criteria": [
+        "common_attacks"
+      ],
+      "schema_version": "semantic_hypothesis.v1",
+      "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+      "supporting_observation_ids": [],
+      "supporting_pattern_ids": []
+    },
+    {
+      "confidence": 0.7000000000000001,
+      "confidence_method": "heuristic",
+      "contradictory_criteria": [
+        "no_sustained_accompaniment"
+      ],
+      "covered_event_ids": [
+        {
+          "id": "n1",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n5",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n2",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n6",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n7",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n3",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n4",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n8",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        }
+      ],
+      "covered_region": {
+        "end": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "schema_version": "score_position.v1"
+        },
+        "schema_version": "score_interval.v1",
+        "start": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "schema_version": "score_position.v1"
+        }
+      },
+      "diagnostics": [],
+      "hypothesis_id": "accompaniment_pattern.v1:semantic_syncopation.musicxml@[0,4)/detection:accompaniment:000",
+      "hypothesis_type": "texture.block_chord",
+      "method_id": "accompaniment_pattern.v1",
+      "method_version": "v1",
+      "missing_evidence": [
+        "slur_evidence_unavailable",
+        "pattern_exclusion_not_available"
+      ],
+      "satisfied_criteria": [
+        "alberti_like_alternation",
+        "arpeggiated_range_and_leaps",
+        "block_chord_support",
+        "pitch_class_ostinato",
+        "sufficient_onsets"
+      ],
+      "schema_version": "semantic_hypothesis.v1",
+      "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+      "supporting_observation_ids": [],
+      "supporting_pattern_ids": []
+    },
+    {
+      "confidence": 0.7000000000000001,
+      "confidence_method": "heuristic",
+      "contradictory_criteria": [],
+      "covered_event_ids": [
+        {
+          "id": "n1",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n5",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n2",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n6",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n7",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n3",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n4",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n8",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        }
+      ],
+      "covered_region": {
+        "end": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "schema_version": "score_position.v1"
+        },
+        "schema_version": "score_interval.v1",
+        "start": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "schema_version": "score_position.v1"
+        }
+      },
+      "diagnostics": [],
+      "hypothesis_id": "texture_classifier.v1:semantic_syncopation.musicxml@[0,4)/detection:melody_plus_accompaniment:000",
+      "hypothesis_type": "texture.melody_plus_accompaniment",
+      "method_id": "texture_classifier.v1",
+      "method_version": "v1",
+      "missing_evidence": [],
+      "satisfied_criteria": [
+        "both_hands",
+        "single_moving_over_sustained",
+        "sustained_under_moving"
+      ],
+      "schema_version": "semantic_hypothesis.v1",
+      "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+      "supporting_observation_ids": [],
+      "supporting_pattern_ids": []
+    },
+    {
+      "confidence": 0.7,
+      "confidence_method": "heuristic",
+      "contradictory_criteria": [
+        "has_sustained_not_block"
+      ],
+      "covered_event_ids": [
+        {
+          "id": "n1",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n5",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n2",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n6",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n7",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n3",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n4",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n8",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        }
+      ],
+      "covered_region": {
+        "end": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "schema_version": "score_position.v1"
+        },
+        "schema_version": "score_interval.v1",
+        "start": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "schema_version": "score_position.v1"
+        }
+      },
+      "diagnostics": [],
+      "hypothesis_id": "texture_classifier.v1:semantic_syncopation.musicxml@[0,4)/detection:homophonic_block:000",
+      "hypothesis_type": "texture.homophonic_block",
+      "method_id": "texture_classifier.v1",
+      "method_version": "v1",
+      "missing_evidence": [],
+      "satisfied_criteria": [
+        "has_chords",
+        "many_chordal_onsets"
+      ],
+      "schema_version": "semantic_hypothesis.v1",
+      "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+      "supporting_observation_ids": [],
+      "supporting_pattern_ids": []
+    },
+    {
+      "confidence": 0.67,
+      "confidence_method": "heuristic",
+      "contradictory_criteria": [
+        "partially_aligned",
+        "stable_rhythm_not_independent"
+      ],
+      "covered_event_ids": [
+        {
+          "id": "n7",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n3",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        }
+      ],
+      "covered_region": {
+        "end": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "schema_version": "score_position.v1"
+        },
+        "schema_version": "score_interval.v1",
+        "start": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "schema_version": "score_position.v1"
+        }
+      },
+      "diagnostics": [],
+      "hypothesis_id": "rhythm_layer.v1:semantic_syncopation.musicxml@[0,4)/detection:independent_hands:000",
+      "hypothesis_type": "rhythm.independent_hands",
+      "method_id": "rhythm_layer.v1",
+      "method_version": "v1",
+      "missing_evidence": [],
+      "satisfied_criteria": [
+        "staggered_onsets"
+      ],
+      "schema_version": "semantic_hypothesis.v1",
+      "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+      "supporting_observation_ids": [],
+      "supporting_pattern_ids": []
+    },
+    {
+      "confidence": 0.575,
+      "confidence_method": "heuristic",
+      "contradictory_criteria": [
+        "mixed_subdivision"
+      ],
+      "covered_event_ids": [
+        {
+          "id": "n1",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n5",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n6",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n7",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n4",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n8",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        }
+      ],
+      "covered_region": {
+        "end": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "schema_version": "score_position.v1"
+        },
+        "schema_version": "score_interval.v1",
+        "start": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "schema_version": "score_position.v1"
+        }
+      },
+      "diagnostics": [],
+      "hypothesis_id": "rhythm_layer.v1:semantic_syncopation.musicxml@[0,4)/detection:stable_accompaniment:000",
+      "hypothesis_type": "rhythm.stable_accompaniment",
+      "method_id": "rhythm_layer.v1",
+      "method_version": "v1",
+      "missing_evidence": [],
+      "satisfied_criteria": [
+        "repeated_duration"
+      ],
+      "schema_version": "semantic_hypothesis.v1",
+      "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+      "supporting_observation_ids": [],
+      "supporting_pattern_ids": []
+    },
+    {
+      "confidence": 0.5375,
+      "confidence_method": "heuristic",
+      "contradictory_criteria": [
+        "low_syncopation"
+      ],
+      "covered_event_ids": [
+        {
+          "id": "n3",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        }
+      ],
+      "covered_region": {
+        "end": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "schema_version": "score_position.v1"
+        },
+        "schema_version": "score_interval.v1",
+        "start": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "schema_version": "score_position.v1"
+        }
+      },
+      "diagnostics": [],
+      "hypothesis_id": "rhythm_layer.v1:semantic_syncopation.musicxml@[0,4)/detection:syncopated_layer:000",
+      "hypothesis_type": "rhythm.syncopated_layer",
+      "method_id": "rhythm_layer.v1",
+      "method_version": "v1",
+      "missing_evidence": [],
+      "satisfied_criteria": [
+        "off_beat_density"
+      ],
+      "schema_version": "semantic_hypothesis.v1",
+      "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+      "supporting_observation_ids": [],
+      "supporting_pattern_ids": []
+    },
+    {
+      "confidence": 0.35,
+      "confidence_method": "heuristic",
+      "contradictory_criteria": [],
+      "covered_event_ids": [
+        {
+          "id": "n1",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n5",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n2",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n6",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n7",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n3",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n4",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n8",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        }
+      ],
+      "covered_region": {
+        "end": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "schema_version": "score_position.v1"
+        },
+        "schema_version": "score_interval.v1",
+        "start": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "schema_version": "score_position.v1"
+        }
+      },
+      "diagnostics": [],
+      "hypothesis_id": "texture_classifier.v1:semantic_syncopation.musicxml@[0,4)/detection:arpeggiated:000",
+      "hypothesis_type": "texture.arpeggiated",
+      "method_id": "texture_classifier.v1",
+      "method_version": "v1",
+      "missing_evidence": [],
+      "satisfied_criteria": [
+        "large_pitch_range",
+        "many_onsets"
+      ],
+      "schema_version": "semantic_hypothesis.v1",
+      "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+      "supporting_observation_ids": [],
+      "supporting_pattern_ids": []
+    },
+    {
+      "confidence": 0.3160344827586207,
+      "confidence_method": "heuristic",
+      "contradictory_criteria": [
+        "hand_ambiguity",
+        "inner_chord_tone",
+        "mixed_top_status",
+        "multiple_candidates_same_onset",
+        "not_top_voice",
+        "off_beat"
+      ],
+      "covered_event_ids": [
+        {
+          "id": "n1",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n5",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n2",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n6",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n7",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n3",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n4",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        },
+        {
+          "id": "n8",
+          "kind": "logical_note",
+          "schema_version": "source_ref.v1"
+        }
+      ],
+      "covered_region": {
+        "end": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 4
+          },
+          "schema_version": "score_position.v1"
+        },
+        "schema_version": "score_interval.v1",
+        "start": {
+          "measure_index": 1,
+          "measure_number": "1",
+          "offset_in_measure": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "quarters": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "schema_version": "score_position.v1"
+        }
+      },
+      "diagnostics": [],
+      "hypothesis_id": "melody_salience.v1:semantic_syncopation.musicxml@[0,4)/detection:melody:000",
+      "hypothesis_type": "role.melody",
+      "method_id": "melody_salience.v1",
+      "method_version": "v1",
+      "missing_evidence": [
+        "slur_evidence_unavailable",
+        "pattern_exclusion_not_available"
+      ],
+      "satisfied_criteria": [
+        "hand_longest_duration",
+        "hand_top_voice",
+        "high_register",
+        "longest_duration",
+        "moving_over_sustained",
+        "on_beat",
+        "stepwise_continuity",
+        "top_voice"
+      ],
+      "schema_version": "semantic_hypothesis.v1",
+      "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+      "supporting_observation_ids": [],
+      "supporting_pattern_ids": []
+    }
+  ],
+  "method_versions": [
+    "accompaniment_pattern.v1@v1",
+    "attack_stream_view@v1",
+    "bass_anchor.v1@v1",
+    "melody_salience.v1@v1",
+    "rhythm_grid_view@v1",
+    "rhythm_layer.v1@v1",
+    "salience_view@v1",
+    "texture_classifier.v1@v1",
+    "texture_grid_view@v1",
+    "written_stream_view@v1"
+  ],
+  "observation_refs": [],
+  "ranked_hypothesis_ids": [
+    "bass_anchor.v1:semantic_syncopation.musicxml@[0,4)/detection:bass:000",
+    "rhythm_layer.v1:semantic_syncopation.musicxml@[0,4)/detection:common_attack_skeleton:000",
+    "accompaniment_pattern.v1:semantic_syncopation.musicxml@[0,4)/detection:accompaniment:000",
+    "texture_classifier.v1:semantic_syncopation.musicxml@[0,4)/detection:melody_plus_accompaniment:000",
+    "texture_classifier.v1:semantic_syncopation.musicxml@[0,4)/detection:homophonic_block:000",
+    "rhythm_layer.v1:semantic_syncopation.musicxml@[0,4)/detection:independent_hands:000",
+    "rhythm_layer.v1:semantic_syncopation.musicxml@[0,4)/detection:stable_accompaniment:000",
+    "rhythm_layer.v1:semantic_syncopation.musicxml@[0,4)/detection:syncopated_layer:000",
+    "texture_classifier.v1:semantic_syncopation.musicxml@[0,4)/detection:arpeggiated:000",
+    "melody_salience.v1:semantic_syncopation.musicxml@[0,4)/detection:melody:000"
+  ],
+  "schema_version": "semantic_bundle.v1",
+  "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+  "view_refs": [
+    "logical_attack_stream:attack_stream_view@v1:semantic_syncopation.musicxml@[0,4)/detection",
+    "rhythm_grid:rhythm_grid_view@v1:semantic_syncopation.musicxml@[0,4)/detection",
+    "salience_view:salience_view@v1:semantic_syncopation.musicxml@[0,4)/detection",
+    "texture_grid:texture_grid_view@v1:semantic_syncopation.musicxml@[0,4)/detection",
+    "written_event_stream:written_stream_view@v1:semantic_syncopation.musicxml@[0,4)/detection"
+  ]
+}

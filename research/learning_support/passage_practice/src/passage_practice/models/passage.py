@@ -40,6 +40,10 @@ class ViewType(str, Enum):
     INTERVAL_TRANSITIONS = "interval_transitions"
     HAND_SHAPES = "hand_shapes"
     RHYTHMIC_CELLS = "rhythmic_cells"
+    RHYTHM_GRID = "rhythm_grid"
+    TEXTURE_GRID = "texture_grid"
+    SALIENCE_VIEW = "salience_view"
+    HARMONY_VIEW = "harmony_view"
 
 
 def _validate_id(value: str, field: str) -> None:

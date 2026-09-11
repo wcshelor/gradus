@@ -19,10 +19,15 @@ Working rules scoped to the `research/piano_difficulty/` subproject:
 - Treat `tests/harness/difficulty_prediction/` as the reusable prediction lab.
 - Treat `tests/harness/difficulty_clustering/` as the reusable unsupervised
   clustering lab.
-- Keep runner scripts thin and located in `tests/scripts/`.
+- Keep runner scripts thin and located in `tests/scripts/`. A legacy
+  `scripts/` directory at the project root still contains public-facing
+  wrappers from earlier workflow iterations; prefer `tests/scripts/` for new
+  harness work and migrate or retire root scripts when touching them.
 - Keep generated evidence under `tests/artifacts/`.
 - Treat `music/` as the canonical score asset library and prefer it over the
-  legacy `external/ScoreAnalyzer/pieces` tree.
+  legacy `external/ScoreAnalyzer/pieces` tree. The directory is being
+  populated; see `music/README.md` for the current migration status and for
+  where scores live while the move is in progress.
 - Treat `evaluation_scores/` as the corpus-and-label area:
   - `known_levels/` for commit-safe labeled corpora
   - `ad_hoc/` for local-only ignored corpora
@@ -86,6 +91,7 @@ Working rules scoped to the `research/piano_difficulty/` subproject:
 - `evaluation_scores/`
   - real corpora, local-only corpora, and manifest tables
 - `music/`
-  - canonical score asset library for committed reference material
+  - canonical score asset library for committed reference material; currently
+    being populated (see `music/README.md`)
 - `docs/`
   - lane definitions, findings logs, and methodology notes

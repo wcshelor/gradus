@@ -1,0 +1,42 @@
+[
+  {
+    "annotation_id": "ann.syncopation.texture.000",
+    "annotator_role": "synthetic",
+    "confidence": 0.85,
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "message": "synthetic",
+        "schema_version": "diagnostic.v1",
+        "severity": "info"
+      }
+    ],
+    "label_family": "texture",
+    "label_value": "polyphonic",
+    "privacy_status": "synthetic",
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "schema_version": "annotation.v1",
+    "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection"
+  },
+  {
+    "annotation_id": "ann.syncopation.phrase.001",
+    "annotator_role": "synthetic",
+    "confidence": 0.85,
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "message": "synthetic",
+        "schema_version": "diagnostic.v1",
+        "severity": "info"
+      }
+    ],
+    "label_family": "phrase",
+    "label_value": "ambiguous",
+    "privacy_status": "synthetic",
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "schema_version": "annotation.v1",
+    "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection"
+  }
+]

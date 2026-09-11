@@ -142,31 +142,31 @@ license, submodule, or migration failure blocks implementation.
   decision naming package/import direction and migration consequence. Limit:
   do not move anything to `research/shared/`.
 
-- [ ] **T02.2 Add the minimal selection fixture family.** Depends on: T02.1.
+- [x] **T02.2 Add the minimal selection fixture family.** Depends on: T02.1.
   Scope: synthetic fixtures for exact boundaries, crossing tie/sustain, inherited
   context, two staves, and two voices, each with a manifest entry. Tests: loader
   smoke assertions and provenance metadata. Limit: each fixture isolates one or
   two constructs; do not import repertoire excerpts.
 
-- [ ] **T02.3 Implement attack and boundary-context selection.** Depends on:
+- [x] **T02.3 Implement attack and boundary-context selection.** Depends on:
   T02.2. Scope: select attacks in `[start,end)` and separately retain events
   sustaining across either boundary. Tests: start included, end excluded,
   crossing events, empty interval result, stable ordering, source immutability.
   Limit: do not expand to whole measures.
 
-- [ ] **T02.4 Preserve relationships and active context.** Depends on: T02.3.
+- [x] **T02.4 Preserve relationships and active context.** Depends on: T02.3.
   Scope: written/logical-note links and meter, key, clef, tempo, and relevant
   directions active at the start. Tests: ties, voice/staff separation, missing
   optional context, deterministic context ordering. Limit: hand inference must
   remain labeled and separate from staff.
 
-- [ ] **T02.5 Add purpose, refinement, and partial-measure behavior.** Depends
+- [x] **T02.5 Add purpose, refinement, and partial-measure behavior.** Depends
   on: T02.4. Scope: detection/evidence/pattern/practice purposes, parent chain,
   exact manual selection API, and a proposed Q-003 selection-side policy.
   Tests: refinement lineage, partial measure, invalid parent, unchanged source.
   Limit: no export padding or rebarring implementation.
 
-- [ ] **T02.6 Produce the G1 selection report.** Depends on: T02.5. Scope:
+- [x] **T02.6 Produce the G1 selection report.** Depends on: T02.5. Scope:
   serialize one tiny case listing included, boundary-context, excluded IDs and
   inherited state. Evidence: compact deterministic artifact and all WP-01/02
   tests plus relevant normalization tests. Limit: report only implemented
@@ -174,6 +174,14 @@ license, submodule, or migration failure blocks implementation.
 
 **G1 exit:** identity, exact time, context, and passage ownership are accepted;
 WP-03 and WP-09 may be released independently.
+
+> Semantic-track note (2026-09-09): the S1 contract/confidence work and the S2.4–S2.8
+> core views (`attack_stream`, `written_stream`, `rhythm_grid`, `texture_grid`,
+> `salience_view`)
+> are already implemented and tested. They are tracked in
+> `docs/semantic_music_extraction_tasks.md` rather than in this WP checklist.
+> Milestone 2A tasks remain unchecked until they are explicitly claimed or the
+> semantic work is folded back into the WP board.
 
 ## Milestone 2A — Derived views and evidence (WP-03–WP-05)
 

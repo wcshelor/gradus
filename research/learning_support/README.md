@@ -75,5 +75,5 @@ the complete learning-support architecture. Difficulty component hardening can
 proceed alongside independent semantic and interaction design; it is not a
 global prerequisite.
 
-Current verified baseline after LS-11: full suite `353 passed, 7 skipped`
+Current verified baseline after LS-11: full suite `594 passed, 10 skipped`
 with optional local-corpus skips unchanged.

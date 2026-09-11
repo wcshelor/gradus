@@ -1,0 +1,136 @@
+"""Passage view builders for passage practice.
+
+Grows incrementally through S2. S2.4 provides the tie-collapsed
+`attack_stream`; rhythm, texture, and salience views build on it.
+"""
+
+from .attack_stream import (
+    ATTACK_EVENT_SCHEMA_VERSION,
+    ATTACK_STREAM_METHOD_ID,
+    ATTACK_STREAM_METHOD_VERSION,
+    ATTACK_STREAM_SCHEMA_VERSION,
+    AttackEvent,
+    AttackStream,
+    build_attack_stream,
+)
+
+from passage_practice.views.written_stream import (
+    WRITTEN_NOTE_EVENT_SCHEMA_VERSION,
+    WRITTEN_REST_EVENT_SCHEMA_VERSION,
+    WRITTEN_STREAM_METHOD_ID,
+    WRITTEN_STREAM_METHOD_VERSION,
+    WRITTEN_STREAM_OMISSIONS,
+    WRITTEN_STREAM_ORDERING,
+    WRITTEN_STREAM_SCHEMA_VERSION,
+    WrittenEvent,
+    WrittenNoteEvent,
+    WrittenRestEvent,
+    WrittenStream,
+    build_written_stream,
+)
+
+from passage_practice.views.rhythm_grid import (
+    RHYTHM_CELL_SCHEMA_VERSION,
+    RHYTHM_GRID_METHOD_ID,
+    RHYTHM_GRID_METHOD_VERSION,
+    RHYTHM_GRID_OMISSIONS,
+    RHYTHM_GRID_ORDERING,
+    RHYTHM_GRID_SCHEMA_VERSION,
+    RHYTHM_ONSET_SCHEMA_VERSION,
+    RhythmCell,
+    RhythmGrid,
+    RhythmOnset,
+    build_rhythm_grid,
+)
+
+from passage_practice.views.texture_grid import (
+    TEXTURE_GRID_METHOD_ID,
+    TEXTURE_GRID_METHOD_VERSION,
+    TEXTURE_GRID_OMISSIONS,
+    TEXTURE_GRID_ORDERING,
+    TEXTURE_GRID_SCHEMA_VERSION,
+    TEXTURE_SLICE_SCHEMA_VERSION,
+    TextureGrid,
+    TextureSlice,
+    build_texture_grid,
+)
+
+from passage_practice.views.salience_view import (
+    SALIENCE_EVENT_SCHEMA_VERSION,
+    SALIENCE_VIEW_METHOD_ID,
+    SALIENCE_VIEW_METHOD_VERSION,
+    SALIENCE_VIEW_OMISSIONS,
+    SALIENCE_VIEW_ORDERING,
+    SALIENCE_VIEW_SCHEMA_VERSION,
+    SalienceEvent,
+    SalienceView,
+    build_salience_view,
+)
+
+from passage_practice.views.harmony_view import (
+    HARMONY_VIEW_METHOD_ID,
+    HARMONY_VIEW_METHOD_VERSION,
+    HARMONY_VIEW_SCHEMA_VERSION,
+    HarmonyView,
+    build_harmony_view,
+    infer_harmonic_rhythm,
+    rank_local_key_candidates,
+)
+
+__all__ = [
+    "ATTACK_EVENT_SCHEMA_VERSION",
+    "ATTACK_STREAM_METHOD_ID",
+    "ATTACK_STREAM_METHOD_VERSION",
+    "ATTACK_STREAM_SCHEMA_VERSION",
+    "AttackEvent",
+    "AttackStream",
+    "HARMONY_VIEW_METHOD_ID",
+    "HARMONY_VIEW_METHOD_VERSION",
+    "HARMONY_VIEW_SCHEMA_VERSION",
+    "HarmonyView",
+    "RHYTHM_CELL_SCHEMA_VERSION",
+    "RHYTHM_GRID_METHOD_ID",
+    "RHYTHM_GRID_METHOD_VERSION",
+    "RHYTHM_GRID_OMISSIONS",
+    "RHYTHM_GRID_ORDERING",
+    "RHYTHM_GRID_SCHEMA_VERSION",
+    "RHYTHM_ONSET_SCHEMA_VERSION",
+    "RhythmCell",
+    "RhythmGrid",
+    "RhythmOnset",
+    "SALIENCE_EVENT_SCHEMA_VERSION",
+    "SALIENCE_VIEW_METHOD_ID",
+    "SALIENCE_VIEW_METHOD_VERSION",
+    "SALIENCE_VIEW_OMISSIONS",
+    "SALIENCE_VIEW_ORDERING",
+    "SALIENCE_VIEW_SCHEMA_VERSION",
+    "SalienceEvent",
+    "SalienceView",
+    "TEXTURE_GRID_METHOD_ID",
+    "TEXTURE_GRID_METHOD_VERSION",
+    "TEXTURE_GRID_OMISSIONS",
+    "TEXTURE_GRID_ORDERING",
+    "TEXTURE_GRID_SCHEMA_VERSION",
+    "TEXTURE_SLICE_SCHEMA_VERSION",
+    "TextureGrid",
+    "TextureSlice",
+    "WRITTEN_NOTE_EVENT_SCHEMA_VERSION",
+    "WRITTEN_REST_EVENT_SCHEMA_VERSION",
+    "WRITTEN_STREAM_METHOD_ID",
+    "WRITTEN_STREAM_METHOD_VERSION",
+    "WRITTEN_STREAM_OMISSIONS",
+    "WRITTEN_STREAM_ORDERING",
+    "WRITTEN_STREAM_SCHEMA_VERSION",
+    "WrittenEvent",
+    "WrittenNoteEvent",
+    "WrittenRestEvent",
+    "WrittenStream",
+    "build_attack_stream",
+    "build_harmony_view",
+    "build_rhythm_grid",
+    "build_salience_view",
+    "build_texture_grid",
+    "build_written_stream",
+    "infer_harmonic_rhythm",
+    "rank_local_key_candidates",
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "annotation_id": "ann.left_hand_melody.melody.000",
+    "annotator_role": "synthetic",
+    "confidence": 0.85,
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "message": "synthetic",
+        "schema_version": "diagnostic.v1",
+        "severity": "info"
+      }
+    ],
+    "label_family": "melody",
+    "label_value": "left_hand",
+    "privacy_status": "synthetic",
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "schema_version": "annotation.v1",
+    "source_passage_id": "semantic_left_hand_melody.musicxml@[0,4)/detection"
+  },
+  {
+    "annotation_id": "ann.left_hand_melody.bass.001",
+    "annotator_role": "synthetic",
+    "confidence": 0.85,
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "message": "synthetic",
+        "schema_version": "diagnostic.v1",
+        "severity": "info"
+      }
+    ],
+    "label_family": "bass",
+    "label_value": "anchor",
+    "privacy_status": "synthetic",
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "schema_version": "annotation.v1",
+    "source_passage_id": "semantic_left_hand_melody.musicxml@[0,4)/detection"
+  },
+  {
+    "annotation_id": "ann.left_hand_melody.texture.002",
+    "annotator_role": "synthetic",
+    "confidence": 0.85,
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "message": "synthetic",
+        "schema_version": "diagnostic.v1",
+        "severity": "info"
+      }
+    ],
+    "label_family": "texture",
+    "label_value": "melody_plus_accompaniment",
+    "privacy_status": "synthetic",
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "schema_version": "annotation.v1",
+    "source_passage_id": "semantic_left_hand_melody.musicxml@[0,4)/detection"
+  }
+]

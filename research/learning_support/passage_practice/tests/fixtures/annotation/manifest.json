@@ -1,0 +1,7 @@
+{
+  "top_voice_melody": "top_voice_melody.json",
+  "left_hand_melody": "left_hand_melody.json",
+  "accompaniment_pattern": "accompaniment_pattern.json",
+  "syncopation": "syncopation.json",
+  "ambiguity": "ambiguity.json"
+}

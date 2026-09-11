@@ -1,0 +1,242 @@
+[
+  {
+    "schema_version": "annotation.v1",
+    "annotation_id": "ann.top_voice_melody.melody.001",
+    "source_passage_id": "semantic_top_voice_melody.musicxml@[0,4)/detection",
+    "label_family": "melody",
+    "label_value": "top_voice",
+    "annotator_role": "synthetic",
+    "confidence": 0.9,
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "privacy_status": "synthetic",
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "severity": "info",
+        "message": "synthetic annotation for testing",
+        "schema_version": "diagnostic.v1"
+      }
+    ]
+  },
+  {
+    "schema_version": "annotation.v1",
+    "annotation_id": "ann.top_voice_melody.texture.001",
+    "source_passage_id": "semantic_top_voice_melody.musicxml@[0,4)/detection",
+    "label_family": "texture",
+    "label_value": "melody_plus_accompaniment",
+    "annotator_role": "synthetic",
+    "confidence": 0.85,
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "privacy_status": "synthetic",
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "severity": "info",
+        "message": "synthetic annotation for testing",
+        "schema_version": "diagnostic.v1"
+      }
+    ]
+  },
+  {
+    "schema_version": "annotation.v1",
+    "annotation_id": "ann.top_voice_melody.bass.001",
+    "source_passage_id": "semantic_top_voice_melody.musicxml@[0,4)/detection",
+    "label_family": "bass",
+    "label_value": "anchor",
+    "annotator_role": "synthetic",
+    "confidence": 0.8,
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "privacy_status": "synthetic",
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "severity": "info",
+        "message": "synthetic annotation for testing",
+        "schema_version": "diagnostic.v1"
+      }
+    ]
+  },
+  {
+    "schema_version": "annotation.v1",
+    "annotation_id": "ann.left_hand_melody.melody.001",
+    "source_passage_id": "semantic_left_hand_melody.musicxml@[0,4)/detection",
+    "label_family": "melody",
+    "label_value": "left_hand",
+    "annotator_role": "synthetic",
+    "confidence": 0.88,
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "privacy_status": "synthetic",
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "severity": "info",
+        "message": "synthetic annotation for testing",
+        "schema_version": "diagnostic.v1"
+      }
+    ]
+  },
+  {
+    "schema_version": "annotation.v1",
+    "annotation_id": "ann.left_hand_melody.texture.001",
+    "source_passage_id": "semantic_left_hand_melody.musicxml@[0,4)/detection",
+    "label_family": "texture",
+    "label_value": "melody_plus_accompaniment",
+    "annotator_role": "synthetic",
+    "confidence": 0.82,
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "privacy_status": "synthetic",
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "severity": "info",
+        "message": "synthetic annotation for testing",
+        "schema_version": "diagnostic.v1"
+      }
+    ]
+  },
+  {
+    "schema_version": "annotation.v1",
+    "annotation_id": "ann.accompaniment.accompaniment.001",
+    "source_passage_id": "semantic_accompaniment_pattern.musicxml@[0,4)/detection",
+    "label_family": "accompaniment",
+    "label_value": "broken_chord",
+    "annotator_role": "synthetic",
+    "confidence": 0.9,
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "privacy_status": "synthetic",
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "severity": "info",
+        "message": "synthetic annotation for testing",
+        "schema_version": "diagnostic.v1"
+      }
+    ]
+  },
+  {
+    "schema_version": "annotation.v1",
+    "annotation_id": "ann.accompaniment.texture.001",
+    "source_passage_id": "semantic_accompaniment_pattern.musicxml@[0,4)/detection",
+    "label_family": "texture",
+    "label_value": "arpeggiated",
+    "annotator_role": "synthetic",
+    "confidence": 0.85,
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "privacy_status": "synthetic",
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "severity": "info",
+        "message": "synthetic annotation for testing",
+        "schema_version": "diagnostic.v1"
+      }
+    ]
+  },
+  {
+    "schema_version": "annotation.v1",
+    "annotation_id": "ann.syncopation.difficulty.001",
+    "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+    "label_family": "difficulty_reason",
+    "label_value": "rhythm",
+    "annotator_role": "synthetic",
+    "confidence": 0.75,
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "privacy_status": "synthetic",
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "severity": "info",
+        "message": "synthetic annotation for testing",
+        "schema_version": "diagnostic.v1"
+      }
+    ]
+  },
+  {
+    "schema_version": "annotation.v1",
+    "annotation_id": "ann.syncopation.learner_issue.001",
+    "source_passage_id": "semantic_syncopation.musicxml@[0,4)/detection",
+    "label_family": "learner_issue",
+    "label_value": "hands_together",
+    "annotator_role": "synthetic",
+    "confidence": 0.72,
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "privacy_status": "synthetic",
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "severity": "info",
+        "message": "synthetic annotation for testing",
+        "schema_version": "diagnostic.v1"
+      }
+    ]
+  },
+  {
+    "schema_version": "annotation.v1",
+    "annotation_id": "ann.ambiguity.melody.001",
+    "source_passage_id": "semantic_ambiguity.musicxml@[0,4)/detection",
+    "label_family": "melody",
+    "label_value": "hidden",
+    "annotator_role": "synthetic",
+    "confidence": 0.35,
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "privacy_status": "synthetic",
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "severity": "info",
+        "message": "synthetic annotation for testing",
+        "schema_version": "diagnostic.v1"
+      }
+    ]
+  },
+  {
+    "schema_version": "annotation.v1",
+    "annotation_id": "ann.ambiguity.phrase.001",
+    "source_passage_id": "semantic_ambiguity.musicxml@[0,4)/detection",
+    "label_family": "phrase",
+    "label_value": "ambiguous",
+    "annotator_role": "synthetic",
+    "confidence": 0.4,
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "privacy_status": "synthetic",
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "severity": "info",
+        "message": "synthetic annotation for testing",
+        "schema_version": "diagnostic.v1"
+      }
+    ]
+  },
+  {
+    "schema_version": "annotation.v1",
+    "annotation_id": "ann.two_voices.texture.001",
+    "source_passage_id": "selection_two_voices.musicxml@[0,3)/detection",
+    "label_family": "texture",
+    "label_value": "polyphonic",
+    "annotator_role": "synthetic",
+    "confidence": 0.8,
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "privacy_status": "synthetic",
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "severity": "info",
+        "message": "synthetic annotation for testing",
+        "schema_version": "diagnostic.v1"
+      }
+    ]
+  }
+]

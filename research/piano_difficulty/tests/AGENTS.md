@@ -25,7 +25,9 @@ Rules for work here:
   clustering box over exported matrices.
 - `tests/scripts/` should only contain thin wrappers that import the harness.
 - `tests/artifacts/` is for generated outputs only.
-- `music/` is the canonical score library for harness input files.
+- `music/` is the canonical score library for harness input files. It is
+  currently being populated; see `music/README.md` for where scores live while
+  the move is in progress.
 - `tests/retired/` is for archived probes and wrappers that are no longer part
   of the active workflow.
 - Keep pytest-discovered test files separate from harness modules.

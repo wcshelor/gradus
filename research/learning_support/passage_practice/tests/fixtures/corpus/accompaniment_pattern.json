@@ -1,0 +1,23 @@
+{
+  "annotation_ids": [
+    "ann.accompaniment.accompaniment.001"
+  ],
+  "diagnostics": [
+    {
+      "code": "synthetic_data",
+      "message": "synthetic",
+      "schema_version": "diagnostic.v1",
+      "severity": "info"
+    }
+  ],
+  "generated_explanation": "System: likely accompaniment broken_chord (0.90).",
+  "human_explanation": "Teacher: broken chord accompaniment supports melody.",
+  "privacy_status": "synthetic",
+  "provenance": "synthetic",
+  "record_id": "corpus.accompaniment_pattern.001",
+  "review_state": "draft",
+  "schema_version": "pedagogical_corpus_record.v1",
+  "score_facts_ref": "semantic_accompaniment_pattern.musicxml",
+  "semantic_bundle_id": "semantic_accompaniment_pattern.musicxml@[0,4)/detection:semantic_bundle:v1",
+  "source_passage_id": "semantic_accompaniment_pattern.musicxml@[0,4)/detection"
+}

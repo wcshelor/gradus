@@ -1,0 +1,23 @@
+{
+  "annotation_ids": [
+    "ann.top_voice_melody.melody.001"
+  ],
+  "diagnostics": [
+    {
+      "code": "synthetic_data",
+      "message": "synthetic",
+      "schema_version": "diagnostic.v1",
+      "severity": "info"
+    }
+  ],
+  "generated_explanation": "System: likely melody top_voice (0.85).",
+  "human_explanation": "Teacher: top voice carries melody; keep accompaniment light.",
+  "privacy_status": "synthetic",
+  "provenance": "synthetic",
+  "record_id": "corpus.top_voice_melody.001",
+  "review_state": "draft",
+  "schema_version": "pedagogical_corpus_record.v1",
+  "score_facts_ref": "semantic_top_voice_melody.musicxml",
+  "semantic_bundle_id": "semantic_top_voice_melody.musicxml@[0,4)/detection:semantic_bundle:v1",
+  "source_passage_id": "semantic_top_voice_melody.musicxml@[0,4)/detection"
+}

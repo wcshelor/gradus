@@ -20,6 +20,14 @@ Only the lead edits live status on the integration branch and marks a package
 `handoffs/WP-XX.md`; this avoids forcing every parallel branch to edit the same
 status table.
 
+> Status reconciliation note (2026-09-09): this board was updated to reflect
+> work that had already landed on the active branch. WP-00 through WP-02 are
+> treated as completed because their handoffs and tests exist. WP-03 is treated
+> as active because the semantic S2 view work (`attack_stream`, `written_stream`,
+> `rhythm_grid`, `texture_grid`, `salience_view`) is already implemented and
+> tested. The semantic
+> track is tracked separately in `docs/semantic_music_extraction_tasks.md`.
+
 ## Dependency map
 
 D-013 review (2026-09-05): LS-03a from the repository-wide plan owns the minimal
@@ -59,10 +67,10 @@ contracts stabilize, but it cannot define those contracts itself.
 
 | ID | Package | Status | Depends on | Suggested owner | Review gate |
 |---|---|---|---|---|---|
-| WP-00 | Baseline and repository hygiene | READY | — | repository steward | G0 |
-| WP-01 | Cross-layer contract models | BLOCKED | WP-00 | representation agent | G1 |
-| WP-02 | Exact passage selection and context | BLOCKED | WP-01 | score-time agent | G1 |
-| WP-03 | Derived view engine | BLOCKED | WP-02 | representation agent | G2 |
+| WP-00 | Baseline and repository hygiene | DONE | — | repository steward | G0 |
+| WP-01 | Cross-layer contract models | DONE | WP-00 | representation agent | G1 |
+| WP-02 | Exact passage selection and context | DONE | WP-01 | score-time agent | G1 |
+| WP-03 | Derived view engine | CLAIMED | WP-02 | representation agent | G2 |
 | WP-04 | Feature evidence traces | BLOCKED | WP-03 | difficulty agent | G2 |
 | WP-05 | Passage investigation adapters | BLOCKED | WP-04, LS-03a | integration agent | G2 |
 | WP-06 | Event attribution and region refinement | BLOCKED | WP-05 | attribution agent | G3 |

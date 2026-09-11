@@ -1,0 +1,42 @@
+[
+  {
+    "annotation_id": "ann.accompaniment_pattern.accompaniment.000",
+    "annotator_role": "synthetic",
+    "confidence": 0.85,
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "message": "synthetic",
+        "schema_version": "diagnostic.v1",
+        "severity": "info"
+      }
+    ],
+    "label_family": "accompaniment",
+    "label_value": "broken_chord",
+    "privacy_status": "synthetic",
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "schema_version": "annotation.v1",
+    "source_passage_id": "semantic_accompaniment_pattern.musicxml@[0,4)/detection"
+  },
+  {
+    "annotation_id": "ann.accompaniment_pattern.texture.001",
+    "annotator_role": "synthetic",
+    "confidence": 0.85,
+    "diagnostics": [
+      {
+        "code": "synthetic_data",
+        "message": "synthetic",
+        "schema_version": "diagnostic.v1",
+        "severity": "info"
+      }
+    ],
+    "label_family": "texture",
+    "label_value": "arpeggiated",
+    "privacy_status": "synthetic",
+    "provenance": "synthetic",
+    "review_state": "unreviewed",
+    "schema_version": "annotation.v1",
+    "source_passage_id": "semantic_accompaniment_pattern.musicxml@[0,4)/detection"
+  }
+]

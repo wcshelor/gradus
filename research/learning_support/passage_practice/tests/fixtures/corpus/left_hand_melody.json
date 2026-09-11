@@ -1,0 +1,23 @@
+{
+  "annotation_ids": [
+    "ann.left_hand_melody.melody.001"
+  ],
+  "diagnostics": [
+    {
+      "code": "synthetic_data",
+      "message": "synthetic",
+      "schema_version": "diagnostic.v1",
+      "severity": "info"
+    }
+  ],
+  "generated_explanation": "System: possible left_hand melody (0.78).",
+  "human_explanation": "Teacher: left hand melody needs projection.",
+  "privacy_status": "synthetic",
+  "provenance": "synthetic",
+  "record_id": "corpus.left_hand_melody.001",
+  "review_state": "draft",
+  "schema_version": "pedagogical_corpus_record.v1",
+  "score_facts_ref": "semantic_left_hand_melody.musicxml",
+  "semantic_bundle_id": "semantic_left_hand_melody.musicxml@[0,4)/detection:semantic_bundle:v1",
+  "source_passage_id": "semantic_left_hand_melody.musicxml@[0,4)/detection"
+}
