@@ -21,7 +21,7 @@ Scope: after S8 pedagogical corpus + explanation (corpus/schema, text_provenance
 
 - **No boundary violation** detected in S8.
 - **One minor cleanup candidate:** `helpers/metamorphic.py` duplicates some ScoreIR deep-copy logic that could be shared with test fixtures; keep as test-scoped helper, not runtime.
-- **Diagnostic registry** (S-X1) now centralizes codes; no duplicate codes found (97 distinct).
+- **Diagnostic registry** (S-X1) now centralizes codes; no duplicate codes found (71 distinct across 8 categories).
 
 ## Required cleanup tasks
 

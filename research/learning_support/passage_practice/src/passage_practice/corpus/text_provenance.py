@@ -76,10 +76,9 @@ class PedagogicalText:
                 raise TypeError(f"diagnostics must contain Diagnostic, got {type(d).__name__}")
         if self.schema_version != PEDAGOGICAL_TEXT_SCHEMA_VERSION:
             raise ValueError(f"schema_version must be {PEDAGOGICAL_TEXT_SCHEMA_VERSION!r}, got {self.schema_version!r}")
-        # Category-specific validation: literature paraphrase should have source_ref
-        if self.source_category == TextSourceCategory.LITERATURE_PARAPHRASE and self.source_ref is None:
-            # Allow but warn via diagnostic; enforce that synthetic tests carry a diagnostic noting literature source
-            pass
+        # Category-specific validation: literature paraphrase must have source_ref
+        if self.source_category == TextSourceCategory.LITERATURE_PARAPHRASE and not self.source_ref:
+            raise ValueError("LITERATURE_PARAPHRASE requires source_ref (resolvable literature source identifier)")
 
     def to_dict(self) -> dict[str, Any]:
         payload: dict[str, Any] = {

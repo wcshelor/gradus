@@ -80,7 +80,7 @@ def template_explanation(brief: ExplanationBrief) -> str:
     Never invents claims outside supported_claims.
     """
     if not brief.supported_claims:
-        return "No supported semantic hypothesis for this passage. Consider asking the learner what feels difficult."
+        return "No supported semantic hypothesis for this passage. No evidence-grounded explanation available."
     parts: list[str] = []
     # Map wording for each supported claim
     wording_map = {d["claim_type"]: d["wording"] for d in brief.uncertainty_wording}

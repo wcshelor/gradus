@@ -22,11 +22,28 @@ def _synthetic_text(category: TextSourceCategory, **overrides):
 
 def test_all_four_categories_accepted():
     for cat in TextSourceCategory:
-        txt = _synthetic_text(cat)
+        overrides: dict = {}
+        if cat == TextSourceCategory.LITERATURE_PARAPHRASE:
+            overrides["source_ref"] = "lit.test.001"
+        txt = _synthetic_text(cat, **overrides)
         assert txt.source_category == cat
         data = txt.to_dict()
         revived = PedagogicalText.from_dict(data)
         assert revived == txt
+
+
+def test_literature_paraphrase_requires_source_ref():
+    with pytest.raises(ValueError, match="source_ref"):
+        _synthetic_text(TextSourceCategory.LITERATURE_PARAPHRASE, text_id="text.lit.missing")
+    # Also via from_dict without source_ref
+    data = _synthetic_text(
+        TextSourceCategory.LITERATURE_PARAPHRASE,
+        text_id="text.lit.ok",
+        source_ref="lit.ok.001",
+    ).to_dict()
+    data.pop("source_ref")
+    with pytest.raises(ValueError, match="source_ref"):
+        PedagogicalText.from_dict(data)
 
 
 def test_unsupported_category_rejected():

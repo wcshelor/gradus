@@ -624,7 +624,7 @@ Resolve these before downstream implementation depends on them:
   missing view, unsupported notation, low confidence, contradictory criteria,
   missing source refs, and learner-dependent claim. Tests: no duplicate codes.
   Status 2026-09-11: `src/passage_practice/semantics/diagnostic_codes.py`
-  (97 codes in 7 categories) with `tests/unit/test_diagnostic_code_registry.py` (4 tests: duplicates, snake_case, categories).
+   (71 codes in 8 categories) with `tests/unit/test_diagnostic_code_registry.py` (4 tests: duplicates, snake_case, categories).
 
 - [x] **S-X2 Add semantic fixture provenance audit.** Scope: ensure every
   semantic fixture is synthetic, licensed, or otherwise commit-safe. Tests:

@@ -106,3 +106,28 @@ def test_audit_does_not_flag_supported_melody_claim():
     text = "Melody likely in top voice."
     violations = audit_explanation(text, brief)
     assert violations == []
+
+
+def test_empty_brief_template_is_audit_clean():
+    from passage_practice.corpus.explanation_brief import ExplanationBrief
+
+    empty_brief = ExplanationBrief(
+        brief_id="test.empty.001",
+        source_passage_id="passage.empty.001",
+        semantic_bundle_id="bundle.empty.001",
+        supported_claims=(),
+        uncertainty_wording=(),
+        confidence_bands=(),
+        caveats=("no_corpus_context: score-only evidence", "uncertainty: confidence is uncalibrated heuristic ranking, not probability"),
+        provenance="synthetic",
+    )
+    text = template_explanation(empty_brief)
+    # Neutral wording must not contain gated keywords
+    violations = audit_explanation(text, empty_brief)
+    assert violations == [], f"empty template should be audit-clean, got {violations}: {text!r}"
+    # Also via mock path
+    assert audit_explanation(mock_llm_explanation(empty_brief), empty_brief) == []
+    # Explicitly ensure no gated keywords leak
+    lowered = text.lower()
+    for gated in ["learner", "difficulty", "melody", "harmony", "cadence", "phrase", "texture", "coordination", "accompaniment", "bass"]:
+        assert gated not in lowered, f"empty template leaked gated keyword {gated!r}: {text!r}"

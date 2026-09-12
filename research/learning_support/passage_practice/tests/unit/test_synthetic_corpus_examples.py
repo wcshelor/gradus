@@ -97,13 +97,32 @@ def test_references_resolve_to_real_passages_and_bundles():
 
 
 def test_no_private_learner_data():
+    import re
+
+    email_re = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+    phone_re = re.compile(r"\b\d{3}[-.\s]?\d{3}[-.\s]?\d{4}\b")
     for path in CORPUS_FIX.glob("*.json"):
         if path.name == "manifest.json":
             continue
         data = json.loads(path.read_text())
         text = json.dumps(data)
-        # Synthetic fixtures must not contain learner PII
-        assert "learner" not in data.get("learner_feedback_ids", []) or True  # allow learner_feedback_ids but ensure synthetic
         rec = PedagogicalCorpusRecord.from_dict(data)
-        assert rec.provenance == "synthetic"
-        assert rec.privacy_status == "synthetic"
+        # provenance and privacy must be synthetic (no real participant data)
+        assert rec.provenance == "synthetic", f"{path} provenance must be synthetic, got {rec.provenance!r}"
+        assert rec.privacy_status == "synthetic", f"{path} privacy_status must be synthetic, got {rec.privacy_status!r}"
+        assert data.get("provenance") == "synthetic", f"{path} raw provenance must be synthetic"
+        assert data.get("privacy_status") == "synthetic", f"{path} raw privacy_status must be synthetic"
+        # no email-like or phone-like strings (simple deterministic PII checks)
+        assert not email_re.search(text), f"email-like PII in {path}: {text!r}"
+        assert not phone_re.search(text), f"phone-like PII in {path}: {text!r}"
+        # no accidental participant/person fields or real data markers
+        lower = text.lower()
+        assert "participant" not in lower, f"participant PII in {path}"
+        assert "person_id" not in lower, f"person_id PII in {path}"
+        assert "real_name" not in lower, f"real_name PII in {path}"
+        # synthetic marker required
+        assert any(d.code == "synthetic_data" for d in rec.diagnostics), f"{path} missing synthetic_data diagnostic"
+        # learner_feedback_ids is allowed as controlled schema term; values must not be PII
+        for fid in rec.learner_feedback_ids:
+            assert not email_re.search(fid), f"learner_feedback_id PII {fid!r} in {path}"
+            assert not phone_re.search(fid), f"learner_feedback_id PII {fid!r} in {path}"

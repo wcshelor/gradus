@@ -22,8 +22,9 @@ def test_checklist_questions_match_document():
     doc = Path(__file__).resolve().parents[2] / "docs" / "corpus_evaluation_checklist.md"
     assert doc.exists(), f"missing checklist doc {doc}"
     text = doc.read_text()
-    for qid in QUESTIONS:
+    for qid, question in QUESTIONS.items():
         assert qid in text, f"question {qid} missing from doc"
+        assert question in text, f"question {qid} canonical text missing from doc: {question!r}"
 
 
 def test_checklist_rejects_incomplete():

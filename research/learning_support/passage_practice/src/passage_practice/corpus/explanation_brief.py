@@ -184,17 +184,26 @@ def build_explanation_brief(
     supported = tuple(sorted({h.hypothesis_type for h in bundle.hypotheses}))
     # Enforce allowed families (filter unsupported - should not happen for heuristic bundles, but guard)
     filtered_supported = tuple(c for c in supported if _is_allowed_claim(c))
-    # Build per-claim wording and bands
+    # Build per-claim wording and bands only for filtered supported claims
+    # If multiple hypotheses share a type, keep the highest confidence for wording/band
+    filtered_set = set(filtered_supported)
+    best_by_type: dict[str, Any] = {}
+    for h in bundle.hypotheses:
+        if h.hypothesis_type not in filtered_set:
+            continue
+        existing = best_by_type.get(h.hypothesis_type)
+        if existing is None or h.confidence > existing.confidence:
+            best_by_type[h.hypothesis_type] = h
     wording_list: list[dict[str, str]] = []
     band_list: list[dict[str, str]] = []
-    for h in sorted(bundle.hypotheses, key=lambda x: x.hypothesis_type):
+    for claim_type in sorted(best_by_type):
+        h = best_by_type[claim_type]
         band = band_for(h.confidence).value
         wording = WORDING_BY_BAND[band]
-        wording_list.append({"claim_type": h.hypothesis_type, "wording": wording})
-        band_list.append({"claim_type": h.hypothesis_type, "band": band})
-    # Sort for determinism
-    wording_tuple = tuple(sorted(wording_list, key=lambda d: d["claim_type"]))
-    band_tuple = tuple(sorted(band_list, key=lambda d: d["claim_type"]))
+        wording_list.append({"claim_type": claim_type, "wording": wording})
+        band_list.append({"claim_type": claim_type, "band": band})
+    wording_tuple = tuple(wording_list)
+    band_tuple = tuple(band_list)
 
     caveats: list[str] = []
     if corpus_record is not None:
