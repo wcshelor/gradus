@@ -128,6 +128,17 @@ class DifficultyPassage:
     threshold: float | None = None
 
     def to_payload(self) -> dict[str, object]:
+        measure_numbers = list(self.region.measure_numbers)
+        if len(measure_numbers) >= 2:
+            measure_range = f"{measure_numbers[0]}-{measure_numbers[-1]}"
+        elif measure_numbers:
+            measure_range = measure_numbers[0]
+        else:
+            measure_range = ""
+        if self.region.measure_start == self.region.measure_end:
+            measure_index_range = str(self.region.measure_start)
+        else:
+            measure_index_range = f"{self.region.measure_start}-{self.region.measure_end}"
         return {
             "passage_id": self.passage_id,
             "region": region_to_payload(self.region),
@@ -137,6 +148,15 @@ class DifficultyPassage:
             "rank": self.rank,
             "method": self.method,
             "threshold": self.threshold,
+            "window_index": self.region.window_index,
+            "measure_start": self.region.measure_start,
+            "measure_end": self.region.measure_end,
+            "measure_index_start": self.region.measure_start,
+            "measure_index_end": self.region.measure_end,
+            "measure_index_range": measure_index_range,
+            "measure_numbers": measure_numbers,
+            "measure_range": measure_range,
+            "label": self.region.label,
         }
 
 
@@ -186,6 +206,19 @@ class DifficultyHotspot:
     feature_contributions: tuple[FeatureContribution, ...] = ()
 
     def to_payload(self) -> dict[str, object]:
+        # Explicit diagnostic fields preserve both internal indices and printed numbers
+        # to debug pickup/hidden-measure label drift without changing user-facing labels.
+        measure_numbers = list(self.region.measure_numbers)
+        if len(measure_numbers) >= 2:
+            measure_range = f"{measure_numbers[0]}-{measure_numbers[-1]}"
+        elif measure_numbers:
+            measure_range = measure_numbers[0]
+        else:
+            measure_range = ""
+        if self.region.measure_start == self.region.measure_end:
+            measure_index_range = str(self.region.measure_start)
+        else:
+            measure_index_range = f"{self.region.measure_start}-{self.region.measure_end}"
         return {
             "hotspot_id": self.hotspot_id,
             "region": region_to_payload(self.region),
@@ -199,6 +232,15 @@ class DifficultyHotspot:
             "methods": list(self.methods),
             "method": self.method,
             "feature_contributions": [contribution.to_payload() for contribution in self.feature_contributions],
+            "window_index": self.region.window_index,
+            "measure_start": self.region.measure_start,
+            "measure_end": self.region.measure_end,
+            "measure_index_start": self.region.measure_start,
+            "measure_index_end": self.region.measure_end,
+            "measure_index_range": measure_index_range,
+            "measure_numbers": measure_numbers,
+            "measure_range": measure_range,
+            "label": self.region.label,
         }
 
 

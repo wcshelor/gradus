@@ -138,11 +138,14 @@ def test_peak_remains_in_known_spike_under_stride_change():
 def test_source_text_cannot_inject_html(tmp_path):
     from piano_difficulty.output.overview import render_html
     fixture = Path(__file__).resolve().parents[1] / "fixtures" / "feature_fixture.musicxml"
-    payload = analyze_score(fixture).to_json_payload()
+    payload = analyze_score(fixture, profile_ids=("difficulty_overview",)).to_json_payload()
     payload["score"]["title"] = "<script>alert(1)</script>"
     rendered = render_html(payload, payload["analysis_profiles"][0])
-    assert "<script>" not in rendered
-    assert "&lt;script&gt;" in rendered
+    # The injected title must be escaped; the report's own tooltip script is legitimate and allowed.
+    assert "<script>alert(1)</script>" not in rendered
+    assert "&lt;script&gt;alert(1)&lt;/script&gt;" in rendered or "&lt;script&gt;" in rendered
+    # Ensure the legitimate UI script for graph polish exists but does not expose raw injection
+    assert rendered.count("<script") == 1  # only the tooltip helper script
 
 
 def test_legacy_harness_imports_promoted_engine():
@@ -163,8 +166,9 @@ def test_runtime_outputs_and_explicit_legacy_profile(tmp_path):
     paths = write_analysis_outputs(result.to_json_payload(), tmp_path)
     assert set(paths) == {"json", "md", "html", "csv"}
     saved = json.loads(Path(paths["json"]).read_text())
-    assert saved["analysis_profiles"][0]["schema_version"] == "difficulty_overview.v1"
-    assert "Candidate high-demand sections" in Path(paths["md"]).read_text()
+    assert saved["analysis_profiles"][0]["schema_version"] == "difficulty_aspects.v1"
+    assert saved["analysis_profiles"][1]["schema_version"] == "difficulty_overview.v1"
+    assert "Difficulty Aspects" in Path(paths["md"]).read_text()
     assert "<svg" in Path(paths["html"]).read_text()
     legacy = analyze_score(fixture, profile_ids=("scoreanalyzer_reference",)).to_json_payload()
     assert [p["profile_id"] for p in legacy["analysis_profiles"]] == ["scoreanalyzer_reference"]

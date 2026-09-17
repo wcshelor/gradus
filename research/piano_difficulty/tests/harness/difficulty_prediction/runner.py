@@ -73,6 +73,18 @@ def run_experiment(
         pd.to_numeric,
         errors="coerce",
     )
+    # Drop columns that are entirely NaN (e.g., sparse runtime duration ratios) before CV;
+    # otherwise SimpleImputer with median would drop them and cause feature-importance mismatch.
+    all_nan_columns = [col for col in feature_frame.columns if feature_frame[col].isna().all()]
+    if all_nan_columns:
+        feature_frame = feature_frame.drop(columns=all_nan_columns)
+        if feature_frame.empty:
+            raise ValueError(
+                f"Feature set {config.feature_set!r} has no usable columns after dropping all-NaN features: {all_nan_columns}"
+            )
+
+    # Optional hygiene filters (conservative defaults = no-op unless explicitly enabled).
+    feature_frame = _apply_feature_hygiene(feature_frame, config.preprocessing, config.feature_set)
     id_frame = filtered_frame.loc[:, list(config.id_columns)].copy()
     target_bundle = transform_target(filtered_frame[config.target_column], config.target_scheme)
 
@@ -215,6 +227,14 @@ def _build_resolved_config(
         "preprocessing": {
             "imputer_strategy": config.preprocessing.imputer_strategy,
             "scaler": config.preprocessing.scaler,
+            "drop_near_zero_variance": config.preprocessing.drop_near_zero_variance,
+            "near_zero_variance_threshold": config.preprocessing.near_zero_variance_threshold,
+            "max_missing_fraction": config.preprocessing.max_missing_fraction,
+            "drop_sparse_duration_ratio": config.preprocessing.drop_sparse_duration_ratio,
+            "sparse_duration_ratio_prefix": config.preprocessing.sparse_duration_ratio_prefix,
+            "winsorize": config.preprocessing.winsorize,
+            "winsorize_lower_quantile": config.preprocessing.winsorize_lower_quantile,
+            "winsorize_upper_quantile": config.preprocessing.winsorize_upper_quantile,
         },
         "model_family": config.model_family,
         "model_parameters": config.model_parameters,
@@ -297,6 +317,72 @@ def _write_yaml(path: Path, payload: dict[str, Any]) -> None:
 
 def _json_summary(payload: dict[str, Any]) -> str:
     return json.dumps(payload, indent=2, sort_keys=True)
+
+
+def _apply_feature_hygiene(
+    feature_frame: pd.DataFrame,
+    preprocessing: Any,
+    feature_set: str,
+) -> pd.DataFrame:
+    result = feature_frame.copy()
+    # Drop sparse high-cardinality duration-ratio columns by prefix.
+    if preprocessing.drop_sparse_duration_ratio:
+        prefix = str(preprocessing.sparse_duration_ratio_prefix or "rhythm_duration_value_ratio_")
+        sparse_cols = [col for col in result.columns if str(col).startswith(prefix)]
+        if sparse_cols:
+            result = result.drop(columns=sparse_cols)
+            if result.empty:
+                raise ValueError(
+                    f"Feature set {feature_set!r} has no usable columns after dropping sparse prefix {prefix!r}: {sparse_cols}"
+                )
+
+    # Drop columns with missing fraction above threshold.
+    if preprocessing.max_missing_fraction is not None:
+        threshold = float(preprocessing.max_missing_fraction)
+        row_count = max(len(result), 1)
+        high_missing = [
+            col for col in result.columns if float(result[col].isna().sum() / row_count) > threshold
+        ]
+        if high_missing:
+            result = result.drop(columns=high_missing)
+            if result.empty:
+                raise ValueError(
+                    f"Feature set {feature_set!r} has no usable columns after dropping high-missing columns (threshold {threshold}): {high_missing}"
+                )
+
+    # Drop near-zero variance columns.
+    if preprocessing.drop_near_zero_variance:
+        threshold = float(preprocessing.near_zero_variance_threshold)
+        nzv_cols: list[str] = []
+        for col in result.columns:
+            series = result[col].dropna()
+            if series.empty:
+                continue
+            var = float(series.var(ddof=0))
+            if var <= threshold:
+                nzv_cols.append(col)
+        if nzv_cols:
+            result = result.drop(columns=nzv_cols)
+            if result.empty:
+                raise ValueError(
+                    f"Feature set {feature_set!r} has no usable columns after dropping near-zero variance columns (threshold {threshold}): {nzv_cols}"
+                )
+
+    # Optionally cap/winsorize extreme numeric features inside preprocessing.
+    if preprocessing.winsorize and not result.empty:
+        lower_q = float(preprocessing.winsorize_lower_quantile)
+        upper_q = float(preprocessing.winsorize_upper_quantile)
+        for col in result.columns:
+            series = result[col]
+            if series.notna().sum() < 2:
+                continue
+            lower = float(series.quantile(lower_q))
+            upper = float(series.quantile(upper_q))
+            if lower == upper:
+                continue
+            result[col] = series.clip(lower=lower, upper=upper)
+
+    return result
 
 
 def _slugify(value: str) -> str:

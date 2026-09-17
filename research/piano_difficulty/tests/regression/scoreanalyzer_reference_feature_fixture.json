@@ -6,7 +6,7 @@
         {
           "diagnostics": [],
           "dimension_id": "speed",
-          "label": "intermediate",
+          "legacy_label": "intermediate",
           "mark": 2,
           "notable_measures": [],
           "raw_units": "percent",
@@ -20,7 +20,7 @@
         {
           "diagnostics": [],
           "dimension_id": "displacement",
-          "label": "beginner",
+          "legacy_label": "beginner",
           "mark": 1,
           "notable_measures": [],
           "raw_units": "percent",
@@ -34,7 +34,7 @@
         {
           "diagnostics": [],
           "dimension_id": "chords",
-          "label": "advanced",
+          "legacy_label": "advanced",
           "mark": 3,
           "notable_measures": [
             1
@@ -50,7 +50,7 @@
         {
           "diagnostics": [],
           "dimension_id": "harmony",
-          "label": "advanced",
+          "legacy_label": "advanced",
           "mark": 3,
           "notable_measures": [
             2
@@ -66,7 +66,7 @@
         {
           "diagnostics": [],
           "dimension_id": "rhythm",
-          "label": "advanced",
+          "legacy_label": "advanced",
           "mark": 3,
           "notable_measures": [
             2
@@ -82,7 +82,7 @@
         {
           "diagnostics": [],
           "dimension_id": "length",
-          "label": "beginner",
+          "legacy_label": "beginner",
           "mark": 1,
           "notable_measures": [],
           "raw_units": "pages",
@@ -96,7 +96,7 @@
         {
           "diagnostics": [],
           "dimension_id": "tonality",
-          "label": "beginner",
+          "legacy_label": "beginner",
           "mark": 1,
           "notable_measures": [],
           "raw_units": "fifths",
@@ -112,10 +112,10 @@
         1,
         2
       ],
-      "overall_label": "intermediate",
       "overall_score": 2.0,
       "profile_id": "scoreanalyzer_reference",
-      "profile_version": "1.0"
+      "profile_version": "1.0",
+      "scoreanalyzer_legacy_grade": "intermediate"
     }
   ],
   "core_feature_schema_version": "core_features.v1",
@@ -211,6 +211,51 @@
       },
       "units": "changes",
       "value": 1
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: score duration (max measure end - min start)"
+      ],
+      "feature_id": "metadata.length_quarters",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "quarter_notes",
+      "value": 7.0
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: first tempo direction or first measure tempo_bpm"
+      ],
+      "feature_id": "metadata.primary_tempo",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "bpm",
+      "value": 100.0
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: first available measure key_fifths"
+      ],
+      "feature_id": "metadata.key_signature",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "fifths",
+      "value": 0
     },
     {
       "diagnostics": [],
@@ -1227,6 +1272,205 @@
       },
       "units": "ratio",
       "value": 0.0
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: mean(MIDI pitch) over logical notes"
+      ],
+      "feature_id": "statistics.pitch_mean",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "midi",
+      "value": 61.8
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: population stddev of MIDI pitch over logical notes"
+      ],
+      "feature_id": "statistics.pitch_std",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "midi",
+      "value": 7.652450587883597
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: Shannon entropy over exact MIDI pitch histogram"
+      ],
+      "feature_id": "statistics.pitch_entropy",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "bits",
+      "value": 2.321928094887362
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: mean(abs(MIDI-60)) over logical notes"
+      ],
+      "feature_id": "statistics.deviation_from_c4",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 6.6
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: mean(logical note duration) in quarter notes"
+      ],
+      "feature_id": "statistics.duration_mean",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "quarter_notes",
+      "value": 1.7
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: population stddev of logical note duration"
+      ],
+      "feature_id": "statistics.duration_std",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "quarter_notes",
+      "value": 1.2489995996796797
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: variability_formula=adjacent_normalized",
+        "Variability over ordered written-note MIDI pitches; flattened by onset/measure/xml_order"
+      ],
+      "feature_id": "statistics.pitch_variability",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.14938341377300535
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: variability_formula=adjacent_normalized",
+        "Variability over ordered written-note durations in quarter notes"
+      ],
+      "feature_id": "statistics.duration_variability",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 1.0666666666666667
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: black_key_rate_formula=written_note_ratio",
+        "count(pitch%12 in {1,3,6,8,10}) / N over written notes"
+      ],
+      "feature_id": "statistics.black_key_rate",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.2
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: polyphony_rate_formula=polyphonic_onset_ratio",
+        "count(onsets with >1 note) / count(distinct onsets) over logical notes"
+      ],
+      "feature_id": "statistics.polyphony_rate",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.3333333333333333
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: distinct pitch-class set size == 3 per global onset group"
+      ],
+      "feature_id": "statistics.triad_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "chords",
+      "value": 0
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: distinct pitch-class set size == 4 per global onset group"
+      ],
+      "feature_id": "statistics.seventh_chord_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "chords",
+      "value": 0
+    },
+    {
+      "diagnostics": [
+        "Yan-harness derived: distinct pitch-class set size >=5 per global onset group"
+      ],
+      "feature_id": "statistics.ninth_chord_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 2,
+        "measure_start": 1
+      },
+      "units": "chords",
+      "value": 0
     }
   ],
   "measure_summaries": [
@@ -1466,7 +1710,7 @@
     }
   ],
   "piece_summary": {
-    "feature_count": 85,
+    "feature_count": 101,
     "features": {
       "coordination.aligned_hand_onset_count": {
         "reliability": "direct",
@@ -1765,6 +2009,16 @@
         "units": "changes",
         "value": 1
       },
+      "metadata.key_signature": {
+        "reliability": "direct",
+        "units": "fifths",
+        "value": 0
+      },
+      "metadata.length_quarters": {
+        "reliability": "direct",
+        "units": "quarter_notes",
+        "value": 7.0
+      },
       "metadata.measure_count": {
         "reliability": "direct",
         "units": "measures",
@@ -1789,6 +2043,11 @@
         "reliability": "direct",
         "units": "semitones",
         "value": 22
+      },
+      "metadata.primary_tempo": {
+        "reliability": "direct",
+        "units": "bpm",
+        "value": 100.0
       },
       "metadata.tempo_change_count": {
         "reliability": "direct",
@@ -1948,6 +2207,71 @@
         "reliability": "direct",
         "units": "notes",
         "value": 1
+      },
+      "statistics.black_key_rate": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.2
+      },
+      "statistics.deviation_from_c4": {
+        "reliability": "direct",
+        "units": "semitones",
+        "value": 6.6
+      },
+      "statistics.duration_mean": {
+        "reliability": "direct",
+        "units": "quarter_notes",
+        "value": 1.7
+      },
+      "statistics.duration_std": {
+        "reliability": "direct",
+        "units": "quarter_notes",
+        "value": 1.2489995996796797
+      },
+      "statistics.duration_variability": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 1.0666666666666667
+      },
+      "statistics.ninth_chord_count": {
+        "reliability": "direct",
+        "units": "chords",
+        "value": 0
+      },
+      "statistics.pitch_entropy": {
+        "reliability": "direct",
+        "units": "bits",
+        "value": 2.321928094887362
+      },
+      "statistics.pitch_mean": {
+        "reliability": "direct",
+        "units": "midi",
+        "value": 61.8
+      },
+      "statistics.pitch_std": {
+        "reliability": "direct",
+        "units": "midi",
+        "value": 7.652450587883597
+      },
+      "statistics.pitch_variability": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.14938341377300535
+      },
+      "statistics.polyphony_rate": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.3333333333333333
+      },
+      "statistics.seventh_chord_count": {
+        "reliability": "direct",
+        "units": "chords",
+        "value": 0
+      },
+      "statistics.triad_count": {
+        "reliability": "direct",
+        "units": "chords",
+        "value": 0
       },
       "texture.chord_count": [
         {

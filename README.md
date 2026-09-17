@@ -63,6 +63,19 @@ planned but not yet built. It should make the existing capabilities visible,
 including the difficulty graph, learner notes, manual measure ranges, and
 score-only versus score-plus-report comparisons.
 
+The current CEO demo workspace is
+[`research/learning_support/ceo_demo/`](research/learning_support/ceo_demo/README.md).
+For the walkthrough, it deliberately uses a compact set of score-native,
+learner-legible feature families: note/attack density, rhythmic variety,
+leaps/displacement, hand span/chord size, polyphony/chord density, hand
+coordination, accidentals/reading load, descriptive articulation/dynamics, and
+a hotspot timeline over those signals. Ambiguous Yan et al. features such as
+distinct stroke rate, playing-speed variation, pressing velocity, melodic
+originality/melodiousness, and deeper structural-pattern modeling are deferred
+to the research track. They should be revisited after the demo through
+candidate feature banks and prediction tests against difficulty labels as one
+validity measure.
+
 Difficulty-analysis consolidation remains a component milestone. Its public
 workflow now produces factor summaries, local peaks, candidate high-demand sections,
 hand views, and JSON/Markdown/CSV/HTML reports:

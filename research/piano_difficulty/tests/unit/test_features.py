@@ -282,6 +282,22 @@ def test_extract_all_emits_registry_feature_families(tmp_path: Path) -> None:
         "metadata.tempo_change_count",
         "metadata.key_change_count",
         "metadata.meter_change_count",
+        "metadata.length_quarters",
+        "metadata.primary_tempo",
+        "metadata.key_signature",
+        "statistics.pitch_mean",
+        "statistics.pitch_std",
+        "statistics.pitch_entropy",
+        "statistics.deviation_from_c4",
+        "statistics.duration_mean",
+        "statistics.duration_std",
+        "statistics.pitch_variability",
+        "statistics.duration_variability",
+        "statistics.black_key_rate",
+        "statistics.polyphony_rate",
+        "statistics.triad_count",
+        "statistics.seventh_chord_count",
+        "statistics.ninth_chord_count",
         "rhythm.note_density",
         "rhythm.attack_density",
         "rhythm.shortest_written_duration",
@@ -435,6 +451,6 @@ def test_extract_score_returns_json_ready_single_file_result(tmp_path: Path) -> 
     assert payload["schema_version"] == "score_payload.v1"
     assert payload["core_feature_schema_version"] == "core_features.v1"
     assert payload["analysis_profiles"] == []
-    assert len(payload["features"]) == 85
-    assert payload["piece_summary"]["feature_count"] == 85
+    assert len(payload["features"]) == 101
+    assert payload["piece_summary"]["feature_count"] == 101
     assert payload["diagnostics"] == []

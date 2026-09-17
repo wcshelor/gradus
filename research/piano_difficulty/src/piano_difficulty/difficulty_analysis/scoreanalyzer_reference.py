@@ -11,7 +11,6 @@ from piano_difficulty.difficulty_analysis.models import (
     AnalysisDimensionResult,
     AnalysisProfileResult,
     DifficultyProfile,
-    mark_to_label,
 )
 if TYPE_CHECKING:
     from piano_difficulty.pipeline import ExtractionResult
@@ -99,6 +98,19 @@ def mark_tonality(value: int | None) -> int | None:
     return 4
 
 
+def scoreanalyzer_legacy_label(mark: float | int | None) -> str | None:
+    """Legacy ScoreAnalyzer compatibility labels for the reference profile only."""
+    if mark is None:
+        return None
+    if mark < 1.5:
+        return "beginner"
+    if mark < 2.5:
+        return "intermediate"
+    if mark < 3.5:
+        return "advanced"
+    return "virtuoso"
+
+
 def speed_ratio(metrics: ReferenceMetrics) -> float | None:
     if metrics.initial_tempo_bpm is None:
         return None
@@ -133,15 +145,17 @@ class ScoreAnalyzerReferenceProfile(DifficultyProfile):
             self._length_dimension(metrics),
             self._tonality_dimension(metrics),
         ]
+        for dimension in dimensions:
+            dimension.legacy_label = scoreanalyzer_legacy_label(dimension.mark)
         marks = [dimension.mark for dimension in dimensions]
         diagnostics: list[str] = []
         if any(mark is None for mark in marks):
             diagnostics.append("Overall score is unavailable because one or more dimensions are missing.")
             overall_score = None
-            overall_label = None
+            scoreanalyzer_legacy_grade = None
         else:
             overall_score = round(sum(marks) / len(marks), 1)
-            overall_label = mark_to_label(overall_score)
+            scoreanalyzer_legacy_grade = scoreanalyzer_legacy_label(overall_score)
 
         notable_measures = sorted(
             {
@@ -154,8 +168,8 @@ class ScoreAnalyzerReferenceProfile(DifficultyProfile):
             profile_id=self.profile_id,
             profile_version=self.profile_version,
             overall_score=overall_score,
-            overall_label=overall_label,
             dimensions=dimensions,
+            scoreanalyzer_legacy_grade=scoreanalyzer_legacy_grade,
             diagnostics=diagnostics,
             notable_measures=notable_measures,
         )

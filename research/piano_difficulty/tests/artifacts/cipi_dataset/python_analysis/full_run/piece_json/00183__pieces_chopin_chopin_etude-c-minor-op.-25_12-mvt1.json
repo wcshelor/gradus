@@ -1,0 +1,4075 @@
+{
+  "analysis_profiles": [],
+  "core_feature_schema_version": "core_features.v1",
+  "diagnostics": [],
+  "features": [
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.page_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "pages",
+      "value": 10
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.measure_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "measures",
+      "value": 83
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.note_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "notes",
+      "value": 2673
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.pitch_range",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 76
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.tempo_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.key_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.meter_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.note_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "notes_per_quarter",
+      "value": 8.014992503748125
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.attack_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "attacks_per_quarter",
+      "value": 3.9400299850074965
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.shortest_written_duration",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "quarter_notes",
+      "value": 0.25
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.tuplet_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "notes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "2",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 83
+      },
+      "units": "ratio",
+      "value": 0.002615844544095665
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "4",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 7
+      },
+      "units": "ratio",
+      "value": 0.011584454409566517
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "8",
+      "source_span": {
+        "measure_end": 76,
+        "measure_start": 17
+      },
+      "units": "ratio",
+      "value": 0.004110612855007474
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "16",
+      "source_span": {
+        "measure_end": 82,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.9816890881913304
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.significant_shortest_value",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "whole_note_denominator",
+      "value": 16.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.asymmetric_tuplet_measure_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.polyrhythm_measure_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.mean_simultaneity_span",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 0.0182648401826484
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.max_simultaneity_span",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 12
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.register_range",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 58
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.max_simultaneity_span",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 12
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.register_range",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 60
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.mean_melodic_leap",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 4.721249047981721
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.max_melodic_leap",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 16
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_5",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "leaps",
+      "value": 788
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_8",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "leaps",
+      "value": 232
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_12",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "leaps",
+      "value": 16
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "percent",
+      "value": 0.4437869822485207
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.max_timed_difficult_displacement",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 16
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "30",
+      "source_span": {
+        "measure_end": 30,
+        "measure_start": 30
+      },
+      "units": "events",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "45",
+      "source_span": {
+        "measure_end": 45,
+        "measure_start": 45
+      },
+      "units": "events",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "63",
+      "source_span": {
+        "measure_end": 63,
+        "measure_start": 63
+      },
+      "units": "events",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "65",
+      "source_span": {
+        "measure_end": 65,
+        "measure_start": 65
+      },
+      "units": "events",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "66",
+      "source_span": {
+        "measure_end": 66,
+        "measure_start": 66
+      },
+      "units": "events",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.mean_melodic_leap",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 4.769230769230769
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.max_melodic_leap",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 19
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_5",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "leaps",
+      "value": 821
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_8",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "leaps",
+      "value": 147
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_12",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "leaps",
+      "value": 18
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "percent",
+      "value": 0.30464584920030463
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.max_timed_difficult_displacement",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 24
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "31",
+      "source_span": {
+        "measure_end": 31,
+        "measure_start": 31
+      },
+      "units": "events",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "45",
+      "source_span": {
+        "measure_end": 45,
+        "measure_start": 45
+      },
+      "units": "events",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "83",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 83
+      },
+      "units": "events",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.notes_per_onset",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "notes_per_onset",
+      "value": 2.0342465753424657
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.simultaneity_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 1.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.vertical_density_proxy",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "average_sounding_notes",
+      "value": 2.1206896551724137
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "onsets",
+      "value": 80
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "percent",
+      "value": 5.9171597633136095
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.octave_chord_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "percent",
+      "value": 2.5
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "7",
+      "source_span": {
+        "measure_end": 7,
+        "measure_start": 7
+      },
+      "units": "onsets",
+      "value": 6
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "8",
+      "source_span": {
+        "measure_end": 8,
+        "measure_start": 8
+      },
+      "units": "onsets",
+      "value": 8
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "16",
+      "source_span": {
+        "measure_end": 16,
+        "measure_start": 16
+      },
+      "units": "onsets",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "17",
+      "source_span": {
+        "measure_end": 17,
+        "measure_start": 17
+      },
+      "units": "onsets",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "18",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 18
+      },
+      "units": "onsets",
+      "value": 6
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "19",
+      "source_span": {
+        "measure_end": 19,
+        "measure_start": 19
+      },
+      "units": "onsets",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "20",
+      "source_span": {
+        "measure_end": 20,
+        "measure_start": 20
+      },
+      "units": "onsets",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "24",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 24
+      },
+      "units": "onsets",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "25",
+      "source_span": {
+        "measure_end": 25,
+        "measure_start": 25
+      },
+      "units": "onsets",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "26",
+      "source_span": {
+        "measure_end": 26,
+        "measure_start": 26
+      },
+      "units": "onsets",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "27",
+      "source_span": {
+        "measure_end": 27,
+        "measure_start": 27
+      },
+      "units": "onsets",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "28",
+      "source_span": {
+        "measure_end": 28,
+        "measure_start": 28
+      },
+      "units": "onsets",
+      "value": 6
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "53",
+      "source_span": {
+        "measure_end": 53,
+        "measure_start": 53
+      },
+      "units": "onsets",
+      "value": 6
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "54",
+      "source_span": {
+        "measure_end": 54,
+        "measure_start": 54
+      },
+      "units": "onsets",
+      "value": 8
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "58",
+      "source_span": {
+        "measure_end": 58,
+        "measure_start": 58
+      },
+      "units": "onsets",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "72",
+      "source_span": {
+        "measure_end": 72,
+        "measure_start": 72
+      },
+      "units": "onsets",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "74",
+      "source_span": {
+        "measure_end": 74,
+        "measure_start": 74
+      },
+      "units": "onsets",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "75",
+      "source_span": {
+        "measure_end": 75,
+        "measure_start": 75
+      },
+      "units": "onsets",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "76",
+      "source_span": {
+        "measure_end": 76,
+        "measure_start": 76
+      },
+      "units": "onsets",
+      "value": 6
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "78",
+      "source_span": {
+        "measure_end": 78,
+        "measure_start": 78
+      },
+      "units": "onsets",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "80",
+      "source_span": {
+        "measure_end": 80,
+        "measure_start": 80
+      },
+      "units": "onsets",
+      "value": 6
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "83",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 83
+      },
+      "units": "onsets",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "onsets",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "percent",
+      "value": 0.30464584920030463
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.octave_chord_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "percent",
+      "value": 50.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "58",
+      "source_span": {
+        "measure_end": 58,
+        "measure_start": 58
+      },
+      "units": "onsets",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "62",
+      "source_span": {
+        "measure_end": 62,
+        "measure_start": 62
+      },
+      "units": "onsets",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "83",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 83
+      },
+      "units": "onsets",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "coordination.aligned_hand_onset_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "onsets",
+      "value": 1314
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "coordination.asynchronous_hand_onset_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "onsets",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "coordination.aligned_hand_onset_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 1.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "coordination.subdivision_mismatch_proxy",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.08034379671150972
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.clef_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 80,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 24
+    },
+    {
+      "diagnostics": [
+        "Counts only explicit hand/staff conflicts available in ScoreIR."
+      ],
+      "feature_id": "notation.cross_staff_note_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "notes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.ledger_line_burden",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ledger_lines",
+      "value": 2891
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "notes",
+      "value": 124
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "percent",
+      "value": 9.137803979366248
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "8",
+      "source_span": {
+        "measure_end": 8,
+        "measure_start": 8
+      },
+      "units": "notes",
+      "value": 6
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "12",
+      "source_span": {
+        "measure_end": 12,
+        "measure_start": 12
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "13",
+      "source_span": {
+        "measure_end": 13,
+        "measure_start": 13
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "14",
+      "source_span": {
+        "measure_end": 14,
+        "measure_start": 14
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "15",
+      "source_span": {
+        "measure_end": 15,
+        "measure_start": 15
+      },
+      "units": "notes",
+      "value": 5
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "16",
+      "source_span": {
+        "measure_end": 16,
+        "measure_start": 16
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "17",
+      "source_span": {
+        "measure_end": 17,
+        "measure_start": 17
+      },
+      "units": "notes",
+      "value": 5
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "18",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 18
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "20",
+      "source_span": {
+        "measure_end": 20,
+        "measure_start": 20
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "22",
+      "source_span": {
+        "measure_end": 22,
+        "measure_start": 22
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "23",
+      "source_span": {
+        "measure_end": 23,
+        "measure_start": 23
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "24",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 24
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "28",
+      "source_span": {
+        "measure_end": 28,
+        "measure_start": 28
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "29",
+      "source_span": {
+        "measure_end": 29,
+        "measure_start": 29
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "30",
+      "source_span": {
+        "measure_end": 30,
+        "measure_start": 30
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "31",
+      "source_span": {
+        "measure_end": 31,
+        "measure_start": 31
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "34",
+      "source_span": {
+        "measure_end": 34,
+        "measure_start": 34
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "35",
+      "source_span": {
+        "measure_end": 35,
+        "measure_start": 35
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "37",
+      "source_span": {
+        "measure_end": 37,
+        "measure_start": 37
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "42",
+      "source_span": {
+        "measure_end": 42,
+        "measure_start": 42
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "43",
+      "source_span": {
+        "measure_end": 43,
+        "measure_start": 43
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "44",
+      "source_span": {
+        "measure_end": 44,
+        "measure_start": 44
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "45",
+      "source_span": {
+        "measure_end": 45,
+        "measure_start": 45
+      },
+      "units": "notes",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "46",
+      "source_span": {
+        "measure_end": 46,
+        "measure_start": 46
+      },
+      "units": "notes",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "54",
+      "source_span": {
+        "measure_end": 54,
+        "measure_start": 54
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "57",
+      "source_span": {
+        "measure_end": 57,
+        "measure_start": 57
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "58",
+      "source_span": {
+        "measure_end": 58,
+        "measure_start": 58
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "60",
+      "source_span": {
+        "measure_end": 60,
+        "measure_start": 60
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "61",
+      "source_span": {
+        "measure_end": 61,
+        "measure_start": 61
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "62",
+      "source_span": {
+        "measure_end": 62,
+        "measure_start": 62
+      },
+      "units": "notes",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "69",
+      "source_span": {
+        "measure_end": 69,
+        "measure_start": 69
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "70",
+      "source_span": {
+        "measure_end": 70,
+        "measure_start": 70
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "71",
+      "source_span": {
+        "measure_end": 71,
+        "measure_start": 71
+      },
+      "units": "notes",
+      "value": 5
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "72",
+      "source_span": {
+        "measure_end": 72,
+        "measure_start": 72
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "73",
+      "source_span": {
+        "measure_end": 73,
+        "measure_start": 73
+      },
+      "units": "notes",
+      "value": 5
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "74",
+      "source_span": {
+        "measure_end": 74,
+        "measure_start": 74
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "76",
+      "source_span": {
+        "measure_end": 76,
+        "measure_start": 76
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "81",
+      "source_span": {
+        "measure_end": 81,
+        "measure_start": 81
+      },
+      "units": "notes",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "82",
+      "source_span": {
+        "measure_end": 82,
+        "measure_start": 82
+      },
+      "units": "notes",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "83",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 83
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "notes",
+      "value": 91
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "percent",
+      "value": 6.899166034874906
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "6",
+      "source_span": {
+        "measure_end": 6,
+        "measure_start": 6
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "8",
+      "source_span": {
+        "measure_end": 8,
+        "measure_start": 8
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "13",
+      "source_span": {
+        "measure_end": 13,
+        "measure_start": 13
+      },
+      "units": "notes",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "14",
+      "source_span": {
+        "measure_end": 14,
+        "measure_start": 14
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "16",
+      "source_span": {
+        "measure_end": 16,
+        "measure_start": 16
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "18",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 18
+      },
+      "units": "notes",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "19",
+      "source_span": {
+        "measure_end": 19,
+        "measure_start": 19
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "20",
+      "source_span": {
+        "measure_end": 20,
+        "measure_start": 20
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "21",
+      "source_span": {
+        "measure_end": 21,
+        "measure_start": 21
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "28",
+      "source_span": {
+        "measure_end": 28,
+        "measure_start": 28
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "29",
+      "source_span": {
+        "measure_end": 29,
+        "measure_start": 29
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "37",
+      "source_span": {
+        "measure_end": 37,
+        "measure_start": 37
+      },
+      "units": "notes",
+      "value": 5
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "39",
+      "source_span": {
+        "measure_end": 39,
+        "measure_start": 39
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "46",
+      "source_span": {
+        "measure_end": 46,
+        "measure_start": 46
+      },
+      "units": "notes",
+      "value": 8
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "47",
+      "source_span": {
+        "measure_end": 47,
+        "measure_start": 47
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "52",
+      "source_span": {
+        "measure_end": 52,
+        "measure_start": 52
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "54",
+      "source_span": {
+        "measure_end": 54,
+        "measure_start": 54
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "58",
+      "source_span": {
+        "measure_end": 58,
+        "measure_start": 58
+      },
+      "units": "notes",
+      "value": 5
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "59",
+      "source_span": {
+        "measure_end": 59,
+        "measure_start": 59
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "60",
+      "source_span": {
+        "measure_end": 60,
+        "measure_start": 60
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "61",
+      "source_span": {
+        "measure_end": 61,
+        "measure_start": 61
+      },
+      "units": "notes",
+      "value": 5
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "62",
+      "source_span": {
+        "measure_end": 62,
+        "measure_start": 62
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "64",
+      "source_span": {
+        "measure_end": 64,
+        "measure_start": 64
+      },
+      "units": "notes",
+      "value": 5
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "72",
+      "source_span": {
+        "measure_end": 72,
+        "measure_start": 72
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "74",
+      "source_span": {
+        "measure_end": 74,
+        "measure_start": 74
+      },
+      "units": "notes",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "75",
+      "source_span": {
+        "measure_end": 75,
+        "measure_start": 75
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "76",
+      "source_span": {
+        "measure_end": 76,
+        "measure_start": 76
+      },
+      "units": "notes",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "77",
+      "source_span": {
+        "measure_end": 77,
+        "measure_start": 77
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulated_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.07212257100149477
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulation_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "articulated_notes_per_quarter",
+      "value": 0.5787106446776612
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staccato_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.accent_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.07212257100149477
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.strong_accent_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.tenuto_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulated_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.1156963890935888
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staccato_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.1156963890935888
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.strong_accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.tenuto_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulated_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.027293404094010616
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staccato_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 82,
+        "measure_start": 13
+      },
+      "units": "ratio",
+      "value": 0.027293404094010616
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.strong_accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.tenuto_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 83,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_marking_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 82,
+        "measure_start": 1
+      },
+      "units": "markings",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_marking_rate",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 82,
+        "measure_start": 1
+      },
+      "units": "markings_per_quarter",
+      "value": 0.008995502248875561
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 82,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_range_span",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 82,
+        "measure_start": 1
+      },
+      "units": "ordinal_steps",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.wedge_start_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 46,
+        "measure_start": 7
+      },
+      "units": "wedges",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.crescendo_start_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 46,
+        "measure_start": 31
+      },
+      "units": "wedges",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.diminuendo_start_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 7,
+        "measure_start": 7
+      },
+      "units": "wedges",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staff_specific_dynamic_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 82,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 1.0
+    }
+  ],
+  "measure_summaries": [
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "6",
+          "units": "notes",
+          "value": 3
+        }
+      ],
+      "measure_index": 6
+    },
+    {
+      "features": [
+        {
+          "feature_id": "expression.diminuendo_start_count",
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "wedges",
+          "value": 1
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "7",
+          "units": "onsets",
+          "value": 6
+        }
+      ],
+      "measure_index": 7
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "8",
+          "units": "notes",
+          "value": 6
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "8",
+          "units": "notes",
+          "value": 4
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "8",
+          "units": "onsets",
+          "value": 8
+        }
+      ],
+      "measure_index": 8
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "12",
+          "units": "notes",
+          "value": 4
+        }
+      ],
+      "measure_index": 12
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "13",
+          "units": "notes",
+          "value": 4
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "13",
+          "units": "notes",
+          "value": 2
+        }
+      ],
+      "measure_index": 13
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "14",
+          "units": "notes",
+          "value": 3
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "14",
+          "units": "notes",
+          "value": 1
+        }
+      ],
+      "measure_index": 14
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "15",
+          "units": "notes",
+          "value": 5
+        }
+      ],
+      "measure_index": 15
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "16",
+          "units": "notes",
+          "value": 3
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "16",
+          "units": "notes",
+          "value": 1
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "16",
+          "units": "onsets",
+          "value": 2
+        }
+      ],
+      "measure_index": 16
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "17",
+          "units": "notes",
+          "value": 5
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "17",
+          "units": "onsets",
+          "value": 2
+        }
+      ],
+      "measure_index": 17
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "18",
+          "units": "notes",
+          "value": 3
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "18",
+          "units": "notes",
+          "value": 2
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "18",
+          "units": "onsets",
+          "value": 6
+        }
+      ],
+      "measure_index": 18
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "19",
+          "units": "notes",
+          "value": 4
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "19",
+          "units": "onsets",
+          "value": 2
+        }
+      ],
+      "measure_index": 19
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "20",
+          "units": "notes",
+          "value": 1
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "20",
+          "units": "notes",
+          "value": 3
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "20",
+          "units": "onsets",
+          "value": 4
+        }
+      ],
+      "measure_index": 20
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "21",
+          "units": "notes",
+          "value": 3
+        }
+      ],
+      "measure_index": 21
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "22",
+          "units": "notes",
+          "value": 3
+        }
+      ],
+      "measure_index": 22
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "23",
+          "units": "notes",
+          "value": 4
+        }
+      ],
+      "measure_index": 23
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "24",
+          "units": "notes",
+          "value": 1
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "24",
+          "units": "onsets",
+          "value": 2
+        }
+      ],
+      "measure_index": 24
+    },
+    {
+      "features": [
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "25",
+          "units": "onsets",
+          "value": 2
+        }
+      ],
+      "measure_index": 25
+    },
+    {
+      "features": [
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "26",
+          "units": "onsets",
+          "value": 2
+        }
+      ],
+      "measure_index": 26
+    },
+    {
+      "features": [
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "27",
+          "units": "onsets",
+          "value": 2
+        }
+      ],
+      "measure_index": 27
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "28",
+          "units": "notes",
+          "value": 1
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "28",
+          "units": "notes",
+          "value": 1
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "28",
+          "units": "onsets",
+          "value": 6
+        }
+      ],
+      "measure_index": 28
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "29",
+          "units": "notes",
+          "value": 3
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "29",
+          "units": "notes",
+          "value": 4
+        }
+      ],
+      "measure_index": 29
+    },
+    {
+      "features": [
+        {
+          "feature_id": "leaps.timed_difficult_displacement_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "30",
+          "units": "events",
+          "value": 1
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "30",
+          "units": "notes",
+          "value": 3
+        }
+      ],
+      "measure_index": 30
+    },
+    {
+      "features": [
+        {
+          "feature_id": "leaps.timed_difficult_displacement_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "31",
+          "units": "events",
+          "value": 1
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "31",
+          "units": "notes",
+          "value": 3
+        }
+      ],
+      "measure_index": 31
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "34",
+          "units": "notes",
+          "value": 4
+        }
+      ],
+      "measure_index": 34
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "35",
+          "units": "notes",
+          "value": 4
+        }
+      ],
+      "measure_index": 35
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "37",
+          "units": "notes",
+          "value": 3
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "37",
+          "units": "notes",
+          "value": 5
+        }
+      ],
+      "measure_index": 37
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "39",
+          "units": "notes",
+          "value": 4
+        }
+      ],
+      "measure_index": 39
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "42",
+          "units": "notes",
+          "value": 3
+        }
+      ],
+      "measure_index": 42
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "43",
+          "units": "notes",
+          "value": 3
+        }
+      ],
+      "measure_index": 43
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "44",
+          "units": "notes",
+          "value": 3
+        }
+      ],
+      "measure_index": 44
+    },
+    {
+      "features": [
+        {
+          "feature_id": "leaps.timed_difficult_displacement_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "45",
+          "units": "events",
+          "value": 1
+        },
+        {
+          "feature_id": "leaps.timed_difficult_displacement_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "45",
+          "units": "events",
+          "value": 1
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "45",
+          "units": "notes",
+          "value": 2
+        }
+      ],
+      "measure_index": 45
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "46",
+          "units": "notes",
+          "value": 2
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "46",
+          "units": "notes",
+          "value": 8
+        }
+      ],
+      "measure_index": 46
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "47",
+          "units": "notes",
+          "value": 1
+        }
+      ],
+      "measure_index": 47
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "52",
+          "units": "notes",
+          "value": 3
+        }
+      ],
+      "measure_index": 52
+    },
+    {
+      "features": [
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "53",
+          "units": "onsets",
+          "value": 6
+        }
+      ],
+      "measure_index": 53
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "54",
+          "units": "notes",
+          "value": 4
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "54",
+          "units": "notes",
+          "value": 4
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "54",
+          "units": "onsets",
+          "value": 8
+        }
+      ],
+      "measure_index": 54
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "57",
+          "units": "notes",
+          "value": 4
+        }
+      ],
+      "measure_index": 57
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "58",
+          "units": "notes",
+          "value": 1
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "58",
+          "units": "notes",
+          "value": 5
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "58",
+          "units": "onsets",
+          "value": 1
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "58",
+          "units": "onsets",
+          "value": 1
+        }
+      ],
+      "measure_index": 58
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "59",
+          "units": "notes",
+          "value": 4
+        }
+      ],
+      "measure_index": 59
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "60",
+          "units": "notes",
+          "value": 4
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "60",
+          "units": "notes",
+          "value": 4
+        }
+      ],
+      "measure_index": 60
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "61",
+          "units": "notes",
+          "value": 3
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "61",
+          "units": "notes",
+          "value": 5
+        }
+      ],
+      "measure_index": 61
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "62",
+          "units": "notes",
+          "value": 2
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "62",
+          "units": "notes",
+          "value": 1
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "62",
+          "units": "onsets",
+          "value": 1
+        }
+      ],
+      "measure_index": 62
+    },
+    {
+      "features": [
+        {
+          "feature_id": "leaps.timed_difficult_displacement_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "63",
+          "units": "events",
+          "value": 1
+        }
+      ],
+      "measure_index": 63
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "64",
+          "units": "notes",
+          "value": 5
+        }
+      ],
+      "measure_index": 64
+    },
+    {
+      "features": [
+        {
+          "feature_id": "leaps.timed_difficult_displacement_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "65",
+          "units": "events",
+          "value": 1
+        }
+      ],
+      "measure_index": 65
+    },
+    {
+      "features": [
+        {
+          "feature_id": "leaps.timed_difficult_displacement_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "66",
+          "units": "events",
+          "value": 2
+        }
+      ],
+      "measure_index": 66
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "69",
+          "units": "notes",
+          "value": 3
+        }
+      ],
+      "measure_index": 69
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "70",
+          "units": "notes",
+          "value": 3
+        }
+      ],
+      "measure_index": 70
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "71",
+          "units": "notes",
+          "value": 5
+        }
+      ],
+      "measure_index": 71
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "72",
+          "units": "notes",
+          "value": 3
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "72",
+          "units": "notes",
+          "value": 1
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "72",
+          "units": "onsets",
+          "value": 2
+        }
+      ],
+      "measure_index": 72
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "73",
+          "units": "notes",
+          "value": 5
+        }
+      ],
+      "measure_index": 73
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "74",
+          "units": "notes",
+          "value": 3
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "74",
+          "units": "notes",
+          "value": 2
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "74",
+          "units": "onsets",
+          "value": 2
+        }
+      ],
+      "measure_index": 74
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "75",
+          "units": "notes",
+          "value": 4
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "75",
+          "units": "onsets",
+          "value": 2
+        }
+      ],
+      "measure_index": 75
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "76",
+          "units": "notes",
+          "value": 1
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "76",
+          "units": "notes",
+          "value": 3
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "76",
+          "units": "onsets",
+          "value": 6
+        }
+      ],
+      "measure_index": 76
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "77",
+          "units": "notes",
+          "value": 4
+        }
+      ],
+      "measure_index": 77
+    },
+    {
+      "features": [
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "78",
+          "units": "onsets",
+          "value": 2
+        }
+      ],
+      "measure_index": 78
+    },
+    {
+      "features": [
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "80",
+          "units": "onsets",
+          "value": 6
+        }
+      ],
+      "measure_index": 80
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "81",
+          "units": "notes",
+          "value": 2
+        }
+      ],
+      "measure_index": 81
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "82",
+          "units": "notes",
+          "value": 2
+        }
+      ],
+      "measure_index": 82
+    },
+    {
+      "features": [
+        {
+          "feature_id": "leaps.timed_difficult_displacement_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "83",
+          "units": "events",
+          "value": 2
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "83",
+          "units": "notes",
+          "value": 3
+        },
+        {
+          "feature_id": "rhythm.duration_value_ratio",
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "2",
+          "units": "ratio",
+          "value": 0.002615844544095665
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "83",
+          "units": "onsets",
+          "value": 1
+        },
+        {
+          "feature_id": "texture.chord_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "83",
+          "units": "onsets",
+          "value": 2
+        }
+      ],
+      "measure_index": 83
+    }
+  ],
+  "piece_summary": {
+    "feature_count": 183,
+    "features": {
+      "coordination.aligned_hand_onset_count": {
+        "reliability": "direct",
+        "units": "onsets",
+        "value": 1314
+      },
+      "coordination.aligned_hand_onset_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 1.0
+      },
+      "coordination.asynchronous_hand_onset_count": {
+        "reliability": "direct",
+        "units": "onsets",
+        "value": 0
+      },
+      "coordination.subdivision_mismatch_proxy": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.0
+      },
+      "expression.accent_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.07212257100149477
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.1156963890935888
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.027293404094010616
+        }
+      ],
+      "expression.articulated_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.07212257100149477
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.1156963890935888
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.027293404094010616
+        }
+      ],
+      "expression.articulation_density": {
+        "reliability": "direct",
+        "units": "articulated_notes_per_quarter",
+        "value": 0.5787106446776612
+      },
+      "expression.crescendo_start_count": {
+        "reliability": "direct",
+        "units": "wedges",
+        "value": 2
+      },
+      "expression.diminuendo_start_count": {
+        "reliability": "direct",
+        "units": "wedges",
+        "value": 1
+      },
+      "expression.dynamic_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 1
+      },
+      "expression.dynamic_marking_count": {
+        "reliability": "direct",
+        "units": "markings",
+        "value": 3
+      },
+      "expression.dynamic_marking_rate": {
+        "reliability": "direct",
+        "units": "markings_per_quarter",
+        "value": 0.008995502248875561
+      },
+      "expression.dynamic_range_span": {
+        "reliability": "direct",
+        "units": "ordinal_steps",
+        "value": 2
+      },
+      "expression.staccato_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.staff_specific_dynamic_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 1.0
+      },
+      "expression.strong_accent_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.tenuto_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.wedge_start_count": {
+        "reliability": "direct",
+        "units": "wedges",
+        "value": 3
+      },
+      "leaps.count_ge_12": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "leaps",
+          "value": 16
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "leaps",
+          "value": 18
+        }
+      ],
+      "leaps.count_ge_5": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "leaps",
+          "value": 788
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "leaps",
+          "value": 821
+        }
+      ],
+      "leaps.count_ge_8": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "leaps",
+          "value": 232
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "leaps",
+          "value": 147
+        }
+      ],
+      "leaps.max_melodic_leap": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 16
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 19
+        }
+      ],
+      "leaps.max_timed_difficult_displacement": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 16
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 24
+        }
+      ],
+      "leaps.mean_melodic_leap": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 4.721249047981721
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 4.769230769230769
+        }
+      ],
+      "leaps.timed_difficult_displacement_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "percent",
+          "value": 0.4437869822485207
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "percent",
+          "value": 0.30464584920030463
+        }
+      ],
+      "metadata.key_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "metadata.measure_count": {
+        "reliability": "direct",
+        "units": "measures",
+        "value": 83
+      },
+      "metadata.meter_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "metadata.note_count": {
+        "reliability": "direct",
+        "units": "notes",
+        "value": 2673
+      },
+      "metadata.page_count": {
+        "reliability": "direct",
+        "units": "pages",
+        "value": 10
+      },
+      "metadata.pitch_range": {
+        "reliability": "direct",
+        "units": "semitones",
+        "value": 76
+      },
+      "metadata.tempo_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "notation.accidental_count": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "notes",
+          "value": 124
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "notes",
+          "value": 91
+        }
+      ],
+      "notation.accidental_density": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.08034379671150972
+      },
+      "notation.accidental_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "percent",
+          "value": 9.137803979366248
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "percent",
+          "value": 6.899166034874906
+        }
+      ],
+      "notation.clef_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 24
+      },
+      "notation.cross_staff_note_count": {
+        "reliability": "direct",
+        "units": "notes",
+        "value": 0
+      },
+      "notation.ledger_line_burden": {
+        "reliability": "direct",
+        "units": "ledger_lines",
+        "value": 2891
+      },
+      "pitch_geometry.max_simultaneity_span": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 12
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 12
+        }
+      ],
+      "pitch_geometry.mean_simultaneity_span": {
+        "reliability": "direct",
+        "units": "semitones",
+        "value": 0.0182648401826484
+      },
+      "pitch_geometry.register_range": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 58
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 60
+        }
+      ],
+      "rhythm.asymmetric_tuplet_measure_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.0
+      },
+      "rhythm.attack_density": {
+        "reliability": "direct",
+        "units": "attacks_per_quarter",
+        "value": 3.9400299850074965
+      },
+      "rhythm.duration_value_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "2",
+          "units": "ratio",
+          "value": 0.002615844544095665
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "4",
+          "units": "ratio",
+          "value": 0.011584454409566517
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "8",
+          "units": "ratio",
+          "value": 0.004110612855007474
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "16",
+          "units": "ratio",
+          "value": 0.9816890881913304
+        }
+      ],
+      "rhythm.note_density": {
+        "reliability": "direct",
+        "units": "notes_per_quarter",
+        "value": 8.014992503748125
+      },
+      "rhythm.polyrhythm_measure_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.0
+      },
+      "rhythm.shortest_written_duration": {
+        "reliability": "direct",
+        "units": "quarter_notes",
+        "value": 0.25
+      },
+      "rhythm.significant_shortest_value": {
+        "reliability": "direct",
+        "units": "whole_note_denominator",
+        "value": 16.0
+      },
+      "rhythm.tuplet_count": {
+        "reliability": "direct",
+        "units": "notes",
+        "value": 0
+      },
+      "texture.chord_count": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "onsets",
+          "value": 80
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "onsets",
+          "value": 4
+        }
+      ],
+      "texture.chord_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "percent",
+          "value": 5.9171597633136095
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "percent",
+          "value": 0.30464584920030463
+        }
+      ],
+      "texture.notes_per_onset": {
+        "reliability": "direct",
+        "units": "notes_per_onset",
+        "value": 2.0342465753424657
+      },
+      "texture.octave_chord_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "percent",
+          "value": 2.5
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "percent",
+          "value": 50.0
+        }
+      ],
+      "texture.simultaneity_density": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 1.0
+      },
+      "texture.vertical_density_proxy": {
+        "reliability": "direct",
+        "units": "average_sounding_notes",
+        "value": 2.1206896551724137
+      }
+    }
+  },
+  "schema": "piano_difficulty.score_payload",
+  "schema_version": "score_payload.v1",
+  "score": {
+    "composer": "F. Chopin",
+    "logical_note_count": 2673,
+    "measure_count": 83,
+    "title": "12.me \u0116TUDE. [half] = 80",
+    "written_note_count": 2676
+  },
+  "source": {
+    "path": "/Users/campshelor/Desktop/oktav-thesis/datasets/cipi/pieces/chopin/chopin_etude-c-minor-op.-25,12-mvt1.musicxml"
+  }
+}

@@ -148,12 +148,17 @@ def _build_view(extraction, options):
         warnings.append("No logical note attacks were found in this score.")
     if any(n.hand is None for n in extraction.score.logical_notes):
         warnings.append("Some attacks have no inferred hand and are omitted from hand-specific profiles.")
+    # Pass score for refined candidate sections (local causes, tempering, mosso) while preserving v1 compatibility
+    try:
+        candidate_sections = consolidate_sections(profile, composite, extraction.score, limit=options.top_sections)
+    except TypeError:
+        candidate_sections = consolidate_sections(profile, composite, limit=options.top_sections)
     return {
         "factors": summaries, "regions": temporal["regions"], "series": temporal["series"],
         "composite": temporal["overall_series"],
         "factor_peaks": [p for p in temporal["passages"] if p["contributing_feature_id"] in profile.series],
         "composite_peaks": [p for p in temporal["passages"] if p["contributing_feature_id"] not in profile.series],
-        "candidate_sections": consolidate_sections(profile, composite, limit=options.top_sections),
+        "candidate_sections": candidate_sections,
         "region_evidence": evidence, "warnings": warnings,
         "methods": profile.metadata,
     }

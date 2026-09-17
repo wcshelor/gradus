@@ -1,0 +1,1823 @@
+{
+  "analysis_profiles": [],
+  "core_feature_schema_version": "core_features.v1",
+  "diagnostics": [],
+  "features": [
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.page_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "pages",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.measure_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "measures",
+      "value": 18
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.note_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "notes",
+      "value": 103
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.pitch_range",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 45
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.tempo_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 4,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.key_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.meter_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.note_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "notes_per_quarter",
+      "value": 2.1020408163265305
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.attack_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "attacks_per_quarter",
+      "value": 1.2857142857142858
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.shortest_written_duration",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "quarter_notes",
+      "value": 0.3333333333333333
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.tuplet_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "notes",
+      "value": 6
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "2",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 6
+      },
+      "units": "ratio",
+      "value": 0.04854368932038835
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "4",
+      "source_span": {
+        "measure_end": 17,
+        "measure_start": 2
+      },
+      "units": "ratio",
+      "value": 0.6407766990291263
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "8",
+      "source_span": {
+        "measure_end": 16,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.2524271844660194
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "12",
+      "source_span": {
+        "measure_end": 17,
+        "measure_start": 8
+      },
+      "units": "ratio",
+      "value": 0.05825242718446602
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.significant_shortest_value",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "whole_note_denominator",
+      "value": 8.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.asymmetric_tuplet_measure_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 17,
+        "measure_start": 8
+      },
+      "units": "ratio",
+      "value": 0.1111111111111111
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.polyrhythm_measure_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 17,
+        "measure_start": 8
+      },
+      "units": "ratio",
+      "value": 0.1111111111111111
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.polyrhythm_flag",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "8",
+      "source_span": {
+        "measure_end": 8,
+        "measure_start": 8
+      },
+      "units": "flag",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.polyrhythm_flag",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "17",
+      "source_span": {
+        "measure_end": 17,
+        "measure_start": 17
+      },
+      "units": "flag",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.mean_simultaneity_span",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.max_simultaneity_span",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.register_range",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 21
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.max_simultaneity_span",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "semitones",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.register_range",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "semitones",
+      "value": 24
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.mean_melodic_leap",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 3.3114754098360657
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.max_melodic_leap",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 12
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_5",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "leaps",
+      "value": 10
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_8",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "leaps",
+      "value": 7
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_12",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "leaps",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.max_timed_difficult_displacement",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.mean_melodic_leap",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "semitones",
+      "value": 4.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.max_melodic_leap",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "semitones",
+      "value": 14
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_5",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "leaps",
+      "value": 13
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_8",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "leaps",
+      "value": 6
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_12",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "leaps",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "percent",
+      "value": 2.5
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.max_timed_difficult_displacement",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "semitones",
+      "value": 14
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "11",
+      "source_span": {
+        "measure_end": 11,
+        "measure_start": 11
+      },
+      "units": "events",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.notes_per_onset",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "notes_per_onset",
+      "value": 1.6349206349206349
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.simultaneity_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.6349206349206349
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.vertical_density_proxy",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "average_sounding_notes",
+      "value": 1.8571428571428572
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "onsets",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.octave_chord_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "onsets",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.octave_chord_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "coordination.aligned_hand_onset_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "onsets",
+      "value": 40
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "coordination.asynchronous_hand_onset_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "onsets",
+      "value": 23
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "coordination.aligned_hand_onset_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.6349206349206349
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "coordination.subdivision_mismatch_proxy",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.3220338983050847
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.04854368932038835
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.clef_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 1,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [
+        "Counts only explicit hand/staff conflicts available in ScoreIR."
+      ],
+      "feature_id": "notation.cross_staff_note_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "notes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.ledger_line_burden",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ledger_lines",
+      "value": 10
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "notes",
+      "value": 4
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "percent",
+      "value": 6.451612903225806
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "6",
+      "source_span": {
+        "measure_end": 6,
+        "measure_start": 6
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "7",
+      "source_span": {
+        "measure_end": 7,
+        "measure_start": 7
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "11",
+      "source_span": {
+        "measure_end": 11,
+        "measure_start": 11
+      },
+      "units": "notes",
+      "value": 2
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "percent",
+      "value": 2.4390243902439024
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "measure",
+      "scope_ref": "7",
+      "source_span": {
+        "measure_end": 7,
+        "measure_start": 7
+      },
+      "units": "notes",
+      "value": 1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulated_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulation_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "articulated_notes_per_quarter",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staccato_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.accent_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.strong_accent_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.tenuto_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulated_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staccato_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.strong_accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.tenuto_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulated_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staccato_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.strong_accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.tenuto_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": 18,
+        "measure_start": 2
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_marking_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 4,
+        "measure_start": 1
+      },
+      "units": "markings",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_marking_rate",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 4,
+        "measure_start": 1
+      },
+      "units": "markings_per_quarter",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 4,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_range_span",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 4,
+        "measure_start": 1
+      },
+      "units": "ordinal_steps",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.wedge_start_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 4,
+        "measure_start": 1
+      },
+      "units": "wedges",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.crescendo_start_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "wedges",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.diminuendo_start_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "wedges",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staff_specific_dynamic_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 4,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    }
+  ],
+  "measure_summaries": [
+    {
+      "features": [
+        {
+          "feature_id": "notation.clef_change_count",
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "changes",
+          "value": 0
+        }
+      ],
+      "measure_index": 1
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "6",
+          "units": "notes",
+          "value": 1
+        }
+      ],
+      "measure_index": 6
+    },
+    {
+      "features": [
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "7",
+          "units": "notes",
+          "value": 1
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "7",
+          "units": "notes",
+          "value": 1
+        }
+      ],
+      "measure_index": 7
+    },
+    {
+      "features": [
+        {
+          "feature_id": "rhythm.polyrhythm_flag",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "8",
+          "units": "flag",
+          "value": 1
+        }
+      ],
+      "measure_index": 8
+    },
+    {
+      "features": [
+        {
+          "feature_id": "leaps.timed_difficult_displacement_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "11",
+          "units": "events",
+          "value": 1
+        },
+        {
+          "feature_id": "notation.accidental_count",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "11",
+          "units": "notes",
+          "value": 2
+        }
+      ],
+      "measure_index": 11
+    },
+    {
+      "features": [
+        {
+          "feature_id": "rhythm.polyrhythm_flag",
+          "reliability": "direct",
+          "scope": "measure",
+          "scope_ref": "17",
+          "units": "flag",
+          "value": 1
+        }
+      ],
+      "measure_index": 17
+    }
+  ],
+  "piece_summary": {
+    "feature_count": 89,
+    "features": {
+      "coordination.aligned_hand_onset_count": {
+        "reliability": "direct",
+        "units": "onsets",
+        "value": 40
+      },
+      "coordination.aligned_hand_onset_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.6349206349206349
+      },
+      "coordination.asynchronous_hand_onset_count": {
+        "reliability": "direct",
+        "units": "onsets",
+        "value": 23
+      },
+      "coordination.subdivision_mismatch_proxy": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.3220338983050847
+      },
+      "expression.accent_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.articulated_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.articulation_density": {
+        "reliability": "direct",
+        "units": "articulated_notes_per_quarter",
+        "value": 0.0
+      },
+      "expression.crescendo_start_count": {
+        "reliability": "direct",
+        "units": "wedges",
+        "value": 0
+      },
+      "expression.diminuendo_start_count": {
+        "reliability": "direct",
+        "units": "wedges",
+        "value": 0
+      },
+      "expression.dynamic_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "expression.dynamic_marking_count": {
+        "reliability": "direct",
+        "units": "markings",
+        "value": 0
+      },
+      "expression.dynamic_marking_rate": {
+        "reliability": "direct",
+        "units": "markings_per_quarter",
+        "value": 0.0
+      },
+      "expression.dynamic_range_span": {
+        "reliability": "direct",
+        "units": "ordinal_steps",
+        "value": 0
+      },
+      "expression.staccato_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.staff_specific_dynamic_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.0
+      },
+      "expression.strong_accent_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.tenuto_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.wedge_start_count": {
+        "reliability": "direct",
+        "units": "wedges",
+        "value": 0
+      },
+      "leaps.count_ge_12": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "leaps",
+          "value": 2
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "leaps",
+          "value": 4
+        }
+      ],
+      "leaps.count_ge_5": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "leaps",
+          "value": 10
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "leaps",
+          "value": 13
+        }
+      ],
+      "leaps.count_ge_8": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "leaps",
+          "value": 7
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "leaps",
+          "value": 6
+        }
+      ],
+      "leaps.max_melodic_leap": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 12
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 14
+        }
+      ],
+      "leaps.max_timed_difficult_displacement": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 14
+        }
+      ],
+      "leaps.mean_melodic_leap": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 3.3114754098360657
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 4.0
+        }
+      ],
+      "leaps.timed_difficult_displacement_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "percent",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "percent",
+          "value": 2.5
+        }
+      ],
+      "metadata.key_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "metadata.measure_count": {
+        "reliability": "direct",
+        "units": "measures",
+        "value": 18
+      },
+      "metadata.meter_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "metadata.note_count": {
+        "reliability": "direct",
+        "units": "notes",
+        "value": 103
+      },
+      "metadata.page_count": {
+        "reliability": "direct",
+        "units": "pages",
+        "value": 1
+      },
+      "metadata.pitch_range": {
+        "reliability": "direct",
+        "units": "semitones",
+        "value": 45
+      },
+      "metadata.tempo_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "notation.accidental_count": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "notes",
+          "value": 4
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "notes",
+          "value": 1
+        }
+      ],
+      "notation.accidental_density": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.04854368932038835
+      },
+      "notation.accidental_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "percent",
+          "value": 6.451612903225806
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "percent",
+          "value": 2.4390243902439024
+        }
+      ],
+      "notation.clef_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "notation.cross_staff_note_count": {
+        "reliability": "direct",
+        "units": "notes",
+        "value": 0
+      },
+      "notation.ledger_line_burden": {
+        "reliability": "direct",
+        "units": "ledger_lines",
+        "value": 10
+      },
+      "pitch_geometry.max_simultaneity_span": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 0
+        }
+      ],
+      "pitch_geometry.mean_simultaneity_span": {
+        "reliability": "direct",
+        "units": "semitones",
+        "value": 0.0
+      },
+      "pitch_geometry.register_range": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 21
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 24
+        }
+      ],
+      "rhythm.asymmetric_tuplet_measure_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.1111111111111111
+      },
+      "rhythm.attack_density": {
+        "reliability": "direct",
+        "units": "attacks_per_quarter",
+        "value": 1.2857142857142858
+      },
+      "rhythm.duration_value_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "2",
+          "units": "ratio",
+          "value": 0.04854368932038835
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "4",
+          "units": "ratio",
+          "value": 0.6407766990291263
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "8",
+          "units": "ratio",
+          "value": 0.2524271844660194
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "12",
+          "units": "ratio",
+          "value": 0.05825242718446602
+        }
+      ],
+      "rhythm.note_density": {
+        "reliability": "direct",
+        "units": "notes_per_quarter",
+        "value": 2.1020408163265305
+      },
+      "rhythm.polyrhythm_measure_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.1111111111111111
+      },
+      "rhythm.shortest_written_duration": {
+        "reliability": "direct",
+        "units": "quarter_notes",
+        "value": 0.3333333333333333
+      },
+      "rhythm.significant_shortest_value": {
+        "reliability": "direct",
+        "units": "whole_note_denominator",
+        "value": 8.0
+      },
+      "rhythm.tuplet_count": {
+        "reliability": "direct",
+        "units": "notes",
+        "value": 6
+      },
+      "texture.chord_count": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "onsets",
+          "value": 0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "onsets",
+          "value": 0
+        }
+      ],
+      "texture.chord_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "percent",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "percent",
+          "value": 0.0
+        }
+      ],
+      "texture.notes_per_onset": {
+        "reliability": "direct",
+        "units": "notes_per_onset",
+        "value": 1.6349206349206349
+      },
+      "texture.octave_chord_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "percent",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "percent",
+          "value": 0.0
+        }
+      ],
+      "texture.simultaneity_density": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.6349206349206349
+      },
+      "texture.vertical_density_proxy": {
+        "reliability": "direct",
+        "units": "average_sounding_notes",
+        "value": 1.8571428571428572
+      }
+    }
+  },
+  "schema": "piano_difficulty.score_payload",
+  "schema_version": "score_payload.v1",
+  "score": {
+    "composer": null,
+    "logical_note_count": 103,
+    "measure_count": 18,
+    "title": "71",
+    "written_note_count": 103
+  },
+  "source": {
+    "path": "/Users/campshelor/Desktop/oktav-thesis/datasets/cipi/pieces/mozart/mozart_minuet-nannerl-music-book-kv-1e-mvt1.musicxml"
+  }
+}

@@ -28,6 +28,12 @@ Questions to explore:
 - What distinguishes actionable support from fluent but generic advice?
 - Which existing intelligent tutoring or music-learning systems are relevant?
 
+Start with `ai_assisted_instrument_learning.md` for the focused state-of-the-art
+map. Current systems are strongest at automatic performance assessment and
+instant correctness feedback, while diagnosis, intervention matching,
+teacher-facing support, and generated piano-technique exercises remain open
+research gaps.
+
 ## Personalization and learner context
 
 Questions to explore:

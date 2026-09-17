@@ -1,0 +1,3816 @@
+{
+  "analysis_profiles": [],
+  "core_feature_schema_version": "core_features.v1",
+  "diagnostics": [
+    {
+      "code": "multi_part_score",
+      "measure_end": null,
+      "measure_start": null,
+      "message": "MusicXML score contains 2 parts; normalization selected one piano-like part.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 1,
+      "measure_start": 1,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 2,
+      "measure_start": 2,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 3,
+      "measure_start": 3,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 3,
+      "measure_start": 3,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 3,
+      "measure_start": 3,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 3,
+      "measure_start": 3,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 3,
+      "measure_start": 3,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 3,
+      "measure_start": 3,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 3,
+      "measure_start": 3,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 3,
+      "measure_start": 3,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 3,
+      "measure_start": 3,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 3,
+      "measure_start": 3,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 4,
+      "measure_start": 4,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 5,
+      "measure_start": 5,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 5,
+      "measure_start": 5,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 5,
+      "measure_start": 5,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 5,
+      "measure_start": 5,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 5,
+      "measure_start": 5,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 5,
+      "measure_start": 5,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 5,
+      "measure_start": 5,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 5,
+      "measure_start": 5,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 5,
+      "measure_start": 5,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 5,
+      "measure_start": 5,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 6,
+      "measure_start": 6,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 6,
+      "measure_start": 6,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 6,
+      "measure_start": 6,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 6,
+      "measure_start": 6,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 6,
+      "measure_start": 6,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 6,
+      "measure_start": 6,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 6,
+      "measure_start": 6,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 6,
+      "measure_start": 6,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 6,
+      "measure_start": 6,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 6,
+      "measure_start": 6,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 7,
+      "measure_start": 7,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 8,
+      "measure_start": 8,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 8,
+      "measure_start": 8,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 8,
+      "measure_start": 8,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 8,
+      "measure_start": 8,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 8,
+      "measure_start": 8,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 8,
+      "measure_start": 8,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 8,
+      "measure_start": 8,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 8,
+      "measure_start": 8,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 8,
+      "measure_start": 8,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 9,
+      "measure_start": 9,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 9,
+      "measure_start": 9,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 9,
+      "measure_start": 9,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 9,
+      "measure_start": 9,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 9,
+      "measure_start": 9,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 9,
+      "measure_start": 9,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 9,
+      "measure_start": 9,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 9,
+      "measure_start": 9,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 9,
+      "measure_start": 9,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 9,
+      "measure_start": 9,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 10,
+      "measure_start": 10,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 11,
+      "measure_start": 11,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 12,
+      "measure_start": 12,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 13,
+      "measure_start": 13,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 14,
+      "measure_start": 14,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 15,
+      "measure_start": 15,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 16,
+      "measure_start": 16,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 17,
+      "measure_start": 17,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 17,
+      "measure_start": 17,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 17,
+      "measure_start": 17,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 17,
+      "measure_start": 17,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 17,
+      "measure_start": 17,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 17,
+      "measure_start": 17,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 17,
+      "measure_start": 17,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 17,
+      "measure_start": 17,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 17,
+      "measure_start": 17,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 17,
+      "measure_start": 17,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 18,
+      "measure_start": 18,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 18,
+      "measure_start": 18,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 18,
+      "measure_start": 18,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 18,
+      "measure_start": 18,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 18,
+      "measure_start": 18,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 18,
+      "measure_start": 18,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 18,
+      "measure_start": 18,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 18,
+      "measure_start": 18,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 18,
+      "measure_start": 18,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 18,
+      "measure_start": 18,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 19,
+      "measure_start": 19,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 19,
+      "measure_start": 19,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 19,
+      "measure_start": 19,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 19,
+      "measure_start": 19,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 19,
+      "measure_start": 19,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 19,
+      "measure_start": 19,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 19,
+      "measure_start": 19,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 19,
+      "measure_start": 19,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 19,
+      "measure_start": 19,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 19,
+      "measure_start": 19,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 20,
+      "measure_start": 20,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 20,
+      "measure_start": 20,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 20,
+      "measure_start": 20,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 20,
+      "measure_start": 20,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 20,
+      "measure_start": 20,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 20,
+      "measure_start": 20,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 20,
+      "measure_start": 20,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 20,
+      "measure_start": 20,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 20,
+      "measure_start": 20,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 20,
+      "measure_start": 20,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 21,
+      "measure_start": 21,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 21,
+      "measure_start": 21,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 21,
+      "measure_start": 21,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 21,
+      "measure_start": 21,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 21,
+      "measure_start": 21,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 21,
+      "measure_start": 21,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 21,
+      "measure_start": 21,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 21,
+      "measure_start": 21,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 21,
+      "measure_start": 21,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 21,
+      "measure_start": 21,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 21,
+      "measure_start": 21,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 21,
+      "measure_start": 21,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 22,
+      "measure_start": 22,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 22,
+      "measure_start": 22,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 22,
+      "measure_start": 22,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 22,
+      "measure_start": 22,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 22,
+      "measure_start": 22,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 22,
+      "measure_start": 22,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 22,
+      "measure_start": 22,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 22,
+      "measure_start": 22,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 23,
+      "measure_start": 23,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    },
+    {
+      "code": "missing_staff",
+      "measure_end": 24,
+      "measure_start": 24,
+      "message": "A note or rest is missing a staff label.",
+      "severity": "warning"
+    }
+  ],
+  "features": [
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.page_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "pages",
+      "value": 3
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.measure_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "measures",
+      "value": 24
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.note_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "notes",
+      "value": 262
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.pitch_range",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "semitones",
+      "value": 27
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.tempo_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.key_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "metadata.meter_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.note_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "notes_per_quarter",
+      "value": 1.8194444444444444
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.attack_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "attacks_per_quarter",
+      "value": 1.7430555555555556
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.shortest_written_duration",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "quarter_notes",
+      "value": 0.1
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.tuplet_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "notes",
+      "value": 20
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "1",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 24
+      },
+      "units": "ratio",
+      "value": 0.003484320557491289
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "2",
+      "source_span": {
+        "measure_end": 23,
+        "measure_start": 4
+      },
+      "units": "ratio",
+      "value": 0.020905923344947737
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "4",
+      "source_span": {
+        "measure_end": 23,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.10104529616724739
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "8",
+      "source_span": {
+        "measure_end": 23,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.6794425087108014
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "16",
+      "source_span": {
+        "measure_end": 22,
+        "measure_start": 8
+      },
+      "units": "ratio",
+      "value": 0.0975609756097561
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "20",
+      "source_span": {
+        "measure_end": 16,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.017421602787456445
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "32",
+      "source_span": {
+        "measure_end": 4,
+        "measure_start": 4
+      },
+      "units": "ratio",
+      "value": 0.027874564459930314
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.duration_value_ratio",
+      "reliability": "direct",
+      "scope": "duration_value",
+      "scope_ref": "40",
+      "source_span": {
+        "measure_end": 16,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.05226480836236934
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.significant_shortest_value",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "whole_note_denominator",
+      "value": 8.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.asymmetric_tuplet_measure_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 16,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.20833333333333334
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "rhythm.polyrhythm_measure_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.mean_simultaneity_span",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "semitones",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.max_simultaneity_span",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "semitones",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.register_range",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "semitones",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.max_simultaneity_span",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "semitones",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "pitch_geometry.register_range",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "semitones",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.mean_melodic_leap",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "semitones",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.max_melodic_leap",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "semitones",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_5",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "leaps",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_8",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "leaps",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_12",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "leaps",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.max_timed_difficult_displacement",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "semitones",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.mean_melodic_leap",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "semitones",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.max_melodic_leap",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "semitones",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_5",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "leaps",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_8",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "leaps",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.count_ge_12",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "leaps",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.timed_difficult_displacement_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "leaps.max_timed_difficult_displacement",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "semitones",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.notes_per_onset",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "notes_per_onset",
+      "value": 1.043824701195219
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.simultaneity_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.043824701195219126
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.vertical_density_proxy",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "average_sounding_notes",
+      "value": 1.2048611111111112
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "onsets",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.octave_chord_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_count",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "onsets",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.chord_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "texture.octave_chord_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "coordination.aligned_hand_onset_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "onsets",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "coordination.asynchronous_hand_onset_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "onsets",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "coordination.aligned_hand_onset_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "coordination.subdivision_mismatch_proxy",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0975609756097561
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.clef_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 1,
+        "measure_start": 1
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [
+        "Counts only explicit hand/staff conflicts available in ScoreIR."
+      ],
+      "feature_id": "notation.cross_staff_note_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "notes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.ledger_line_burden",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "ledger_lines",
+      "value": 24
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "notes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_count",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "notes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "notation.accidental_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "percent",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulated_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulation_density",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "articulated_notes_per_quarter",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staccato_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.accent_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.strong_accent_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.tenuto_note_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": 24,
+        "measure_start": 1
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulated_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staccato_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.strong_accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.tenuto_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "right",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.articulated_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staccato_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.strong_accent_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.tenuto_note_ratio",
+      "reliability": "direct",
+      "scope": "hand",
+      "scope_ref": "left",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_marking_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "markings",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_marking_rate",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "markings_per_quarter",
+      "value": 0.0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_change_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "changes",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.dynamic_range_span",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ordinal_steps",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.wedge_start_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "wedges",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.crescendo_start_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "wedges",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.diminuendo_start_count",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "wedges",
+      "value": 0
+    },
+    {
+      "diagnostics": [],
+      "feature_id": "expression.staff_specific_dynamic_ratio",
+      "reliability": "direct",
+      "scope": "piece",
+      "scope_ref": "all",
+      "source_span": {
+        "measure_end": null,
+        "measure_start": null
+      },
+      "units": "ratio",
+      "value": 0.0
+    }
+  ],
+  "measure_summaries": [
+    {
+      "features": [
+        {
+          "feature_id": "notation.clef_change_count",
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "changes",
+          "value": 0
+        }
+      ],
+      "measure_index": 1
+    },
+    {
+      "features": [
+        {
+          "feature_id": "rhythm.duration_value_ratio",
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "32",
+          "units": "ratio",
+          "value": 0.027874564459930314
+        }
+      ],
+      "measure_index": 4
+    },
+    {
+      "features": [
+        {
+          "feature_id": "rhythm.duration_value_ratio",
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "1",
+          "units": "ratio",
+          "value": 0.003484320557491289
+        }
+      ],
+      "measure_index": 24
+    }
+  ],
+  "piece_summary": {
+    "feature_count": 86,
+    "features": {
+      "coordination.aligned_hand_onset_count": {
+        "reliability": "direct",
+        "units": "onsets",
+        "value": 0
+      },
+      "coordination.aligned_hand_onset_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.0
+      },
+      "coordination.asynchronous_hand_onset_count": {
+        "reliability": "direct",
+        "units": "onsets",
+        "value": 0
+      },
+      "coordination.subdivision_mismatch_proxy": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.0
+      },
+      "expression.accent_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.articulated_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.articulation_density": {
+        "reliability": "direct",
+        "units": "articulated_notes_per_quarter",
+        "value": 0.0
+      },
+      "expression.crescendo_start_count": {
+        "reliability": "direct",
+        "units": "wedges",
+        "value": 0
+      },
+      "expression.diminuendo_start_count": {
+        "reliability": "direct",
+        "units": "wedges",
+        "value": 0
+      },
+      "expression.dynamic_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "expression.dynamic_marking_count": {
+        "reliability": "direct",
+        "units": "markings",
+        "value": 0
+      },
+      "expression.dynamic_marking_rate": {
+        "reliability": "direct",
+        "units": "markings_per_quarter",
+        "value": 0.0
+      },
+      "expression.dynamic_range_span": {
+        "reliability": "direct",
+        "units": "ordinal_steps",
+        "value": 0
+      },
+      "expression.staccato_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.staff_specific_dynamic_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.0
+      },
+      "expression.strong_accent_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.tenuto_note_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "piece",
+          "scope_ref": "all",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "ratio",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "ratio",
+          "value": 0.0
+        }
+      ],
+      "expression.wedge_start_count": {
+        "reliability": "direct",
+        "units": "wedges",
+        "value": 0
+      },
+      "leaps.count_ge_12": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "leaps",
+          "value": 0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "leaps",
+          "value": 0
+        }
+      ],
+      "leaps.count_ge_5": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "leaps",
+          "value": 0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "leaps",
+          "value": 0
+        }
+      ],
+      "leaps.count_ge_8": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "leaps",
+          "value": 0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "leaps",
+          "value": 0
+        }
+      ],
+      "leaps.max_melodic_leap": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 0
+        }
+      ],
+      "leaps.max_timed_difficult_displacement": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 0
+        }
+      ],
+      "leaps.mean_melodic_leap": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 0.0
+        }
+      ],
+      "leaps.timed_difficult_displacement_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "percent",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "percent",
+          "value": 0.0
+        }
+      ],
+      "metadata.key_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "metadata.measure_count": {
+        "reliability": "direct",
+        "units": "measures",
+        "value": 24
+      },
+      "metadata.meter_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "metadata.note_count": {
+        "reliability": "direct",
+        "units": "notes",
+        "value": 262
+      },
+      "metadata.page_count": {
+        "reliability": "direct",
+        "units": "pages",
+        "value": 3
+      },
+      "metadata.pitch_range": {
+        "reliability": "direct",
+        "units": "semitones",
+        "value": 27
+      },
+      "metadata.tempo_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "notation.accidental_count": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "notes",
+          "value": 0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "notes",
+          "value": 0
+        }
+      ],
+      "notation.accidental_density": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.0975609756097561
+      },
+      "notation.accidental_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "percent",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "percent",
+          "value": 0.0
+        }
+      ],
+      "notation.clef_change_count": {
+        "reliability": "direct",
+        "units": "changes",
+        "value": 0
+      },
+      "notation.cross_staff_note_count": {
+        "reliability": "direct",
+        "units": "notes",
+        "value": 0
+      },
+      "notation.ledger_line_burden": {
+        "reliability": "direct",
+        "units": "ledger_lines",
+        "value": 24
+      },
+      "pitch_geometry.max_simultaneity_span": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 0
+        }
+      ],
+      "pitch_geometry.mean_simultaneity_span": {
+        "reliability": "direct",
+        "units": "semitones",
+        "value": 0.0
+      },
+      "pitch_geometry.register_range": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "semitones",
+          "value": 0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "semitones",
+          "value": 0
+        }
+      ],
+      "rhythm.asymmetric_tuplet_measure_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.20833333333333334
+      },
+      "rhythm.attack_density": {
+        "reliability": "direct",
+        "units": "attacks_per_quarter",
+        "value": 1.7430555555555556
+      },
+      "rhythm.duration_value_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "1",
+          "units": "ratio",
+          "value": 0.003484320557491289
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "2",
+          "units": "ratio",
+          "value": 0.020905923344947737
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "4",
+          "units": "ratio",
+          "value": 0.10104529616724739
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "8",
+          "units": "ratio",
+          "value": 0.6794425087108014
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "16",
+          "units": "ratio",
+          "value": 0.0975609756097561
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "20",
+          "units": "ratio",
+          "value": 0.017421602787456445
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "32",
+          "units": "ratio",
+          "value": 0.027874564459930314
+        },
+        {
+          "reliability": "direct",
+          "scope": "duration_value",
+          "scope_ref": "40",
+          "units": "ratio",
+          "value": 0.05226480836236934
+        }
+      ],
+      "rhythm.note_density": {
+        "reliability": "direct",
+        "units": "notes_per_quarter",
+        "value": 1.8194444444444444
+      },
+      "rhythm.polyrhythm_measure_ratio": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.0
+      },
+      "rhythm.shortest_written_duration": {
+        "reliability": "direct",
+        "units": "quarter_notes",
+        "value": 0.1
+      },
+      "rhythm.significant_shortest_value": {
+        "reliability": "direct",
+        "units": "whole_note_denominator",
+        "value": 8.0
+      },
+      "rhythm.tuplet_count": {
+        "reliability": "direct",
+        "units": "notes",
+        "value": 20
+      },
+      "texture.chord_count": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "onsets",
+          "value": 0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "onsets",
+          "value": 0
+        }
+      ],
+      "texture.chord_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "percent",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "percent",
+          "value": 0.0
+        }
+      ],
+      "texture.notes_per_onset": {
+        "reliability": "direct",
+        "units": "notes_per_onset",
+        "value": 1.043824701195219
+      },
+      "texture.octave_chord_ratio": [
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "right",
+          "units": "percent",
+          "value": 0.0
+        },
+        {
+          "reliability": "direct",
+          "scope": "hand",
+          "scope_ref": "left",
+          "units": "percent",
+          "value": 0.0
+        }
+      ],
+      "texture.simultaneity_density": {
+        "reliability": "direct",
+        "units": "ratio",
+        "value": 0.043824701195219126
+      },
+      "texture.vertical_density_proxy": {
+        "reliability": "direct",
+        "units": "average_sounding_notes",
+        "value": 1.2048611111111112
+      }
+    }
+  },
+  "schema": "piano_difficulty.score_payload",
+  "schema_version": "score_payload.v1",
+  "score": {
+    "composer": null,
+    "logical_note_count": 262,
+    "measure_count": 24,
+    "title": "Pr\u00e9lude No. 9 in E Major, from \u201cDas Wohltemperierte Klavier\u201d Book I, Johann Sebastian Bach",
+    "written_note_count": 287
+  },
+  "source": {
+    "path": "/Users/campshelor/Desktop/oktav-thesis/datasets/cipi/pieces/bach/bach_prelude-e-major-bwv-854-mvt1.musicxml"
+  }
+}

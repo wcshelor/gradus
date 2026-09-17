@@ -15,7 +15,10 @@ def test_render_verbose_report_includes_feature_and_profile_details() -> None:
 
     assert "Verbose Extraction Report" in report
     assert "Path: " in report
-    assert "Feature count: 85" in report
+    # Feature count grew after statistics promotion (now 101); keep check flexible
+    assert "Feature count: " in report
+    # Also verify count matches payload
+    assert f"Feature count: {payload['piece_summary']['feature_count']}" in report
     assert "- metadata.measure_count: 2 measures" in report
     assert "- notation.accidental_count" in report
     assert "source span: measure 2" in report

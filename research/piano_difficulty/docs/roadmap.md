@@ -17,6 +17,9 @@ user-selected passages and questions do not need a difficulty ranking first.
 - Promoted existing Dynamics algorithms/contracts and exporters into runtime.
 - Kept experiment configs, runners, piece labs and compatibility imports.
 - Added the versioned difficulty_overview default profile.
+- Promoted `difficulty_aspects.v1` as the default/main Gradus difficulty
+  profile, with `difficulty_overview.v1` retained as the compatibility timeline
+  slice.
 - Added reviewed factor definitions, exact attack selection, hand views,
   factor peaks, merged candidate sections and region input provenance.
 - Connected Python API, CLI, batch, JSON, Markdown, CSV and HTML timeline.
@@ -33,7 +36,8 @@ user-selected passages and questions do not need a difficulty ranking first.
    record direction, redundancy and limitations before adding their weights.
 4. Add exact feature-observation attribution when the semantic passage program
    requires it. Input event IDs currently provide provenance only.
-5. Let passage practice consume score regions and optional factor evidence,
+5. Let passage practice consume the 9-aspect demand profile, score regions, and
+   optional factor evidence,
    including regions selected by the learner. Semantic interpretation and
    pedagogical assistance are separate capabilities, not a mandatory continuation
    of hotspot detection. Optional learner-context work belongs in learning support.

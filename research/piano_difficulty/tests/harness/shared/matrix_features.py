@@ -35,7 +35,24 @@ RUNTIME_FAMILY_PREFIXES: dict[str, tuple[str, ...]] = {
     "coordination": ("coordination_",),
     "notation": ("notation_",),
     "expression": ("expression_",),
+    "statistics": ("statistics_",),
 }
+
+# Rhythm duration-ratio columns are high-cardinality sparse features that dominate
+# variance and calibration.  Core sets exclude them by using a curated non-sparse
+# rhythm allowlist rather than the broad ``rhythm_`` prefix.
+_RHYTHM_CORE_PREFIXES: tuple[str, ...] = (
+    "rhythm_asymmetric_tuplet",
+    "rhythm_attack_density",
+    "rhythm_note_density",
+    "rhythm_polyrhythm",
+    "rhythm_shortest",
+    "rhythm_significant",
+    "rhythm_tuplet",
+)
+
+# Prefix that identifies sparse high-cardinality duration-ratio columns.
+RUNTIME_SPARSE_DURATION_RATIO_PREFIX: str = "rhythm_duration_value_ratio_"
 
 
 @dataclass(frozen=True, slots=True)
@@ -128,6 +145,104 @@ FEATURE_SET_SPECS: dict[str, FeatureSetSpec] = {
             "playing_speed_variation",
         ),
         description="Observed Yan 2023 first-pass features with the currently empty slots excluded.",
+    ),
+    "yan2023_observed_no_blocked": FeatureSetSpec(
+        prefixes=(
+            "pitch_mean_",
+            "deviation_of_pitch_",
+            "deviation_of_pitch_from_C4_",
+            "pitch_range_",
+            "pitch_entropy_",
+            "hand_displacement_rate_",
+            "hand_stretch_",
+            "black_key_rate_",
+            "mean_of_note_duration_",
+            "deviation_of_note_duration_",
+            "playing_speed_",
+            "polyphony_rate_",
+            "distinct_stroke_rate_",
+            "irregular_rhythm_",
+            "pitch_variability_",
+            "note_duration_variability_",
+            "note_density_",
+            "triad_",
+            "seventh_chord_",
+            "ninth_chord_",
+            "staccato_rate_",
+            "dotted_note_rate_",
+        ),
+        exact_columns=(
+            "length",
+            "tempo",
+            "key_signature",
+            "playing_speed_variation",
+        ),
+        description="Alias of yan2023_observed explicitly documented as the predictive baseline (implemented + proxyable, no blocked slots).",
+    ),
+    # Curated runtime sets for controlled experiments — config-level selection only.
+    "runtime_core_no_expression": FeatureSetSpec(
+        prefixes=(
+            "metadata_",
+            *_RHYTHM_CORE_PREFIXES,
+            "pitch_geometry_",
+            "leap_",
+            "leaps_",
+            "texture_",
+            "coordination_",
+            "notation_",
+        ),
+        description="Runtime families minus expression and sparse duration-ratio columns (core motor/structural set).",
+    ),
+    "runtime_core_no_sparse": FeatureSetSpec(
+        prefixes=(
+            "metadata_",
+            *_RHYTHM_CORE_PREFIXES,
+            "pitch_geometry_",
+            "leap_",
+            "leaps_",
+            "texture_",
+            "coordination_",
+            "notation_",
+            "expression_",
+        ),
+        description="Runtime all minus known sparse/high-cardinality rhythm_duration_value_ratio_* columns.",
+    ),
+    "runtime_motor_texture": FeatureSetSpec(
+        prefixes=(
+            "leap_",
+            "leaps_",
+            "pitch_geometry_",
+            "texture_",
+            "coordination_",
+        ),
+        description="Leaps + pitch geometry + texture + coordination (motor/texture coordination bundle).",
+    ),
+    "runtime_statistical": FeatureSetSpec(
+        prefixes=("statistics_",),
+        exact_columns=(
+            "metadata_length_quarters",
+            "metadata_primary_tempo",
+            "metadata_key_signature",
+        ),
+        description="Promoted compact Yan-style score-native statistical descriptors plus compact metadata predictors (pitch/duration aggregates, entropy, C4 deviation, variability, black-key/polyphony rates, typed chord counts, length/tempo/key).",
+    ),
+    "runtime_yan_overlap": FeatureSetSpec(
+        prefixes=(
+            "metadata_",
+            "statistics_",
+            "rhythm_note_density",
+            "rhythm_attack_density",
+            "rhythm_tuplet",
+            "rhythm_asymmetric",
+            "rhythm_polyrhythm",
+            "pitch_geometry_",
+            "leap_",
+            "leaps_",
+            "texture_",
+            "coordination_",
+            "expression_staccato_",
+        ),
+        description="Only runtime columns that correspond cleanly to Yan concepts where available (pitch range, note density, playing speed, hand stretch/displacement, polyphony, chord types, staccato), now runtime-native via statistics_* and compact metadata predictors.",
     ),
 }
 

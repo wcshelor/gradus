@@ -146,8 +146,13 @@ def load_cipi_dataset(
     nonconforming: list[dict[str, Any]] = []
     for index, row in enumerate(rows):
         rel = str(row.get("dataset_relative_path", "") or "").strip().replace("\\", "/")
+        legacy_rel = str(row.get("legacy_dataset_relative_path", "") or "").strip().replace("\\", "/")
         manifest_paths.append(rel)
-        source_path = (effective_root / rel).expanduser() if rel else effective_root
+        source_path, resolved_rel, path_resolution = _resolve_manifest_source_path(
+            effective_root,
+            dataset_relative_path=rel,
+            legacy_dataset_relative_path=legacy_rel,
+        )
         exists = source_path.is_file() if rel else False
         piece_uid = str(row.get("piece_uid", "") or "").strip()
         cipi_id = str(row.get("cipi_id", "") or "").strip()
@@ -180,6 +185,8 @@ def load_cipi_dataset(
                     if exists
                     else "",
                     "source_path": str(source_path.resolve()) if exists else str(source_path),
+                    "resolved_dataset_relative_path": resolved_rel,
+                    "path_resolution": path_resolution,
                     "manifest_path": str(manifest_path),
                     "movement": str(row.get("movement", "") or "").strip(),
                 },
@@ -188,9 +195,9 @@ def load_cipi_dataset(
                     "movement": str(row.get("movement", "") or "").strip(),
                     "piece_id_manifest": str(row.get("piece_id", "") or "").strip(),
                     "legacy_piece_uid": str(row.get("legacy_piece_uid", "") or "").strip(),
-                    "legacy_dataset_relative_path": str(
-                        row.get("legacy_dataset_relative_path", "") or ""
-                    ).strip(),
+                    "legacy_dataset_relative_path": legacy_rel,
+                    "resolved_dataset_relative_path": resolved_rel,
+                    "path_resolution": path_resolution,
                     "upstream_path": str(row.get("upstream_path", "") or "").strip(),
                     "book": str(row.get("book", "") or "").strip(),
                     "uri": str(row.get("uri", "") or "").strip(),
@@ -203,10 +210,13 @@ def load_cipi_dataset(
 
     discovered = _discover_pieces_files(effective_root)
     comparison = compare_manifest_paths_to_discovered(manifest_paths, discovered)
-    missing_files = [path for path in comparison["missing_files"] if path]
     extra_files = comparison["extra_files"]
-    actually_missing = [rel for rel in manifest_paths if not (effective_root / rel).is_file()]
-    missing_files = sorted(set(missing_files) | set(actually_missing))
+    missing_files = [
+        str(record.dataset_relative_path)
+        for record in records
+        if record.dataset_relative_path and not Path(record.source_path).is_file()
+    ]
+    missing_files = sorted(set(missing_files))
 
     dup_uids = duplicate_piece_uids(records)
     if dup_uids:
@@ -256,6 +266,9 @@ def load_cipi_dataset(
             "movement_henle_distribution": {str(key): int(value) for key, value in sorted(movement_henle.items())},
             "work_henle_distribution": {str(key): int(value) for key, value in sorted(work_henle.items())},
             "pieces_dir_hint": pieces_dir_hint,
+            "path_resolution_distribution": dict(
+                Counter(str(record.adapter_metadata.get("path_resolution", "")) for record in records)
+            ),
             "split_diagnostics": split_diagnostics,
         },
     )
@@ -409,6 +422,27 @@ def _discover_pieces_files(root: Path) -> list[str]:
         except ValueError:
             found.append(path.resolve().as_posix())
     return found
+
+
+def _resolve_manifest_source_path(
+    root: Path,
+    *,
+    dataset_relative_path: str,
+    legacy_dataset_relative_path: str,
+) -> tuple[Path, str, str]:
+    if dataset_relative_path:
+        canonical = (root / dataset_relative_path).expanduser()
+        if canonical.is_file():
+            return canonical, dataset_relative_path, "dataset_relative_path"
+    if legacy_dataset_relative_path:
+        legacy = (root / legacy_dataset_relative_path).expanduser()
+        if legacy.is_file():
+            return legacy, legacy_dataset_relative_path, "legacy_dataset_relative_path"
+    if dataset_relative_path:
+        return (root / dataset_relative_path).expanduser(), dataset_relative_path, "missing_dataset_relative_path"
+    if legacy_dataset_relative_path:
+        return (root / legacy_dataset_relative_path).expanduser(), legacy_dataset_relative_path, "missing_legacy_dataset_relative_path"
+    return root, "", "missing_path"
 
 
 def _build_dataset_index(dataset_root: Path) -> dict[str, Path]:

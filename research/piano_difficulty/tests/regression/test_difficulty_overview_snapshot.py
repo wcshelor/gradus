@@ -28,6 +28,7 @@ def contract_example(profile):
 
 def test_overview_versioned_contract_example():
     fixture = Path(__file__).resolve().parents[1] / "fixtures" / "feature_fixture.musicxml"
-    profile = analyze_score(fixture).to_json_payload()["analysis_profiles"][0]
+    profiles = analyze_score(fixture, profile_ids=("difficulty_overview",)).to_json_payload()["analysis_profiles"]
+    profile = profiles[0]
     expected = json.loads(Path(__file__).with_name("difficulty_overview_contract.json").read_text())
     assert contract_example(profile) == expected

@@ -159,7 +159,7 @@ def _render_profile(profile: dict[str, object]) -> list[str]:
     lines = [
         f"- Profile: {profile.get('profile_id')} (version {profile.get('profile_version')})",
         f"  overall score: {profile.get('overall_score')}",
-        f"  overall label: {profile.get('overall_label')}",
+        f"  legacy ScoreAnalyzer label: {profile.get('scoreanalyzer_legacy_grade')}",
         f"  notable measures: {_format_measure_list(profile.get('notable_measures'))}",
     ]
 

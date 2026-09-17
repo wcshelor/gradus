@@ -15,6 +15,7 @@ from . import (
     notation,
     pitch_geometry,
     rhythm,
+    statistics,
     texture,
 )
 from piano_difficulty.features.base import FeatureRecord
@@ -29,6 +30,7 @@ EXTRACTOR_MODULES = (
     coordination,
     notation,
     expression,
+    statistics,
 )
 
 

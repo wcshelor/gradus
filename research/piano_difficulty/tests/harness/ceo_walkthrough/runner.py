@@ -36,13 +36,58 @@ def _runtime_versions() -> dict[str, str]:
     return versions
 
 
-def analyze_single_piece(source_path: str | Path, piece_dir: str | Path) -> dict[str, Any]:
-    """Run existing analysis over one score and write the four artifacts."""
+def analyze_single_piece(
+    source_path: str | Path,
+    piece_dir: str | Path,
+    *,
+    with_snippets: bool = True,
+    snippets_dir: str | Path | None = None,
+    allow_render: bool = True,
+    overwrite_snippets: bool = False,
+    snippet_renderer=None,
+) -> dict[str, Any]:
+    """Run existing analysis over one score and write the four artifacts.
+
+    When with_snippets is True, enrich hotspot payloads with snippet_image/status
+    derived from pre-rendered PNGs under <piece_dir>/snippets/, falling back to
+    on-demand rendering via snippet_renderer (defaults to try_default_mscore_renderer
+    when allow_render).
+    """
     source = Path(source_path).expanduser()
     if not source.is_file():
         raise FileNotFoundError(f"Score file not found: {source}")
     result = analyze_score(source)
     payload = result.to_json_payload()
+    if with_snippets:
+        try:
+            from piano_difficulty.output.snippet_resolver import (
+                enrich_payload_with_snippets,
+                try_default_mscore_renderer,
+            )
+        except Exception:
+            enrich_payload_with_snippets = None  # type: ignore
+            try_default_mscore_renderer = None  # type: ignore
+
+        if enrich_payload_with_snippets is not None:
+            sdir = Path(snippets_dir).expanduser() if snippets_dir is not None else Path(piece_dir).expanduser() / "snippets"
+            # resolve renderer
+            renderer = snippet_renderer
+            if renderer is None and allow_render and try_default_mscore_renderer is not None:
+                renderer = try_default_mscore_renderer
+            elif not allow_render:
+                renderer = None
+            try:
+                enrich_payload_with_snippets(
+                    payload,
+                    sdir,
+                    source,
+                    renderer if allow_render else None,
+                    allow_render=allow_render,
+                    overwrite=overwrite_snippets,
+                )
+            except Exception:
+                # never break analysis for snippet failures
+                pass
     write_analysis_outputs(payload, piece_dir, stem="analysis")
     return payload
 

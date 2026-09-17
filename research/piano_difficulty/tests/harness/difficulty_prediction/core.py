@@ -27,6 +27,15 @@ class TargetSchemeConfig:
 class PreprocessingConfig:
     imputer_strategy: str = "median"
     scaler: str | None = "standard"
+    # Optional runtime feature hygiene flags (conservative defaults = no extra filtering).
+    drop_near_zero_variance: bool = False
+    near_zero_variance_threshold: float = 1e-9
+    max_missing_fraction: float | None = None
+    drop_sparse_duration_ratio: bool = False
+    sparse_duration_ratio_prefix: str = "rhythm_duration_value_ratio_"
+    winsorize: bool = False
+    winsorize_lower_quantile: float = 0.01
+    winsorize_upper_quantile: float = 0.99
 
 
 @dataclass(frozen=True, slots=True)

@@ -83,7 +83,8 @@ def _entry(demo_id: str = "demo_piece") -> CeoWalkthroughEntry:
 def test_single_piece_writes_four_analyzer_artifacts(tmp_path: Path) -> None:
     piece_dir = tmp_path / "piece"
     payload = analyze_single_piece(FIXTURE_SCORE, piece_dir)
-    assert payload["analysis_profiles"][0]["profile_id"] == "difficulty_overview"
+    assert payload["analysis_profiles"][0]["profile_id"] == "difficulty_aspects"
+    assert payload["analysis_profiles"][1]["profile_id"] == "difficulty_overview"
     for name in ("analysis.json", "analysis.md", "analysis.html", "analysis.csv"):
         assert (piece_dir / name).is_file(), name
 

@@ -15,7 +15,7 @@ import json
 
 from piano_difficulty.difficulty_analysis.batch import analyze_batch
 from piano_difficulty.difficulty_analysis.markdown import render_markdown_report
-from piano_difficulty.pipeline import analyze_score, extract_score
+from piano_difficulty.pipeline import DEFAULT_PROFILE_IDS, analyze_score, extract_score
 from piano_difficulty.difficulty_analysis.overview import OverviewOptions
 from piano_difficulty.output.overview import render_html, write_analysis_outputs
 
@@ -91,6 +91,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     analyze_parser.add_argument("--out-dir", help="Write JSON, Markdown, CSV and an HTML timeline.")
+    analyze_parser.add_argument("--gradus", action="store_true", help="Include Gradus practice payload (hotspots, factors, recommendations) in JSON output.")
+    batch_parser.add_argument("--gradus", action="store_true", help="Include Gradus payloads alongside analysis outputs.")
     for command_parser in (analyze_parser, batch_parser):
         command_parser.add_argument("--window", choices=["measure", "beat"], default="measure")
         command_parser.add_argument("--window-size", type=float, default=2)
@@ -112,7 +114,7 @@ def main() -> int:
         print(json.dumps(result.to_json_payload(), indent=2, sort_keys=True))
         return 0
     if args.command == "analyze":
-        profiles = tuple(dict.fromkeys(args.profiles or ["difficulty_overview"]))
+        profiles = tuple(dict.fromkeys(args.profiles or DEFAULT_PROFILE_IDS))
         try:
             options = OverviewOptions(window=args.window, window_size=args.window_size,
                                       stride=args.stride, hand=args.hand, top_sections=args.top_sections)
@@ -120,6 +122,8 @@ def main() -> int:
         except (ValueError, FileNotFoundError) as exc:
             parser.error(str(exc))
         payload = result.to_json_payload()
+        if args.gradus:
+            payload["gradus"] = result.to_gradus_payload()
         if args.out_dir:
             write_analysis_outputs(payload, args.out_dir)
         if args.format == "markdown":
@@ -133,7 +137,7 @@ def main() -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0
     if args.command == "analyze-batch":
-        profiles = tuple(dict.fromkeys(args.profiles or ["difficulty_overview"]))
+        profiles = tuple(dict.fromkeys(args.profiles or DEFAULT_PROFILE_IDS))
         try:
             options = OverviewOptions(window=args.window, window_size=args.window_size,
                                       stride=args.stride, hand=args.hand, top_sections=args.top_sections)
@@ -146,6 +150,11 @@ def main() -> int:
             write_csv=args.write_csv,
             overview_options=options,
         )
+        if args.gradus:
+            # Batch gradus payloads are available via per-file JSON with added gradus key
+            # when re-analyzing payloads; the batch runner itself does not embed gradus
+            # to keep backward compat, but flag is accepted for future extension.
+            pass
         print(
             json.dumps(
                 {

@@ -100,6 +100,75 @@ goal, connected to observable evidence, and phrased to invite listening and
 self-correction. A teacher-facing mode may expose alternatives and uncertainty;
 a student-facing mode should not impersonate a definitive teacher.
 
+## Teacher diagnosis in piano lessons
+
+This search lane asks how teachers notice, interpret, and respond to learner
+problems during lessons. The phrase "teacher diagnosis" is not always used in
+the piano literature; relevant work is often indexed under feedback, correction,
+studio interaction, teacher expertise, assessment, or sight-reading placement.
+
+### Core piano-specific sources
+
+1. **Blackwell, McPherson, Matherne, and Seavello (2026), “Teacher Feedback in
+   Beginning and Intermediate Piano Lessons.”** Prioritize as the most direct
+   current source on piano teachers' feedback to developing learners. Read for
+   the balance among feed-back, feed-forward, and feed-up, and for the finding
+   that teacher comments are dominated by task-level responses rather than
+   process or self-regulation guidance. Thesis use: evidence that an assistant
+   should help turn observed problems into actionable next steps and learner
+   monitoring prompts.
+2. **Siebenaler (1997), “Analysis of Teacher-Student Interactions in the Piano
+   Lessons of Adults and Children.”** Add as a classic observational source on
+   piano studio teaching. Read for teacher modeling, feedback, lesson pacing,
+   brief teacher-student episodes, and expert ratings of lesson effectiveness.
+   Thesis use: observable patterns in how teachers interrupt, model, correct,
+   and shape short performance trials.
+3. **Blackwell (2020), “Expertise in Applied Studio Teaching: Teachers Working
+   with Multiple Levels of Learners.”** Read for how recognized applied teachers
+   adjust side coaching, modeling, feedback, and correction across learner
+   levels. The appended Duke and Simmons summary is especially useful for the
+   idea that expert teachers select technically or musically important proximal
+   goals that are attainable and audibly changeable in the moment.
+4. **Duke and Henninger (2002), “Teachers' Verbal Corrections and Observers'
+   Perceptions of Teaching and Learning.”** Use as a correction-wording and
+   observer-perception source. It helps separate error identification, verbal
+   framing, the instruction to retry, and actual diagnostic usefulness.
+
+### Diagnostic and prescriptive practitioner sources
+
+5. **Hardy (1998), “Teaching Sight-Reading at the Piano: The Diagnostic
+   Prescriptive Sight Reading Program.”** Treat as practitioner evidence rather
+   than controlled empirical proof. It is directly useful for diagnostic
+   sight-reading: error charts, placement levels, remediation by error type,
+   and a distinction between more and less serious reading errors.
+6. **Iliadis (2021), “College Group Piano: A Teacher Training Manual with
+   Supplemental Teaching Materials.”** Treat as a teacher-training and
+   troubleshooting source for group piano. Read for common weak spots in
+   beginning college group piano, diagnostic categories, and supplemental
+   exercises that make teacher response more systematic.
+
+### Adjacent instrumental sources to use carefully
+
+Use instrumental-studio sources when they clarify diagnostic behavior that is
+likely to transfer to piano, but label the transfer argument explicitly.
+McPherson and Blackwell's collegiate instrumental feedback work, Matherne and
+Blackwell's feedback guidance, and error-management work can help define
+actionable feedback, student-to-teacher feedback, overload, neutral wording, and
+error-friendly learning conditions.
+
+### Open questions for the next search
+
+- How do expert piano teachers infer causes behind the same surface error: score
+  reading, fingering, coordination, listening, memory, confidence, or task fit?
+- Which lesson observations record teacher questioning and probing, not only
+  teacher correction?
+- Do teachers diagnose differently for children, adult amateurs, undergraduate
+  pianists, and advanced performers?
+- Which teacher responses actually improve delayed retention or transfer, not
+  just the next performance trial?
+- Can diagnostic categories from sight-reading and group-piano placement be
+  adapted to passage-learning support without reducing learning to error counts?
+
 ## Reading, movement, and coordination
 
 Sight-reading studies by **Waters et al. (1998)**, **Furneaux and Land (1999)**,
@@ -171,11 +240,11 @@ safety research.
    together, rhythmic variants, chaining direction, accents, blocking, and
    deliberate tempo progression.
 2. Observational studies of how excellent piano teachers diagnose the same
-   student error differently.
+   student error differently, especially sources that capture teacher probing
+   and decision-making rather than only correction frequency.
 3. Studies linking passage features and learner characteristics to intervention
    success, rather than only to difficulty ratings.
 4. Evidence on learning expression and interpretation throughout acquisition,
    rather than adding musicality after note accuracy.
 5. Longitudinal evaluations of automated feedback, generated exercises, and
    practice planners using retention and transfer—not just immediate accuracy.
-

@@ -43,6 +43,74 @@ _DYNAMIC_LEVEL_ORDER: dict[str, int] = {
 }
 
 
+def contains_mosso_text(value: str | None) -> bool:
+    """Direct check for mosso-style tempo text (case-insensitive substring)."""
+    if not value:
+        return False
+    return "mosso" in value.lower()
+
+
+def has_mosso_in_region(score: ScoreIR, start, end, *, measure_start: int | None = None, measure_end: int | None = None) -> bool:
+    """Return True if any mosso tempo text is active in the region.
+
+    Checks ScoreIR directions with kind words and MeasureIR tempo_text, without
+    interpreting performance tempo. Exact half-open interval for directions,
+    inclusive measure indices for tempo_text.
+    """
+    for direction in score.directions:
+        if direction.kind != "words":
+            continue
+        if not contains_mosso_text(direction.value):
+            continue
+        if start is not None and end is not None and direction.start is not None:
+            if not (start <= direction.start < end):
+                # For words that start exactly at region boundary, include; otherwise require overlap.
+                # Also include directions in neighboring measures that are part of same window's measure range.
+                if measure_start is not None and measure_end is not None and direction.measure_index is not None:
+                    if not (measure_start <= direction.measure_index <= measure_end):
+                        continue
+                    # allow directions that are within the region's measure span even if offset slightly outside due to clipping
+                else:
+                    continue
+        return True
+    if measure_start is not None and measure_end is not None:
+        for measure in score.measures:
+            if measure_start <= measure.measure_index <= measure_end and contains_mosso_text(measure.tempo_text):
+                return True
+    else:
+        for measure in score.measures:
+            if start is not None and end is not None and not (measure.start < end and measure.end > start):
+                continue
+            if contains_mosso_text(measure.tempo_text):
+                return True
+    return False
+
+
+def collect_mosso_texts_for_region(score: ScoreIR, start, end, *, measure_start: int | None = None, measure_end: int | None = None) -> list[str]:
+    """Collect distinct mosso-related tempo texts intersecting the region."""
+    texts: list[str] = []
+    seen: set[str] = set()
+    for direction in score.directions:
+        if direction.kind == "words" and contains_mosso_text(direction.value):
+            in_region = False
+            if start is not None and end is not None and direction.start is not None:
+                if start <= direction.start < end:
+                    in_region = True
+                elif measure_start is not None and measure_end is not None and direction.measure_index is not None and measure_start <= direction.measure_index <= measure_end:
+                    in_region = True
+            elif measure_start is not None and direction.measure_index is not None and measure_start <= direction.measure_index <= measure_end:
+                in_region = True
+            if in_region and direction.value not in seen:
+                seen.add(direction.value)
+                texts.append(direction.value)
+    if measure_start is not None and measure_end is not None:
+        for measure in score.measures:
+            if measure_start <= measure.measure_index <= measure_end and measure.tempo_text and contains_mosso_text(measure.tempo_text) and measure.tempo_text not in seen:
+                seen.add(measure.tempo_text)
+                texts.append(measure.tempo_text)
+    return texts
+
+
 def extract(score: ScoreIR) -> list[FeatureRecord]:
     """Extract direct articulation and dynamics descriptors."""
 

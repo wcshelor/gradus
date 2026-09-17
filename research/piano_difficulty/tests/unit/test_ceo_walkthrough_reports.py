@@ -64,7 +64,7 @@ def test_piece_context_success_has_required_keys(tmp_path: Path) -> None:
     assert context["artifacts"]["analysis.json"] == "x"
     assert context["runtime_versions"]["piano-difficulty"] == "0.1.0"
     assert context["timestamp"] == "2026-09-07T00:00:00Z"
-    assert context["analysis"]["profile_ids"] == ["difficulty_overview"]
+    assert context["analysis"]["profile_ids"] == ["difficulty_aspects", "difficulty_overview"]
 
 
 def test_piece_context_failure_includes_status_and_reason(tmp_path: Path) -> None:

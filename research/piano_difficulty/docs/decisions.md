@@ -9,15 +9,27 @@ Keep shared temporal primitives in temporal/. Preserve all other research lanes.
 
 ## 2026-09-05 — Version and qualify the overview
 
-The default API/CLI profile becomes difficulty_overview, schema
-difficulty_overview.v1. Explicit scoreanalyzer_reference preserves its historical
-profile. CLI analyze defaults to readable Markdown; --format json retains
-machine-readable output. Explicit profile flags replace, rather than append to,
-the implicit default.
+The API/CLI profile became difficulty_overview, schema difficulty_overview.v1.
+Explicit scoreanalyzer_reference preserves its historical profile. CLI analyze
+defaults to readable Markdown; --format json retains machine-readable output.
+Explicit profile flags replace, rather than append to, the implicit default.
 
 The initial five-factor selection is descriptive and within-piece. Raw values,
 hand views, exact locations, methods, original support windows and input
 provenance accompany rankings. Constant tracks abstain from local peaks.
+
+## 2026-09-14 — Promote the 9-aspect taxonomy as the main system
+
+The default API/CLI profile set is now `difficulty_aspects` first, followed by
+`difficulty_overview`. The 9-aspect profile is the main Gradus difficulty
+vocabulary for score-derived practice demand. The 5-factor overview remains
+available as an explicit compatibility profile and continues to power timeline,
+CSV, HTML, and older demo surfaces while consumers migrate.
+
+The 9 aspects are descriptive grouped traces, not calibrated grades or
+validated weights. Aspect 8 remains blocked/contextual until structural pattern
+extractors exist. Aspect 9 remains caveated because performance interpretation
+cannot be inferred from score data alone.
 
 ## 2026-09-05 — Exact selection as an explicit adaptation
 

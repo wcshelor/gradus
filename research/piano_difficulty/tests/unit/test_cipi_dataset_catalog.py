@@ -170,6 +170,21 @@ def test_cipi_legacy_fields_preserved(tmp_path: Path) -> None:
     assert metadata["upstream_path"] == "upstream/x.musicxml"
 
 
+def test_cipi_legacy_relative_path_resolves_when_canonical_path_absent(tmp_path: Path) -> None:
+    root = tmp_path / "cipi"
+    (root / "bach").mkdir(parents=True)
+    (root / "bach" / "x_mvt1.musicxml").write_text(FIXTURE_XML)
+    manifest = tmp_path / "manifest.csv"
+    _write_manifest(manifest, [_manifest_row()])
+    result = load_cipi_dataset(dataset_root=root, manifest_csv=manifest)
+    assert result.missing_files == []
+    record = result.records[0]
+    assert record.source_path == root / "bach" / "x_mvt1.musicxml"
+    assert record.adapter_metadata["resolved_dataset_relative_path"] == "bach/x_mvt1.musicxml"
+    assert record.adapter_metadata["path_resolution"] == "legacy_dataset_relative_path"
+    assert result.summary["path_resolution_distribution"] == {"legacy_dataset_relative_path": 1}
+
+
 def test_cipi_split_validation(tmp_path: Path) -> None:
     index_path = tmp_path / "index.json"
     index_path.write_text(json.dumps({"c-1": {"henle": 5}, "c-2": {"henle": 6}}))

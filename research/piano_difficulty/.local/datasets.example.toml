@@ -14,4 +14,7 @@
 root = "/path/to/oktav-starting-dataset"
 
 [cipi]
+# Use the dataset root containing `metadata/` and `pieces/`, not `pieces/`
+# itself. The committed manifest uses paths such as
+# `pieces/beethoven/example.musicxml`.
 root = "/path/to/cipi"

@@ -1,0 +1,44 @@
+{
+  "dataset_name": "cipi",
+  "duplicate_piece_uid_count": 0,
+  "failure_count": 0,
+  "henle_distribution": {
+    "1": 15,
+    "2": 42,
+    "3": 54,
+    "4": 98,
+    "5": 137,
+    "6": 164,
+    "7": 134,
+    "8": 61,
+    "9": 39
+  },
+  "henle_labeled_row_count": 744,
+  "henle_missing_row_count": 0,
+  "load_movement_henle_distribution": {
+    "1": 15,
+    "2": 42,
+    "3": 54,
+    "4": 98,
+    "5": 137,
+    "6": 164,
+    "7": 134,
+    "8": 61,
+    "9": 39
+  },
+  "load_record_count": 744,
+  "manifest_row_count": 744,
+  "matrix_csv_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/cipi_dataset/python_analysis/full_run/cipi_labeled_feature_matrix.csv",
+  "matrix_row_count": 744,
+  "missing_file_count": 0,
+  "path_resolution_counts": {
+    "dataset_relative_path": 744
+  },
+  "ready_for_henle_validation": true,
+  "status_counts": {
+    "success": 744
+  },
+  "success_count": 744,
+  "unique_dataset_relative_path_count": 744,
+  "unique_piece_uid_count": 744
+}

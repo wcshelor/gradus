@@ -8,7 +8,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-from piano_difficulty.pipeline import analyze_score
+from piano_difficulty.pipeline import DEFAULT_PROFILE_IDS, analyze_score
 from piano_difficulty.difficulty_analysis.overview import OverviewOptions
 from piano_difficulty.output.overview import write_analysis_outputs
 
@@ -35,7 +35,7 @@ def analyze_batch(
     source: str | Path,
     *,
     out_dir: str | Path,
-    profile_ids: tuple[str, ...] = ("difficulty_overview",),
+    profile_ids: tuple[str, ...] = DEFAULT_PROFILE_IDS,
     write_csv: bool = False,
     overview_options: OverviewOptions | None = None,
 ) -> BatchAnalysisResult:
@@ -191,7 +191,7 @@ def _analysis_rows(payload: dict[str, object]) -> list[dict[str, object]]:
                     "profile_id": profile["profile_id"],
                     "dimension_id": dimension["dimension_id"],
                     "mark": dimension["mark"],
-                    "label": dimension["label"],
+                    "legacy_label": dimension.get("legacy_label"),
                     "raw_value": dimension["raw_value"],
                     "raw_units": dimension["raw_units"],
                     "measure_start": dimension["source_span"]["measure_start"],

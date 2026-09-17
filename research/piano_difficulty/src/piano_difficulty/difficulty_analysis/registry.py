@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from piano_difficulty.difficulty_analysis.aspects import DifficultyAspectsProfile
 from piano_difficulty.difficulty_analysis.models import DifficultyProfile
 from piano_difficulty.difficulty_analysis.overview import DifficultyOverviewProfile
 from piano_difficulty.difficulty_analysis.scoreanalyzer_reference import (
@@ -10,6 +11,7 @@ from piano_difficulty.difficulty_analysis.scoreanalyzer_reference import (
 
 PROFILE_REGISTRY: dict[str, DifficultyProfile] = {
     "difficulty_overview": DifficultyOverviewProfile(),
+    "difficulty_aspects": DifficultyAspectsProfile(),
     "scoreanalyzer_reference": ScoreAnalyzerReferenceProfile(),
 }
 

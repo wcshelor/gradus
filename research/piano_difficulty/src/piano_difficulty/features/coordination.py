@@ -62,6 +62,36 @@ def extract(score: ScoreIR) -> list[FeatureRecord]:
     ]
 
 
+def is_single_hand_active(score: ScoreIR, start: Fraction, end: Fraction) -> bool:
+    """Return True when exactly one hand has attacks in [start, end)."""
+    has_right = any(start <= n.onset < end and n.hand == "right" for n in score.logical_notes)
+    has_left = any(start <= n.onset < end and n.hand == "left" for n in score.logical_notes)
+    return has_right ^ has_left
+
+
+def rhythm_temper_factor_for_region(score: ScoreIR, start: Fraction, end: Fraction) -> float:
+    """Temper factor for rhythm when other hand is inactive (v1 compatible, descriptive)."""
+    return 0.6 if is_single_hand_active(score, start, end) else 1.0
+
+
+def hand_activity_summary(score: ScoreIR, start: Fraction, end: Fraction) -> dict:
+    """Summarize hand activity in [start, end) for explanatory use."""
+    right = sum(1 for n in score.logical_notes if start <= n.onset < end and n.hand == "right")
+    left = sum(1 for n in score.logical_notes if start <= n.onset < end and n.hand == "left")
+    active = []
+    if right:
+        active.append("right")
+    if left:
+        active.append("left")
+    return {
+        "right_count": right,
+        "left_count": left,
+        "active_hands": active,
+        "is_single_hand": len(active) == 1,
+        "is_empty": len(active) == 0,
+    }
+
+
 def _subdivision_mismatch_ratio(score: ScoreIR) -> float:
     measures = measures_by_index(score)
     offsets_by_measure: dict[int, dict[str, set[Fraction]]] = defaultdict(

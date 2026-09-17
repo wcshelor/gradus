@@ -8,6 +8,10 @@ Current maps:
 - [`historical_pedagogy_and_etudes.md`](historical_pedagogy_and_etudes.md) —
   classical keyboard treatises, the development and analysis of the étude, and
   criteria for effective pedagogical studies;
+- [`ai_assisted_instrument_learning.md`](ai_assisted_instrument_learning.md) —
+  state of the art in AI-assisted piano and instrumental learning, including
+  automatic performance assessment, commercial apps, personalization,
+  generation, multimodal feedback, and evaluation gaps;
 - [`thesis_landscape.md`](thesis_landscape.md) — broad thesis territory.
 
 Reading lists are curated, ordered pathways through the literature rather than

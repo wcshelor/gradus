@@ -1,8 +1,9 @@
 # Piano difficulty analysis
 
-This research area owns symbolic score extraction and the public difficulty
-overview for Gradus. Analyze a piece to inspect its factors, local peaks, and
-candidate high-demand sections.
+This research area owns symbolic score extraction, the public difficulty
+overview, and the score-derived practice payload for Gradus. Analyze a piece
+to inspect the 9-aspect difficulty framework, the conservative overview slice,
+local peaks, and candidate high-demand sections.
 
 ## Setup
 
@@ -41,6 +42,12 @@ peak. The five reviewed overview factors cover onset density, pitch
 transitions, simultaneous spans, hand timing mismatch, and accidentals.
 All existing raw descriptors remain in the extraction output.
 
+The main Gradus vocabulary is the 9-aspect difficulty taxonomy documented in
+[difficulty_aspect_taxonomy.md](docs/difficulty_aspect_taxonomy.md). The default
+analysis now emits `difficulty_aspects.v1` first, followed by the smaller
+`difficulty_overview.v1` compatibility slice used for timeline exports and
+older demo reports.
+
 ```bash
 piano-difficulty analyze piece.mxl --format json
 piano-difficulty analyze piece.mxl --hand right --window-size 1
@@ -48,6 +55,8 @@ piano-difficulty analyze piece.mxl --window beat --window-size 4 --stride 1
 piano-difficulty analyze-batch scores/ --out-dir analyses/ --write-csv
 piano-difficulty extract piece.mxl
 piano-difficulty analyze piece.mxl --profile scoreanalyzer_reference --format json
+piano-difficulty analyze piece.mxl --profile difficulty_aspects --format json
+piano-difficulty analyze piece.mxl --gradus --format json
 ```
 
 Beat units are quarter notes. Regions use exact rational half-open intervals.
@@ -66,8 +75,13 @@ payload = result.to_json_payload()
 ```
 
 `extract_score` retains the existing direct descriptor contract.
-`analyze_score` now defaults to `difficulty_overview`. Request
+`analyze_score` now defaults to `difficulty_aspects` plus
+`difficulty_overview`, with the 9-aspect profile first. Request
+`profile_ids=("difficulty_overview",)` for only the older 5-factor overview, or
 `profile_ids=("scoreanalyzer_reference",)` to reproduce the legacy analysis.
+`AnalysisResult.to_gradus_payload()` builds the opt-in
+`gradus.practice_payload.v1` payload for practice cards, hotspots, routines,
+feedback-derived recommendations, and learner-visible demand labels.
 
 ## Interpretation
 
@@ -82,10 +96,17 @@ across a window start are not counted as new attacks. Hand inference remains
 conservative and staff-based. See [difficulty_model.md](docs/difficulty_model.md)
 for the complete method and limitations.
 
+Gradus practice output should use musically precise, student-visible language:
+not plain-language simplification, but also not teacher-only framing. The
+canonical conceptual vocabulary is the 9-aspect taxonomy; any practice-demand
+labels should map back to those aspects and preserve limitations/provenance.
+
 ## Architecture and research lanes
 
 - [Architecture](docs/architecture.md): module ownership and dependency direction.
 - [Factor registry](docs/feature_registry.md): selected factors and retained descriptors.
+- [Difficulty aspect taxonomy](docs/difficulty_aspect_taxonomy.md): canonical
+  9-aspect framework and validation boundaries.
 - [Research lanes](docs/analysis_lanes.md): Yan reconstruction, datasets, OMR,
   Difficulty Dynamics experiments, matrix evaluation, and legacy parity.
 - [Dataset adapter cleanup task plan](docs/dataset_adapters_cleanup_task_plan.md):

@@ -1,0 +1,32 @@
+category,yan_base_feature,yan_example_column,runtime_analogue_columns,gap_status,priority,is_blocked,notes
+yan_observed,black_key_rate,black_key_rate_es,notation_accidental_* (proxy),missing,high,no,No black-key rate; accidental counts are proxy
+yan_observed,deviation_of_note_duration,deviation_of_note_duration_es,,missing,high,no,No duration std in runtime
+yan_observed,deviation_of_pitch,deviation_of_pitch_es,metadata_pitch_range,missing,high,no,"Runtime has range, not std"
+yan_observed,deviation_of_pitch_from_C4,deviation_of_pitch_from_C4_es,,missing,high,no,No C4-distance in runtime
+yan_observed,distinct_stroke_rate,distinct_stroke_rate_es,,missing,medium,no,No distinct-stroke concept in runtime
+yan_observed,dotted_note_rate,dotted_note_rate_es,,missing,medium,no,No dotted-note rate in runtime
+yan_observed,hand_displacement_rate,hand_displacement_rate_es,leaps_max_timed_difficult_displacement_*; leaps_timed_difficult_displacement_ratio_*; leaps_mean_melodic_leap_*,partial,medium,no,Leaps family proxies hand displacement
+yan_observed,hand_stretch,hand_stretch_es,pitch_geometry_max_simultaneity_span_*; pitch_geometry_mean_simultaneity_span,partial,defer,no,Pitch geometry simultaneity span proxies stretch
+yan_observed,irregular_rhythm,irregular_rhythm_es,rhythm_tuplet_count; rhythm_polyrhythm_measure_ratio; rhythm_asymmetric_tuplet_measure_ratio,partial,medium,no,Rhythm tuplet/polyrhythm approximates irregular rhythm
+yan_observed,key_signature,key_signature,metadata_key_change_count,partial,high,no,"Only key change count, not fifths"
+yan_observed,length,length,metadata_measure_count; metadata_note_count; metadata_page_count,partial,high,no,Metadata counts approximate length (quarters)
+yan_observed,mean_of_note_duration,mean_of_note_duration_es,,missing,high,no,No duration mean in runtime
+yan_observed,ninth_chord,ninth_chord_es,texture_chord_count_*,partial,high,no,No ninth-specific typing
+yan_observed,note_density,note_density_es,rhythm_note_density,available,high,no,Direct analogue: rhythm_note_density
+yan_observed,note_duration_variability,note_duration_variability_es,,missing,high,no,No duration variability in runtime
+yan_observed,pitch_entropy,pitch_entropy_es,,missing,high,no,No entropy column in runtime
+yan_observed,pitch_mean,pitch_mean_es,metadata_pitch_range (proxy only),missing,high,no,Runtime has range/span but no mean pitch
+yan_observed,pitch_range,pitch_range_es,metadata_pitch_range; pitch_geometry_register_range_*,partial,high,no,Runtime register_range + pitch_range approximates span
+yan_observed,pitch_variability,pitch_variability_es,,missing,high,no,No pitch variability in runtime
+yan_observed,playing_speed,playing_speed_es,rhythm_attack_density,partial,medium,no,Rhythm attack density is attacks/quarter proxy
+yan_observed,playing_speed_variation,playing_speed_variation,,missing,medium,no,No tempo variation ratio in runtime
+yan_observed,polyphony_rate,polyphony_rate_es,texture_chord_ratio_*; texture_notes_per_onset; texture_simultaneity_density,partial,high,no,Texture chord ratios approximate polyphony
+yan_observed,seventh_chord,seventh_chord_es,texture_chord_count_*,partial,high,no,No seventh-specific typing
+yan_observed,staccato_rate,staccato_rate_es,expression_staccato_note_ratio*,available,medium,no,Direct analogue via expression_staccato_note_ratio
+yan_observed,tempo,tempo,metadata_tempo_change_count,partial,high,no,"Only tempo change count, not BPM"
+yan_observed,triad,triad_es,texture_chord_count_*; texture_chord_ratio_*,partial,high,no,Texture chord counts but not triad-typed
+runtime_only_extra,rhythm_duration_value_ratio_*,,rhythm_duration_value_ratio_*,runtime_only,sparse,no,high-cardinality sparse duration ratios (100+ columns on CIPI)
+runtime_only_extra,notation_accidental_* + ledger_line_burden + clef_change,,notation_accidental_* + ledger_line_burden + clef_change,runtime_only,extra,no,notation burden
+runtime_only_extra,expression_accent/tenuto/wedge/dynamic* (except staccato),,expression_accent/tenuto/wedge/dynamic* (except staccato),runtime_only,extra,no,expression family beyond staccato
+runtime_only_extra,coordination_subdivision_mismatch_proxy,,coordination_subdivision_mismatch_proxy,runtime_only,extra,no,coordination extra
+runtime_only_extra,pitch_geometry_* beyond range,,pitch_geometry_* beyond range,runtime_only,extra,no,pitch geometry span details

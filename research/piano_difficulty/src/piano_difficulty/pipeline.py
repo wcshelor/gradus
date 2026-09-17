@@ -32,6 +32,9 @@ from piano_difficulty.output.json_export import to_json_payload
 from piano_difficulty.validation.sanity_checks import run_sanity_checks
 
 
+DEFAULT_PROFILE_IDS = ("difficulty_aspects", "difficulty_overview")
+
+
 @dataclass(slots=True)
 class ExtractionResult:
     """Structured result for one score extraction run."""
@@ -72,6 +75,23 @@ class AnalysisResult:
             ],
         )
 
+    def to_gradus_payload(
+        self,
+        *,
+        recommendation_context: object | None = None,
+        cards: list[object] | None = None,
+        max_hotspots: int = 5,
+    ) -> dict[str, object]:
+        """Build Gradus practice payload without mutating the score payload."""
+        from piano_difficulty.pedagogy.payload import build_gradus_payload
+
+        return build_gradus_payload(
+            self,
+            recommendation_context=recommendation_context,  # type: ignore[arg-type]
+            cards=cards,  # type: ignore[arg-type]
+            max_hotspots=max_hotspots,
+        )
+
 
 def extract_score(path: str | Path) -> ExtractionResult:
     """Extract a normalized score representation and features from one file.
@@ -100,7 +120,7 @@ def extract_score(path: str | Path) -> ExtractionResult:
 def analyze_score(
     path: str | Path,
     *,
-    profile_ids: tuple[str, ...] = ("difficulty_overview",),
+    profile_ids: tuple[str, ...] = DEFAULT_PROFILE_IDS,
     overview_options: OverviewOptions | None = None,
 ) -> AnalysisResult:
     """Extract one score and apply registered difficulty profiles."""
@@ -111,7 +131,8 @@ def analyze_score(
         extraction=extraction,
         analysis_profiles=[
             profile.analyze(extraction, overview_options)
-            if profile.profile_id == "difficulty_overview" else profile.analyze(extraction)
+            if profile.profile_id in ("difficulty_overview", "difficulty_aspects")
+            else profile.analyze(extraction)
             for profile in profiles
         ],
     )

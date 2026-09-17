@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-09-16T00:00:00Z",
+  "schema_version": "ceo_demo_pieces.v1",
+  "pieces": [
+    {
+      "id": "beethoven_fur_elise",
+      "title": "Bagatelle \"Für Elise\" a minor WoO 59",
+      "composer": "Ludwig van Beethoven",
+      "dataset": "cipi",
+      "dataset_id": "beethoven_bagatelle-für-elise-a-minor-woo-59-mvt1",
+      "dataset_relative_path": "pieces/beethoven/beethoven_bagatelle-für-elise-a-minor-woo-59-mvt1.musicxml",
+      "difficulty_label": "Henle 3",
+      "manifest_url": "../artifacts/beethoven_fur_elise/demo_manifest.json",
+      "artifact_base": "../artifacts/beethoven_fur_elise/",
+      "status": "ready"
+    },
+    {
+      "id": "beethoven_bagatelle_119_10",
+      "title": "Bagatelle A major Op. 119 No. 10",
+      "composer": "Ludwig van Beethoven",
+      "dataset": "cipi",
+      "dataset_id": "beethoven_bagatelle-a-major-op.-119,10-mvt1",
+      "dataset_relative_path": "pieces/beethoven/beethoven_bagatelle-a-major-op.-119,10-mvt1.musicxml",
+      "difficulty_label": "Henle 3",
+      "manifest_url": "../artifacts/beethoven_bagatelle_119_10/demo_manifest.json",
+      "artifact_base": "../artifacts/beethoven_bagatelle_119_10/",
+      "status": "ready"
+    },
+    {
+      "id": "mozart_k545",
+      "title": "Piano Sonata \"Facile\" C major KV 545, 1st movement",
+      "composer": "Wolfgang Amadeus Mozart",
+      "dataset": "cipi",
+      "dataset_id": "mozart_1st-movement-allegro-from-piano-sonata-facile-c-major-kv-545-mvt1",
+      "dataset_relative_path": "pieces/mozart/mozart_1st-movement-allegro-from-piano-sonata-facile-c-major-kv-545-mvt1.musicxml",
+      "difficulty_label": "Henle 4",
+      "manifest_url": "../artifacts/mozart_k545/demo_manifest.json",
+      "artifact_base": "../artifacts/mozart_k545/",
+      "status": "ready"
+    },
+    {
+      "id": "chopin_waltz_a_minor_kk_ivb_11",
+      "title": "Waltz a minor KK IVb,11",
+      "composer": "Frédéric Chopin",
+      "dataset": "cipi",
+      "dataset_id": "chopin_waltz-a-minor-kk-ivb,11-mvt1",
+      "dataset_relative_path": "pieces/chopin/chopin_waltz-a-minor-kk-ivb,11-mvt1.musicxml",
+      "difficulty_label": "Henle 3",
+      "manifest_url": "../artifacts/chopin_waltz_a_minor_kk_ivb_11/demo_manifest.json",
+      "artifact_base": "../artifacts/chopin_waltz_a_minor_kk_ivb_11/",
+      "status": "ready"
+    },
+    {
+      "id": "chopin_prelude_e_minor_28_4",
+      "title": "Prelude e minor Op. 28 No. 4",
+      "composer": "Frédéric Chopin",
+      "dataset": "cipi",
+      "dataset_id": "chopin_prelude-e-minor-op.-28,4-mvt1",
+      "dataset_relative_path": "pieces/chopin/chopin_prelude-e-minor-op.-28,4-mvt1.musicxml",
+      "difficulty_label": "Henle 4",
+      "manifest_url": "../artifacts/chopin_prelude_e_minor_28_4/demo_manifest.json",
+      "artifact_base": "../artifacts/chopin_prelude_e_minor_28_4/",
+      "status": "ready"
+    },
+    {
+      "id": "chopin_prelude_a_major_28_7",
+      "title": "Prelude A major Op. 28 No. 7",
+      "composer": "Frédéric Chopin",
+      "dataset": "cipi",
+      "dataset_id": "chopin_prelude-a-major-op.-28,7-mvt1",
+      "dataset_relative_path": "pieces/chopin/chopin_prelude-a-major-op.-28,7-mvt1.musicxml",
+      "difficulty_label": "Henle 4",
+      "manifest_url": "../artifacts/chopin_prelude_a_major_28_7/demo_manifest.json",
+      "artifact_base": "../artifacts/chopin_prelude_a_major_28_7/",
+      "status": "ready"
+    },
+    {
+      "id": "debussy_arabesque_1",
+      "title": "Arabesque No. 1",
+      "composer": "Claude Debussy",
+      "dataset": "cipi",
+      "dataset_id": "x-336",
+      "dataset_relative_path": "pieces/debussy/debussy_arabesque-no.-1-mvt1.musicxml",
+      "difficulty_label": "Henle 4",
+      "manifest_url": "../artifacts/debussy_arabesque_1/demo_manifest.json",
+      "artifact_base": "../artifacts/debussy_arabesque_1/",
+      "status": "ready"
+    },
+    {
+      "id": "satie_gymnopedie_1",
+      "title": "Gymnopédie No. 1",
+      "composer": "Erik Satie",
+      "dataset": "cipi",
+      "dataset_id": "satie_gymnopédie-no.-1-mvt1",
+      "dataset_relative_path": "pieces/satie/satie_gymnopédie-no.-1-mvt1.musicxml",
+      "difficulty_label": "Henle 2",
+      "manifest_url": "../artifacts/satie_gymnopedie_1/demo_manifest.json",
+      "artifact_base": "../artifacts/satie_gymnopedie_1/",
+      "status": "ready"
+    },
+    {
+      "id": "oktav_le_onde",
+      "title": "Le Onde",
+      "composer": "Ludovico Einaudi",
+      "dataset": "oktav",
+      "dataset_id": "OK00027",
+      "dataset_relative_path": "Le Onde (Ludovico Einaudi) - piano MSMT OK00027.xml",
+      "manifest_url": "../artifacts/oktav_le_onde/demo_manifest.json",
+      "artifact_base": "../artifacts/oktav_le_onde/",
+      "status": "ready",
+      "difficulty_label": "Oktav 43 (original dataset label; not a Gradus grade)"
+    },
+    {
+      "id": "oktav_a_thousand_miles",
+      "title": "A Thousand Miles",
+      "composer": "Vanessa Carlton",
+      "dataset": "oktav",
+      "dataset_id": "OK00016",
+      "dataset_relative_path": "A Thousand Miles (Vanessa Carlton) - PVG-Ac MSMT OK00016 - 01.xml",
+      "manifest_url": "../artifacts/oktav_a_thousand_miles/demo_manifest.json",
+      "artifact_base": "../artifacts/oktav_a_thousand_miles/",
+      "status": "ready",
+      "difficulty_label": "Oktav 53 (original dataset label; not a Gradus grade)"
+    },
+    {
+      "id": "oktav_viva_la_vida",
+      "title": "Viva la Vida",
+      "composer": "Coldplay",
+      "dataset": "oktav",
+      "dataset_id": "OK00009",
+      "dataset_relative_path": "Viva la Vida (Coldplay) - PVG-RH MSMT OK00009-01.xml",
+      "manifest_url": "../artifacts/oktav_viva_la_vida/demo_manifest.json",
+      "artifact_base": "../artifacts/oktav_viva_la_vida/",
+      "status": "ready",
+      "difficulty_label": "Oktav 55 (original dataset label; not a Gradus grade)"
+    }
+  ]
+}

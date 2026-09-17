@@ -44,9 +44,13 @@ local CIPI corpus through the shared dataset contract
 - `tests/scripts/run_cipi_python_analysis.py`
   - active repo-native runtime export: loads movement records, converts via
     `to_runtime_export_input`, and writes `cipi_labeled_feature_matrix.csv`,
-    `corpus_summary.json`, `errors.csv` (on failures), `piece_json/`, and
-    `load_report.json` to
+    `corpus_summary.json`, `errors.csv` (on failures), `piece_json/`,
+    `load_report.json`, and `label_pairing_audit.json` to
     `tests/artifacts/cipi_dataset/python_analysis/full_run/`
+  - `label_pairing_audit.json` is the quick validation preflight: it reports
+    matrix row count, Henle-labeled row count, missing files, duplicate
+    movement IDs, Henle distribution, and whether the matrix is ready for
+    Henle validation
 - `tests/scripts/run_cipi_og_export.py`
   - archival ScoreAnalyzer export; evidence stays under
     `tests/artifacts/retired/cipi_og_export/`

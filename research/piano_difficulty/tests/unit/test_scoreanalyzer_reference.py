@@ -60,7 +60,7 @@ def test_analyze_score_emits_scoreanalyzer_reference_payload(tmp_path: Path) -> 
     profile = payload["analysis_profiles"][0]
     assert profile["profile_id"] == "scoreanalyzer_reference"
     assert profile["overall_score"] == 2.0
-    assert profile["overall_label"] == "intermediate"
+    assert profile["scoreanalyzer_legacy_grade"] == "intermediate"
     assert [dimension["dimension_id"] for dimension in profile["dimensions"]] == [
         "speed",
         "displacement",
@@ -71,6 +71,7 @@ def test_analyze_score_emits_scoreanalyzer_reference_payload(tmp_path: Path) -> 
         "tonality",
     ]
     assert profile["dimensions"][0]["summary"].startswith("Estimated speed ratio")
+    assert profile["dimensions"][0]["legacy_label"] == "intermediate"
 
 
 def test_markdown_report_renders_from_saved_payload(tmp_path: Path) -> None:

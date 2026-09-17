@@ -51,6 +51,7 @@ def test_cipi_runtime_export_writes_matrix_and_load_report(tmp_path: Path) -> No
     out_dir = tmp_path / "out"
     summary = run_cipi_python_analysis(dataset_root=root, manifest_csv=manifest, out_dir=out_dir)
     assert summary["failure_count"] == 0
+    assert Path(summary["label_pairing_audit_path"]).is_file()
     matrix = Path(summary["matrix_csv_path"])
     assert matrix.name == "cipi_labeled_feature_matrix.csv"
     with matrix.open(newline="") as handle:
@@ -62,6 +63,11 @@ def test_cipi_runtime_export_writes_matrix_and_load_report(tmp_path: Path) -> No
     load_report = Path(summary["load_report_path"])
     assert load_report.name == "load_report.json"
     assert json.loads(load_report.read_text())["summary"]["record_count"] == 1
+    audit = json.loads(Path(summary["label_pairing_audit_path"]).read_text())
+    assert audit["matrix_row_count"] == 1
+    assert audit["henle_labeled_row_count"] == 1
+    assert audit["henle_distribution"] == {"5": 1}
+    assert audit["ready_for_henle_validation"] is True
 
 
 def test_oktav_runtime_export_writes_load_report(tmp_path: Path) -> None:

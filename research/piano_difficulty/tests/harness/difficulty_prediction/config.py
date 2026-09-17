@@ -32,7 +32,20 @@ _TOP_LEVEL_KEYS = frozenset(
     }
 )
 _TARGET_SCHEME_KEYS = frozenset({"kind", "bins", "bin_edges", "labels"})
-_PREPROCESSING_KEYS = frozenset({"imputer_strategy", "scaler"})
+_PREPROCESSING_KEYS = frozenset(
+    {
+        "imputer_strategy",
+        "scaler",
+        "drop_near_zero_variance",
+        "near_zero_variance_threshold",
+        "max_missing_fraction",
+        "drop_sparse_duration_ratio",
+        "sparse_duration_ratio_prefix",
+        "winsorize",
+        "winsorize_lower_quantile",
+        "winsorize_upper_quantile",
+    }
+)
 _CV_KEYS = frozenset({"kind", "folds", "shuffle", "random_state"})
 _OUTPUT_KEYS = frozenset(
     {"run_name", "primary_metric", "save_predictions", "save_confusion_matrix", "save_feature_importance"}
@@ -70,6 +83,17 @@ def load_experiment_config(path: str | Path) -> ExperimentConfig:
     preprocessing = PreprocessingConfig(
         imputer_strategy=str(preprocessing_mapping.get("imputer_strategy", "median")).strip(),
         scaler=_optional_str(preprocessing_mapping.get("scaler")),
+        drop_near_zero_variance=bool(preprocessing_mapping.get("drop_near_zero_variance", False)),
+        near_zero_variance_threshold=float(preprocessing_mapping.get("near_zero_variance_threshold", 1e-9)),
+        max_missing_fraction=_optional_float(preprocessing_mapping.get("max_missing_fraction"), config_path, "preprocessing.max_missing_fraction"),
+        drop_sparse_duration_ratio=bool(preprocessing_mapping.get("drop_sparse_duration_ratio", False)),
+        sparse_duration_ratio_prefix=str(
+            preprocessing_mapping.get("sparse_duration_ratio_prefix", "rhythm_duration_value_ratio_")
+        ).strip()
+        or "rhythm_duration_value_ratio_",
+        winsorize=bool(preprocessing_mapping.get("winsorize", False)),
+        winsorize_lower_quantile=float(preprocessing_mapping.get("winsorize_lower_quantile", 0.01)),
+        winsorize_upper_quantile=float(preprocessing_mapping.get("winsorize_upper_quantile", 0.99)),
     )
 
     cross_validation = CrossValidationConfig(
@@ -184,4 +208,13 @@ def _optional_tuple(value: Any, config_path: Path, field: str) -> tuple[Any, ...
     if not isinstance(value, list):
         raise ValueError(f"Expected list for {field!r} in {config_path}.")
     return tuple(value)
+
+
+def _optional_float(value: Any, config_path: Path, field: str) -> float | None:
+    if value is None:
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"Expected float-compatible value for {field!r} in {config_path}.") from exc
 

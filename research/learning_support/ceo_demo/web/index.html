@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo</title>
+  <meta name="description" content="Demo — Debussy Arabesque No.1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Demo</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Load screen (Screen 1) -->
+    <section id="view-load" class="card card-load">
+      <div class="load-content">
+        <button id="btn-load" class="btn btn-primary">Load piece</button>
+        <div id="piece-list" class="piece-list" role="listbox" aria-label="Stored pieces"></div>
+        <p id="load-error" class="msg msg-error hidden" role="alert"></p>
+      </div>
+    </section>
+
+    <!-- Live dataset picker (local live-demo mode, requires run_live_demo_server.py) -->
+    <section id="live-panel" class="card live-card" aria-label="Live dataset analysis">
+      <div class="live-header">
+        <h3>Live dataset analysis</h3>
+        <span class="small muted">Local only · requires live server</span>
+      </div>
+      <p class="small muted" style="margin:6px 0 10px">Search CIPI / Oktav and run the same 9-aspect analysis on demand. <strong>Labels are provenance only</strong> · output is symbolic-score evidence · no calibrated learner grade · Oktav labels are not Gradus grades.</p>
+      <div class="live-controls">
+        <label class="small" for="live-dataset">Dataset</label>
+        <select id="live-dataset" class="live-select" aria-label="Dataset selector">
+          <option value="cipi">CIPI</option>
+          <option value="oktav">Oktav</option>
+        </select>
+        <input id="live-search" type="text" class="live-search-input" placeholder="Search composer/title/id, e.g. mozart, arabesque, Le Onde" aria-label="Search text" />
+        <button id="btn-live-search" class="btn">Search</button>
+      </div>
+      <div id="live-results" class="live-results" role="listbox" aria-label="Live search results"></div>
+      <div class="live-actions">
+        <button id="btn-analyze" class="btn btn-primary" disabled>Analyze selected</button>
+        <span id="live-status" class="small muted"></span>
+      </div>
+      <p id="live-error" class="msg msg-error hidden" role="alert"></p>
+      <p id="live-hint" class="small muted hidden"></p>
+    </section>
+
+    <!-- Difficulty Chart screen (Screen 2) — hidden until manifest loads -->
+    <section id="view-chart" class="hidden">
+      <!-- Piece metadata row -->
+      <section id="piece-meta" class="card meta-card"></section>
+
+      <!-- Local-demo MuseScore launcher (visible only when live server origin available) -->
+      <section id="score-open-row" class="card score-open-card hidden" aria-label="Open score in MuseScore (local demo only)">
+        <div class="score-open-main">
+          <button id="btn-open-score" class="btn btn-ghost" disabled>Open in MuseScore</button>
+          <span id="open-score-status" class="small muted">Local demo only — requires live server</span>
+        </div>
+        <span class="small muted" style="font-size:.78em">Local demo convenience — opens the canonical source file in MuseScore on this machine. Not a production viewer.</span>
+      </section>
+
+      <!-- Taxonomy banner -->
+      <section class="card layer-banner" aria-label="Demo model">
+        <span class="layer-pill layer-overview">9-aspect difficulty taxonomy · supporting signals → timeline &amp; hotspots</span>
+        <span class="small muted">Chart &amp; hotspots show relative demands inside the 9-aspect model. Aspects below show taxonomy coverage/readiness — not a grade.</span>
+      </section>
+
+      <!-- Navigation hint -->
+      <nav class="chart-nav" aria-label="Demo navigation">
+        <button id="btn-back-to-load" class="btn btn-ghost small">&larr; Back</button>
+        <span class="nav-label">Difficulty Chart <span class="small muted" style="font-weight:400;text-transform:none;letter-spacing:0">— supporting signals inside the 9-aspect taxonomy</span></span>
+        <span class="nav-hint small muted">Signal toggles affect display only · Hotspots update the right panel</span>
+      </nav>
+
+      <!-- Controls: signal toggles + composite -->
+      <section class="card controls-card">
+        <div class="controls-header">
+          <h3>Supporting signals</h3>
+          <span class="small muted">Default: all signals on · Composite on</span>
+        </div>
+        <div id="factor-toggles" class="toggles"></div>
+        <div class="composite-row">
+          <label class="toggle composite-toggle">
+            <input type="checkbox" id="toggle-composite" checked />
+            <span class="swatch swatch-composite"></span>
+            <span>Composite Difficulty</span>
+            <span class="small muted">(chart.composite)</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Chart + Detail layout (stable dimensions) -->
+      <div class="chart-layout">
+        <section class="card chart-card">
+          <div class="chart-head">
+            <h3>Difficulty Chart</h3>
+            <div class="chart-legend small muted">Normalized 0–1 · Window: 2 measures, step 1 · Hand mode: both</div>
+          </div>
+          <div class="chart-wrap">
+            <svg id="chart-svg" viewBox="0 0 960 340" width="960" height="340" role="img" aria-label="Normalized difficulty traces and hotspot markers"></svg>
+          </div>
+          <div id="chart-x-labels" class="x-labels mono small"></div>
+          <div id="hotspot-list" class="hotspot-list"></div>
+        </section>
+
+        <aside id="detail-panel" class="card detail-card" aria-live="polite">
+          <div id="detail-empty" class="detail-empty">
+            <h3>Detail</h3>
+            <p class="muted">Select a hotspot star on the chart (or in the list below) to see its detail.</p>
+            <div class="placeholder-snippet">
+              <div class="snippet-badge">Snippet</div>
+              <div class="snippet-state">Select a hotspot to view its pre-rendered snippet image (or its not-rendered / failed state).</div>
+            </div>
+          </div>
+          <div id="detail-content" class="hidden"></div>
+        </aside>
+      </div>
+
+      <section class="card caveats-card">
+        <h3>Caveats &amp; diagnostics</h3>
+        <ul id="caveats-list" class="small"></ul>
+        <p id="snippet-global-status" class="small muted"></p>
+      </section>
+
+      <!-- Aspect taxonomy panel -->
+      <section id="aspects-panel" class="card aspects-card" aria-label="Difficulty aspects taxonomy">
+        <div class="aspects-header">
+          <div>
+            <div class="eyebrow">9-aspect taxonomy · coverage</div>
+            <h3>Difficulty aspects <span class="badge badge-aspects">9 aspects · not a calibrated score · no timeline yet</span></h3>
+            <p class="small muted" id="aspects-interpretation">Grouped descriptive traces by difficulty aspect; no cross-aspect weights and no calibrated difficulty grade. Timeline &amp; hotspots reflect supporting signals inside the 9-aspect model.</p>
+          </div>
+          <div class="aspects-meta small muted">
+            <div>Schema: <code id="aspects-schema"></code></div>
+            <div id="aspects-count"></div>
+            <div id="aspects-profile-version" class="mono small"></div>
+          </div>
+        </div>
+
+        <div id="aspects-notice" class="msg small hidden" role="status"></div>
+
+        <div id="aspects-grid" class="aspects-grid" aria-live="polite"></div>
+
+        <div class="aspects-footer small muted" style="margin-top:12px">
+          <p id="aspects-diagnostics"></p>
+          <p id="aspects-warnings"></p>
+          <p><strong>Not a grade:</strong> aspects are unweighted descriptive buckets. Do not compare as calibrated scores. Aspect timelines are not drawn — grouped payload has no temporal series yet.</p>
+        </div>
+      </section>
+    </section>
+
+    <footer class="footer small muted">
+      <p>Demo · supporting signals and aspects are descriptive and not a calibrated grade.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

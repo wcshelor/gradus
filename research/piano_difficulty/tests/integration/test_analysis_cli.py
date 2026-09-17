@@ -22,7 +22,10 @@ def test_cli_analyze_json_and_markdown(tmp_path: Path, monkeypatch, capsys) -> N
     )
     assert main() == 0
     json_payload = json.loads(capsys.readouterr().out)
-    assert json_payload["analysis_profiles"][0]["profile_id"] == "difficulty_overview"
+    assert [p["profile_id"] for p in json_payload["analysis_profiles"]] == [
+        "difficulty_aspects",
+        "difficulty_overview",
+    ]
 
     monkeypatch.setattr(
         "sys.argv",
@@ -30,8 +33,8 @@ def test_cli_analyze_json_and_markdown(tmp_path: Path, monkeypatch, capsys) -> N
     )
     assert main() == 0
     markdown = capsys.readouterr().out
-    assert "## Dominant factors" in markdown
-    assert "## Candidate high-demand sections" in markdown
+    assert "## Difficulty Aspects" in markdown
+    assert "Rhythmic demand" in markdown
 
 
 def test_cli_analyze_batch_writes_outputs(tmp_path: Path, monkeypatch, capsys) -> None:
@@ -150,9 +153,14 @@ def test_explicit_profile_replaces_default_and_output_files_match(tmp_path, monk
                                     "--out-dir", str(tmp_path), "--window", "beat",
                                     "--window-size", "1", "--hand", "right"])
     assert main() == 0
-    assert "Candidate high-demand sections" in capsys.readouterr().out
+    assert "Difficulty Aspects" in capsys.readouterr().out
     saved = json.loads((tmp_path / "analysis.json").read_text())
-    assert saved["analysis_profiles"][0]["hand_mode"] == "right"
+    assert [p["profile_id"] for p in saved["analysis_profiles"]] == [
+        "difficulty_aspects",
+        "difficulty_overview",
+    ]
+    overview = next(p for p in saved["analysis_profiles"] if p["profile_id"] == "difficulty_overview")
+    assert overview["hand_mode"] == "right"
     assert (tmp_path / "analysis.html").is_file()
     assert (tmp_path / "analysis.csv").is_file()
 

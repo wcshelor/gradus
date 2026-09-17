@@ -63,9 +63,15 @@ def build_estimator(
     if preprocessing.imputer_strategy.strip().lower():
         strategy = preprocessing.imputer_strategy.strip().lower()
         if strategy == "zero":
-            steps.append(("imputer", SimpleImputer(strategy="constant", fill_value=0.0)))
+            try:
+                steps.append(("imputer", SimpleImputer(strategy="constant", fill_value=0.0, keep_empty_features=True)))
+            except TypeError:
+                steps.append(("imputer", SimpleImputer(strategy="constant", fill_value=0.0)))
         else:
-            steps.append(("imputer", SimpleImputer(strategy=strategy)))
+            try:
+                steps.append(("imputer", SimpleImputer(strategy=strategy, keep_empty_features=True)))
+            except TypeError:
+                steps.append(("imputer", SimpleImputer(strategy=strategy)))
 
     if preprocessing.scaler and normalized_family in LINEAR_MODEL_FAMILIES:
         steps.append(("scaler", StandardScaler()))
@@ -79,8 +85,14 @@ def extract_feature_importance(
     feature_names: list[str],
 ) -> list[ImportanceRecord]:
     model = estimator.named_steps.get("model", estimator)
+    # Try to map importance back to the feature names that actually entered the model.
+    # If the imputer dropped empty columns, the model will have fewer coefficients than names;
+    # in that case align by truncating or padding.
     if hasattr(model, "feature_importances_"):
         values = np.asarray(getattr(model, "feature_importances_"), dtype=float)
+        aligned_names = feature_names[-len(values) :] if len(values) < len(feature_names) else feature_names
+        if len(values) != len(aligned_names):
+            aligned_names = feature_names[: len(values)]
         return [
             ImportanceRecord(
                 feature=feature_name,
@@ -88,13 +100,16 @@ def extract_feature_importance(
                 absolute_importance=float(abs(value)),
                 source="feature_importances_",
             )
-            for feature_name, value in zip(feature_names, values.tolist(), strict=True)
+            for feature_name, value in zip(aligned_names, values.tolist(), strict=False)
         ]
 
     if hasattr(model, "coef_"):
         values = np.asarray(getattr(model, "coef_"), dtype=float)
         if values.ndim > 1:
             values = np.mean(np.abs(values), axis=0)
+        aligned_names = feature_names[-len(values) :] if len(values) < len(feature_names) else feature_names
+        if len(values) != len(aligned_names):
+            aligned_names = feature_names[: len(values)]
         return [
             ImportanceRecord(
                 feature=feature_name,
@@ -102,7 +117,7 @@ def extract_feature_importance(
                 absolute_importance=float(abs(value)),
                 source="coef_",
             )
-            for feature_name, value in zip(feature_names, values.tolist(), strict=True)
+            for feature_name, value in zip(aligned_names, values.tolist(), strict=False)
         ]
 
     return []
