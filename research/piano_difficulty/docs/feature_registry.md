@@ -2,12 +2,11 @@
 
 Canonical taxonomy: the 9-aspect difficulty taxonomy in
 [difficulty_aspect_taxonomy.md](difficulty_aspect_taxonomy.md) is the thesis/product
-target framing. The learner-facing graph vocabulary is being designed
-separately in
-[front_facing_graph_taxonomy.md](front_facing_graph_taxonomy.md). This document
-defines the conservative, reviewed 5-factor overview that remains available as
-a compatibility/timeline profile. The 9 aspects are the backend Gradus
-vocabulary and remain an unweighted framework, not validated weights.
+target framing. The learner-facing 6-dimension graph vocabulary is implemented
+separately in [front_facing_graph_taxonomy.md](front_facing_graph_taxonomy.md).
+This document defines the conservative, reviewed 5-factor overview that remains
+available as a compatibility/timeline profile. The 9 aspects are the backend
+Gradus vocabulary and remain an unweighted framework, not validated weights.
 
 Authoritative executable metadata: src/piano_difficulty/features/registry.py.
 Version: difficulty_factors.v1 / schema difficulty_overview.v1. Existing extractors
@@ -70,9 +69,10 @@ feature importance is not silently substituted for these descriptive weights.
 - **Overview status:** `difficulty_overview.v1` remains the stable 5-factor
   compatibility/timeline profile.
 - **Practice payloads:** Gradus learner-facing practice payloads should map
-  hotspots and recommendations back to the 9 aspects. They may use musically
-  precise vocabulary visible to students, but should avoid creating a separate
-  teacher-only taxonomy that competes with the canonical aspect framework.
+  hotspots and recommendations back to the 9 aspects for provenance while using
+  the 6-dimension front-facing graph vocabulary when a compact learner-visible
+  chart is needed. They should avoid creating a separate teacher-only taxonomy
+  that competes with the canonical aspect framework.
 - **Promotion rule:** Aspect 9 must remain marked as caveated/partially
   observable. Promotion into the stable overview requires explicit review and
   validation evidence.

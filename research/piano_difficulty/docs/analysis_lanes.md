@@ -128,13 +128,13 @@ Rules:
   clustering must remain label-free during fitting
 - feature selection and matrix loading should be shared wherever possible
 
-## Demo surface: CEO CIPI walkthrough (not a lane)
+## Demo surface: David CIPI walkthrough (not a lane)
 
 - Curated demo-evidence harness over the existing difficulty overview:
-  `tests/harness/ceo_walkthrough/`, thin runner
-  `tests/scripts/run_ceo_cipi_walkthrough.py`, curated manifest
-  `evaluation_scores/manifests/ceo_walkthrough/cipi_familiar_v1.csv`,
-  generated evidence under `tests/artifacts/ceo_walkthrough/cipi_familiar_v1/`.
+  `tests/harness/david_walkthrough/`, thin runner
+  `tests/scripts/run_david_cipi_walkthrough.py`, curated manifest
+  `evaluation_scores/manifests/david_walkthrough/cipi_familiar_v1.csv`,
+  generated evidence under `tests/artifacts/david_walkthrough/cipi_familiar_v1/`.
 - This is a review surface, not a research lane: it owns no difficulty math
   and reuses CIPI dataset-root resolution plus the runtime analysis/export
   path. Do not add lane-style experiments here.

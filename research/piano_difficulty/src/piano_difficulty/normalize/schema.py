@@ -75,6 +75,12 @@ class WrittenNoteIR:
     tuplet_normal: int | None = None
     xml_order: int | None = None
     measure_staff_order: int | None = None
+    arpeggiate: bool = False
+    has_slur_start: bool = False
+    has_slur_stop: bool = False
+    # if needed for future: slur number/type distinction from phrase
+    phrase_start: bool = False
+    phrase_stop: bool = False
 
 
 @dataclass(slots=True)
@@ -113,6 +119,11 @@ class LogicalNoteIR:
     alter: int | None = None
     xml_order: int | None = None
     measure_staff_order: int | None = None
+    arpeggiate: bool = False
+    has_slur_start: bool = False
+    has_slur_stop: bool = False
+    phrase_start: bool = False
+    phrase_stop: bool = False
 
 
 @dataclass(slots=True)
@@ -126,6 +137,9 @@ class DirectionIR:
     end: Fraction | None = None
     measure_index: int | None = None
     staff: int | None = None
+    # optional extra metadata for marking extraction (e.g., wedge start/stop linkage)
+    number: int | None = None
+    extra: dict[str, str] | None = None
 
 
 @dataclass(slots=True)

@@ -3,11 +3,12 @@
 Defines the minimal detector contract and a deterministic registry.
 
 Design refs:
-- docs/semantic_music_extraction_plan.md § Detector design: detector_id,
-  detector_version, hypothesis_types produced, required_views, optional_views,
-  supported subset, known limitations; detector input (passage, requested
-  scope, derived views, observations, optional difficulty/learner context) and
-  output (zero or more SemanticHypothesis + diagnostics)
+- docs/practice_chunk_objects.md: semantic detectors produce evidence-backed
+  claims that can attach to bounded chunks
+- detector_id, detector_version, hypothesis_types produced, required_views,
+  optional_views, supported subset, known limitations; detector input (passage,
+  requested scope, derived views, observations, optional difficulty/learner
+  context) and output (zero or more SemanticHypothesis + diagnostics)
 - S1.5/S-Q003: confidence vocabulary via semantics.confidence, S1.2 contracts
 
 Registry expectations (S3.1 verification):

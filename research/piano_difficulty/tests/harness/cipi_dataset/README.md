@@ -57,7 +57,7 @@ local CIPI corpus through the shared dataset contract
 
 ## Related demo surface
 
-- The CEO CIPI walkthrough (`tests/harness/ceo_walkthrough/`) resolves a
+- The David CIPI walkthrough (`tests/harness/david_walkthrough/`) resolves a
   curated eight-piece manifest against the canonical movement manifest above
   and runs each piece through the existing difficulty overview. It reuses the
   dataset-root behavior documented here and owns no difficulty math; see its

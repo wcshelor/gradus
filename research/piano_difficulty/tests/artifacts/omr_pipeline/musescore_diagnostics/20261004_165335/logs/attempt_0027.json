@@ -1,0 +1,50 @@
+{
+  "argv": [
+    "/opt/homebrew/Caskroom/musescore/4.7.5.260831071,4.7.5/.homebrew-command-wrappers/mscore",
+    "-R",
+    "-s",
+    "-w",
+    "-o",
+    "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/musescore_diagnostics/20261004_165335/pdfs/debussy_arabesque-no-1__R_s_w__score_parent__minimal.pdf",
+    "/Users/campshelor/repos/gradus/research/learning_support/david_demo/data/source_scores/debussy_arabesque-no-1.musicxml"
+  ],
+  "attempt_id": "attempt_0027",
+  "cwd": "/Users/campshelor/repos/gradus/research/learning_support/david_demo/data/source_scores",
+  "cwd_label": "score_parent",
+  "duration_seconds": 0.601,
+  "env_keys": [
+    "HOME",
+    "PATH",
+    "TMPDIR"
+  ],
+  "env_profile": "minimal",
+  "failure_category": "unsupported_option",
+  "markers": {
+    "crash_abort": false,
+    "hiservices": false,
+    "import_error": false,
+    "missing_output": true,
+    "pasteboard": false,
+    "timeout": false,
+    "unsupported_option": true
+  },
+  "musescore_bin": "/opt/homebrew/Caskroom/musescore/4.7.5.260831071,4.7.5/.homebrew-command-wrappers/mscore",
+  "pdf_exists": false,
+  "pdf_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/musescore_diagnostics/20261004_165335/pdfs/debussy_arabesque-no-1__R_s_w__score_parent__minimal.pdf",
+  "pdf_size_bytes": 0,
+  "pdf_valid_header": false,
+  "piece_id": "",
+  "returncode": 1,
+  "score_name": "debussy_arabesque-no-1.musicxml",
+  "score_path": "/Users/campshelor/repos/gradus/research/learning_support/david_demo/data/source_scores/debussy_arabesque-no-1.musicxml",
+  "stderr_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/musescore_diagnostics/20261004_165335/logs/attempt_0027.stderr.txt",
+  "stdout_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/musescore_diagnostics/20261004_165335/logs/attempt_0027.stdout.txt",
+  "timeout": false,
+  "timeout_seconds": 20.0,
+  "variant": "-R -s -w",
+  "variant_flags": [
+    "-R",
+    "-s",
+    "-w"
+  ]
+}

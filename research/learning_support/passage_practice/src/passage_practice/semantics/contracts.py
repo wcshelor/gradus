@@ -8,8 +8,8 @@ hypotheses; consumers rank and filter, producers never hide uncertainty by
 returning only one winner.
 
 Design refs:
-- docs/semantic_music_extraction_plan.md: SemanticHypothesis/SemanticBundle
-  suggested fields and hypothesis-type families
+- docs/practice_chunk_objects.md: semantic hypotheses attach richer
+  interpretations to bounded chunks when evidence supports them
 - docs/decisions.md: D-015 (S-Q001 independence decision)
 - docs/contracts.md: versioning and contract-test policy
 """

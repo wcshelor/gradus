@@ -2,7 +2,8 @@
 
 Design refs:
 - docs/pedagogical_input_boundary.md (S4.1)
-- docs/semantic_music_extraction_plan.md Layer 6
+- docs/practice_chunk_objects.md: learner-facing claims attach to bounded
+  chunks without rewriting score-derived evidence
 - semantics/contracts.py (SemanticHypothesis pattern)
 - pedagogy/rules.py (PedagogicalRule)
 

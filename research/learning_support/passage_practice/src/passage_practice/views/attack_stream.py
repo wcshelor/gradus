@@ -8,9 +8,9 @@ documented omissions, never synthesized into the stream. No inference is
 performed, so the view carries no confidence.
 
 Design refs:
-- docs/semantic_music_extraction_plan.md: Layer 3 `attack_stream`
 - docs/contracts.md: Derived view (view_type, source passage, method,
   included IDs, ordering, omissions, diagnostics)
+- docs/practice_chunk_objects.md: views provide chunk-citable evidence
 - docs/decisions.md: D-018 (no ScoreIR promotion needed for S2 views)
 - models/passage.py: `ViewType.LOGICAL_ATTACK_STREAM` (reused, not copied)
 """

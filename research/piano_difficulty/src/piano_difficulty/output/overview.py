@@ -236,7 +236,7 @@ def render_html(payload, profile):
                 lines.append(f'<text x="20" y="115" font-size="12">Measure {first}</text>'
                              f'<text x="960" y="115" text-anchor="end" font-size="12">Measure {last}</text>')
             lines.append("</svg></article>")
-        # --- Learner-facing graph taxonomy (six dimensions) when available ---
+        # --- Learner-facing graph taxonomy (six learner-facing dimensions) when available ---
         try:
             _aspects_for_graph = next((p for p in payload.get("analysis_profiles", []) if p.get("profile_id") == "difficulty_aspects"), None)
             _graph_payload = None
@@ -261,7 +261,7 @@ def render_html(payload, profile):
                             return 20 + 940 * idx / max(len(view["regions"]) - 1, 1)
                     # Render a combined timeline with all six dimensions + overall (if present)
                     lines.append('<article><strong>Learner-facing graph dimensions</strong>'
-                                 '<p style="font-size:13px;color:#405060">Six graph dimensions as presentation layer over raw feature traces; hover a line to highlight it. Underlying data is the normalized series; curve smoothing is visual only.</p>'
+                                 '<p style="font-size:13px;color:#405060">Six learner-facing graph dimensions as a presentation layer over raw feature traces; hover a line to highlight it. Underlying data is the normalized series; curve smoothing is visual only.</p>'
                                  '<svg viewBox="0 0 980 150" role="img" aria-label="Learner-facing graph dimensions">')
                     for section in view["candidate_sections"]:
                         left = _pos_x_g(float(Fraction(section["region"]["start_offset"])))

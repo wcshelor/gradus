@@ -7,7 +7,7 @@ No runtime code, interface, AI model, or data collection was introduced by this
 document itself. Later LS work implemented a narrower deterministic runtime
 subset: exact passage selection, optional context, pitch-transition observations,
 one text-only aid, interaction tests, and technical evaluation. See
-`evaluation_ls10.md` and `ceo_demo_milestone_2026-09-06.md` for current status
+`evaluation_ls10.md` and `david_demo_milestone_2026-09-06.md` for current status
 and next direction.
 
 Authority: [project direction](../../docs/project_direction.md) (three

@@ -19,6 +19,10 @@ Working rules scoped to the `research/piano_difficulty/` subproject:
 - Treat `tests/harness/difficulty_prediction/` as the reusable prediction lab.
 - Treat `tests/harness/difficulty_clustering/` as the reusable unsupervised
   clustering lab.
+- Treat `src/piano_difficulty/semantic_tokens/` and
+  `tests/artifacts/practice_chunk_review/` as the current practice-chunk lane;
+  use `docs/current_practice_chunking.md` and `docs/practice_chunks.md` before
+  changing that work.
 - Keep runner scripts thin and located in `tests/scripts/`. A legacy
   `scripts/` directory at the project root still contains public-facing
   wrappers from earlier workflow iterations; prefer `tests/scripts/` for new
@@ -55,6 +59,8 @@ Working rules scoped to the `research/piano_difficulty/` subproject:
 
 - `src/piano_difficulty/`
   - reusable runtime extraction, normalization, analysis, and CLI code
+- `src/piano_difficulty/semantic_tokens/`
+  - current semantic-token and practice-chunk runtime
 - `tests/harness/scoreanalyzer/`
   - OG PHP `ScoreAnalyzer` parity harness and probes
 - `tests/harness/yan2023/`
@@ -76,6 +82,9 @@ Working rules scoped to the `research/piano_difficulty/` subproject:
   - reusable modeling experiments over exported feature matrices
 - `tests/harness/difficulty_clustering/`
   - reusable unsupervised clustering experiments over exported feature matrices
+- `tests/artifacts/practice_chunk_review/`
+  - current visual QA artifacts for practice chunks, including Clair de Lune
+    spans
 - `tests/scripts/`
   - thin runnable wrappers only; no heavy logic
 - `tests/artifacts/`

@@ -1,0 +1,135 @@
+{
+  "attempts_csv": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/musescore_diagnostics/20261004_165335/attempts.csv",
+  "best_cwd": "score_parent",
+  "best_env_profile": "inherited",
+  "best_variant": "-R",
+  "best_variant_success_rate": 0.8333333333333334,
+  "command_variants": [
+    "plain",
+    "-f",
+    "-R",
+    "-R -f",
+    "-R -s -w",
+    "-R -s -w -f"
+  ],
+  "cwd_variants": [
+    "repo_root",
+    "score_parent",
+    "output_dir"
+  ],
+  "does_any_variant_work": true,
+  "env_profiles": [
+    "inherited",
+    "minimal"
+  ],
+  "failure_count": 21,
+  "global_vs_score_specific": "At least one variant succeeded for every score \u2014 failures are variant/cwd/env-specific, not score-specific.",
+  "lane": "omr_pipeline",
+  "logs_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/musescore_diagnostics/20261004_165335/logs",
+  "markers_summary": {
+    "crash_abort_count": 9,
+    "hiservices_count": 9,
+    "missing_output_count": 21,
+    "pasteboard_count": 0,
+    "pasteboard_hiservices_present": true,
+    "timeout_count": 0,
+    "unsupported_option_count": 12
+  },
+  "musescore_bin": "/opt/homebrew/Caskroom/musescore/4.7.5.260831071,4.7.5/.homebrew-command-wrappers/mscore",
+  "musescore_bin_error": null,
+  "musescore_bin_resolved": true,
+  "out_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/musescore_diagnostics/20261004_165335",
+  "pasteboard_hiservices_present": true,
+  "pdf_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/musescore_diagnostics/20261004_165335/pdfs",
+  "per_cwd": {
+    "output_dir": {
+      "failure_count": 8,
+      "success_count": 4,
+      "success_rate": 0.3333333333333333,
+      "total": 12
+    },
+    "repo_root": {
+      "failure_count": 7,
+      "success_count": 5,
+      "success_rate": 0.4166666666666667,
+      "total": 12
+    },
+    "score_parent": {
+      "failure_count": 6,
+      "success_count": 6,
+      "success_rate": 0.5,
+      "total": 12
+    }
+  },
+  "per_env": {
+    "inherited": {
+      "failure_count": 8,
+      "success_count": 10,
+      "success_rate": 0.5555555555555556,
+      "total": 18
+    },
+    "minimal": {
+      "failure_count": 13,
+      "success_count": 5,
+      "success_rate": 0.2777777777777778,
+      "total": 18
+    }
+  },
+  "per_score": {
+    "debussy_arabesque-no-1.musicxml": {
+      "failure_count": 21,
+      "score_path": "/Users/campshelor/repos/gradus/research/learning_support/david_demo/data/source_scores/debussy_arabesque-no-1.musicxml",
+      "success_count": 15,
+      "success_rate": 0.4166666666666667,
+      "total": 36
+    }
+  },
+  "per_variant": {
+    "-R": {
+      "failure_count": 1,
+      "success_count": 5,
+      "success_rate": 0.8333333333333334,
+      "total": 6
+    },
+    "-R -f": {
+      "failure_count": 2,
+      "success_count": 4,
+      "success_rate": 0.6666666666666666,
+      "total": 6
+    },
+    "-R -s -w": {
+      "failure_count": 6,
+      "success_count": 0,
+      "success_rate": 0.0,
+      "total": 6
+    },
+    "-R -s -w -f": {
+      "failure_count": 6,
+      "success_count": 0,
+      "success_rate": 0.0,
+      "total": 6
+    },
+    "-f": {
+      "failure_count": 2,
+      "success_count": 4,
+      "success_rate": 0.6666666666666666,
+      "total": 6
+    },
+    "plain": {
+      "failure_count": 4,
+      "success_count": 2,
+      "success_rate": 0.3333333333333333,
+      "total": 6
+    }
+  },
+  "recommended_next_action": "At least one variant works (-R with 83% success). Pin OMR pipeline to the best variant (-R) and prefer cwd=repo_root or score_parent with inherited env. Avoid variants with unsupported_option (12 hits) \u2014 MuseScore 4 removed -s/-w.",
+  "schema_version": "musescore_diagnostics_summary.v1",
+  "source_count": 1,
+  "source_scores": [
+    "/Users/campshelor/repos/gradus/research/learning_support/david_demo/data/source_scores/debussy_arabesque-no-1.musicxml"
+  ],
+  "success_count": 15,
+  "timeout_seconds": 20.0,
+  "timestamp": "20261004_165335",
+  "total_attempts": 36
+}

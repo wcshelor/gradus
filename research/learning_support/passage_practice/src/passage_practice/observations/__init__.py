@@ -98,10 +98,10 @@ STAFF_CROSSING_METHOD_VERSION = "v1"
 STAFF_CROSSING_TYPE = "staff_crossing_count"
 
 # --- S2.12 notation-readability observations ---
-# Design refs: docs/semantic_music_extraction_plan.md Layer 4 notation-readability,
-# views/written_stream.py (notation facts while declaring omissions),
-# D-018 (no ScoreIR promotion needed). Readability observations consume
-# written_stream facts and record missing layout data as unavailable, never as zero.
+# Design refs: docs/practice_chunk_objects.md (chunk-citable evidence),
+# views/written_stream.py (notation facts while declaring omissions), D-018
+# (no ScoreIR promotion needed). Readability observations consume written_stream
+# facts and record missing layout data as unavailable, never as zero.
 
 ACCIDENTAL_DENSITY_METHOD_ID = "notation_accidental_density_observation"
 ACCIDENTAL_DENSITY_METHOD_VERSION = "v1"

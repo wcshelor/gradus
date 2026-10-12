@@ -738,7 +738,7 @@ class DifficultyAspectsProfile:
                     payload["chart"]["front_graph_taxonomy_version"] = GRAPH_TAXONOMY_VERSION
                 # Diagnostics
                 payload["diagnostics"].append(
-                    "Front-facing graph taxonomy (gradus.front_graph_taxonomy.v1) provides six learner-visible dimensions as presentation layer over raw feature traces; raw feature extraction formulas unchanged; difficulty_overview.v1 remains compatible."
+                    "Front-facing graph taxonomy (gradus.front_graph_taxonomy.v2) provides six learner-facing graph dimensions as a presentation layer over raw feature traces; raw feature extraction formulas unchanged; difficulty_overview.v1 remains compatible."
                 )
             except Exception as _graph_exc:
                 # Graph layer is additive; do not fail primary profile if it errors

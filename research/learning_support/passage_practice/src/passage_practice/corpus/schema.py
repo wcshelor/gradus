@@ -5,7 +5,7 @@ feedback, human explanation, generated explanation, exercise candidate, and
 review status. Synthetic-only for thesis phase.
 
 Design refs:
-- docs/semantic_music_extraction_plan.md Phase S8 (corpus schema)
+- docs/practice_chunk_objects.md (chunk-centered evidence and explanations)
 - semantic_music_extraction_tasks.md S8.1 (round-trip with synthetic data)
 """
 

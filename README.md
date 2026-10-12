@@ -13,12 +13,13 @@ AI technique or product design too early.
 
 - `research/piano_difficulty/` contains the existing piano-difficulty project
   as a self-contained research subproject, including its code, tests, datasets,
-  documentation, and generated evidence.
+  documentation, generated evidence, and the current semantic-token /
+  practice-chunk runtime.
 - `research/learning_support/` is the staging area for experiments that help a
   pianist learn a particular piece. It now contains the completed LS-01–LS-11
   first research slice: optional learner context, exact passage selection,
   bounded semantic observations, one grounded text aid, a deterministic
-  interaction harness, evaluation evidence, and the next CEO-demo milestone
+  interaction harness, evaluation evidence, and the next David-demo milestone
   plan. Its `passage_practice/` program remains one route to assistance, not
   the mandatory workflow.
 - `research/shared/` is reserved for concepts or utilities that are genuinely
@@ -36,8 +37,17 @@ AI technique or product design too early.
 
 ## Current status
 
-The project is organized around three complementary areas: semantic understanding
-of a piece, development of pedagogical assistance, and flexible interaction.
+The current active implementation lane is the semantic-token and practice-chunk
+work in `research/piano_difficulty/`. Its current Clair de Lune evidence lives
+under `research/piano_difficulty/tests/artifacts/practice_chunk_review/` and
+`research/piano_difficulty/tests/artifacts/semantic_breakdown/clair_de_lune_current/`.
+See
+[`research/piano_difficulty/docs/current_practice_chunking.md`](research/piano_difficulty/docs/current_practice_chunking.md)
+for the map of current versus historical paths.
+
+The broader thesis is still organized around three complementary areas:
+semantic understanding of a piece, development of pedagogical assistance, and
+flexible interaction.
 Optional practice notes and learner-reported difficulties can provide context;
 neither continuous tracking nor a fixed learning sequence is required. Live-playing
 feedback and MIDI/audio performance capture are outside the current scope.
@@ -57,19 +67,24 @@ review. The current learning-support slice can:
   playing ability; and
 - evaluate the slice through a reproducible technical report.
 
-The next selected increment is a thin local
-[CEO walkthrough prototype](research/learning_support/ceo_demo_milestone_2026-09-06.md),
-planned but not yet built. It should make the existing capabilities visible,
-including the difficulty graph, learner notes, manual measure ranges, and
-score-only versus score-plus-report comparisons.
+The older selected demo increment is a thin local
+[David walkthrough prototype](research/learning_support/david_demo_milestone_2026-09-06.md),
+built under `research/learning_support/david_demo/`. It makes the difficulty
+analysis visible through a compact catalog walkthrough; learner notes, manual
+measure ranges, and score-only versus score-plus-report comparisons remain in
+the broader learning-support research track.
 
-The current CEO demo workspace is
-[`research/learning_support/ceo_demo/`](research/learning_support/ceo_demo/README.md).
+The David demo workspace is historical presentation infrastructure, not the
+current semantic-token / practice-chunk evidence path. The demo workspace is
+[`research/learning_support/david_demo/`](research/learning_support/david_demo/README.md).
 For the walkthrough, it deliberately uses a compact set of score-native,
 learner-legible feature families: note/attack density, rhythmic variety,
 leaps/displacement, hand span/chord size, polyphony/chord density, hand
 coordination, accidentals/reading load, descriptive articulation/dynamics, and
-a hotspot timeline over those signals. Ambiguous Yan et al. features such as
+a hotspot timeline over those signals. The visible chart is the 6-dimension
+front-facing graph (`gradus.front_graph_taxonomy.v2`); the 9-aspect
+`difficulty_aspects.v1` taxonomy remains backend coverage/provenance for
+explanations and caveats. Ambiguous Yan et al. features such as
 distinct stroke rate, playing-speed variation, pressing velocity, melodic
 originality/melodiousness, and deeper structural-pattern modeling are deferred
 to the research track. They should be revisited after the demo through
@@ -93,9 +108,11 @@ regions and learner notes do not depend on hotspot detection.
 To work on or run the existing Python project, begin in
 `research/piano_difficulty/` and follow its README.
 
-To continue learning-support work, begin with
-`research/learning_support/README.md`, the CEO milestone document, and any scoped
-`AGENTS.md` files for the area being edited.
+To continue current practice-chunk work, begin with
+`research/piano_difficulty/docs/current_practice_chunking.md`,
+`research/piano_difficulty/docs/practice_chunks.md`, and the scoped `AGENTS.md`
+files for the area being edited. To continue older learning-support work, begin
+with `research/learning_support/README.md`.
 
 ## Setup (fresh clone)
 

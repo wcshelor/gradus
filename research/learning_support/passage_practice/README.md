@@ -80,22 +80,26 @@ Read these in order before implementation:
    that prevent locally correct changes from drifting architecturally.
 10. [`docs/pedagogy_knowledge_base.md`](docs/pedagogy_knowledge_base.md) — later
    literature-to-diagnosis and diagnosis-to-exercise knowledge work.
-11. [`docs/semantic_music_extraction_plan.md`](docs/semantic_music_extraction_plan.md)
-    — later architecture plan for probabilistic musical-role, texture, rhythm,
-    phrase, harmony, and learner-feedback semantics.
+11. [`docs/practice_chunk_objects.md`](docs/practice_chunk_objects.md) — current
+    practice-chunk-centered object model for evidence, semantic observations,
+    display/core regions, and learner-facing explanations.
 12. [`docs/semantic_music_extraction_tasks.md`](docs/semantic_music_extraction_tasks.md)
-    — atomic future task list for implementing the semantic-extraction plan.
-13. [`docs/traceability.md`](docs/traceability.md) — requirements mapped to work
+    — historical/current task record for implemented semantic support and
+    remaining future work.
+13. [`docs/semantic_music_extraction_plan.md`](docs/semantic_music_extraction_plan.md)
+    — superseded background plan for broader probabilistic semantic extraction;
+    do not treat it as the starting point for new chunk-centered work.
+14. [`docs/traceability.md`](docs/traceability.md) — requirements mapped to work
     packages, tests, and review gates.
-14. [`docs/thesis_alignment.md`](docs/thesis_alignment.md) — research questions,
+15. [`docs/thesis_alignment.md`](docs/thesis_alignment.md) — research questions,
     claim boundaries, and evidence needed for the thesis.
-15. [`docs/risks.md`](docs/risks.md) — technical and research risks with trigger
+16. [`docs/risks.md`](docs/risks.md) — technical and research risks with trigger
     conditions and mitigations.
-16. [`docs/agent_prompts.md`](docs/agent_prompts.md) — reusable assignment,
+17. [`docs/agent_prompts.md`](docs/agent_prompts.md) — reusable assignment,
     review, and audit prompts.
-17. [`docs/decisions.md`](docs/decisions.md) — accepted decisions and unresolved
+18. [`docs/decisions.md`](docs/decisions.md) — accepted decisions and unresolved
     questions.
-18. [`handoffs/README.md`](handoffs/README.md) — one-file-per-package completion
+19. [`handoffs/README.md`](handoffs/README.md) — one-file-per-package completion
     records that parallel branches can merge cleanly.
 
 ## Repository boundaries

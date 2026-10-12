@@ -7,9 +7,9 @@ flags); never parses MusicXML and never recomputes pitch, tie collapse,
 or event identity (S0.4 R1/R2/R7/R11).
 
 Design refs:
-- docs/semantic_music_extraction_plan.md: Layer 3 ``rhythm_grid``
 - docs/contracts.md: Derived view (view_type, source passage, method,
   included IDs, ordering, omissions, diagnostics)
+- docs/practice_chunk_objects.md: views provide chunk-citable evidence
 - docs/decisions.md: D-011 (SourceRef), D-014 (half-open selection),
   D-018 (S-Q004: attack stream + ``MeasureIR`` meter + tuplet flags are
   sufficient; no ScoreIR promotion needed)

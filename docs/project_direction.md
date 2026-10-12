@@ -82,6 +82,12 @@ data-handling decisions before implementation with those data.
 
 ## Current concrete program
 
+The active implementation lane is currently the semantic-token and
+practice-chunk work under `research/piano_difficulty/`. Use
+[`research/piano_difficulty/docs/current_practice_chunking.md`](../research/piano_difficulty/docs/current_practice_chunking.md)
+to distinguish current Clair de Lune practice-chunk artifacts from older demo
+or learning-support history.
+
 The repository-wide execution direction is recorded in
 [the three-area learning-support plan](Task_list_2026-09-05_flexible_piano_learning_support.md).
 It supersedes the earlier assumption that all learning-support work must wait
@@ -102,10 +108,9 @@ synthetic history, and technical evaluation. It is intentionally narrow:
 pedagogical effectiveness is unproven, no real learner data has been collected,
 and no product integration is claimed.
 
-The next selected increment is a thin local CEO walkthrough prototype that makes
-the slice visible alongside the existing difficulty overview and graph outputs.
-That demo should remain a presentation harness over tested components, not the
-new architectural center. The broader `passage_practice/` program still contains
-plans for event attribution, semantic diagnosis, deterministic transformations,
-and generated exercises; not every planned component must appear in the final
-thesis or product.
+The David walkthrough prototype remains useful historical/presentation context
+for the older hotspot-demo lane. It should not be treated as the current
+semantic extraction or practice-chunk evidence path. The broader
+`passage_practice/` program still contains plans for event attribution,
+semantic diagnosis, deterministic transformations, and generated exercises; not
+every planned component must appear in the final thesis or product.

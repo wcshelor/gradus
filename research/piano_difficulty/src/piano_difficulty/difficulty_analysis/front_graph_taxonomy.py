@@ -1,12 +1,22 @@
 """Front-facing graph taxonomy: learner-visible presentation layer over raw features.
 
-Version: gradus.front_graph_taxonomy.v1
+Version: gradus.front_graph_taxonomy.v2
 Stable dimension IDs and feature-to-dimension weight table as documented in
-research/piano_difficulty/docs/front_facing_graph_taxonomy.md.
+research/piano_difficulty/docs/front_facing_graph_taxonomy.md. This module is
+the executable source of truth; the markdown table is the human-readable tracker.
+
+David demo binding: the visible chart (chart.series, 6 graph_dimension_ids) and
+visible hotspot ranking / primary explanation (top_contributors with nested
+micro-component feature_contributors) are driven by this 6-dimension taxonomy.
+The 9-aspect taxonomy remains as backend coverage/provenance only (difficulty_aspects,
+backend_aspect_hotspots) and is not used for visible hotspot selection or ranking.
+Weights are design weights for presentation, not validated difficulty weights; the
+demo does not imply calibrated grades or learner diagnosis.
 
 This is a presentation/graph layer over existing raw features, normalized temporal
 traces, and difficulty aspect/profile machinery. It does not replace the 9-aspect
-backend taxonomy and does not alter raw feature extraction formulas.
+backend taxonomy and does not alter raw feature extraction formulas. Micro-components
+are the raw feature IDs in FEATURE_TO_DIMENSION_WEIGHTS.
 """
 
 from __future__ import annotations
@@ -14,27 +24,27 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Dict, Tuple
 
-GRAPH_TAXONOMY_VERSION = "gradus.front_graph_taxonomy.v1"
+GRAPH_TAXONOMY_VERSION = "gradus.front_graph_taxonomy.v2"
 
 # Stable graph dimension IDs -> labels
 _GRAPH_DIMENSIONS: Tuple[Dict[str, str], ...] = (
     {
         "id": "finger_dexterity",
         "label": "Finger Dexterity",
-        "description": "Finger-level execution demand: fast or intricate patterns, short written values, articulation precision, repeated attacks, and chord or pitch patterns that make finger control more demanding.",
-        "caveats": "Does not include large relocations across the keyboard unless the feature also implies finger-level complexity; does not include notation that is primarily a reading burden.",
+        "description": "Finger-level execution demand: fast or intricate patterns, short written values, articulation precision, repeated attacks, and finger-pattern complexity.",
+        "caveats": "Does not include large relocations or wide hand spans/chord shapes unless the feature explicitly captures finger-pattern instability; does not include notation that is primarily a reading burden. Wide chords, octaves, and simultaneous span are hand position demand, not finger dexterity, unless finger-level change is encoded.",
     },
     {
         "id": "hand_movement_position",
-        "label": "Hand Movement / Position",
-        "description": "Spatial demand at the keyboard: reaches, stretches, leaps, register shifts, hand relocation, cross-staff movement, and awkward hand positions.",
-        "caveats": "Does not include finger speed without spatial relocation; visual reading burden except where notation implies physical relocation.",
+        "label": "Hand Position / Movement",
+        "description": "Spatial demand at the keyboard: reaches, stretches, leaps, register shifts, hand relocation, cross-staff movement, wide simultaneous spans, octaves, dense block-chord shapes, and awkward hand positions.",
+        "caveats": "Does not include finger speed without spatial relocation; visual reading burden except where notation implies physical relocation. Vertical/chordal density belongs here as hand shape/span demand, not as coordination, unless there is independent timing or layer evidence.",
     },
     {
         "id": "layers_coordination",
-        "label": "Layers & Coordination",
-        "description": "Demand from managing multiple things at once: layered texture, polyphony, inter-hand independence, chordal density, asynchronous onsets, and hand-role separation.",
-        "caveats": "Does not include rhythm difficulty that is only about subdivision or duration variety; does not include expression markings that do not imply layered control.",
+        "label": "Coordination / Layers",
+        "description": "Demand from managing independently timed or layered material: asynchronous hand onsets, subdivision mismatch, contrasting rhythms between hands, polyrhythm / asymmetric tuplets, independently moving layers, and hand-role separation.",
+        "caveats": "Does not include rhythm difficulty that is only about subdivision or duration variety; does not include expression markings that do not imply layered control. Both-hands-aligned chordal density or wide simultaneous spans alone are not coordination difficulty — they are hand position/span demand unless there is subdivision mismatch, asynchrony, or explicit voice/layer independence.",
     },
     {
         "id": "rhythm_timing",
@@ -44,7 +54,7 @@ _GRAPH_DIMENSIONS: Tuple[Dict[str, str], ...] = (
     },
     {
         "id": "expression_sound_control",
-        "label": "Expression & Sound Control",
+        "label": "Control / Expression",
         "description": "Sound-shaping demand that is explicitly visible in the score: dynamics, articulations, hairpins, staff-specific control, and written changes that ask the learner to shape tone or balance.",
         "caveats": "Does not include unnotated interpretation, tone production, rubato, or performance nuance as a scored fact; does not claim actual performer velocity or musical maturity.",
     },
@@ -65,13 +75,13 @@ GRAPH_DIMENSIONS_BY_ID: Dict[str, Dict[str, str]] = {d["id"]: d for d in _GRAPH_
 # Draft contributions from docs/front_facing_graph_taxonomy.md (design weights, not validated difficulty weights)
 # Context-only features (metadata.length_quarters, measure_count, note_count, page_count) are intentionally excluded.
 FEATURE_TO_DIMENSION_WEIGHTS: Dict[str, Dict[str, float]] = {
-    # rhythm
-    "rhythm.note_density": {"rhythm_timing": 0.55, "finger_dexterity": 0.35, "layers_coordination": 0.10},
-    "rhythm.attack_density": {"rhythm_timing": 0.55, "finger_dexterity": 0.35, "layers_coordination": 0.10},
-    "rhythm.shortest_written_duration": {"rhythm_timing": 0.65, "finger_dexterity": 0.35},
+    # rhythm — retuned: finger dexterity represents quick/sequential finger activity, not note/chord density
+    "rhythm.note_density": {"rhythm_timing": 0.55, "hand_movement_position": 0.20, "finger_dexterity": 0.05, "layers_coordination": 0.05},
+    "rhythm.attack_density": {"rhythm_timing": 0.65, "finger_dexterity": 0.15, "layers_coordination": 0.05},
+    "rhythm.shortest_written_duration": {"rhythm_timing": 0.75, "finger_dexterity": 0.15},
     "rhythm.tuplet_count": {"rhythm_timing": 0.75, "finger_dexterity": 0.15, "layers_coordination": 0.10},
     "rhythm.duration_value_ratio": {"rhythm_timing": 0.90, "finger_dexterity": 0.10},
-    "rhythm.significant_shortest_value": {"rhythm_timing": 0.75, "finger_dexterity": 0.25},
+    "rhythm.significant_shortest_value": {"rhythm_timing": 0.80, "finger_dexterity": 0.10},
     "rhythm.asymmetric_tuplet_measure_ratio": {"rhythm_timing": 0.75, "layers_coordination": 0.15, "finger_dexterity": 0.10},
     "rhythm.polyrhythm_measure_ratio": {"rhythm_timing": 0.65, "layers_coordination": 0.35},
     "rhythm.polyrhythm_flag": {"rhythm_timing": 0.65, "layers_coordination": 0.35},
@@ -84,21 +94,25 @@ FEATURE_TO_DIMENSION_WEIGHTS: Dict[str, Dict[str, float]] = {
     "leaps.timed_difficult_displacement_ratio": {"hand_movement_position": 0.75, "rhythm_timing": 0.10, "finger_dexterity": 0.10, "layers_coordination": 0.05},
     "leaps.max_timed_difficult_displacement": {"hand_movement_position": 0.75, "rhythm_timing": 0.10, "finger_dexterity": 0.10, "layers_coordination": 0.05},
     "leaps.timed_difficult_displacement_count": {"hand_movement_position": 0.75, "rhythm_timing": 0.10, "finger_dexterity": 0.10, "layers_coordination": 0.05},
-    # pitch_geometry
-    "pitch_geometry.max_simultaneity_span": {"hand_movement_position": 0.80, "finger_dexterity": 0.15, "layers_coordination": 0.05},
-    "pitch_geometry.mean_simultaneity_span": {"hand_movement_position": 0.80, "finger_dexterity": 0.15, "layers_coordination": 0.05},
+    # pitch_geometry — wide span is primarily hand position/span demand
+    "pitch_geometry.max_simultaneity_span": {"hand_movement_position": 0.90, "finger_dexterity": 0.05},
+    "pitch_geometry.mean_simultaneity_span": {"hand_movement_position": 0.85, "finger_dexterity": 0.05},
     "pitch_geometry.register_range": {"hand_movement_position": 0.85, "rhythm_timing": 0.15},
-    # texture
-    "texture.notes_per_onset": {"layers_coordination": 0.60, "hand_movement_position": 0.20, "finger_dexterity": 0.10, "expression_sound_control": 0.10},
-    "texture.simultaneity_density": {"layers_coordination": 0.70, "hand_movement_position": 0.15, "expression_sound_control": 0.10, "finger_dexterity": 0.05},
-    "texture.vertical_density_proxy": {"layers_coordination": 0.65, "hand_movement_position": 0.10, "finger_dexterity": 0.10, "expression_sound_control": 0.10, "rhythm_timing": 0.05},
-    "texture.chord_count": {"layers_coordination": 0.55, "hand_movement_position": 0.25, "finger_dexterity": 0.15, "expression_sound_control": 0.05},
-    "texture.chord_ratio": {"layers_coordination": 0.55, "hand_movement_position": 0.25, "finger_dexterity": 0.15, "expression_sound_control": 0.05},
-    "texture.octave_chord_ratio": {"hand_movement_position": 0.55, "layers_coordination": 0.30, "finger_dexterity": 0.10, "expression_sound_control": 0.05},
-    # coordination
-    "coordination.aligned_hand_onset_count": {"layers_coordination": 0.70, "rhythm_timing": 0.30},
+    # texture — vertical density / chord shape is primarily hand position, not coordination/dexterity.
+    # No separate front-facing texture dimension exists. Until one does, texture contributes
+    # modestly to hand_movement_position / expression_sound_control and only weakly (if at all)
+    # to layers_coordination as a texture proxy, not true coordination.
+    "texture.notes_per_onset": {"hand_movement_position": 0.50, "expression_sound_control": 0.15, "layers_coordination": 0.15, "finger_dexterity": 0.05},
+    "texture.simultaneity_density": {"hand_movement_position": 0.45, "expression_sound_control": 0.15, "layers_coordination": 0.15, "finger_dexterity": 0.05},
+    "texture.vertical_density_proxy": {"hand_movement_position": 0.40, "expression_sound_control": 0.20, "layers_coordination": 0.10, "finger_dexterity": 0.05, "rhythm_timing": 0.05},
+    "texture.chord_count": {"hand_movement_position": 0.55, "expression_sound_control": 0.10, "layers_coordination": 0.10, "finger_dexterity": 0.05},
+    "texture.chord_ratio": {"hand_movement_position": 0.55, "expression_sound_control": 0.10, "layers_coordination": 0.10, "finger_dexterity": 0.05},
+    "texture.octave_chord_ratio": {"hand_movement_position": 0.85, "expression_sound_control": 0.10, "finger_dexterity": 0.05},
+    # coordination — aligned-hand onsets are not coordination difficulty; keep only weak rhythm_timing context.
+    # True coordination signals remain asynchronous onsets, subdivision mismatch, polyrhythm, asymmetric tuplets.
+    "coordination.aligned_hand_onset_count": {"rhythm_timing": 0.20},
     "coordination.asynchronous_hand_onset_count": {"layers_coordination": 0.70, "rhythm_timing": 0.25, "hand_movement_position": 0.05},
-    "coordination.aligned_hand_onset_ratio": {"layers_coordination": 0.75, "rhythm_timing": 0.25},
+    "coordination.aligned_hand_onset_ratio": {"rhythm_timing": 0.20},
     "coordination.subdivision_mismatch_proxy": {"layers_coordination": 0.55, "rhythm_timing": 0.45},
     # notation
     "notation.accidental_density": {"notation_reading": 0.90, "finger_dexterity": 0.10},
@@ -108,12 +122,13 @@ FEATURE_TO_DIMENSION_WEIGHTS: Dict[str, Dict[str, float]] = {
     "notation.cross_staff_note_count": {"notation_reading": 0.60, "layers_coordination": 0.25, "hand_movement_position": 0.15},
     "notation.ledger_line_burden": {"notation_reading": 0.90, "hand_movement_position": 0.10},
     # expression
-    "expression.articulated_note_ratio": {"expression_sound_control": 0.50, "finger_dexterity": 0.35, "rhythm_timing": 0.10, "layers_coordination": 0.05},
-    "expression.articulation_density": {"finger_dexterity": 0.40, "expression_sound_control": 0.40, "rhythm_timing": 0.15, "layers_coordination": 0.05},
-    "expression.staccato_note_ratio": {"expression_sound_control": 0.55, "finger_dexterity": 0.30, "rhythm_timing": 0.10, "layers_coordination": 0.05},
-    "expression.accent_note_ratio": {"expression_sound_control": 0.55, "finger_dexterity": 0.30, "rhythm_timing": 0.10, "layers_coordination": 0.05},
-    "expression.strong_accent_note_ratio": {"expression_sound_control": 0.55, "finger_dexterity": 0.30, "rhythm_timing": 0.10, "layers_coordination": 0.05},
-    "expression.tenuto_note_ratio": {"expression_sound_control": 0.55, "finger_dexterity": 0.30, "rhythm_timing": 0.10, "layers_coordination": 0.05},
+    # expression — articulation primarily Control/Expression, not generic finger dexterity
+    "expression.articulated_note_ratio": {"expression_sound_control": 0.65, "finger_dexterity": 0.10, "rhythm_timing": 0.10},
+    "expression.articulation_density": {"expression_sound_control": 0.60, "finger_dexterity": 0.15, "rhythm_timing": 0.15},
+    "expression.staccato_note_ratio": {"expression_sound_control": 0.65, "finger_dexterity": 0.15, "rhythm_timing": 0.10},
+    "expression.accent_note_ratio": {"expression_sound_control": 0.65, "finger_dexterity": 0.15, "rhythm_timing": 0.10},
+    "expression.strong_accent_note_ratio": {"expression_sound_control": 0.65, "finger_dexterity": 0.15, "rhythm_timing": 0.10},
+    "expression.tenuto_note_ratio": {"expression_sound_control": 0.70, "finger_dexterity": 0.05, "rhythm_timing": 0.05},
     "expression.dynamic_marking_count": {"expression_sound_control": 0.90, "rhythm_timing": 0.05, "layers_coordination": 0.05},
     "expression.dynamic_marking_rate": {"expression_sound_control": 0.90, "rhythm_timing": 0.05, "layers_coordination": 0.05},
     "expression.dynamic_change_count": {"expression_sound_control": 0.90, "rhythm_timing": 0.05, "layers_coordination": 0.05},
@@ -131,10 +146,10 @@ FEATURE_TO_DIMENSION_WEIGHTS: Dict[str, Dict[str, float]] = {
     "statistics.duration_std": {"rhythm_timing": 0.70, "finger_dexterity": 0.15},
     "statistics.duration_variability": {"rhythm_timing": 0.70, "finger_dexterity": 0.15},
     "statistics.black_key_rate": {"notation_reading": 0.45, "finger_dexterity": 0.25, "hand_movement_position": 0.20},
-    "statistics.polyphony_rate": {"layers_coordination": 0.75, "hand_movement_position": 0.10, "expression_sound_control": 0.10, "finger_dexterity": 0.05},
-    "statistics.triad_count": {"layers_coordination": 0.45, "hand_movement_position": 0.35, "finger_dexterity": 0.15, "expression_sound_control": 0.05},
-    "statistics.seventh_chord_count": {"layers_coordination": 0.45, "hand_movement_position": 0.35, "finger_dexterity": 0.15, "expression_sound_control": 0.05},
-    "statistics.ninth_chord_count": {"layers_coordination": 0.45, "hand_movement_position": 0.35, "finger_dexterity": 0.15, "expression_sound_control": 0.05},
+    "statistics.polyphony_rate": {"hand_movement_position": 0.40, "expression_sound_control": 0.15, "layers_coordination": 0.15, "finger_dexterity": 0.05},
+    "statistics.triad_count": {"hand_movement_position": 0.55, "expression_sound_control": 0.10, "layers_coordination": 0.10, "finger_dexterity": 0.05},
+    "statistics.seventh_chord_count": {"hand_movement_position": 0.55, "expression_sound_control": 0.10, "layers_coordination": 0.10, "finger_dexterity": 0.05},
+    "statistics.ninth_chord_count": {"hand_movement_position": 0.55, "expression_sound_control": 0.10, "layers_coordination": 0.10, "finger_dexterity": 0.05},
     # metadata (excluding context-only)
     "metadata.primary_tempo": {"rhythm_timing": 0.50, "finger_dexterity": 0.20},
     "metadata.tempo_change_count": {"rhythm_timing": 0.45, "expression_sound_control": 0.40},
@@ -142,6 +157,26 @@ FEATURE_TO_DIMENSION_WEIGHTS: Dict[str, Dict[str, float]] = {
     "metadata.key_signature": {"notation_reading": 0.75, "finger_dexterity": 0.10},
     "metadata.key_change_count": {"notation_reading": 0.75, "rhythm_timing": 0.10, "expression_sound_control": 0.10},
     "metadata.pitch_range": {"hand_movement_position": 0.75},
+    # hand_shape — wide chords, octave shapes, chord-shape variability, chord-tone motion
+    # Gradus experimental / Yan-adjacent (hand_stretch/chord_number families), Gradus-defined formulas
+    "hand_shape.octave_onset_rate": {"hand_movement_position": 0.85, "finger_dexterity": 0.05},
+    "hand_shape.large_span_onset_rate": {"hand_movement_position": 0.90},
+    "hand_shape.mean_large_span_burden": {"hand_movement_position": 0.90},
+    "hand_shape.wide_chord_density": {"hand_movement_position": 0.80, "rhythm_timing": 0.10},
+    "hand_shape.repeated_octave_texture_rate": {"hand_movement_position": 0.85},
+    "hand_shape.chord_shape_change_rate": {"hand_movement_position": 0.75, "finger_dexterity": 0.10},
+    "hand_shape.chord_shape_entropy": {"hand_movement_position": 0.75, "finger_dexterity": 0.10},
+    "hand_shape.chord_shape_edit_distance_mean": {"hand_movement_position": 0.75, "finger_dexterity": 0.10},
+    "hand_shape.chord_size_change_rate": {"hand_movement_position": 0.65, "finger_dexterity": 0.10},
+    "hand_shape.repeated_shape_ratio": {"hand_movement_position": 0.60},
+    "hand_shape.chord_tone_motion_variability": {"hand_movement_position": 0.70, "finger_dexterity": 0.15},
+    "hand_shape.nonparallel_chord_tone_motion_rate": {"hand_movement_position": 0.70, "finger_dexterity": 0.15},
+    "hand_shape.inner_chord_tone_change_rate": {"hand_movement_position": 0.70, "finger_dexterity": 0.15},
+    # hand_position — likely hand-position shift (center shift), not literal repositioning
+    "hand_position.max_center_shift": {"hand_movement_position": 0.90},
+    "hand_position.mean_center_shift": {"hand_movement_position": 0.85},
+    "hand_position.large_center_shift_rate": {"hand_movement_position": 0.90},
+    "hand_position.timed_center_shift": {"hand_movement_position": 0.85, "rhythm_timing": 0.10},
 }
 
 # Context-only features (non-scoring) - explicitly excluded from graph layer
@@ -151,6 +186,30 @@ CONTEXT_ONLY_FEATURES = (
     "metadata.note_count",
     "metadata.page_count",
 )
+
+
+def get_top_features_for_dimension(dimension_id: str, limit: int = 10) -> list[tuple[str, float]]:
+    """Debug helper: list top contributing feature weights for a dimension.
+
+    Returns list of (feature_id, weight) sorted by weight descending.
+    Useful for answering 'why did this dimension light up?'
+    """
+    if dimension_id not in GRAPH_DIMENSION_IDS:
+        raise ValueError(f"unknown dimension {dimension_id!r}; expected one of {GRAPH_DIMENSION_IDS}")
+    ranked = sorted(
+        ((fid, wmap[dimension_id]) for fid, wmap in FEATURE_TO_DIMENSION_WEIGHTS.items() if dimension_id in wmap),
+        key=lambda x: x[1],
+        reverse=True,
+    )
+    return ranked[:limit] if limit is not None else ranked
+
+
+def get_feature_primary_dimension(feature_id: str) -> str | None:
+    """Return the dimension with the highest weight for a feature, or None if unknown."""
+    wmap = FEATURE_TO_DIMENSION_WEIGHTS.get(feature_id)
+    if not wmap:
+        return None
+    return max(wmap.items(), key=lambda x: x[1])[0]
 
 
 def get_graph_dimensions():

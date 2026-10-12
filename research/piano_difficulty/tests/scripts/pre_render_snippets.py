@@ -1,4 +1,4 @@
-"""Pre-render snippet PNGs for CEO walkthrough demo pieces.
+"""Pre-render snippet PNGs for David walkthrough demo pieces.
 
 Preferred flow:
   1. Pre-render page/snippet PNGs for known demo pieces into
@@ -10,7 +10,7 @@ Preferred flow:
 This script can be run standalone or via the walkthrough harness.
 
 Usage:
-  conda run -n piano-difficulty python -m tests.scripts.pre_render_snippets --out-dir tests/artifacts/ceo_walkthrough/cipi_familiar_v1 --limit 1
+  conda run -n piano-difficulty python -m tests.scripts.pre_render_snippets --out-dir tests/artifacts/david_walkthrough/cipi_familiar_v1 --limit 1
   conda run -n piano-difficulty python -m tests.scripts.pre_render_snippets --demo-id chopin_prelude_e_minor_28_4 --overwrite
 """
 
@@ -21,21 +21,21 @@ import json
 from pathlib import Path
 from typing import Any
 
-from tests.harness.ceo_walkthrough.cipi_selection import (
+from tests.harness.david_walkthrough.cipi_selection import (
     DEFAULT_CANONICAL_MANIFEST_CSV,
     DEFAULT_CURATION_MANIFEST_CSV,
     plan_batch,
 )
-from tests.harness.ceo_walkthrough.manifest import load_manifest
+from tests.harness.david_walkthrough.manifest import load_manifest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_OUT_DIR = REPO_ROOT / "tests" / "artifacts" / "ceo_walkthrough" / "cipi_familiar_v1"
+DEFAULT_OUT_DIR = REPO_ROOT / "tests" / "artifacts" / "david_walkthrough" / "cipi_familiar_v1"
 
 
 def _build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="pre_render_snippets",
-        description="Pre-render snippet PNGs for CEO walkthrough demo pieces (offline, explainable).",
+        description="Pre-render snippet PNGs for David walkthrough demo pieces (offline, explainable).",
     )
     p.add_argument("--manifest-csv", type=Path, default=DEFAULT_CURATION_MANIFEST_CSV)
     p.add_argument("--canonical-manifest-csv", type=Path, default=DEFAULT_CANONICAL_MANIFEST_CSV)

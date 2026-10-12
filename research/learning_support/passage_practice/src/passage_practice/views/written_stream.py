@@ -7,9 +7,9 @@ tie-collapsed logical attacks from S2.4. Consumes only normalized
 timing, tie collapse, or event identity (S0.4 R1/R2/R6/R9/R10/R11).
 
 Design refs:
-- docs/semantic_music_extraction_plan.md: Layer 3 ``written_stream`` family
 - docs/contracts.md: Derived view + ``written_event_stream`` ("ordered
   written notes and rests")
+- docs/practice_chunk_objects.md: views provide chunk-citable evidence
 - docs/decisions.md: D-011 (SourceRef), D-014 (half-open selection),
   D-018 (S-Q004: written-note fields + rests need no ScoreIR promotion;
   whether rests join the stream is S2.5-internal policy)

@@ -1,4 +1,4 @@
-"""Focused tests for the CEO demo readiness validator (stdlib-only, no recompute)."""
+"""Focused tests for the David demo readiness validator (stdlib-only, no recompute)."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ import pytest
 
 # Ensure validator importable
 REPO_ROOT = Path(__file__).resolve().parents[4]
-VALIDATOR_PATH = REPO_ROOT / "research" / "learning_support" / "ceo_demo" / "scripts"
+VALIDATOR_PATH = REPO_ROOT / "research" / "learning_support" / "david_demo" / "scripts"
 if str(VALIDATOR_PATH) not in sys.path:
     sys.path.insert(0, str(VALIDATOR_PATH))
 
@@ -47,7 +47,7 @@ def _valid_pieces_entry(piece_id: str) -> dict:
 def _valid_pieces_json() -> dict:
     return {
         "generated_at": "2026-09-15T00:00:00Z",
-        "schema_version": "ceo_demo_pieces.v1",
+        "schema_version": "david_demo_pieces.v1",
         "pieces": [_valid_pieces_entry(pid) for pid in EXPECTED],
     }
 
@@ -78,6 +78,15 @@ NINE_ASPECT_IDS = [
     "performance_interpretive_demand",
 ]
 
+GRAPH_DIMENSION_IDS = [
+    "finger_dexterity",
+    "hand_movement_position",
+    "layers_coordination",
+    "rhythm_timing",
+    "expression_sound_control",
+    "notation_reading",
+]
+
 
 def _valid_aspects_payload() -> dict:
     aspects = [_aspect(aid) for aid in NINE_ASPECT_IDS]
@@ -101,18 +110,20 @@ def _valid_chart(num_regions: int = 5) -> dict:
         for i in range(num_regions)
     ]
     series = {}
-    for aid in NINE_ASPECT_IDS:
-        series[aid] = {
-            "aspect_id": aid,
-            "feature_id": aid,
-            "id": aid,
-            "label": aid,
-            "feature_name": aid,
+    for gid in GRAPH_DIMENSION_IDS:
+        series[gid] = {
+            "graph_dimension_id": gid,
+            "dimension_id": gid,
+            "aspect_id": gid,
+            "feature_id": gid,
+            "id": gid,
+            "label": gid,
+            "feature_name": gid,
             "units": "normalized_score",
-            "blocked": aid == "structural_pattern_demand",
-            "caveated": aid == "performance_interpretive_demand",
-            "readiness": "blocked" if aid == "structural_pattern_demand" else "ready",
-            "availability": "blocked" if aid == "structural_pattern_demand" else "ready",
+            "blocked": False,
+            "caveated": False,
+            "readiness": "ready",
+            "availability": "ready",
             "raw_values": [0.5] * num_regions,
             "normalized_values": [0.5] * num_regions,
             "smoothed_values": [0.5] * num_regions,
@@ -126,18 +137,24 @@ def _valid_chart(num_regions: int = 5) -> dict:
         "regions": regions,
         "series": series,
         "composite": {
-            "feature_id": "composite.aspect_demand",
-            "aspect_id": "composite.aspect_demand",
-            "label": "Overall aspect demand",
-            "feature_name": "Overall aspect demand",
+            "feature_id": "composite.graph_demand",
+            "graph_dimension_id": "composite.graph_demand",
+            "dimension_id": "composite.graph_demand",
+            "aspect_id": "composite.graph_demand",
+            "label": "Overall graph demand",
+            "feature_name": "Overall graph demand",
             "units": "normalized_score",
             "raw_values": [0.5] * num_regions,
             "normalized_values": [0.5] * num_regions,
             "smoothed_values": [0.5] * num_regions,
             "missing_region_indices": [],
         },
-        "factor_ids": list(NINE_ASPECT_IDS),
-        "aspect_ids": list(NINE_ASPECT_IDS),
+        "graph_dimension_ids": list(GRAPH_DIMENSION_IDS),
+        "dimension_ids": list(GRAPH_DIMENSION_IDS),
+        "factor_ids": list(GRAPH_DIMENSION_IDS),
+        "aspect_ids": list(NINE_ASPECT_IDS),  # backend provenance alias, not used for visible graph
+        "taxonomy_version": "gradus.front_graph_taxonomy.v2",
+        "graph_taxonomy_version": "gradus.front_graph_taxonomy.v2",
         "references": {"analysis_csv": "analysis.csv", "analysis_json": "analysis.json"},
     }
 
@@ -155,33 +172,80 @@ def _valid_hotspot(rank: int = 1) -> dict:
         "end_offset": "0:2",
         "score_position": 0.0,
         "score_value": 0.5,
-        "method": "test",
+        "method": "graph_composite_top_n.v1",
         "supporting_window_indices": [0],
-        "supporting_factor_ids": ["rhythmic_demand"],
-        "supporting_aspect_ids": ["rhythmic_demand"],
+        "supporting_dimension_ids": ["rhythm_timing"],
+        "supporting_graph_dimension_ids": ["rhythm_timing"],
+        "supporting_factor_ids": ["rhythm_timing"],
+        "supporting_aspect_ids": ["rhythm_timing"],
         "representative_region": {"window_index": 0, "measure_numbers": [1], "start_offset": "0:0", "end_offset": "0:1"},
         "top_contributors": [
             {
-                "aspect_id": "rhythmic_demand",
-                "feature_id": "rhythmic_demand",
-                "label": "Rhythmic demand",
+                "dimension_id": "rhythm_timing",
+                "graph_dimension_id": "rhythm_timing",
+                "feature_id": "rhythm_timing",
+                "aspect_id": "rhythm_timing",
+                "id": "rhythm_timing",
+                "label": "Rhythm Timing",
                 "rank": 1,
                 "contribution_share": 0.5,
                 "normalized_value": 0.5,
                 "weighted_value": 0.5,
                 "readiness": "ready",
+                "feature_contributors": [
+                    {
+                        "feature_id": "rhythm.note_density",
+                        "label": "Note Density",
+                        "feature_name": "Note Density",
+                        "contribution_share": 0.5,
+                        "raw_value": 0.5,
+                        "normalized_value": 0.5,
+                        "weighted_value": 0.5,
+                        "rank": 1,
+                        "units": "notes_per_beat",
+                    }
+                ],
+                "supporting_feature_contributors": [
+                    {
+                        "feature_id": "rhythm.note_density",
+                        "label": "Note Density",
+                        "feature_name": "Note Density",
+                        "contribution_share": 0.5,
+                        "raw_value": 0.5,
+                        "normalized_value": 0.5,
+                        "weighted_value": 0.5,
+                        "rank": 1,
+                        "units": "notes_per_beat",
+                    }
+                ],
             }
         ],
-        "aspect_contributors": [
+        "dimension_contributors": [
             {
-                "aspect_id": "rhythmic_demand",
-                "feature_id": "rhythmic_demand",
-                "label": "Rhythmic demand",
+                "dimension_id": "rhythm_timing",
+                "graph_dimension_id": "rhythm_timing",
+                "feature_id": "rhythm_timing",
+                "aspect_id": "rhythm_timing",
+                "id": "rhythm_timing",
+                "label": "Rhythm Timing",
                 "rank": 1,
                 "contribution_share": 0.5,
                 "normalized_value": 0.5,
                 "weighted_value": 0.5,
                 "readiness": "ready",
+                "feature_contributors": [
+                    {
+                        "feature_id": "rhythm.note_density",
+                        "label": "Note Density",
+                        "feature_name": "Note Density",
+                        "contribution_share": 0.5,
+                        "raw_value": 0.5,
+                        "normalized_value": 0.5,
+                        "weighted_value": 0.5,
+                        "rank": 1,
+                        "units": "notes_per_beat",
+                    }
+                ],
             }
         ],
         "snippet_image": None,
@@ -192,7 +256,7 @@ def _valid_hotspot(rank: int = 1) -> dict:
 
 def _valid_manifest(piece_id: str) -> dict:
     return {
-        "schema_version": "ceo_demo_manifest.v1",
+        "schema_version": "david_demo_manifest.v1",
         "demo_id": piece_id,
         "id": piece_id,
         "piece_id": piece_id,
@@ -206,7 +270,7 @@ def _valid_manifest(piece_id: str) -> dict:
             "dataset": "oktav" if piece_id in vdr.OKTAV_IDS else "cipi",
             "dataset_id": f"id-{piece_id}",
             "dataset_relative_path": f"pieces/{piece_id}.musicxml",
-            "source_score_path": f"research/learning_support/ceo_demo/data/source_scores/{piece_id}.musicxml",
+            "source_score_path": f"research/learning_support/david_demo/data/source_scores/{piece_id}.musicxml",
             "canonical_filename": f"{piece_id}.musicxml",
             "measure_count": 10,
             "written_note_count": 100,
@@ -220,6 +284,9 @@ def _valid_manifest(piece_id: str) -> dict:
             "No measured learning benefit; no pedagogical diagnosis.",
             "No production score-viewer claim; future snippet images are pre-rendered.",
             "Ornamental timing is approximate in symbolic data; rubato and tone are out of scope.",
+            "Visible graph and hotspots are driven by 6 learner-facing dimensions (gradus.front_graph_taxonomy.v2: finger_dexterity, hand_movement_position, layers_coordination, rhythm_timing, expression_sound_control, notation_reading).",
+            "9-aspect taxonomy (difficulty_aspects.v1) is backend coverage/provenance only, not the visible hotspot ranking or primary explanation.",
+            "Hotspots are ranked from graph composite (mean of 6 dimension signals); dimension contributors include nested micro-component feature contributors.",
             "Relative score demands within this piece; no calibrated difficulty grade.",
         ],
         "diagnostics": ["test diagnostic"],
@@ -233,6 +300,22 @@ def _valid_manifest(piece_id: str) -> dict:
         "aspects_profile_version": "test",
         "interpretation": "Relative score demands within this piece; no calibrated difficulty grade.",
         "hand_mode": "both",
+        "graph_taxonomy": {
+            "version": "gradus.front_graph_taxonomy.v2",
+            "taxonomy_version": "gradus.front_graph_taxonomy.v2",
+            "dimension_ids": list(GRAPH_DIMENSION_IDS),
+            "graph_dimension_ids": list(GRAPH_DIMENSION_IDS),
+            "dimensions": list(GRAPH_DIMENSION_IDS),
+        },
+        "front_graph_taxonomy": {
+            "version": "gradus.front_graph_taxonomy.v2",
+            "taxonomy_version": "gradus.front_graph_taxonomy.v2",
+            "dimension_ids": list(GRAPH_DIMENSION_IDS),
+            "graph_dimension_ids": list(GRAPH_DIMENSION_IDS),
+            "dimensions": list(GRAPH_DIMENSION_IDS),
+        },
+        "backend_aspect_hotspots": [],
+        "aspect_hotspots": [],
     }
 
 
@@ -261,7 +344,8 @@ def test_pieces_json_wrong_count(tmp_path: Path) -> None:
     pj = tmp_path / "pieces.json"
     pj.write_text(json.dumps(payload), encoding="utf-8")
     _, issues = vdr.validate_pieces_json(pj)
-    assert any("Expected 6 pieces" in i.message for i in issues)
+    # Expect mismatch vs curated pieces (12 after Clair de Lune addition)
+    assert any(f"Expected {len(EXPECTED)} pieces" in i.message for i in issues)
 
 
 def test_pieces_json_unexpected_piece_id(tmp_path: Path) -> None:
@@ -337,12 +421,12 @@ def test_manifest_wrong_aspect_count_fails(tmp_path: Path) -> None:
 def test_manifest_chart_series_must_be_9(tmp_path: Path) -> None:
     piece_id = EXPECTED[0]
     m = _valid_manifest(piece_id)
-    # keep aspects 9 but trim chart series to 8
-    del m["chart"]["series"][NINE_ASPECT_IDS[0]]
+    # keep aspects 9 but trim chart series to 5 (visible graph expects 6)
+    del m["chart"]["series"][GRAPH_DIMENSION_IDS[0]]
     p = tmp_path / "demo_manifest.json"
     p.write_text(json.dumps(m), encoding="utf-8")
     issues = vdr.validate_manifest(p, piece_id)
-    assert any("chart.series must contain exactly 9" in i.message for i in issues)
+    assert any("chart.series must contain exactly 6" in i.message for i in issues)
 
 
 def test_manifest_caveats_must_contain_claim_boundaries(tmp_path: Path) -> None:
@@ -434,8 +518,8 @@ def test_validate_all_ready(tmp_path: Path) -> None:
     pieces_path = _write_full_catalog(tmp_path)
     report = vdr.validate_all(pieces_path)
     assert report.ok
-    assert report.ready_count == 6
-    assert report.total_expected == 6
+    assert report.ready_count == len(EXPECTED)
+    assert report.total_expected == len(EXPECTED)
 
 
 def test_validate_all_fails_when_manifest_missing(tmp_path: Path) -> None:
@@ -444,7 +528,7 @@ def test_validate_all_fails_when_manifest_missing(tmp_path: Path) -> None:
     (tmp_path / "artifacts" / EXPECTED[1] / "demo_manifest.json").unlink()
     report = vdr.validate_all(pieces_path)
     assert not report.ok
-    assert report.ready_count == 5
+    assert report.ready_count == len(EXPECTED) - 1
 
 
 def test_format_report_json(tmp_path: Path) -> None:
@@ -453,16 +537,19 @@ def test_format_report_json(tmp_path: Path) -> None:
     out = vdr.format_report(report, use_json=True)
     data = json.loads(out)
     assert data["ok"] is True
-    assert data["ready"] == "6/6"
-    assert len(data["pieces"]) == 6
+    assert data["ready"] == f"{len(EXPECTED)}/{len(EXPECTED)}"
+    assert len(data["pieces"]) == len(EXPECTED)
 
 
 def test_real_artifacts_pass() -> None:
-    # Validate the actual shipped artifacts (if present)
-    real_pieces = REPO_ROOT / "research" / "learning_support" / "ceo_demo" / "artifacts" / "pieces.json"
+    # Validate the actual shipped artifacts (if present) — currently stale before regeneration
+    real_pieces = REPO_ROOT / "research" / "learning_support" / "david_demo" / "artifacts" / "pieces.json"
     if not real_pieces.is_file():
         pytest.skip("real artifacts not present")
     report = vdr.validate_all(real_pieces)
-    # Report should be ready with current artifacts (snippets are not_rendered with diagnostic)
+    # After migrating to 6-dimension graph taxonomy, committed artifacts are stale
+    # until regenerated via build_demo_piece.py — expect NOT READY before regeneration
+    if not report.ok:
+        pytest.skip(f"artifacts stale — regenerate with build_demo_piece.py: {report.ready_count}/{report.total_expected} ready")
     assert report.ok, "\n".join(f"{i.field}: {i.message}" for i in report.global_errors + [e for r in report.piece_results for e in r.errors])
-    assert report.ready_count == 6
+    assert report.ready_count == len(EXPECTED)

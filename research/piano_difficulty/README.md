@@ -5,6 +5,22 @@ overview, and the score-derived practice payload for Gradus. Analyze a piece
 to inspect the 9-aspect difficulty framework, the conservative overview slice,
 local peaks, and candidate high-demand sections.
 
+## Current semantic-token / practice-chunk lane
+
+Current semantic extraction and practice-chunk work lives in
+`src/piano_difficulty/semantic_tokens/`, with the design direction documented in
+[`docs/practice_chunks.md`](docs/practice_chunks.md). The current Clair de Lune
+review artifacts live under:
+
+```text
+tests/artifacts/practice_chunk_review/clair_de_lune_25_26/
+tests/artifacts/practice_chunk_review/clair_de_lune_27_28/
+tests/artifacts/semantic_breakdown/clair_de_lune_current/
+```
+
+Use [`docs/current_practice_chunking.md`](docs/current_practice_chunking.md) to
+distinguish these current artifacts from older learning-support demo outputs.
+
 ## Setup
 
 From the repository root:
@@ -57,6 +73,7 @@ piano-difficulty extract piece.mxl
 piano-difficulty analyze piece.mxl --profile scoreanalyzer_reference --format json
 piano-difficulty analyze piece.mxl --profile difficulty_aspects --format json
 piano-difficulty analyze piece.mxl --gradus --format json
+piano-difficulty analyze piece.mxl --explain-events --format json  # post-process flagged passages into difficulty events
 ```
 
 Beat units are quarter notes. Regions use exact rational half-open intervals.
@@ -82,6 +99,10 @@ payload = result.to_json_payload()
 `AnalysisResult.to_gradus_payload()` builds the opt-in
 `gradus.practice_payload.v1` payload for practice cards, hotspots, routines,
 feedback-derived recommendations, and learner-visible demand labels.
+`analyze_score(..., explain_events=True)` adds `difficulty_events.v1` that
+subdivides already-flagged passages into overlapping playable events with
+metric evidence, optional note evidence, confidence, and explicit uncertainty
+without changing difficulty scores.
 
 ## Interpretation
 
@@ -114,6 +135,7 @@ labels should map back to those aspects and preserve limitations/provenance.
 - [Consolidation record](docs/consolidation.md): preservation map and migration evidence.
 - [Evaluation](docs/evaluation.md): automated checks and remaining expert review.
 - [Roadmap](docs/roadmap.md): current follow-up work.
+- [PracticeChunks](docs/practice_chunks.md): hierarchical grouping model for score understanding and practice (traits, hierarchy, fallback grouping, notation markings).
 - [Consolidation task list — 2026-09-05](docs/Task_list_2026-09-05_difficulty_analysis_consolidation.md): detailed implementation handoff and acceptance checks.
 - [Legacy workflows](docs/legacy_workflows.md): preserved historical commands.
 

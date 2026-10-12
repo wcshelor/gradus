@@ -10,6 +10,7 @@ from __future__ import annotations
 from . import (
     coordination,
     expression,
+    hand_shape,
     leaps,
     metadata,
     notation,
@@ -31,6 +32,7 @@ EXTRACTOR_MODULES = (
     notation,
     expression,
     statistics,
+    hand_shape,
 )
 
 

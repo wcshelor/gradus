@@ -4,7 +4,7 @@ Provides pitch-class collections, bass candidates, duration weighting,
 local-key candidates, and harmonic rhythm evidence for a passage.
 
 Design refs:
-- docs/semantic_music_extraction_plan.md Layer 3 harmony_view
+- docs/practice_chunk_objects.md: views provide chunk-citable evidence
 - S6.1 contract: pitch-class collections, bass candidates, duration weighting,
   local-key candidates, harmonic rhythm evidence; empty/atonal diagnostic
 - S6.2 local key heuristic, S6.3 harmonic rhythm heuristic

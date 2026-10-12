@@ -2,7 +2,8 @@
 
 Design refs:
 - docs/pedagogical_input_boundary.md (S4.1 boundary)
-- docs/semantic_music_extraction_plan.md Layer 6 (pedagogical hypotheses)
+- docs/practice_chunk_objects.md (learner-facing claims attach to chunks
+  without rewriting score-derived evidence)
 - semantics/contracts.py (SemanticHypothesis/Bundles)
 - passage_practice/models/source.py (SourceRef)
 

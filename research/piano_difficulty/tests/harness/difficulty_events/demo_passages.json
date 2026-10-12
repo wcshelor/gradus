@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "id": "debussy_arabesque_34_37_synthetic",
+      "fixture": "tests/fixtures/difficulty_events/debussy_arabesque_34_37.musicxml",
+      "description": "Synthetic 4-measure Debussy-like passage mimicking Arabesque No.1 mm.34-37: repeated ascending RH pattern (mm34-35), two-voice texture inside pattern, closing broad arpeggiated arrival (mm36-37), LH octave relocation into arpeggio.",
+      "flagged_span_measures": ["34", "37"],
+      "hand_labeled_events": [
+        {"type": "repeated_ascending_pattern", "measures": ["34", "35"], "note": "ascending repeated RH patterned figure across two measures"},
+        {"type": "two_voice_texture", "measures": ["34", "35"], "note": "two-voice RH texture inside that pattern — overlaps repeated pattern"},
+        {"type": "arpeggiated_arrival", "measures": ["36", "37"], "note": "closing broad arpeggiated gesture"},
+        {"type": "hand_relocation", "measures": ["36", "36"], "note": "left-hand octave relocation into the arpeggio"}
+      ],
+      "success_criteria": {
+        "min_events": 3,
+        "requires_overlap": true,
+        "requires_types": ["repeated_ascending_pattern", "arpeggiated_arrival"]
+      }
+    }
+  ]
+}

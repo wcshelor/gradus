@@ -420,6 +420,7 @@ def _parse_written_note(
 
     tuplet_actual, tuplet_normal = _time_modification(child)
     tie_start, tie_stop = _tie_flags(child)
+    arpeggiate, slur_start, slur_stop, phrase_start, phrase_stop = _notations_markings(child)
     midi = (octave + 1) * 12 + _PITCH_CLASS[step] + alter
 
     return WrittenNoteIR(
@@ -444,6 +445,11 @@ def _parse_written_note(
         tuplet_normal=tuplet_normal,
         xml_order=xml_order,
         measure_staff_order=staff_order,
+        arpeggiate=arpeggiate,
+        has_slur_start=slur_start,
+        has_slur_stop=slur_stop,
+        phrase_start=phrase_start,
+        phrase_stop=phrase_stop,
     )
 
 
@@ -518,6 +524,12 @@ def _collapse_ties_with_diagnostics(
 def _logical_from_chain(chain: list[WrittenNoteIR]) -> LogicalNoteIR:
     first = chain[0]
     duration = sum((note.duration for note in chain), Fraction(0))
+    # propagate markings: if any note in chain had arpeggiate/slur, logical inherits
+    arpeg = any(n.arpeggiate for n in chain)
+    slur_start = any(n.has_slur_start for n in chain)
+    slur_stop = any(n.has_slur_stop for n in chain)
+    phrase_start = any(getattr(n, "phrase_start", False) for n in chain)
+    phrase_stop = any(getattr(n, "phrase_stop", False) for n in chain)
     return LogicalNoteIR(
         note_id=first.note_id,
         pitch_midi=first.pitch_midi,
@@ -534,6 +546,11 @@ def _logical_from_chain(chain: list[WrittenNoteIR]) -> LogicalNoteIR:
         alter=first.alter,
         xml_order=first.xml_order,
         measure_staff_order=first.measure_staff_order,
+        arpeggiate=arpeg,
+        has_slur_start=slur_start,
+        has_slur_stop=slur_stop,
+        phrase_start=phrase_start,
+        phrase_stop=phrase_stop,
     )
 
 
@@ -745,6 +762,7 @@ def _parse_direction(
         wedge = _child(direction_type, "wedge")
         wedge_type = wedge.get("type") if wedge is not None else None
         if wedge_type:
+            number = _optional_int(wedge.get("number")) if wedge is not None else None
             result.append(
                 DirectionIR(
                     direction_id=f"d{first_direction_number + len(result)}",
@@ -753,8 +771,31 @@ def _parse_direction(
                     start=start,
                     measure_index=measure_index,
                     staff=staff,
+                    number=number,
+                    extra={"wedge_type": wedge_type, "number": str(number) if number is not None else ""},
                 )
             )
+
+        octave_shift = _child(direction_type, "octave-shift")
+        if octave_shift is not None:
+            otype = octave_shift.get("type")  # up, down, stop, continue
+            size = octave_shift.get("size") or "8"
+            number = _optional_int(octave_shift.get("number"))
+            val = f"{otype}:{size}" if otype else str(size)
+            result.append(
+                DirectionIR(
+                    direction_id=f"d{first_direction_number + len(result)}",
+                    kind="octave_shift",
+                    value=val,
+                    start=start,
+                    measure_index=measure_index,
+                    staff=staff,
+                    number=number,
+                    extra={"octave_shift_type": otype or "", "size": size},
+                )
+            )
+        # bracket / pedal etc may be added later; thin layer keeps wedge/octave/dynamics
+        # slur/phrase extracted via notations, not direction
 
         metronome = _child(direction_type, "metronome")
         if metronome is not None:
@@ -869,6 +910,40 @@ def _articulations(note: ElementTree.Element) -> tuple[str, ...]:
     if articulations is None:
         return ()
     return tuple(_local_name(child.tag) for child in list(articulations))
+
+
+def _notations_markings(note: ElementTree.Element) -> tuple[bool, bool, bool, bool, bool]:
+    """Return (arpeggiate, slur_start, slur_stop, phrase_start, phrase_stop) for a note."""
+    notations = _child(note, "notations")
+    if notations is None:
+        return False, False, False, False, False
+    arpeggiate = _child(notations, "arpeggiate") is not None
+    slur_start = False
+    slur_stop = False
+    phrase_start = False
+    phrase_stop = False
+    for child in _children(notations, "slur"):
+        t = child.get("type")
+        if t == "start":
+            slur_start = True
+        elif t == "stop":
+            slur_stop = True
+        elif t == "continue":
+            slur_start = True
+            slur_stop = True
+    # phrase marks: some scores encode phrase via <slur> with different attribute or <phrase> element
+    # MusicXML also has <notations><slur type="start"> and placement; treat any slur as phrase candidate
+    # while also checking for explicit <notations><phrasing> style if present (rare).
+    # For now, also look for <notations><or-factor> ? Keep thin: check if any <slur> exists and treat second check as phrase fallback.
+    # Some exporters emit <notations><slur> with explicit "above/below" but we already capture.
+    # Check for <phrase> if exporter uses it (not standard, but handle generically).
+    for child in _children(notations, "phrase"):
+        t = child.get("type")
+        if t == "start":
+            phrase_start = True
+        elif t == "stop":
+            phrase_stop = True
+    return arpeggiate, slur_start, slur_stop, phrase_start, phrase_stop
 
 
 def _format_time_signature(state: _ActiveState) -> str | None:

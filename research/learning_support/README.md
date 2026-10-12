@@ -6,6 +6,13 @@ score-derived passage selection, optional learner context, one semantic
 observation family, one grounded text aid, a local interaction harness, and
 evaluation documentation.
 
+Current semantic-token and practice-chunk implementation work has moved to
+`research/piano_difficulty/src/piano_difficulty/semantic_tokens/`, with current
+Clair de Lune review artifacts under
+`research/piano_difficulty/tests/artifacts/practice_chunk_review/`. See
+[`../piano_difficulty/docs/current_practice_chunking.md`](../piano_difficulty/docs/current_practice_chunking.md)
+before using older learning-support demo artifacts as evidence.
+
 No particular AI mechanism or application architecture is assumed here. Early
 work should begin with a clear learning problem, the information available to
 the system, the intended user, and a way to judge whether the result is useful
@@ -66,9 +73,9 @@ real learner data, external model processing, or product persistence.
 - `evaluation_ls10.md` is the reproducible technical evaluation of the first
   slice. It explicitly states that pedagogical effectiveness is unproven and
   no real learner data has been used.
-- `ceo_demo_milestone_2026-09-06.md` selects the next increment: a thin local
-  CEO walkthrough prototype. Planning is complete; demo implementation has not
-  started.
+- `david_demo_milestone_2026-09-06.md` records the older thin local David
+  walkthrough prototype plan. Treat it as presentation/history, not the current
+  practice-chunk evidence path.
 
 The existing passage-practice program is preserved as a bounded experiment, not
 the complete learning-support architecture. Difficulty component hardening can

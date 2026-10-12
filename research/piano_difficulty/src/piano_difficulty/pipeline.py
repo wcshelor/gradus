@@ -122,17 +122,66 @@ def analyze_score(
     *,
     profile_ids: tuple[str, ...] = DEFAULT_PROFILE_IDS,
     overview_options: OverviewOptions | None = None,
+    explain_events: bool = False,
 ) -> AnalysisResult:
     """Extract one score and apply registered difficulty profiles."""
 
     extraction = extract_score(path)
     profiles = resolve_profiles(profile_ids)
+    analysis_profiles = [
+        profile.analyze(extraction, overview_options)
+        if profile.profile_id in ("difficulty_overview", "difficulty_aspects")
+        else profile.analyze(extraction)
+        for profile in profiles
+    ]
+    if explain_events:
+        # Post-processing layer — does not change scores.
+        try:
+            from piano_difficulty.difficulty_analysis.events.pipeline import explain_events_for_extraction
+
+            overview_payload = next(
+                (p.to_payload() if hasattr(p, "to_payload") else p for p in analysis_profiles if getattr(p, "profile_id", None) == "difficulty_overview" or (isinstance(p, dict) and p.get("profile_id") == "difficulty_overview")),
+                None,
+            )
+            # analysis_profiles are DifficultyAnalysisResult objects — unwrap
+            unwrapped: dict[str, object] | None = None
+            for p in analysis_profiles:
+                try:
+                    pl = p.to_payload()  # type: ignore[union-attr]
+                    if isinstance(pl, dict) and pl.get("profile_id") == "difficulty_overview":
+                        unwrapped = pl
+                        break
+                except Exception:
+                    continue
+            events_payload = explain_events_for_extraction(
+                extraction,
+                unwrapped,
+                options=overview_options,
+            )
+
+            # Attach to overview payload in-place (non-breaking)
+            for p in analysis_profiles:
+                try:
+                    pl = p.to_payload()  # type: ignore[union-attr]
+                    if isinstance(pl, dict) and pl.get("profile_id") == "difficulty_overview":
+                        # mutate underlying payload dict
+                        if hasattr(p, "payload") and isinstance(getattr(p, "payload"), dict):
+                            p.payload["difficulty_events"] = events_payload  # type: ignore[attr-defined]
+                        break
+                except Exception:
+                    continue
+        except Exception as exc:  # noqa: BLE001
+            # Never fail analysis because events failed
+            for p in analysis_profiles:
+                try:
+                    pl = p.to_payload()  # type: ignore[union-attr]
+                    if isinstance(pl, dict) and pl.get("profile_id") == "difficulty_overview" and hasattr(p, "payload"):
+                        p.payload["difficulty_events_error"] = str(exc)  # type: ignore[attr-defined]
+                        break
+                except Exception:
+                    continue
+
     return AnalysisResult(
         extraction=extraction,
-        analysis_profiles=[
-            profile.analyze(extraction, overview_options)
-            if profile.profile_id in ("difficulty_overview", "difficulty_aspects")
-            else profile.analyze(extraction)
-            for profile in profiles
-        ],
+        analysis_profiles=analysis_profiles,
     )

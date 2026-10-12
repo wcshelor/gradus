@@ -1,0 +1,29 @@
+{
+  "aspect_count": 9,
+  "aspects_requested": [
+    "rhythmic_demand",
+    "pitch_movement_demand",
+    "hand_shape_span_demand",
+    "texture_polyphony_demand",
+    "coordination_demand",
+    "notation_reading_demand",
+    "expression_control_demand",
+    "structural_pattern_demand",
+    "performance_interpretive_demand"
+  ],
+  "experiment_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext",
+  "include_composite": false,
+  "limit": null,
+  "manifest": null,
+  "out_dir": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext",
+  "piece_count": 1,
+  "plot_manifest_csv": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/plot_manifest.csv",
+  "plot_summary_json": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/plot_summary.json",
+  "png_root": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/aspect_comparison_pngs",
+  "rendered": 9,
+  "schema_version": "omr_aspect_trace_plots.v1",
+  "skipped": 0,
+  "skipped_comparisons": [],
+  "source": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext",
+  "total_expected": 9
+}

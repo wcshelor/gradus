@@ -1,0 +1,965 @@
+2026-10-04 21:09:14,012 INFO [debussy_arabesque-no-1]                 Book.java:560  | 10 sheets in /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/pdfs/debussy_arabesque-no-1.pdf
+2026-10-04 21:09:14,161 INFO []                 Book.java:2565 | Stored /book.xml
+2026-10-04 21:09:14,162 INFO []                 Book.java:2525 | Book stored as /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/logs/audiveris_output/debussy_arabesque-no-1/debussy_arabesque-no-1.omr
+2026-10-04 21:09:14,166 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1#2#3#4#5#6#7#8#9#10]
+2026-10-04 21:09:14,167 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | LOAD
+2026-10-04 21:09:14,595 WARN [debussy_arabesque-no-1#1]           GlyphCache.java:64   | No glyph for code 0 (CID 0000) in font TimesNewRomanPS-ItalicMT
+2026-10-04 21:09:14,631 INFO [debussy_arabesque-no-1#1]            SheetStub.java:1278 | Loaded image #1 2479x3508 from /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/pdfs/debussy_arabesque-no-1.pdf
+2026-10-04 21:09:14,635 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | BINARY
+2026-10-04 21:09:15,370 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | SCALE
+2026-10-04 21:09:15,431 INFO [debussy_arabesque-no-1#1]         ScaleBuilder.java:254  | Beam  guessed height: 12 -- 0.25 of [9..20] range
+2026-10-04 21:09:15,432 INFO [debussy_arabesque-no-1#1]         ScaleBuilder.java:271  | Beam measured height: 11 -- 0.18 of [9..20] range at 302% of needed quorum
+2026-10-04 21:09:15,432 INFO [debussy_arabesque-no-1#1]         ScaleBuilder.java:401  | Normalized black jitter: 9.52 %
+2026-10-04 21:09:15,432 INFO [debussy_arabesque-no-1#1]            ScaleStep.java:65   | Scale{ interline(20,21,21) line(2,2,4) beam(11)}
+2026-10-04 21:09:15,433 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | GRID
+2026-10-04 21:09:16,327 INFO [debussy_arabesque-no-1#1]       LinesRetriever.java:1508 | Global slope: 0.00000
+2026-10-04 21:09:16,455 INFO [debussy_arabesque-no-1#1]    ClustersRetriever.java:326  | Retrieved raw line clusters: 8 of sizes [5] with interline(20,21,21)
+2026-10-04 21:09:16,838 INFO [debussy_arabesque-no-1#1]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8]
+2026-10-04 21:09:17,491 INFO [debussy_arabesque-no-1#1]        SystemManager.java:134  | Indentation detected for system #1
+2026-10-04 21:09:17,491 INFO [debussy_arabesque-no-1#1]        SystemManager.java:800  | 1 part along 4 systems
+2026-10-04 21:09:17,497 INFO [debussy_arabesque-no-1#1]                 Book.java:543  | Created scores: [{Score 1}]
+2026-10-04 21:09:17,500 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | HEADERS
+2026-10-04 21:09:19,046 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | STEM_SEEDS
+2026-10-04 21:09:19,102 INFO [debussy_arabesque-no-1#1]        StemSeedsStep.java:86   | stem(2 max:3)
+2026-10-04 21:09:19,179 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | BEAMS
+2026-10-04 21:09:26,704 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | LEDGERS
+2026-10-04 21:09:27,530 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | HEADS
+2026-10-04 21:09:34,835 INFO [debussy_arabesque-no-1#1]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.5,R:-0.4]}
+2026-10-04 21:09:34,837 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | STEMS
+2026-10-04 21:09:36,496 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | REDUCTION
+2026-10-04 21:09:36,603 INFO [debussy_arabesque-no-1#1]        ReductionStep.java:105  | Stems free length median value: 72 pixels, 3.4 interlines
+2026-10-04 21:09:36,608 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | CUE_BEAMS
+2026-10-04 21:09:36,608 INFO [debussy_arabesque-no-1#1]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-10-04 21:09:36,609 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | TEXTS
+2026-10-04 21:09:36,797 WARN [debussy_arabesque-no-1#1]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-10-04 21:09:36,797 INFO [debussy_arabesque-no-1#1]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-10-04 21:09:36,805 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | MEASURES
+2026-10-04 21:09:36,813 INFO [debussy_arabesque-no-1#1]                 Page.java:307  | 15 raw measures: [3 in system#1, 4 in system#2, 4 in system#3, 4 in system#4]
+2026-10-04 21:09:36,813 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | CHORDS
+2026-10-04 21:09:36,830 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | CURVES
+2026-10-04 21:09:38,485 INFO [debussy_arabesque-no-1#1]         SlursBuilder.java:240  | Slurs: 61
+2026-10-04 21:09:38,633 INFO [debussy_arabesque-no-1#1]      SegmentsBuilder.java:155  | Segments: 51
+2026-10-04 21:09:38,684 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | SYMBOLS
+2026-10-04 21:09:40,479 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | LINKS
+2026-10-04 21:09:40,488 INFO [debussy_arabesque-no-1#1]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#6764{(0.151) staff:2 OTTAVA BASSA} at java.awt.Point[x=1349,y=951]
+2026-10-04 21:09:40,516 INFO [debussy_arabesque-no-1#1]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#6859{(0.147) staff:4 OTTAVA BASSA} at java.awt.Point[x=129,y=1916]
+2026-10-04 21:09:40,516 INFO [debussy_arabesque-no-1#1]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#6898{(0.151) staff:3 OTTAVA ALTA} at java.awt.Point[x=1349,y=951]
+2026-10-04 21:09:40,553 INFO [debussy_arabesque-no-1#1]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#7070{(0.147) staff:5 OTTAVA ALTA} at java.awt.Point[x=129,y=1916]
+2026-10-04 21:09:40,592 INFO [debussy_arabesque-no-1#1]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#7292{(0.206) staff:7 OTTAVA ALTA} at java.awt.Point[x=1649,y=2654]
+2026-10-04 21:09:40,592 INFO [debussy_arabesque-no-1#1]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#7309{(0.132) staff:7 OTTAVA ALTA} at java.awt.Point[x=1960,y=2644]
+2026-10-04 21:09:40,592 INFO [debussy_arabesque-no-1#1]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#7311{(0.198) staff:7 QUINDICESIMA ALTA} at java.awt.Point[x=1928,y=2644]
+2026-10-04 21:09:40,593 INFO [debussy_arabesque-no-1#1]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#7316{(0.131) staff:7 QUINDICESIMA ALTA} at java.awt.Point[x=2150,y=2645]
+2026-10-04 21:09:40,632 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | RHYTHMS
+2026-10-04 21:09:40,686 INFO [debussy_arabesque-no-1#1]        MeasureRhythm.java:1044 | Measure{#2} No timeOffset for RestChordInter#6856{(0.789/0.789) staff:1 slot#10 dur:1/4}
+2026-10-04 21:09:40,688 INFO [debussy_arabesque-no-1#1]        MeasureRhythm.java:1044 | Measure{#2} No timeOffset for HeadChordInter#5228{(0.924/0.924) staff:2 slot#10 dur:1/8}
+2026-10-04 21:09:40,689 INFO [debussy_arabesque-no-1#1]          StackRhythm.java:224  | S1 MeasureStack#2 no correct rhythm
+2026-10-04 21:09:40,697 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#5 excess:1/4} too long
+2026-10-04 21:09:40,697 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#2 excess:1/4} too long
+2026-10-04 21:09:40,698 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#3 excess:5/8} too long
+2026-10-04 21:09:40,699 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#4 excess:5/8} too long
+2026-10-04 21:09:40,699 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#6 excess:1} too long
+2026-10-04 21:09:40,699 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#7 excess:7/8} too long
+2026-10-04 21:09:40,699 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#8 excess:1} too long
+2026-10-04 21:09:40,699 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#9 excess:9/8} too long
+2026-10-04 21:09:40,700 INFO [debussy_arabesque-no-1#1]          StackRhythm.java:224  | S1 MeasureStack#3 no correct rhythm
+2026-10-04 21:09:40,709 INFO [debussy_arabesque-no-1#1]        MeasureRhythm.java:1044 | Measure{#4} No timeOffset for HeadChordInter#5277{(0.954/0.954) staff:4 slot#8 dur:1/4}
+2026-10-04 21:09:40,710 INFO [debussy_arabesque-no-1#1]   AbstractChordInter.java:635  | Measure{#4} No timeOffset for HeadChordInter#5277{(0.954/0.954) staff:4 slot#8 dur:1/4}
+2026-10-04 21:09:40,712 INFO [debussy_arabesque-no-1#1]   AbstractChordInter.java:635  | Measure{#4} No timeOffset for HeadChordInter#5279{(0.907/0.907) staff:4 slot#10 dur:1/4}
+2026-10-04 21:09:40,713 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#4} Voice{#5 excess:1/4} too long
+2026-10-04 21:09:40,713 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#4} Voice{#3 excess:1/4} too long
+2026-10-04 21:09:40,714 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#4} Voice{#4 excess:5/8} too long
+2026-10-04 21:09:40,714 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#4} Voice{#6 excess:5/8} too long
+2026-10-04 21:09:40,717 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#4} Voice{#7 excess:7/8} too long
+2026-10-04 21:09:40,718 INFO [debussy_arabesque-no-1#1]          StackRhythm.java:224  | S2 MeasureStack#4 no correct rhythm
+2026-10-04 21:09:40,724 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#5} Voice{#1 excess:1/8} too long
+2026-10-04 21:09:40,724 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#5} Voice{#7 excess:1/8} too long
+2026-10-04 21:09:40,725 INFO [debussy_arabesque-no-1#1]          StackRhythm.java:224  | S2 MeasureStack#5 no correct rhythm
+2026-10-04 21:09:40,730 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#6} Voice{#2 excess:1/8} too long
+2026-10-04 21:09:40,732 INFO [debussy_arabesque-no-1#1]          StackRhythm.java:224  | S2 MeasureStack#6 no correct rhythm
+2026-10-04 21:09:40,741 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#8} Voice{#3 excess:1/8} too long
+2026-10-04 21:09:40,741 INFO [debussy_arabesque-no-1#1]          StackRhythm.java:224  | S3 MeasureStack#8 no correct rhythm
+2026-10-04 21:09:40,755 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#14} Voice{#6 excess:5/12} too long
+2026-10-04 21:09:40,756 INFO [debussy_arabesque-no-1#1]          StackRhythm.java:224  | S4 MeasureStack#14 no correct rhythm
+2026-10-04 21:09:40,772 INFO [debussy_arabesque-no-1#1]       StepMonitoring.java:98   | PAGE
+2026-10-04 21:09:40,795 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#2 excess:1/4} too long
+2026-10-04 21:09:40,795 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#3 excess:5/8} too long
+2026-10-04 21:09:40,795 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#4 excess:5/8} too long
+2026-10-04 21:09:40,795 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#5 excess:1} too long
+2026-10-04 21:09:40,795 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#6 excess:9/8} too long
+2026-10-04 21:09:40,796 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#5 excess:1/4} too long
+2026-10-04 21:09:40,796 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#6 excess:1} too long
+2026-10-04 21:09:40,796 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#3} Voice{#7 excess:7/8} too long
+2026-10-04 21:09:40,796 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#4} Voice{#3 excess:1/4} too long
+2026-10-04 21:09:40,796 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#4} Voice{#4 excess:5/8} too long
+2026-10-04 21:09:40,796 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#4} Voice{#5 excess:5/8} too long
+2026-10-04 21:09:40,796 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#4} Voice{#5 excess:1/4} too long
+2026-10-04 21:09:40,796 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#4} Voice{#6 excess:7/8} too long
+2026-10-04 21:09:40,796 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#5} Voice{#1 excess:1/8} too long
+2026-10-04 21:09:40,796 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#5} Voice{#7 excess:1/8} too long
+2026-10-04 21:09:40,797 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#6} Voice{#2 excess:1/8} too long
+2026-10-04 21:09:40,797 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#8} Voice{#3 excess:1/8} too long
+2026-10-04 21:09:40,797 INFO [debussy_arabesque-no-1#1]                Voice.java:257  | Measure{#14} Voice{#6 excess:5/12} too long
+2026-10-04 21:09:40,803 INFO [debussy_arabesque-no-1#1]                 Book.java:2584 | Book{debussy_arabesque-no-1} storing
+2026-10-04 21:09:40,901 INFO [debussy_arabesque-no-1#1]                 Book.java:2565 | Stored /book.xml
+2026-10-04 21:09:41,081 INFO [debussy_arabesque-no-1#1]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-10-04 21:09:42,488 INFO [debussy_arabesque-no-1#1]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-10-04 21:09:42,488 INFO [debussy_arabesque-no-1#1]                 Book.java:2525 | Book stored as /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/logs/audiveris_output/debussy_arabesque-no-1/debussy_arabesque-no-1.omr
+2026-10-04 21:09:42,490 INFO [debussy_arabesque-no-1#1]            SheetStub.java:1655 | Sheet#1 disposed
+2026-10-04 21:09:42,551 INFO [debussy_arabesque-no-1#1]                 Book.java:2050 | End of Stub#1
+2026-10-04 21:09:42,553 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | LOAD
+2026-10-04 21:09:42,642 INFO [debussy_arabesque-no-1#2]            SheetStub.java:1278 | Loaded image #2 2479x3508 from /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/pdfs/debussy_arabesque-no-1.pdf
+2026-10-04 21:09:42,646 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | BINARY
+2026-10-04 21:09:43,296 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | SCALE
+2026-10-04 21:09:43,318 INFO [debussy_arabesque-no-1#2]         ScaleBuilder.java:254  | Beam  guessed height: 12 -- 0.25 of [9..20] range
+2026-10-04 21:09:43,318 INFO [debussy_arabesque-no-1#2]         ScaleBuilder.java:271  | Beam measured height: 11 -- 0.18 of [9..20] range at 281% of needed quorum
+2026-10-04 21:09:43,319 INFO [debussy_arabesque-no-1#2]         ScaleBuilder.java:401  | Normalized black jitter: 4.76 %
+2026-10-04 21:09:43,319 INFO [debussy_arabesque-no-1#2]            ScaleStep.java:65   | Scale{ interline(20,21,21) line(2,2,3) beam(11)}
+2026-10-04 21:09:43,319 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | GRID
+2026-10-04 21:09:43,443 INFO [debussy_arabesque-no-1#2]       LinesRetriever.java:1508 | Global slope: 0.00000
+2026-10-04 21:09:43,456 INFO [debussy_arabesque-no-1#2]    ClustersRetriever.java:326  | Retrieved raw line clusters: 6 of sizes [5] with interline(20,21,21)
+2026-10-04 21:09:43,491 INFO [debussy_arabesque-no-1#2]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6]
+2026-10-04 21:09:43,593 INFO [debussy_arabesque-no-1#2]        SystemManager.java:800  | 1 part along 3 systems
+2026-10-04 21:09:43,602 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | HEADERS
+2026-10-04 21:09:43,843 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | STEM_SEEDS
+2026-10-04 21:09:43,881 INFO [debussy_arabesque-no-1#2]        StemSeedsStep.java:86   | stem(2 max:3)
+2026-10-04 21:09:43,892 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | BEAMS
+2026-10-04 21:09:50,816 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | LEDGERS
+2026-10-04 21:09:50,964 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | HEADS
+2026-10-04 21:09:56,857 INFO [debussy_arabesque-no-1#2]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.5,R:-0.5]}
+2026-10-04 21:09:56,858 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | STEMS
+2026-10-04 21:09:57,068 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | REDUCTION
+2026-10-04 21:09:57,095 INFO [debussy_arabesque-no-1#2]        ReductionStep.java:105  | Stems free length median value: 72 pixels, 3.4 interlines
+2026-10-04 21:09:57,097 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | CUE_BEAMS
+2026-10-04 21:09:57,097 INFO [debussy_arabesque-no-1#2]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-10-04 21:09:57,097 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | TEXTS
+2026-10-04 21:09:57,221 WARN [debussy_arabesque-no-1#2]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-10-04 21:09:57,222 INFO [debussy_arabesque-no-1#2]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-10-04 21:09:57,223 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | MEASURES
+2026-10-04 21:09:57,224 INFO [debussy_arabesque-no-1#2]                 Page.java:307  | 5 raw measures: [1 in system#1, 3 in system#2, 1 in system#3]
+2026-10-04 21:09:57,225 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | CHORDS
+2026-10-04 21:09:57,231 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | CURVES
+2026-10-04 21:09:58,246 INFO [debussy_arabesque-no-1#2]         SlursBuilder.java:240  | Slurs: 14
+2026-10-04 21:09:58,265 INFO [debussy_arabesque-no-1#2]      SegmentsBuilder.java:155  | Segments: 19
+2026-10-04 21:09:58,272 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | SYMBOLS
+2026-10-04 21:09:59,760 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | LINKS
+2026-10-04 21:09:59,762 INFO [debussy_arabesque-no-1#2]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#2303{(0.131) staff:1 QUINDICESIMA ALTA} at java.awt.Point[x=379,y=191]
+2026-10-04 21:09:59,763 INFO [debussy_arabesque-no-1#2]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#2385{(0.254) staff:1 QUINDICESIMA ALTA} at java.awt.Point[x=1389,y=202]
+2026-10-04 21:09:59,793 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | RHYTHMS
+2026-10-04 21:09:59,794 INFO [debussy_arabesque-no-1#2]           PageRhythm.java:199  | {Page#2.1} Time value reused from sheet#1
+2026-10-04 21:09:59,801 INFO [debussy_arabesque-no-1#2]        MeasureRhythm.java:1044 | Measure{#2} No timeOffset for HeadChordInter#1841{(0.927/0.927) staff:3 slot#8 dur:1/4}
+2026-10-04 21:09:59,802 INFO [debussy_arabesque-no-1#2]   AbstractChordInter.java:635  | Measure{#2} No timeOffset for HeadChordInter#1841{(0.927/0.927) staff:3 slot#8 dur:1/4}
+2026-10-04 21:09:59,804 INFO [debussy_arabesque-no-1#2]   AbstractChordInter.java:635  | Measure{#2} No timeOffset for HeadChordInter#1842{(0.908/0.908) staff:3 slot#9 dur:1/4}
+2026-10-04 21:09:59,805 INFO [debussy_arabesque-no-1#2]                Voice.java:257  | Measure{#2} Voice{#1 excess:3/8} too long
+2026-10-04 21:09:59,805 INFO [debussy_arabesque-no-1#2]          StackRhythm.java:224  | S2 MeasureStack#2 no correct rhythm
+2026-10-04 21:09:59,807 INFO [debussy_arabesque-no-1#2]        MeasureRhythm.java:1044 | Measure{#3} No timeOffset for HeadChordInter#1848{(0.922/0.922) staff:3 slot#8 dur:1/4}
+2026-10-04 21:09:59,807 INFO [debussy_arabesque-no-1#2]   AbstractChordInter.java:635  | Measure{#3} No timeOffset for HeadChordInter#1848{(0.922/0.922) staff:3 slot#8 dur:1/4}
+2026-10-04 21:09:59,807 INFO [debussy_arabesque-no-1#2]   AbstractChordInter.java:635  | Measure{#3} No timeOffset for HeadChordInter#1849{(0.874/0.874) staff:3 slot#9 dur:1/4}
+2026-10-04 21:09:59,808 INFO [debussy_arabesque-no-1#2]                Voice.java:257  | Measure{#3} Voice{#1 excess:3/8} too long
+2026-10-04 21:09:59,808 INFO [debussy_arabesque-no-1#2]          StackRhythm.java:224  | S2 MeasureStack#3 no correct rhythm
+2026-10-04 21:09:59,810 INFO [debussy_arabesque-no-1#2]        MeasureRhythm.java:1044 | Measure{#4} No timeOffset for HeadChordInter#1852{(0.914/0.914) staff:3 slot#10 dur:1/8}
+2026-10-04 21:09:59,810 INFO [debussy_arabesque-no-1#2]        MeasureRhythm.java:1044 | Measure{#4} No timeOffset for HeadChordInter#1875{(0.924/0.924) staff:4 slot#10 dur:1/8}
+2026-10-04 21:09:59,810 INFO [debussy_arabesque-no-1#2]                Voice.java:257  | Measure{#4} Voice{#5 excess:1/8} too long
+2026-10-04 21:09:59,811 INFO [debussy_arabesque-no-1#2]          StackRhythm.java:224  | S2 MeasureStack#4 no correct rhythm
+2026-10-04 21:09:59,816 INFO [debussy_arabesque-no-1#2]                Voice.java:257  | Measure{#5} Voice{#5 excess:1/8} too long
+2026-10-04 21:09:59,817 INFO [debussy_arabesque-no-1#2]          StackRhythm.java:224  | S3 MeasureStack#5 no correct rhythm
+2026-10-04 21:09:59,817 INFO [debussy_arabesque-no-1#2]       StepMonitoring.java:98   | PAGE
+2026-10-04 21:09:59,818 INFO [debussy_arabesque-no-1#2]                Voice.java:257  | Measure{#2} Voice{#1 excess:3/8} too long
+2026-10-04 21:09:59,819 INFO [debussy_arabesque-no-1#2]                Voice.java:257  | Measure{#3} Voice{#1 excess:3/8} too long
+2026-10-04 21:09:59,819 INFO [debussy_arabesque-no-1#2]                Voice.java:257  | Measure{#4} Voice{#5 excess:1/8} too long
+2026-10-04 21:09:59,819 INFO [debussy_arabesque-no-1#2]                Voice.java:257  | Measure{#5} Voice{#5 excess:1/8} too long
+2026-10-04 21:09:59,822 INFO [debussy_arabesque-no-1#2]                 Book.java:2584 | Book{debussy_arabesque-no-1} storing
+2026-10-04 21:09:59,896 INFO [debussy_arabesque-no-1#2]                 Book.java:2565 | Stored /book.xml
+2026-10-04 21:10:00,022 INFO [debussy_arabesque-no-1#2]           DataHolder.java:348  | Stored /sheet#2/BINARY.png
+2026-10-04 21:10:00,655 INFO [debussy_arabesque-no-1#2]                Sheet.java:1583 | Stored /sheet#2/sheet#2.xml
+2026-10-04 21:10:00,656 INFO [debussy_arabesque-no-1#2]                 Book.java:2525 | Book stored as /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/logs/audiveris_output/debussy_arabesque-no-1/debussy_arabesque-no-1.omr
+2026-10-04 21:10:00,660 INFO [debussy_arabesque-no-1#2]            SheetStub.java:1655 | Sheet#2 disposed
+2026-10-04 21:10:00,697 INFO [debussy_arabesque-no-1#2]                 Book.java:2050 | End of Stub#2
+2026-10-04 21:10:00,697 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | LOAD
+2026-10-04 21:10:00,755 INFO [debussy_arabesque-no-1#3]            SheetStub.java:1278 | Loaded image #3 2479x3508 from /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/pdfs/debussy_arabesque-no-1.pdf
+2026-10-04 21:10:00,755 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | BINARY
+2026-10-04 21:10:01,533 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | SCALE
+2026-10-04 21:10:01,559 INFO [debussy_arabesque-no-1#3]         ScaleBuilder.java:254  | Beam  guessed height: 12 -- 0.25 of [9..20] range
+2026-10-04 21:10:01,559 INFO [debussy_arabesque-no-1#3]         ScaleBuilder.java:271  | Beam measured height: 11 -- 0.18 of [9..20] range at 222% of needed quorum
+2026-10-04 21:10:01,559 INFO [debussy_arabesque-no-1#3]         ScaleBuilder.java:401  | Normalized black jitter: 9.52 %
+2026-10-04 21:10:01,560 INFO [debussy_arabesque-no-1#3]            ScaleStep.java:65   | Scale{ interline(20,21,21) line(2,2,4) beam(11)}
+2026-10-04 21:10:01,560 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | GRID
+2026-10-04 21:10:02,683 INFO [debussy_arabesque-no-1#3]       LinesRetriever.java:1508 | Global slope: 0.00000
+2026-10-04 21:10:02,705 INFO [debussy_arabesque-no-1#3]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(20,21,21)
+2026-10-04 21:10:02,800 INFO [debussy_arabesque-no-1#3]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2026-10-04 21:10:03,244 INFO [debussy_arabesque-no-1#3]        SystemManager.java:800  | 1 part along 5 systems
+2026-10-04 21:10:03,245 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | HEADERS
+2026-10-04 21:10:03,833 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | STEM_SEEDS
+2026-10-04 21:10:03,873 INFO [debussy_arabesque-no-1#3]        StemSeedsStep.java:86   | stem(2 max:3)
+2026-10-04 21:10:03,884 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | BEAMS
+2026-10-04 21:10:10,333 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | LEDGERS
+2026-10-04 21:10:10,861 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | HEADS
+2026-10-04 21:10:22,305 INFO [debussy_arabesque-no-1#3]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.5,R:-0.5]}
+2026-10-04 21:10:22,309 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | STEMS
+2026-10-04 21:10:23,235 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | REDUCTION
+2026-10-04 21:10:23,416 INFO [debussy_arabesque-no-1#3]        ReductionStep.java:105  | Stems free length median value: 72 pixels, 3.4 interlines
+2026-10-04 21:10:23,421 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | CUE_BEAMS
+2026-10-04 21:10:23,422 INFO [debussy_arabesque-no-1#3]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-10-04 21:10:23,422 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | TEXTS
+2026-10-04 21:10:23,614 WARN [debussy_arabesque-no-1#3]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-10-04 21:10:23,615 INFO [debussy_arabesque-no-1#3]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-10-04 21:10:23,618 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | MEASURES
+2026-10-04 21:10:23,621 INFO [debussy_arabesque-no-1#3]                 Page.java:307  | 13 raw measures: [3 in system#1, 1 in system#2, 4 in system#3, 4 in system#4, 1 in system#5]
+2026-10-04 21:10:23,622 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | CHORDS
+2026-10-04 21:10:23,640 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | CURVES
+2026-10-04 21:10:25,107 INFO [debussy_arabesque-no-1#3]         SlursBuilder.java:240  | Slurs: 33
+2026-10-04 21:10:25,265 INFO [debussy_arabesque-no-1#3]      SegmentsBuilder.java:155  | Segments: 47
+2026-10-04 21:10:25,305 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | SYMBOLS
+2026-10-04 21:10:28,324 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | LINKS
+2026-10-04 21:10:28,378 INFO [debussy_arabesque-no-1#3]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#5934{(0.180) staff:5 OTTAVA ALTA} at java.awt.Point[x=523,y=1422]
+2026-10-04 21:10:28,379 INFO [debussy_arabesque-no-1#3]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#5976{(0.210) staff:6 OTTAVA BASSA} at java.awt.Point[x=1358,y=2057]
+2026-10-04 21:10:28,398 INFO [debussy_arabesque-no-1#3]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#6071{(0.210) staff:7 OTTAVA ALTA} at java.awt.Point[x=1358,y=2057]
+2026-10-04 21:10:28,418 INFO [debussy_arabesque-no-1#3]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#6090{(0.308) staff:9 QUINDICESIMA ALTA} at java.awt.Point[x=369,y=2722]
+2026-10-04 21:10:28,428 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | RHYTHMS
+2026-10-04 21:10:28,440 INFO [debussy_arabesque-no-1#3]           PageRhythm.java:199  | {Page#3.1} Time value reused from sheet#1
+2026-10-04 21:10:28,449 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#1} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:28,449 INFO [debussy_arabesque-no-1#3]          StackRhythm.java:224  | S1 MeasureStack#1 no correct rhythm
+2026-10-04 21:10:28,454 INFO [debussy_arabesque-no-1#3]        MeasureRhythm.java:1276 | Measure{#2} Time inconsistency in {5/6=[HeadChordInter#4354{(0.941/0.941) staff:1 slot#11 off:5/6 dur:1/12}], 7/8=[HeadChordInter#4383{(0.926/0.926) staff:2 slot#11 off:7/8 dur:1/8}]}
+2026-10-04 21:10:28,454 INFO [debussy_arabesque-no-1#3]        MeasureRhythm.java:1276 | Measure{#2} Time inconsistency in {11/12=[HeadChordInter#4355{(0.931/0.931) staff:1 slot#12 off:11/12 dur:1/12}], 1=[HeadChordInter#4384{(0.931/0.931) staff:2 slot#12 off:1 dur:1/8}]}
+2026-10-04 21:10:28,454 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#2} Voice{#6 excess:1/8} too long
+2026-10-04 21:10:28,455 INFO [debussy_arabesque-no-1#3]          StackRhythm.java:224  | S1 MeasureStack#2 no correct rhythm
+2026-10-04 21:10:28,463 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#3} Voice{#8 excess:1/8} too long
+2026-10-04 21:10:28,465 INFO [debussy_arabesque-no-1#3]          StackRhythm.java:224  | S1 MeasureStack#3 no correct rhythm
+2026-10-04 21:10:28,475 INFO [debussy_arabesque-no-1#3]        MeasureRhythm.java:1044 | Measure{#4} No timeOffset for HeadChordInter#4400{(0.933/0.933) staff:3 slot#10 dur:1/12}
+2026-10-04 21:10:28,476 INFO [debussy_arabesque-no-1#3]        MeasureRhythm.java:1044 | Measure{#4} No timeOffset for HeadChordInter#4412{(0.957/0.957) staff:4 slot#10 dur:1/8}
+2026-10-04 21:10:28,477 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#4} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:28,477 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#4} Voice{#2 excess:1/8} too long
+2026-10-04 21:10:28,477 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#4} Voice{#3 excess:1/16} too long
+2026-10-04 21:10:28,477 INFO [debussy_arabesque-no-1#3]          StackRhythm.java:224  | S2 MeasureStack#4 no correct rhythm
+2026-10-04 21:10:28,486 INFO [debussy_arabesque-no-1#3]        MeasureRhythm.java:1044 | Measure{#5} No timeOffset for HeadChordInter#4417{(0.942/0.942) staff:5 slot#10 dur:1/4}
+2026-10-04 21:10:28,487 INFO [debussy_arabesque-no-1#3]        MeasureRhythm.java:1044 | Measure{#5} No timeOffset for HeadChordInter#4451{(0.922/0.922) staff:6 slot#10 dur:1/8}
+2026-10-04 21:10:28,487 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#5} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:28,487 INFO [debussy_arabesque-no-1#3]          StackRhythm.java:224  | S3 MeasureStack#5 no correct rhythm
+2026-10-04 21:10:28,489 INFO [debussy_arabesque-no-1#3]        MeasureRhythm.java:1044 | Measure{#6} No timeOffset for HeadChordInter#4425{(0.924/0.924) staff:5 slot#10 dur:1/8}
+2026-10-04 21:10:28,489 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#6} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:28,489 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#6} Voice{#6 excess:1/8} too long
+2026-10-04 21:10:28,490 INFO [debussy_arabesque-no-1#3]          StackRhythm.java:224  | S3 MeasureStack#6 no correct rhythm
+2026-10-04 21:10:28,490 INFO [debussy_arabesque-no-1#3]        MeasureRhythm.java:1044 | Measure{#7} No timeOffset for HeadChordInter#4432{(0.525/0.525) staff:5 slot#5 dur:1/2}
+2026-10-04 21:10:28,490 INFO [debussy_arabesque-no-1#3]          StackRhythm.java:224  | S3 MeasureStack#7 no correct rhythm
+2026-10-04 21:10:28,511 INFO [debussy_arabesque-no-1#3]        MeasureRhythm.java:1044 | Measure{#11} No timeOffset for HeadChordInter#4474{(0.934/0.934) staff:7 slot#10 dur:1/8}
+2026-10-04 21:10:28,513 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#11} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:28,513 INFO [debussy_arabesque-no-1#3]          StackRhythm.java:224  | S4 MeasureStack#11 no correct rhythm
+2026-10-04 21:10:28,520 INFO [debussy_arabesque-no-1#3]        MeasureRhythm.java:1044 | Measure{#13} No timeOffset for HeadChordInter#4503{(0.941/0.941) staff:9 slot#10 dur:1/8}
+2026-10-04 21:10:28,520 INFO [debussy_arabesque-no-1#3]          StackRhythm.java:224  | S5 MeasureStack#13 no correct rhythm
+2026-10-04 21:10:28,521 INFO [debussy_arabesque-no-1#3]       StepMonitoring.java:98   | PAGE
+2026-10-04 21:10:28,525 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#1} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:28,525 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#2} Voice{#6 excess:1/8} too long
+2026-10-04 21:10:28,526 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#3} Voice{#8 excess:1/8} too long
+2026-10-04 21:10:28,526 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#4} Voice{#2 excess:1/8} too long
+2026-10-04 21:10:28,526 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#4} Voice{#3 excess:1/16} too long
+2026-10-04 21:10:28,530 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#4} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:28,536 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#5} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:28,536 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#6} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:28,536 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#6} Voice{#6 excess:1/8} too long
+2026-10-04 21:10:28,537 INFO [debussy_arabesque-no-1#3]                Voice.java:257  | Measure{#11} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:28,540 INFO [debussy_arabesque-no-1#3]                 Book.java:2584 | Book{debussy_arabesque-no-1} storing
+2026-10-04 21:10:28,618 INFO [debussy_arabesque-no-1#3]                 Book.java:2565 | Stored /book.xml
+2026-10-04 21:10:28,834 INFO [debussy_arabesque-no-1#3]           DataHolder.java:348  | Stored /sheet#3/BINARY.png
+2026-10-04 21:10:30,749 INFO [debussy_arabesque-no-1#3]                Sheet.java:1583 | Stored /sheet#3/sheet#3.xml
+2026-10-04 21:10:30,750 INFO [debussy_arabesque-no-1#3]                 Book.java:2525 | Book stored as /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/logs/audiveris_output/debussy_arabesque-no-1/debussy_arabesque-no-1.omr
+2026-10-04 21:10:30,754 INFO [debussy_arabesque-no-1#3]            SheetStub.java:1655 | Sheet#3 disposed
+2026-10-04 21:10:30,786 INFO [debussy_arabesque-no-1#3]                 Book.java:2050 | End of Stub#3
+2026-10-04 21:10:30,787 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | LOAD
+2026-10-04 21:10:30,849 INFO [debussy_arabesque-no-1#4]            SheetStub.java:1278 | Loaded image #4 2479x3508 from /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/pdfs/debussy_arabesque-no-1.pdf
+2026-10-04 21:10:30,850 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | BINARY
+2026-10-04 21:10:31,553 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | SCALE
+2026-10-04 21:10:31,555 INFO [debussy_arabesque-no-1#4]         ScaleBuilder.java:254  | Beam  guessed height: 12 -- 0.25 of [9..20] range
+2026-10-04 21:10:31,555 INFO [debussy_arabesque-no-1#4]         ScaleBuilder.java:271  | Beam measured height: 10 -- 0.09 of [9..20] range at 178% of needed quorum
+2026-10-04 21:10:31,555 INFO [debussy_arabesque-no-1#4]         ScaleBuilder.java:401  | Normalized black jitter: 9.52 %
+2026-10-04 21:10:31,555 INFO [debussy_arabesque-no-1#4]            ScaleStep.java:65   | Scale{ interline(20,21,21) line(2,2,4) beam(10)}
+2026-10-04 21:10:31,555 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | GRID
+2026-10-04 21:10:31,645 INFO [debussy_arabesque-no-1#4]       LinesRetriever.java:1508 | Global slope: 0.00000
+2026-10-04 21:10:31,653 INFO [debussy_arabesque-no-1#4]    ClustersRetriever.java:326  | Retrieved raw line clusters: 4 of sizes [5] with interline(20,21,21)
+2026-10-04 21:10:31,825 INFO [debussy_arabesque-no-1#4]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4]
+2026-10-04 21:10:32,114 INFO [debussy_arabesque-no-1#4]        SystemManager.java:800  | 1 part along 2 systems
+2026-10-04 21:10:32,116 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | HEADERS
+2026-10-04 21:10:32,857 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | STEM_SEEDS
+2026-10-04 21:10:32,924 INFO [debussy_arabesque-no-1#4]        StemSeedsStep.java:86   | stem(2 max:3)
+2026-10-04 21:10:32,942 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | BEAMS
+2026-10-04 21:10:42,792 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | LEDGERS
+2026-10-04 21:10:42,926 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | HEADS
+2026-10-04 21:10:49,187 INFO [debussy_arabesque-no-1#4]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.4] NOTEHEAD_BLACK[L:-0.5,R:-0.3]}
+2026-10-04 21:10:49,187 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | STEMS
+2026-10-04 21:10:50,426 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | REDUCTION
+2026-10-04 21:10:50,593 INFO [debussy_arabesque-no-1#4]        ReductionStep.java:105  | Stems free length median value: 58 pixels, 2.8 interlines
+2026-10-04 21:10:50,595 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | CUE_BEAMS
+2026-10-04 21:10:50,596 INFO [debussy_arabesque-no-1#4]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-10-04 21:10:50,596 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | TEXTS
+2026-10-04 21:10:51,072 WARN [debussy_arabesque-no-1#4]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-10-04 21:10:51,074 INFO [debussy_arabesque-no-1#4]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-10-04 21:10:51,075 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | MEASURES
+2026-10-04 21:10:51,077 INFO [debussy_arabesque-no-1#4]                 Page.java:307  | 9 raw measures: [4 in system#1, 5 in system#2]
+2026-10-04 21:10:51,080 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | CHORDS
+2026-10-04 21:10:51,139 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | CURVES
+2026-10-04 21:10:53,260 INFO [debussy_arabesque-no-1#4]         SlursBuilder.java:240  | Slurs: 19
+2026-10-04 21:10:53,311 INFO [debussy_arabesque-no-1#4]      SegmentsBuilder.java:155  | Segments: 29
+2026-10-04 21:10:53,327 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | SYMBOLS
+2026-10-04 21:10:55,384 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | LINKS
+2026-10-04 21:10:55,386 INFO [debussy_arabesque-no-1#4]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#3372{(0.164) staff:2 OTTAVA BASSA} at java.awt.Point[x=1041,y=1335]
+2026-10-04 21:10:55,388 INFO [debussy_arabesque-no-1#4]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#3464{(0.137) staff:1 OTTAVA ALTA} at java.awt.Point[x=1986,y=203]
+2026-10-04 21:10:55,424 INFO [debussy_arabesque-no-1#4]             KeyInter.java:1331 | Key built KeyInter#3563{(0.972) staff:3 KEY_SHARP_3 pitch:-3.0 fifths:3}
+2026-10-04 21:10:55,425 INFO [debussy_arabesque-no-1#4]             KeyInter.java:1331 | Key built KeyInter#3567{(0.972) staff:4 KEY_SHARP_3 pitch:-1.1 fifths:3}
+2026-10-04 21:10:55,436 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | RHYTHMS
+2026-10-04 21:10:55,439 INFO [debussy_arabesque-no-1#4]           PageRhythm.java:199  | {Page#4.1} Time value reused from sheet#1
+2026-10-04 21:10:55,449 INFO [debussy_arabesque-no-1#4]                Voice.java:257  | Measure{#1} Voice{#2 excess:1/4} too long
+2026-10-04 21:10:55,451 INFO [debussy_arabesque-no-1#4]                Voice.java:257  | Measure{#1} Voice{#6 excess:1/8} too long
+2026-10-04 21:10:55,451 INFO [debussy_arabesque-no-1#4]          StackRhythm.java:224  | S1 MeasureStack#1 no correct rhythm
+2026-10-04 21:10:55,460 INFO [debussy_arabesque-no-1#4]                Voice.java:257  | Measure{#2} Voice{#6 excess:1/8} too long
+2026-10-04 21:10:55,461 INFO [debussy_arabesque-no-1#4]          StackRhythm.java:224  | S1 MeasureStack#2 no correct rhythm
+2026-10-04 21:10:55,470 INFO [debussy_arabesque-no-1#4]                Voice.java:257  | Measure{#3} Voice{#7 excess:1/8} too long
+2026-10-04 21:10:55,471 INFO [debussy_arabesque-no-1#4]          StackRhythm.java:224  | S1 MeasureStack#3 no correct rhythm
+2026-10-04 21:10:55,485 INFO [debussy_arabesque-no-1#4]       StepMonitoring.java:98   | PAGE
+2026-10-04 21:10:55,486 INFO [debussy_arabesque-no-1#4]                Voice.java:257  | Measure{#1} Voice{#2 excess:1/4} too long
+2026-10-04 21:10:55,486 INFO [debussy_arabesque-no-1#4]                Voice.java:257  | Measure{#1} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:55,486 INFO [debussy_arabesque-no-1#4]                Voice.java:257  | Measure{#2} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:55,486 INFO [debussy_arabesque-no-1#4]                Voice.java:257  | Measure{#3} Voice{#5 excess:1/8} too long
+2026-10-04 21:10:55,487 INFO [debussy_arabesque-no-1#4]                 Book.java:2584 | Book{debussy_arabesque-no-1} storing
+2026-10-04 21:10:55,632 INFO [debussy_arabesque-no-1#4]                 Book.java:2565 | Stored /book.xml
+2026-10-04 21:10:55,728 INFO [debussy_arabesque-no-1#4]           DataHolder.java:348  | Stored /sheet#4/BINARY.png
+2026-10-04 21:10:56,198 INFO [debussy_arabesque-no-1#4]                Sheet.java:1583 | Stored /sheet#4/sheet#4.xml
+2026-10-04 21:10:56,198 INFO [debussy_arabesque-no-1#4]                 Book.java:2525 | Book stored as /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/logs/audiveris_output/debussy_arabesque-no-1/debussy_arabesque-no-1.omr
+2026-10-04 21:10:56,203 INFO [debussy_arabesque-no-1#4]            SheetStub.java:1655 | Sheet#4 disposed
+2026-10-04 21:10:56,231 INFO [debussy_arabesque-no-1#4]                 Book.java:2050 | End of Stub#4
+2026-10-04 21:10:56,232 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | LOAD
+2026-10-04 21:10:56,292 INFO [debussy_arabesque-no-1#5]            SheetStub.java:1278 | Loaded image #5 2479x3508 from /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/pdfs/debussy_arabesque-no-1.pdf
+2026-10-04 21:10:56,293 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | BINARY
+2026-10-04 21:10:56,882 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | SCALE
+2026-10-04 21:10:56,885 INFO [debussy_arabesque-no-1#5]         ScaleBuilder.java:254  | Beam  guessed height: 12 -- 0.25 of [9..20] range
+2026-10-04 21:10:56,886 INFO [debussy_arabesque-no-1#5]         ScaleBuilder.java:271  | Beam measured height: 10 -- 0.09 of [9..20] range at 220% of needed quorum
+2026-10-04 21:10:56,886 INFO [debussy_arabesque-no-1#5]         ScaleBuilder.java:401  | Normalized black jitter: 9.52 %
+2026-10-04 21:10:56,886 INFO [debussy_arabesque-no-1#5]            ScaleStep.java:65   | Scale{ interline(20,21,21) line(2,2,4) beam(10)}
+2026-10-04 21:10:56,886 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | GRID
+2026-10-04 21:10:57,070 INFO [debussy_arabesque-no-1#5]       LinesRetriever.java:1508 | Global slope: 0.00000
+2026-10-04 21:10:57,121 INFO [debussy_arabesque-no-1#5]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(20,21,21)
+2026-10-04 21:10:57,325 INFO [debussy_arabesque-no-1#5]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2026-10-04 21:10:57,605 INFO [debussy_arabesque-no-1#5]        SystemManager.java:800  | 1 part along 5 systems
+2026-10-04 21:10:57,606 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | HEADERS
+2026-10-04 21:10:58,358 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | STEM_SEEDS
+2026-10-04 21:10:58,415 INFO [debussy_arabesque-no-1#5]        StemSeedsStep.java:86   | stem(2 max:3)
+2026-10-04 21:10:58,439 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | BEAMS
+2026-10-04 21:11:05,993 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | LEDGERS
+2026-10-04 21:11:06,461 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | HEADS
+2026-10-04 21:11:15,491 INFO [debussy_arabesque-no-1#5]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.4,R:-0.4] NOTEHEAD_BLACK[L:-0.5,R:-0.4]}
+2026-10-04 21:11:15,492 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | STEMS
+2026-10-04 21:11:16,496 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | REDUCTION
+2026-10-04 21:11:16,576 INFO [debussy_arabesque-no-1#5]        ReductionStep.java:105  | Stems free length median value: 58 pixels, 2.8 interlines
+2026-10-04 21:11:16,588 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | CUE_BEAMS
+2026-10-04 21:11:16,589 INFO [debussy_arabesque-no-1#5]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-10-04 21:11:16,590 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | TEXTS
+2026-10-04 21:11:16,907 WARN [debussy_arabesque-no-1#5]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-10-04 21:11:16,908 INFO [debussy_arabesque-no-1#5]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-10-04 21:11:16,910 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | MEASURES
+2026-10-04 21:11:16,912 INFO [debussy_arabesque-no-1#5]                 Page.java:307  | 19 raw measures: [5 in system#1, 4 in system#2, 4 in system#3, 1 in system#4, 5 in system#5]
+2026-10-04 21:11:16,912 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | CHORDS
+2026-10-04 21:11:16,920 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | CURVES
+2026-10-04 21:11:18,706 INFO [debussy_arabesque-no-1#5]         SlursBuilder.java:240  | Slurs: 62
+2026-10-04 21:11:18,785 INFO [debussy_arabesque-no-1#5]      SegmentsBuilder.java:155  | Segments: 52
+2026-10-04 21:11:18,804 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | SYMBOLS
+2026-10-04 21:11:21,186 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | LINKS
+2026-10-04 21:11:21,189 INFO [debussy_arabesque-no-1#5]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#7347{(0.232) staff:2 QUINDICESIMA BASSA} at java.awt.Point[x=2138,y=812]
+2026-10-04 21:11:21,268 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | RHYTHMS
+2026-10-04 21:11:21,271 INFO [debussy_arabesque-no-1#5]           PageRhythm.java:199  | {Page#5.1} Time value reused from sheet#1
+2026-10-04 21:11:21,298 INFO [debussy_arabesque-no-1#5]        MeasureRhythm.java:1044 | Measure{#5} No timeOffset for HeadChordInter#5828{(0.502/0.502) staff:1 slot#13 dur:1/2}
+2026-10-04 21:11:21,298 INFO [debussy_arabesque-no-1#5]                Voice.java:257  | Measure{#5} Voice{#2 excess:1/12} too long
+2026-10-04 21:11:21,299 INFO [debussy_arabesque-no-1#5]          StackRhythm.java:224  | S1 MeasureStack#5 no correct rhythm
+2026-10-04 21:11:21,301 INFO [debussy_arabesque-no-1#5]        MeasureRhythm.java:1044 | Measure{#6} No timeOffset for HeadChordInter#5854{(0.933/0.933) staff:3 slot#10 dur:1/8}
+2026-10-04 21:11:21,301 INFO [debussy_arabesque-no-1#5]        MeasureRhythm.java:1044 | Measure{#6} No timeOffset for HeadChordInter#5890{(0.966/0.966) staff:4 slot#10 dur:1/4}
+2026-10-04 21:11:21,301 INFO [debussy_arabesque-no-1#5]          StackRhythm.java:224  | S2 MeasureStack#6 no correct rhythm
+2026-10-04 21:11:21,307 INFO [debussy_arabesque-no-1#5]                Voice.java:257  | Measure{#9} Voice{#1 excess:5/24} too long
+2026-10-04 21:11:21,307 INFO [debussy_arabesque-no-1#5]                Voice.java:257  | Measure{#9} Voice{#6 excess:1/8} too long
+2026-10-04 21:11:21,307 INFO [debussy_arabesque-no-1#5]          StackRhythm.java:224  | S2 MeasureStack#9 no correct rhythm
+2026-10-04 21:11:21,309 INFO [debussy_arabesque-no-1#5]        MeasureRhythm.java:1044 | Measure{#10} No timeOffset for HeadChordInter#5911{(0.940/0.940) staff:5 slot#10 dur:1/8}
+2026-10-04 21:11:21,309 INFO [debussy_arabesque-no-1#5]        MeasureRhythm.java:1044 | Measure{#10} No timeOffset for HeadChordInter#5944{(0.969/0.969) staff:6 slot#10 dur:1/4}
+2026-10-04 21:11:21,310 INFO [debussy_arabesque-no-1#5]          StackRhythm.java:224  | S3 MeasureStack#10 no correct rhythm
+2026-10-04 21:11:21,393 INFO [debussy_arabesque-no-1#5]       StepMonitoring.java:98   | PAGE
+2026-10-04 21:11:21,399 INFO [debussy_arabesque-no-1#5]       SheetReduction.java:154  | Gutter. Different glyphs 2/3 PedalInter#7408{(0.793/0.793) PEDAL_MARK} vs ArticulationInter#7484{(0.771/0.873) STACCATO}
+2026-10-04 21:11:21,408 INFO [debussy_arabesque-no-1#5]                Voice.java:257  | Measure{#5} Voice{#2 excess:1/12} too long
+2026-10-04 21:11:21,408 INFO [debussy_arabesque-no-1#5]                Voice.java:257  | Measure{#9} Voice{#1 excess:5/24} too long
+2026-10-04 21:11:21,420 INFO [debussy_arabesque-no-1#5]                Voice.java:257  | Measure{#9} Voice{#6 excess:1/8} too long
+2026-10-04 21:11:21,425 INFO [debussy_arabesque-no-1#5]                 Book.java:2584 | Book{debussy_arabesque-no-1} storing
+2026-10-04 21:11:21,645 INFO [debussy_arabesque-no-1#5]                 Book.java:2565 | Stored /book.xml
+2026-10-04 21:11:21,771 INFO [debussy_arabesque-no-1#5]           DataHolder.java:348  | Stored /sheet#5/BINARY.png
+2026-10-04 21:11:22,669 INFO [debussy_arabesque-no-1#5]                Sheet.java:1583 | Stored /sheet#5/sheet#5.xml
+2026-10-04 21:11:22,670 INFO [debussy_arabesque-no-1#5]                 Book.java:2525 | Book stored as /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/logs/audiveris_output/debussy_arabesque-no-1/debussy_arabesque-no-1.omr
+2026-10-04 21:11:22,675 INFO [debussy_arabesque-no-1#5]            SheetStub.java:1655 | Sheet#5 disposed
+2026-10-04 21:11:22,706 INFO [debussy_arabesque-no-1#5]                 Book.java:2050 | End of Stub#5
+2026-10-04 21:11:22,707 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | LOAD
+2026-10-04 21:11:22,733 INFO [debussy_arabesque-no-1#6]            SheetStub.java:1278 | Loaded image #6 2479x3508 from /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/pdfs/debussy_arabesque-no-1.pdf
+2026-10-04 21:11:22,734 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | BINARY
+2026-10-04 21:11:23,204 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | SCALE
+2026-10-04 21:11:23,206 INFO [debussy_arabesque-no-1#6]         ScaleBuilder.java:254  | Beam  guessed height: 12 -- 0.25 of [9..20] range
+2026-10-04 21:11:23,206 INFO [debussy_arabesque-no-1#6]         ScaleBuilder.java:271  | Beam measured height: 10 -- 0.09 of [9..20] range at 63% of needed quorum
+2026-10-04 21:11:23,206 INFO [debussy_arabesque-no-1#6]         ScaleBuilder.java:401  | Normalized black jitter: 4.76 %
+2026-10-04 21:11:23,206 INFO [debussy_arabesque-no-1#6]            ScaleStep.java:65   | Scale{ interline(20,21,21) line(2,2,3) beam(10)}
+2026-10-04 21:11:23,206 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | GRID
+2026-10-04 21:11:23,249 INFO [debussy_arabesque-no-1#6]       LinesRetriever.java:1508 | Global slope: 0.00000
+2026-10-04 21:11:23,254 INFO [debussy_arabesque-no-1#6]    ClustersRetriever.java:326  | Retrieved raw line clusters: 6 of sizes [5] with interline(20,21,21)
+2026-10-04 21:11:23,269 INFO [debussy_arabesque-no-1#6]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6]
+2026-10-04 21:11:23,542 INFO [debussy_arabesque-no-1#6]        SystemManager.java:800  | 1 part along 3 systems
+2026-10-04 21:11:23,542 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | HEADERS
+2026-10-04 21:11:23,884 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | STEM_SEEDS
+2026-10-04 21:11:23,923 INFO [debussy_arabesque-no-1#6]        StemSeedsStep.java:86   | stem(2 max:3)
+2026-10-04 21:11:23,928 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | BEAMS
+2026-10-04 21:11:31,900 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | LEDGERS
+2026-10-04 21:11:32,090 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | HEADS
+2026-10-04 21:11:40,885 INFO [debussy_arabesque-no-1#6]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[R:-0.5] NOTEHEAD_BLACK[L:-0.5,R:-0.4]}
+2026-10-04 21:11:40,886 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | STEMS
+2026-10-04 21:11:41,062 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | REDUCTION
+2026-10-04 21:11:41,081 INFO [debussy_arabesque-no-1#6]        ReductionStep.java:105  | Stems free length median value: 52 pixels, 2.5 interlines
+2026-10-04 21:11:41,083 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | CUE_BEAMS
+2026-10-04 21:11:41,083 INFO [debussy_arabesque-no-1#6]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-10-04 21:11:41,084 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | TEXTS
+2026-10-04 21:11:41,177 WARN [debussy_arabesque-no-1#6]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-10-04 21:11:41,178 INFO [debussy_arabesque-no-1#6]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-10-04 21:11:41,179 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | MEASURES
+2026-10-04 21:11:41,181 INFO [debussy_arabesque-no-1#6]                 Page.java:307  | 7 raw measures: [1 in system#1, 5 in system#2, 1 in system#3]
+2026-10-04 21:11:41,182 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | CHORDS
+2026-10-04 21:11:41,184 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | CURVES
+2026-10-04 21:11:42,430 INFO [debussy_arabesque-no-1#6]         SlursBuilder.java:240  | Slurs: 9
+2026-10-04 21:11:42,439 INFO [debussy_arabesque-no-1#6]      SegmentsBuilder.java:155  | Segments: 16
+2026-10-04 21:11:42,484 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | SYMBOLS
+2026-10-04 21:11:43,759 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | LINKS
+2026-10-04 21:11:43,760 INFO [debussy_arabesque-no-1#6]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#2230{(0.349) staff:2 QUINDICESIMA BASSA} at java.awt.Point[x=2025,y=1148]
+2026-10-04 21:11:43,782 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | RHYTHMS
+2026-10-04 21:11:43,782 INFO [debussy_arabesque-no-1#6]           PageRhythm.java:199  | {Page#6.1} Time value reused from sheet#1
+2026-10-04 21:11:43,790 INFO [debussy_arabesque-no-1#6]        MeasureRhythm.java:1044 | Measure{#5} No timeOffset for HeadChordInter#1857{(0.949/0.949) staff:4 slot#7 dur:1/4}
+2026-10-04 21:11:43,791 INFO [debussy_arabesque-no-1#6]   AbstractChordInter.java:635  | Measure{#5} No timeOffset for HeadChordInter#1857{(0.949/0.949) staff:4 slot#7 dur:1/4}
+2026-10-04 21:11:43,791 INFO [debussy_arabesque-no-1#6]        MeasureRhythm.java:1044 | Measure{#5} No timeOffset for HeadChordInter#1858{(0.556/0.556) staff:4 slot#8 dur:1/2}
+2026-10-04 21:11:43,791 INFO [debussy_arabesque-no-1#6]          StackRhythm.java:224  | S2 MeasureStack#5 no correct rhythm
+2026-10-04 21:11:43,792 INFO [debussy_arabesque-no-1#6]                Voice.java:257  | Measure{#6} Voice{#1 excess:1/8} too long
+2026-10-04 21:11:43,792 INFO [debussy_arabesque-no-1#6]          StackRhythm.java:224  | S2 MeasureStack#6 no correct rhythm
+2026-10-04 21:11:43,793 INFO [debussy_arabesque-no-1#6]       StepMonitoring.java:98   | PAGE
+2026-10-04 21:11:43,793 INFO [debussy_arabesque-no-1#6]                Voice.java:257  | Measure{#6} Voice{#1 excess:1/8} too long
+2026-10-04 21:11:43,795 INFO [debussy_arabesque-no-1#6]                 Book.java:2584 | Book{debussy_arabesque-no-1} storing
+2026-10-04 21:11:43,866 INFO [debussy_arabesque-no-1#6]                 Book.java:2565 | Stored /book.xml
+2026-10-04 21:11:43,977 INFO [debussy_arabesque-no-1#6]           DataHolder.java:348  | Stored /sheet#6/BINARY.png
+2026-10-04 21:11:44,342 INFO [debussy_arabesque-no-1#6]                Sheet.java:1583 | Stored /sheet#6/sheet#6.xml
+2026-10-04 21:11:44,342 INFO [debussy_arabesque-no-1#6]                 Book.java:2525 | Book stored as /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/logs/audiveris_output/debussy_arabesque-no-1/debussy_arabesque-no-1.omr
+2026-10-04 21:11:44,350 INFO [debussy_arabesque-no-1#6]            SheetStub.java:1655 | Sheet#6 disposed
+2026-10-04 21:11:44,399 INFO [debussy_arabesque-no-1#6]                 Book.java:2050 | End of Stub#6
+2026-10-04 21:11:44,399 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | LOAD
+2026-10-04 21:11:44,443 INFO [debussy_arabesque-no-1#7]            SheetStub.java:1278 | Loaded image #7 2479x3508 from /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/pdfs/debussy_arabesque-no-1.pdf
+2026-10-04 21:11:44,444 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | BINARY
+2026-10-04 21:11:44,957 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | SCALE
+2026-10-04 21:11:44,962 INFO [debussy_arabesque-no-1#7]         ScaleBuilder.java:254  | Beam  guessed height: 12 -- 0.25 of [9..20] range
+2026-10-04 21:11:44,962 INFO [debussy_arabesque-no-1#7]         ScaleBuilder.java:271  | Beam measured height: 10 -- 0.09 of [9..20] range at 314% of needed quorum
+2026-10-04 21:11:44,963 INFO [debussy_arabesque-no-1#7]         ScaleBuilder.java:401  | Normalized black jitter: 9.52 %
+2026-10-04 21:11:44,963 INFO [debussy_arabesque-no-1#7]            ScaleStep.java:65   | Scale{ interline(20,21,21) line(2,2,4) beam(10)}
+2026-10-04 21:11:44,965 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | GRID
+2026-10-04 21:11:45,082 INFO [debussy_arabesque-no-1#7]       LinesRetriever.java:1508 | Global slope: 0.00000
+2026-10-04 21:11:45,095 INFO [debussy_arabesque-no-1#7]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(20,21,21)
+2026-10-04 21:11:45,158 INFO [debussy_arabesque-no-1#7]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2026-10-04 21:11:45,422 INFO [debussy_arabesque-no-1#7]        SystemManager.java:800  | 1 part along 5 systems
+2026-10-04 21:11:45,427 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | HEADERS
+2026-10-04 21:11:46,116 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | STEM_SEEDS
+2026-10-04 21:11:46,149 INFO [debussy_arabesque-no-1#7]        StemSeedsStep.java:86   | stem(2 max:3)
+2026-10-04 21:11:46,158 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | BEAMS
+2026-10-04 21:11:53,798 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | LEDGERS
+2026-10-04 21:11:53,951 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | HEADS
+2026-10-04 21:12:02,698 INFO [debussy_arabesque-no-1#7]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.5,R:-0.4]}
+2026-10-04 21:12:02,699 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | STEMS
+2026-10-04 21:12:03,301 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | REDUCTION
+2026-10-04 21:12:03,342 INFO [debussy_arabesque-no-1#7]        ReductionStep.java:105  | Stems free length median value: 58 pixels, 2.8 interlines
+2026-10-04 21:12:03,347 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | CUE_BEAMS
+2026-10-04 21:12:03,348 INFO [debussy_arabesque-no-1#7]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-10-04 21:12:03,348 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | TEXTS
+2026-10-04 21:12:03,450 WARN [debussy_arabesque-no-1#7]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-10-04 21:12:03,451 INFO [debussy_arabesque-no-1#7]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-10-04 21:12:03,452 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | MEASURES
+2026-10-04 21:12:03,452 INFO [debussy_arabesque-no-1#7]                 Page.java:307  | 13 raw measures: [4 in system#1, 3 in system#2, 1 in system#3, 4 in system#4, 1 in system#5]
+2026-10-04 21:12:03,453 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | CHORDS
+2026-10-04 21:12:03,456 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | CURVES
+2026-10-04 21:12:04,821 INFO [debussy_arabesque-no-1#7]         SlursBuilder.java:240  | Slurs: 43
+2026-10-04 21:12:04,838 INFO [debussy_arabesque-no-1#7]      SegmentsBuilder.java:155  | Segments: 34
+2026-10-04 21:12:04,848 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | SYMBOLS
+2026-10-04 21:12:07,769 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | LINKS
+2026-10-04 21:12:07,772 INFO [debussy_arabesque-no-1#7]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#5504{(0.148) staff:1 OTTAVA ALTA} at java.awt.Point[x=525,y=348]
+2026-10-04 21:12:07,773 INFO [debussy_arabesque-no-1#7]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#5717{(0.136) staff:2 OTTAVA BASSA} at java.awt.Point[x=2293,y=916]
+2026-10-04 21:12:07,773 INFO [debussy_arabesque-no-1#7]             KeyInter.java:1331 | Key built KeyInter#6086{(0.797) staff:1 KEY_SHARP_1 pitch:-2.0 fifths:1}
+2026-10-04 21:12:07,773 INFO [debussy_arabesque-no-1#7]             KeyInter.java:1331 | Key built KeyInter#6091{(0.981) staff:2 KEY_SHARP_4 pitch:-3.0 fifths:4}
+2026-10-04 21:12:07,789 INFO [debussy_arabesque-no-1#7]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#5881{(0.136) staff:3 OTTAVA ALTA} at java.awt.Point[x=2293,y=916]
+2026-10-04 21:12:07,844 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | RHYTHMS
+2026-10-04 21:12:07,845 INFO [debussy_arabesque-no-1#7]           PageRhythm.java:199  | {Page#7.1} Time value reused from sheet#1
+2026-10-04 21:12:07,849 INFO [debussy_arabesque-no-1#7]        MeasureRhythm.java:1044 | Measure{#3} No timeOffset for HeadChordInter#4357{(0.906/0.906) staff:1 slot#8 dur:1/4}
+2026-10-04 21:12:07,849 INFO [debussy_arabesque-no-1#7]   AbstractChordInter.java:635  | Measure{#3} No timeOffset for HeadChordInter#4357{(0.906/0.906) staff:1 slot#8 dur:1/4}
+2026-10-04 21:12:07,850 INFO [debussy_arabesque-no-1#7]   AbstractChordInter.java:635  | Measure{#3} No timeOffset for HeadChordInter#4358{(0.910/0.910) staff:1 slot#9 dur:1/4}
+2026-10-04 21:12:07,850 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#3} Voice{#1 excess:3/8} too long
+2026-10-04 21:12:07,850 INFO [debussy_arabesque-no-1#7]          StackRhythm.java:224  | S1 MeasureStack#3 no correct rhythm
+2026-10-04 21:12:07,851 INFO [debussy_arabesque-no-1#7]        MeasureRhythm.java:1044 | Measure{#4} No timeOffset for HeadChordInter#4364{(0.920/0.920) staff:1 slot#8 dur:1/4}
+2026-10-04 21:12:07,852 INFO [debussy_arabesque-no-1#7]   AbstractChordInter.java:635  | Measure{#4} No timeOffset for HeadChordInter#4364{(0.920/0.920) staff:1 slot#8 dur:1/4}
+2026-10-04 21:12:07,852 INFO [debussy_arabesque-no-1#7]   AbstractChordInter.java:635  | Measure{#4} No timeOffset for HeadChordInter#4365{(0.914/0.914) staff:1 slot#9 dur:1/4}
+2026-10-04 21:12:07,852 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#4} Voice{#1 excess:3/8} too long
+2026-10-04 21:12:07,852 INFO [debussy_arabesque-no-1#7]          StackRhythm.java:224  | S1 MeasureStack#4 no correct rhythm
+2026-10-04 21:12:07,855 INFO [debussy_arabesque-no-1#7]        MeasureRhythm.java:1044 | Measure{#5} No timeOffset for HeadChordInter#4417{(0.931/0.931) staff:4 slot#8 dur:1/4}
+2026-10-04 21:12:07,855 INFO [debussy_arabesque-no-1#7]   AbstractChordInter.java:635  | Measure{#5} No timeOffset for HeadChordInter#4417{(0.931/0.931) staff:4 slot#8 dur:1/4}
+2026-10-04 21:12:07,855 INFO [debussy_arabesque-no-1#7]   AbstractChordInter.java:635  | Measure{#5} No timeOffset for HeadChordInter#4419{(0.900/0.900) staff:4 slot#10 dur:1/4}
+2026-10-04 21:12:07,856 INFO [debussy_arabesque-no-1#7]        MeasureRhythm.java:1044 | Measure{#5} No timeOffset for HeadChordInter#4388{(0.958/0.958) staff:3 slot#10 dur:1/8}
+2026-10-04 21:12:07,856 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#5} Voice{#5 excess:1/4} too long
+2026-10-04 21:12:07,856 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#5} Voice{#2 excess:1/4} too long
+2026-10-04 21:12:07,856 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#5} Voice{#3 excess:5/8} too long
+2026-10-04 21:12:07,856 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#5} Voice{#4 excess:5/8} too long
+2026-10-04 21:12:07,856 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#5} Voice{#6 excess:7/8} too long
+2026-10-04 21:12:07,856 INFO [debussy_arabesque-no-1#7]          StackRhythm.java:224  | S2 MeasureStack#5 no correct rhythm
+2026-10-04 21:12:07,859 INFO [debussy_arabesque-no-1#7]        MeasureRhythm.java:1044 | Measure{#6} No timeOffset for HeadChordInter#4425{(0.943/0.943) staff:4 slot#8 dur:1/4}
+2026-10-04 21:12:07,860 INFO [debussy_arabesque-no-1#7]   AbstractChordInter.java:635  | Measure{#6} No timeOffset for HeadChordInter#4425{(0.943/0.943) staff:4 slot#8 dur:1/4}
+2026-10-04 21:12:07,860 INFO [debussy_arabesque-no-1#7]   AbstractChordInter.java:635  | Measure{#6} No timeOffset for HeadChordInter#4427{(0.923/0.923) staff:4 slot#10 dur:1/4}
+2026-10-04 21:12:07,861 INFO [debussy_arabesque-no-1#7]        MeasureRhythm.java:1044 | Measure{#6} No timeOffset for HeadChordInter#4402{(0.962/0.962) staff:3 slot#10 dur:1/8}
+2026-10-04 21:12:07,862 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#6} Voice{#5 excess:1/4} too long
+2026-10-04 21:12:07,863 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#6} Voice{#3 excess:1/4} too long
+2026-10-04 21:12:07,863 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#6} Voice{#4 excess:5/8} too long
+2026-10-04 21:12:07,863 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#6} Voice{#6 excess:5/8} too long
+2026-10-04 21:12:07,863 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#6} Voice{#7 excess:7/8} too long
+2026-10-04 21:12:07,863 INFO [debussy_arabesque-no-1#7]          StackRhythm.java:224  | S2 MeasureStack#6 no correct rhythm
+2026-10-04 21:12:07,865 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#7} Voice{#1 excess:1/8} too long
+2026-10-04 21:12:07,865 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#7} Voice{#5 excess:1/2} too long
+2026-10-04 21:12:07,865 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#7} Voice{#6 excess:1/8} too long
+2026-10-04 21:12:07,866 INFO [debussy_arabesque-no-1#7]          StackRhythm.java:224  | S2 MeasureStack#7 no correct rhythm
+2026-10-04 21:12:07,867 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#8} Voice{#1 excess:1/8} too long
+2026-10-04 21:12:07,868 INFO [debussy_arabesque-no-1#7]          StackRhythm.java:224  | S3 MeasureStack#8 no correct rhythm
+2026-10-04 21:12:07,871 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#10} Voice{#3 excess:1/8} too long
+2026-10-04 21:12:07,872 INFO [debussy_arabesque-no-1#7]          StackRhythm.java:224  | S4 MeasureStack#10 no correct rhythm
+2026-10-04 21:12:07,876 INFO [debussy_arabesque-no-1#7]       StepMonitoring.java:98   | PAGE
+2026-10-04 21:12:07,876 INFO [debussy_arabesque-no-1#7]       SheetReduction.java:154  | Gutter. Different glyphs 1/2 PedalInter#5617{(0.787/0.787) PEDAL_MARK} vs ArticulationInter#5759{(0.796/0.870) STACCATO}
+2026-10-04 21:12:07,879 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#3} Voice{#1 excess:3/8} too long
+2026-10-04 21:12:07,880 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#4} Voice{#1 excess:3/8} too long
+2026-10-04 21:12:07,880 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#5} Voice{#2 excess:1/4} too long
+2026-10-04 21:12:07,880 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#5} Voice{#3 excess:5/8} too long
+2026-10-04 21:12:07,882 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#5} Voice{#4 excess:5/8} too long
+2026-10-04 21:12:07,883 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#5} Voice{#5 excess:1/4} too long
+2026-10-04 21:12:07,883 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#5} Voice{#6 excess:7/8} too long
+2026-10-04 21:12:07,883 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#6} Voice{#3 excess:1/4} too long
+2026-10-04 21:12:07,883 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#6} Voice{#4 excess:5/8} too long
+2026-10-04 21:12:07,883 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#6} Voice{#2 excess:5/8} too long
+2026-10-04 21:12:07,883 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#6} Voice{#5 excess:1/4} too long
+2026-10-04 21:12:07,884 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#6} Voice{#6 excess:7/8} too long
+2026-10-04 21:12:07,884 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#7} Voice{#1 excess:1/8} too long
+2026-10-04 21:12:07,886 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#7} Voice{#5 excess:1/2} too long
+2026-10-04 21:12:07,888 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#7} Voice{#6 excess:1/8} too long
+2026-10-04 21:12:07,888 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#8} Voice{#1 excess:1/8} too long
+2026-10-04 21:12:07,889 INFO [debussy_arabesque-no-1#7]                Voice.java:257  | Measure{#10} Voice{#3 excess:1/8} too long
+2026-10-04 21:12:07,890 INFO [debussy_arabesque-no-1#7]                 Book.java:2584 | Book{debussy_arabesque-no-1} storing
+2026-10-04 21:12:07,982 INFO [debussy_arabesque-no-1#7]                 Book.java:2565 | Stored /book.xml
+2026-10-04 21:12:08,107 INFO [debussy_arabesque-no-1#7]           DataHolder.java:348  | Stored /sheet#7/BINARY.png
+2026-10-04 21:12:08,955 INFO [debussy_arabesque-no-1#7]                Sheet.java:1583 | Stored /sheet#7/sheet#7.xml
+2026-10-04 21:12:08,955 INFO [debussy_arabesque-no-1#7]                 Book.java:2525 | Book stored as /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/logs/audiveris_output/debussy_arabesque-no-1/debussy_arabesque-no-1.omr
+2026-10-04 21:12:08,966 INFO [debussy_arabesque-no-1#7]            SheetStub.java:1655 | Sheet#7 disposed
+2026-10-04 21:12:09,349 INFO [debussy_arabesque-no-1#7]                 Book.java:2050 | End of Stub#7
+2026-10-04 21:12:09,350 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | LOAD
+2026-10-04 21:12:09,398 INFO [debussy_arabesque-no-1#8]            SheetStub.java:1278 | Loaded image #8 2479x3508 from /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/pdfs/debussy_arabesque-no-1.pdf
+2026-10-04 21:12:09,399 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | BINARY
+2026-10-04 21:12:10,448 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | SCALE
+2026-10-04 21:12:10,451 INFO [debussy_arabesque-no-1#8]         ScaleBuilder.java:254  | Beam  guessed height: 12 -- 0.25 of [9..20] range
+2026-10-04 21:12:10,452 INFO [debussy_arabesque-no-1#8]         ScaleBuilder.java:271  | Beam measured height: 10 -- 0.09 of [9..20] range at 317% of needed quorum
+2026-10-04 21:12:10,452 INFO [debussy_arabesque-no-1#8]         ScaleBuilder.java:401  | Normalized black jitter: 4.76 %
+2026-10-04 21:12:10,452 INFO [debussy_arabesque-no-1#8]            ScaleStep.java:65   | Scale{ interline(20,21,21) line(2,2,3) beam(10)}
+2026-10-04 21:12:10,453 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | GRID
+2026-10-04 21:12:10,538 INFO [debussy_arabesque-no-1#8]       LinesRetriever.java:1508 | Global slope: 0.00000
+2026-10-04 21:12:10,545 INFO [debussy_arabesque-no-1#8]    ClustersRetriever.java:326  | Retrieved raw line clusters: 8 of sizes [5] with interline(20,21,21)
+2026-10-04 21:12:10,573 INFO [debussy_arabesque-no-1#8]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8]
+2026-10-04 21:12:10,782 INFO [debussy_arabesque-no-1#8]        SystemManager.java:800  | 1 part along 4 systems
+2026-10-04 21:12:10,784 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | HEADERS
+2026-10-04 21:12:11,035 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | STEM_SEEDS
+2026-10-04 21:12:11,073 INFO [debussy_arabesque-no-1#8]        StemSeedsStep.java:86   | stem(2 max:3)
+2026-10-04 21:12:11,085 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | BEAMS
+2026-10-04 21:12:17,226 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | LEDGERS
+2026-10-04 21:12:17,667 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | HEADS
+2026-10-04 21:12:25,298 INFO [debussy_arabesque-no-1#8]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.5,R:-0.5]}
+2026-10-04 21:12:25,299 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | STEMS
+2026-10-04 21:12:25,633 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | REDUCTION
+2026-10-04 21:12:25,685 INFO [debussy_arabesque-no-1#8]        ReductionStep.java:105  | Stems free length median value: 68 pixels, 3.2 interlines
+2026-10-04 21:12:25,689 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | CUE_BEAMS
+2026-10-04 21:12:25,690 INFO [debussy_arabesque-no-1#8]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-10-04 21:12:25,690 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | TEXTS
+2026-10-04 21:12:25,811 WARN [debussy_arabesque-no-1#8]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-10-04 21:12:25,812 INFO [debussy_arabesque-no-1#8]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-10-04 21:12:25,814 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | MEASURES
+2026-10-04 21:12:25,815 INFO [debussy_arabesque-no-1#8]                 Page.java:307  | 9 raw measures: [4 in system#1, 1 in system#2, 3 in system#3, 1 in system#4]
+2026-10-04 21:12:25,816 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | CHORDS
+2026-10-04 21:12:25,820 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | CURVES
+2026-10-04 21:12:27,100 INFO [debussy_arabesque-no-1#8]         SlursBuilder.java:240  | Slurs: 34
+2026-10-04 21:12:27,134 INFO [debussy_arabesque-no-1#8]      SegmentsBuilder.java:155  | Segments: 27
+2026-10-04 21:12:27,171 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | SYMBOLS
+2026-10-04 21:12:28,616 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | LINKS
+2026-10-04 21:12:28,618 INFO [debussy_arabesque-no-1#8]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#4007{(0.175) staff:1 OTTAVA ALTA} at java.awt.Point[x=128,y=135]
+2026-10-04 21:12:28,619 INFO [debussy_arabesque-no-1#8]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#4283{(0.128) staff:1 OTTAVA ALTA} at java.awt.Point[x=2181,y=238]
+2026-10-04 21:12:28,636 INFO [debussy_arabesque-no-1#8]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#4327{(0.233) staff:3 QUINDICESIMA ALTA} at java.awt.Point[x=1389,y=1150]
+2026-10-04 21:12:28,641 INFO [debussy_arabesque-no-1#8]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#4366{(0.145) staff:6 OTTAVA BASSA} at java.awt.Point[x=155,y=2745]
+2026-10-04 21:12:28,649 INFO [debussy_arabesque-no-1#8]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#4401{(0.145) staff:7 OTTAVA ALTA} at java.awt.Point[x=155,y=2745]
+2026-10-04 21:12:28,653 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | RHYTHMS
+2026-10-04 21:12:28,653 INFO [debussy_arabesque-no-1#8]           PageRhythm.java:199  | {Page#8.1} Time value reused from sheet#1
+2026-10-04 21:12:28,658 INFO [debussy_arabesque-no-1#8]                Voice.java:257  | Measure{#3} Voice{#1 excess:1/8} too long
+2026-10-04 21:12:28,660 INFO [debussy_arabesque-no-1#8]                Voice.java:257  | Measure{#3} Voice{#6 excess:1/2} too long
+2026-10-04 21:12:28,660 INFO [debussy_arabesque-no-1#8]          StackRhythm.java:224  | S1 MeasureStack#3 no correct rhythm
+2026-10-04 21:12:28,664 INFO [debussy_arabesque-no-1#8]        MeasureRhythm.java:1044 | Measure{#6} No timeOffset for HeadChordInter#3276{(0.911/0.911) staff:5 slot#8 dur:1/4}
+2026-10-04 21:12:28,664 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#6} No timeOffset for HeadChordInter#3276{(0.911/0.911) staff:5 slot#8 dur:1/4}
+2026-10-04 21:12:28,665 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#6} No timeOffset for HeadChordInter#3277{(0.896/0.896) staff:5 slot#9 dur:1/4}
+2026-10-04 21:12:28,665 INFO [debussy_arabesque-no-1#8]                Voice.java:257  | Measure{#6} Voice{#1 excess:3/8} too long
+2026-10-04 21:12:28,665 INFO [debussy_arabesque-no-1#8]          StackRhythm.java:224  | S3 MeasureStack#6 no correct rhythm
+2026-10-04 21:12:28,666 INFO [debussy_arabesque-no-1#8]        MeasureRhythm.java:1044 | Measure{#7} No timeOffset for HeadChordInter#3283{(0.921/0.921) staff:5 slot#8 dur:1/4}
+2026-10-04 21:12:28,667 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#7} No timeOffset for HeadChordInter#3283{(0.921/0.921) staff:5 slot#8 dur:1/4}
+2026-10-04 21:12:28,667 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#7} No timeOffset for HeadChordInter#3284{(0.910/0.910) staff:5 slot#9 dur:1/4}
+2026-10-04 21:12:28,667 INFO [debussy_arabesque-no-1#8]                Voice.java:257  | Measure{#7} Voice{#1 excess:3/8} too long
+2026-10-04 21:12:28,667 INFO [debussy_arabesque-no-1#8]          StackRhythm.java:224  | S3 MeasureStack#7 no correct rhythm
+2026-10-04 21:12:28,670 INFO [debussy_arabesque-no-1#8]        MeasureRhythm.java:1044 | Measure{#8} No timeOffset for HeadChordInter#3287{(0.948/0.948) staff:5 slot#4 dur:1/8}
+2026-10-04 21:12:28,670 INFO [debussy_arabesque-no-1#8]        MeasureRhythm.java:1044 | Measure{#8} No timeOffset for HeadChordInter#3286{(0.929/0.929) staff:5 slot#4 dur:1/4}
+2026-10-04 21:12:28,672 INFO [debussy_arabesque-no-1#8]        MeasureRhythm.java:1044 | Measure{#8} No timeOffset for HeadChordInter#3309{(0.949/0.949) staff:6 slot#4 dur:1/8}
+2026-10-04 21:12:28,672 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#8} No timeOffset for HeadChordInter#3288{(0.940/0.940) staff:5 slot#6 dur:1/8}
+2026-10-04 21:12:28,672 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#8} No timeOffset for HeadChordInter#3286{(0.929/0.929) staff:5 slot#4 dur:1/4}
+2026-10-04 21:12:28,672 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#8} No timeOffset for HeadChordInter#3311{(0.961/0.961) staff:6 slot#7 dur:1/8}
+2026-10-04 21:12:28,673 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#8} No timeOffset for HeadChordInter#3293{(0.949/0.949) staff:5 slot#14 dur:1/8}
+2026-10-04 21:12:28,673 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#8} No timeOffset for RestChordInter#4400{(0.795/0.795) staff:5 slot#8 dur:1/4}
+2026-10-04 21:12:28,673 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#8} No timeOffset for HeadChordInter#3312{(0.834/0.834) staff:6 slot#8 dur:1/2}
+2026-10-04 21:12:28,674 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#8} No timeOffset for HeadChordInter#3293{(0.949/0.949) staff:5 slot#14 dur:1/8}
+2026-10-04 21:12:28,674 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#8} No timeOffset for RestChordInter#4400{(0.795/0.795) staff:5 slot#8 dur:1/4}
+2026-10-04 21:12:28,674 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#8} No timeOffset for HeadChordInter#3313{(0.955/0.955) staff:6 slot#9 dur:1/4}
+2026-10-04 21:12:28,674 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#8} No timeOffset for HeadChordInter#3293{(0.949/0.949) staff:5 slot#14 dur:1/8}
+2026-10-04 21:12:28,674 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#8} No timeOffset for RestChordInter#4400{(0.795/0.795) staff:5 slot#8 dur:1/4}
+2026-10-04 21:12:28,674 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#8} No timeOffset for HeadChordInter#3314{(0.941/0.941) staff:6 slot#11 dur:1/4}
+2026-10-04 21:12:28,675 INFO [debussy_arabesque-no-1#8]          StackRhythm.java:224  | S3 MeasureStack#8 no correct rhythm
+2026-10-04 21:12:28,676 INFO [debussy_arabesque-no-1#8]        MeasureRhythm.java:1044 | Measure{#9} No timeOffset for HeadChordInter#3320{(0.906/0.906) staff:7 slot#4 dur:1/4}
+2026-10-04 21:12:28,677 INFO [debussy_arabesque-no-1#8]        MeasureRhythm.java:1044 | Measure{#9} No timeOffset for HeadChordInter#3327{(0.946/0.946) staff:8 slot#4 dur:1/8}
+2026-10-04 21:12:28,677 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#9} No timeOffset for HeadChordInter#3321{(0.902/0.902) staff:7 slot#7 dur:1/4}
+2026-10-04 21:12:28,677 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#9} No timeOffset for HeadChordInter#3329{(0.946/0.946) staff:8 slot#6 dur:1/8}
+2026-10-04 21:12:28,677 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#9} No timeOffset for HeadChordInter#3322{(0.873/0.873) staff:7 slot#7 dur:1/2}
+2026-10-04 21:12:28,677 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#9} No timeOffset for HeadChordInter#3330{(0.860/0.860) slot#7 dur:1/2}
+2026-10-04 21:12:28,677 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#9} No timeOffset for HeadChordInter#3322{(0.873/0.873) staff:7 slot#7 dur:1/2}
+2026-10-04 21:12:28,677 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#9} No timeOffset for HeadChordInter#3331{(0.954/0.954) slot#8 dur:1/4}
+2026-10-04 21:12:28,678 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#9} No timeOffset for HeadChordInter#3322{(0.873/0.873) staff:7 slot#7 dur:1/2}
+2026-10-04 21:12:28,678 INFO [debussy_arabesque-no-1#8]   AbstractChordInter.java:635  | Measure{#9} No timeOffset for HeadChordInter#3332{(0.938/0.938) slot#9 dur:1/4}
+2026-10-04 21:12:28,679 INFO [debussy_arabesque-no-1#8]          StackRhythm.java:224  | S4 MeasureStack#9 no correct rhythm
+2026-10-04 21:12:28,679 INFO [debussy_arabesque-no-1#8]       StepMonitoring.java:98   | PAGE
+2026-10-04 21:12:28,680 INFO [debussy_arabesque-no-1#8]                Voice.java:257  | Measure{#3} Voice{#1 excess:1/8} too long
+2026-10-04 21:12:28,680 INFO [debussy_arabesque-no-1#8]                Voice.java:257  | Measure{#3} Voice{#6 excess:1/2} too long
+2026-10-04 21:12:28,680 INFO [debussy_arabesque-no-1#8]                Voice.java:257  | Measure{#6} Voice{#1 excess:3/8} too long
+2026-10-04 21:12:28,680 INFO [debussy_arabesque-no-1#8]                Voice.java:257  | Measure{#7} Voice{#1 excess:3/8} too long
+2026-10-04 21:12:28,681 INFO [debussy_arabesque-no-1#8]                 Book.java:2584 | Book{debussy_arabesque-no-1} storing
+2026-10-04 21:12:28,749 INFO [debussy_arabesque-no-1#8]                 Book.java:2565 | Stored /book.xml
+2026-10-04 21:12:28,855 INFO [debussy_arabesque-no-1#8]           DataHolder.java:348  | Stored /sheet#8/BINARY.png
+2026-10-04 21:12:29,769 INFO [debussy_arabesque-no-1#8]                Sheet.java:1583 | Stored /sheet#8/sheet#8.xml
+2026-10-04 21:12:29,769 INFO [debussy_arabesque-no-1#8]                 Book.java:2525 | Book stored as /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/logs/audiveris_output/debussy_arabesque-no-1/debussy_arabesque-no-1.omr
+2026-10-04 21:12:29,775 INFO [debussy_arabesque-no-1#8]            SheetStub.java:1655 | Sheet#8 disposed
+2026-10-04 21:12:29,822 INFO [debussy_arabesque-no-1#8]                 Book.java:2050 | End of Stub#8
+2026-10-04 21:12:29,823 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | LOAD
+2026-10-04 21:12:29,881 INFO [debussy_arabesque-no-1#9]            SheetStub.java:1278 | Loaded image #9 2479x3508 from /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/pdfs/debussy_arabesque-no-1.pdf
+2026-10-04 21:12:29,882 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | BINARY
+2026-10-04 21:12:30,311 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | SCALE
+2026-10-04 21:12:30,314 INFO [debussy_arabesque-no-1#9]         ScaleBuilder.java:254  | Beam  guessed height: 12 -- 0.25 of [9..20] range
+2026-10-04 21:12:30,314 INFO [debussy_arabesque-no-1#9]         ScaleBuilder.java:271  | Beam measured height: 10 -- 0.09 of [9..20] range at 292% of needed quorum
+2026-10-04 21:12:30,314 INFO [debussy_arabesque-no-1#9]         ScaleBuilder.java:401  | Normalized black jitter: 4.76 %
+2026-10-04 21:12:30,314 INFO [debussy_arabesque-no-1#9]            ScaleStep.java:65   | Scale{ interline(20,21,21) line(2,2,3) beam(10)}
+2026-10-04 21:12:30,314 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | GRID
+2026-10-04 21:12:30,401 INFO [debussy_arabesque-no-1#9]       LinesRetriever.java:1508 | Global slope: 0.00000
+2026-10-04 21:12:30,409 INFO [debussy_arabesque-no-1#9]    ClustersRetriever.java:326  | Retrieved raw line clusters: 10 of sizes [5] with interline(20,21,21)
+2026-10-04 21:12:30,454 INFO [debussy_arabesque-no-1#9]            PeakGraph.java:310  | Systems: #1[1, 2] #2[3, 4] #3[5, 6] #4[7, 8] #5[9, 10]
+2026-10-04 21:12:30,687 INFO [debussy_arabesque-no-1#9]        SystemManager.java:800  | 1 part along 5 systems
+2026-10-04 21:12:30,688 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | HEADERS
+2026-10-04 21:12:31,182 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | STEM_SEEDS
+2026-10-04 21:12:31,211 INFO [debussy_arabesque-no-1#9]        StemSeedsStep.java:86   | stem(2 max:3)
+2026-10-04 21:12:31,220 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | BEAMS
+2026-10-04 21:12:39,325 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | LEDGERS
+2026-10-04 21:12:39,852 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | HEADS
+2026-10-04 21:12:50,502 INFO [debussy_arabesque-no-1#9]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:-0.5] NOTEHEAD_BLACK[L:-0.5,R:-0.5]}
+2026-10-04 21:12:50,518 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | STEMS
+2026-10-04 21:12:51,488 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | REDUCTION
+2026-10-04 21:12:51,544 INFO [debussy_arabesque-no-1#9]        ReductionStep.java:105  | Stems free length median value: 63 pixels, 3.0 interlines
+2026-10-04 21:12:51,552 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | CUE_BEAMS
+2026-10-04 21:12:51,553 INFO [debussy_arabesque-no-1#9]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-10-04 21:12:51,553 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | TEXTS
+2026-10-04 21:12:51,690 WARN [debussy_arabesque-no-1#9]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-10-04 21:12:51,691 INFO [debussy_arabesque-no-1#9]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-10-04 21:12:51,692 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | MEASURES
+2026-10-04 21:12:51,693 INFO [debussy_arabesque-no-1#9]                 Page.java:307  | 14 raw measures: [4 in system#1, 2 in system#2, 3 in system#3, 1 in system#4, 4 in system#5]
+2026-10-04 21:12:51,693 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | CHORDS
+2026-10-04 21:12:51,697 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | CURVES
+2026-10-04 21:12:53,314 INFO [debussy_arabesque-no-1#9]         SlursBuilder.java:240  | Slurs: 32
+2026-10-04 21:12:53,388 INFO [debussy_arabesque-no-1#9]      SegmentsBuilder.java:155  | Segments: 35
+2026-10-04 21:12:53,390 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | SYMBOLS
+2026-10-04 21:12:56,703 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | LINKS
+2026-10-04 21:12:56,722 INFO [debussy_arabesque-no-1#9]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#5040{(0.135) staff:4 QUINDICESIMA BASSA} at java.awt.Point[x=414,y=1537]
+2026-10-04 21:12:56,726 INFO [debussy_arabesque-no-1#9]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#5048{(0.351) staff:4 QUINDICESIMA BASSA} at java.awt.Point[x=413,y=1537]
+2026-10-04 21:12:56,791 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | RHYTHMS
+2026-10-04 21:12:56,792 INFO [debussy_arabesque-no-1#9]           PageRhythm.java:199  | {Page#9.1} Time value reused from sheet#1
+2026-10-04 21:12:56,817 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#1} Voice{#6 excess:1/8} too long
+2026-10-04 21:12:56,821 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#1} Voice{#9 excess:1/8} too long
+2026-10-04 21:12:56,821 INFO [debussy_arabesque-no-1#9]          StackRhythm.java:224  | S1 MeasureStack#1 no correct rhythm
+2026-10-04 21:12:56,825 INFO [debussy_arabesque-no-1#9]        MeasureRhythm.java:1044 | Measure{#2} No timeOffset for HeadChordInter#4064{(0.901/0.901) staff:1 slot#4 dur:1/2}
+2026-10-04 21:12:56,826 INFO [debussy_arabesque-no-1#9]        MeasureRhythm.java:1044 | Measure{#2} No timeOffset for HeadChordInter#4091{(0.941/0.941) staff:2 slot#4 dur:1/8}
+2026-10-04 21:12:56,827 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#2} No timeOffset for HeadChordInter#4064{(0.901/0.901) staff:1 slot#4 dur:1/2}
+2026-10-04 21:12:56,827 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#2} No timeOffset for HeadChordInter#4093{(0.958/0.958) staff:2 slot#6 dur:1/8}
+2026-10-04 21:12:56,827 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#2} No timeOffset for HeadChordInter#4065{(0.812/0.812) staff:1 slot#7 dur:1/2}
+2026-10-04 21:12:56,828 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#2} No timeOffset for HeadChordInter#4094{(0.861/0.861) staff:2 slot#7 dur:1/2}
+2026-10-04 21:12:56,829 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#2} No timeOffset for HeadChordInter#4065{(0.812/0.812) staff:1 slot#7 dur:1/2}
+2026-10-04 21:12:56,829 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#2} No timeOffset for HeadChordInter#4095{(0.954/0.954) staff:2 slot#8 dur:1/4}
+2026-10-04 21:12:56,829 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#2} No timeOffset for HeadChordInter#4065{(0.812/0.812) staff:1 slot#7 dur:1/2}
+2026-10-04 21:12:56,830 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#2} No timeOffset for HeadChordInter#4096{(0.921/0.921) staff:2 slot#9 dur:1/4}
+2026-10-04 21:12:56,830 INFO [debussy_arabesque-no-1#9]          StackRhythm.java:224  | S1 MeasureStack#2 no correct rhythm
+2026-10-04 21:12:56,837 INFO [debussy_arabesque-no-1#9]        MeasureRhythm.java:1044 | Measure{#3} No timeOffset for HeadChordInter#4107{(0.950/0.950) staff:2 slot#10 dur:1/4}
+2026-10-04 21:12:56,841 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#3} No timeOffset for HeadChordInter#4107{(0.950/0.950) staff:2 slot#10 dur:1/4}
+2026-10-04 21:12:56,842 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#3} No timeOffset for HeadChordInter#4108{(0.930/0.930) staff:2 slot#12 dur:1/4}
+2026-10-04 21:12:56,842 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#3} Voice{#6 excess:1/8} too long
+2026-10-04 21:12:56,842 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#3} Voice{#3 excess:1/8} too long
+2026-10-04 21:12:56,843 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#3} Voice{#4 excess:1/8} too long
+2026-10-04 21:12:56,843 INFO [debussy_arabesque-no-1#9]          StackRhythm.java:224  | S1 MeasureStack#3 no correct rhythm
+2026-10-04 21:12:56,847 INFO [debussy_arabesque-no-1#9]        MeasureRhythm.java:1044 | Measure{#5} No timeOffset for HeadChordInter#4118{(0.941/0.941) slot#2 dur:1/4}
+2026-10-04 21:12:56,852 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#5} No timeOffset for HeadChordInter#4118{(0.941/0.941) slot#2 dur:1/4}
+2026-10-04 21:12:56,853 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#5} No timeOffset for HeadChordInter#4119{(0.938/0.938) slot#4 dur:1/4}
+2026-10-04 21:12:56,853 INFO [debussy_arabesque-no-1#9]   AbstractChordInter.java:635  | Measure{#5} No timeOffset for HeadChordInter#4119{(0.938/0.938) slot#4 dur:1/4}
+2026-10-04 21:12:56,853 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#5} Voice{#7 excess:1/8} too long
+2026-10-04 21:12:56,854 INFO [debussy_arabesque-no-1#9]          StackRhythm.java:224  | S2 MeasureStack#5 no correct rhythm
+2026-10-04 21:12:56,856 INFO [debussy_arabesque-no-1#9]        MeasureRhythm.java:1044 | Measure{#7} No timeOffset for HeadChordInter#4125{(0.937/0.937) staff:5 slot#10 dur:1/8}
+2026-10-04 21:12:56,857 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#7} Voice{#5 excess:1/8} too long
+2026-10-04 21:12:56,857 INFO [debussy_arabesque-no-1#9]          StackRhythm.java:224  | S3 MeasureStack#7 no correct rhythm
+2026-10-04 21:12:56,858 INFO [debussy_arabesque-no-1#9]        MeasureRhythm.java:1044 | Measure{#8} No timeOffset for HeadChordInter#4137{(0.947/0.947) staff:5 slot#10 dur:1/8}
+2026-10-04 21:12:56,859 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#8} Voice{#1 excess:1/8} too long
+2026-10-04 21:12:56,860 INFO [debussy_arabesque-no-1#9]          StackRhythm.java:224  | S3 MeasureStack#8 no correct rhythm
+2026-10-04 21:12:56,864 INFO [debussy_arabesque-no-1#9]        MeasureRhythm.java:1044 | Measure{#9} No timeOffset for HeadChordInter#4144{(0.949/0.949) staff:5 slot#10 dur:1/8}
+2026-10-04 21:12:56,866 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#9} Voice{#5 excess:1/8} too long
+2026-10-04 21:12:56,866 INFO [debussy_arabesque-no-1#9]          StackRhythm.java:224  | S3 MeasureStack#9 no correct rhythm
+2026-10-04 21:12:56,869 INFO [debussy_arabesque-no-1#9]        MeasureRhythm.java:1044 | Measure{#10} No timeOffset for HeadChordInter#4163{(0.953/0.953) staff:7 slot#10 dur:1/8}
+2026-10-04 21:12:56,869 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#10} Voice{#5 excess:1/8} too long
+2026-10-04 21:12:56,870 INFO [debussy_arabesque-no-1#9]          StackRhythm.java:224  | S4 MeasureStack#10 no correct rhythm
+2026-10-04 21:12:56,889 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#13} Voice{#3 excess:1/8} too long
+2026-10-04 21:12:56,890 INFO [debussy_arabesque-no-1#9]          StackRhythm.java:224  | S5 MeasureStack#13 no correct rhythm
+2026-10-04 21:12:56,891 INFO [debussy_arabesque-no-1#9]       StepMonitoring.java:98   | PAGE
+2026-10-04 21:12:56,894 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#1} Voice{#6 excess:1/8} too long
+2026-10-04 21:12:56,894 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#1} Voice{#8 excess:1/8} too long
+2026-10-04 21:12:56,894 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#3} Voice{#1 excess:1/8} too long
+2026-10-04 21:12:56,894 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#3} Voice{#4 excess:1/8} too long
+2026-10-04 21:12:56,894 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#3} Voice{#6 excess:1/8} too long
+2026-10-04 21:12:56,895 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#5} Voice{#7 excess:1/8} too long
+2026-10-04 21:12:56,895 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#7} Voice{#5 excess:1/8} too long
+2026-10-04 21:12:56,896 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#8} Voice{#1 excess:1/8} too long
+2026-10-04 21:12:56,896 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#9} Voice{#5 excess:1/8} too long
+2026-10-04 21:12:56,896 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#10} Voice{#5 excess:1/8} too long
+2026-10-04 21:12:56,897 INFO [debussy_arabesque-no-1#9]                Voice.java:257  | Measure{#13} Voice{#3 excess:1/8} too long
+2026-10-04 21:12:56,897 INFO [debussy_arabesque-no-1#9]                 Book.java:2584 | Book{debussy_arabesque-no-1} storing
+2026-10-04 21:12:57,013 INFO [debussy_arabesque-no-1#9]                 Book.java:2565 | Stored /book.xml
+2026-10-04 21:12:57,121 INFO [debussy_arabesque-no-1#9]           DataHolder.java:348  | Stored /sheet#9/BINARY.png
+2026-10-04 21:12:58,393 INFO [debussy_arabesque-no-1#9]                Sheet.java:1583 | Stored /sheet#9/sheet#9.xml
+2026-10-04 21:12:58,394 INFO [debussy_arabesque-no-1#9]                 Book.java:2525 | Book stored as /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/logs/audiveris_output/debussy_arabesque-no-1/debussy_arabesque-no-1.omr
+2026-10-04 21:12:58,423 INFO [debussy_arabesque-no-1#9]            SheetStub.java:1655 | Sheet#9 disposed
+2026-10-04 21:12:58,480 INFO [debussy_arabesque-no-1#9]                 Book.java:2050 | End of Stub#9
+2026-10-04 21:12:58,484 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | LOAD
+2026-10-04 21:12:58,654 INFO [debussy_arabesque-no-1#10]            SheetStub.java:1278 | Loaded image #10 2479x3508 from /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/pdfs/debussy_arabesque-no-1.pdf
+2026-10-04 21:12:58,656 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | BINARY
+2026-10-04 21:12:59,703 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | SCALE
+2026-10-04 21:12:59,705 INFO [debussy_arabesque-no-1#10]         ScaleBuilder.java:254  | Beam  guessed height: 12 -- 0.25 of [9..20] range
+2026-10-04 21:12:59,705 INFO [debussy_arabesque-no-1#10]         ScaleBuilder.java:271  | Beam measured height: 11 -- 0.18 of [9..20] range at 145% of needed quorum
+2026-10-04 21:12:59,705 INFO [debussy_arabesque-no-1#10]         ScaleBuilder.java:401  | Normalized black jitter: 4.76 %
+2026-10-04 21:12:59,705 INFO [debussy_arabesque-no-1#10]            ScaleStep.java:65   | Scale{ interline(20,21,21) line(2,2,3) beam(11)}
+2026-10-04 21:12:59,718 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | GRID
+2026-10-04 21:12:59,820 INFO [debussy_arabesque-no-1#10]       LinesRetriever.java:1508 | Global slope: 0.00000
+2026-10-04 21:12:59,824 INFO [debussy_arabesque-no-1#10]    ClustersRetriever.java:326  | Retrieved raw line clusters: 4 of sizes [5] with interline(20,21,21)
+2026-10-04 21:12:59,838 INFO [debussy_arabesque-no-1#10]            PeakGraph.java:310  | Systems: #1[1, 2]
+2026-10-04 21:13:00,084 INFO [debussy_arabesque-no-1#10]        SystemManager.java:800  | 1 part along 1 system
+2026-10-04 21:13:00,085 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | HEADERS
+2026-10-04 21:13:00,414 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | STEM_SEEDS
+2026-10-04 21:13:00,475 INFO [debussy_arabesque-no-1#10]        StemSeedsStep.java:86   | stem(2 max:3)
+2026-10-04 21:13:00,478 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | BEAMS
+2026-10-04 21:13:08,505 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | LEDGERS
+2026-10-04 21:13:08,571 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | HEADS
+2026-10-04 21:13:11,279 INFO [debussy_arabesque-no-1#10]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.5,R:-0.5]}
+2026-10-04 21:13:11,280 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | STEMS
+2026-10-04 21:13:11,389 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | REDUCTION
+2026-10-04 21:13:11,408 INFO [debussy_arabesque-no-1#10]        ReductionStep.java:105  | Stems free length median value: 74 pixels, 3.5 interlines
+2026-10-04 21:13:11,410 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | CUE_BEAMS
+2026-10-04 21:13:11,410 INFO [debussy_arabesque-no-1#10]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-10-04 21:13:11,411 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | TEXTS
+2026-10-04 21:13:11,492 WARN [debussy_arabesque-no-1#10]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-10-04 21:13:11,493 INFO [debussy_arabesque-no-1#10]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-10-04 21:13:11,493 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | MEASURES
+2026-10-04 21:13:11,494 INFO [debussy_arabesque-no-1#10]                 Page.java:307  | 4 raw measures: [4 in system#1]
+2026-10-04 21:13:11,494 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | CHORDS
+2026-10-04 21:13:11,497 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | CURVES
+2026-10-04 21:13:12,647 INFO [debussy_arabesque-no-1#10]         SlursBuilder.java:240  | Slurs: 10
+2026-10-04 21:13:12,650 INFO [debussy_arabesque-no-1#10]      SegmentsBuilder.java:155  | Segments: 5
+2026-10-04 21:13:12,651 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | SYMBOLS
+2026-10-04 21:13:13,439 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | LINKS
+2026-10-04 21:13:13,441 INFO [debussy_arabesque-no-1#10]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#1416{(0.147) staff:2 QUINDICESIMA BASSA} at java.awt.Point[x=141,y=1295]
+2026-10-04 21:13:13,450 INFO [debussy_arabesque-no-1#10]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#1489{(0.427) staff:1 OTTAVA ALTA} at java.awt.Point[x=2163,y=187]
+2026-10-04 21:13:13,462 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | RHYTHMS
+2026-10-04 21:13:13,462 INFO [debussy_arabesque-no-1#10]           PageRhythm.java:199  | {Page#10.1} Time value reused from sheet#9
+2026-10-04 21:13:13,468 INFO [debussy_arabesque-no-1#10]                Voice.java:257  | Measure{#1} Voice{#4 excess:1/8} too long
+2026-10-04 21:13:13,468 INFO [debussy_arabesque-no-1#10]          StackRhythm.java:224  | S1 MeasureStack#1 no correct rhythm
+2026-10-04 21:13:13,474 INFO [debussy_arabesque-no-1#10]                Voice.java:257  | Measure{#2} Voice{#4 excess:1/8} too long
+2026-10-04 21:13:13,474 INFO [debussy_arabesque-no-1#10]          StackRhythm.java:224  | S1 MeasureStack#2 no correct rhythm
+2026-10-04 21:13:13,478 INFO [debussy_arabesque-no-1#10]                Voice.java:257  | Measure{#3} Voice{#1 excess:1/8} too long
+2026-10-04 21:13:13,478 INFO [debussy_arabesque-no-1#10]          StackRhythm.java:224  | S1 MeasureStack#3 no correct rhythm
+2026-10-04 21:13:13,479 INFO [debussy_arabesque-no-1#10]       StepMonitoring.java:98   | PAGE
+2026-10-04 21:13:13,483 INFO [debussy_arabesque-no-1#10]                Voice.java:257  | Measure{#1} Voice{#4 excess:1/8} too long
+2026-10-04 21:13:13,483 INFO [debussy_arabesque-no-1#10]                Voice.java:257  | Measure{#2} Voice{#4 excess:1/8} too long
+2026-10-04 21:13:13,483 INFO [debussy_arabesque-no-1#10]                Voice.java:257  | Measure{#3} Voice{#1 excess:1/8} too long
+2026-10-04 21:13:13,484 INFO [debussy_arabesque-no-1#10]                 Book.java:2584 | Book{debussy_arabesque-no-1} storing
+2026-10-04 21:13:13,859 INFO [debussy_arabesque-no-1#10]                 Book.java:2565 | Stored /book.xml
+2026-10-04 21:13:14,202 INFO [debussy_arabesque-no-1#10]           DataHolder.java:348  | Stored /sheet#10/BINARY.png
+2026-10-04 21:13:14,646 INFO [debussy_arabesque-no-1#10]                Sheet.java:1583 | Stored /sheet#10/sheet#10.xml
+2026-10-04 21:13:14,646 INFO [debussy_arabesque-no-1#10]                 Book.java:2525 | Book stored as /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/logs/audiveris_output/debussy_arabesque-no-1/debussy_arabesque-no-1.omr
+2026-10-04 21:13:14,679 INFO [debussy_arabesque-no-1#10]            SheetStub.java:1655 | Sheet#10 disposed
+2026-10-04 21:13:14,870 INFO [debussy_arabesque-no-1#10]                 Book.java:2050 | End of Stub#10
+2026-10-04 21:13:14,871 INFO [debussy_arabesque-no-1]                 Book.java:2057 | End of Book{debussy_arabesque-no-1}
+2026-10-04 21:13:16,595 INFO [debussy_arabesque-no-1]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-10-04 21:13:17,264 INFO [debussy_arabesque-no-1]            SheetStub.java:1000 | Loaded /sheet#2/sheet#2.xml
+2026-10-04 21:13:17,865 INFO [debussy_arabesque-no-1]            SheetStub.java:1000 | Loaded /sheet#3/sheet#3.xml
+2026-10-04 21:13:18,412 INFO [debussy_arabesque-no-1]            SheetStub.java:1000 | Loaded /sheet#4/sheet#4.xml
+2026-10-04 21:13:19,197 INFO [debussy_arabesque-no-1]            SheetStub.java:1000 | Loaded /sheet#5/sheet#5.xml
+2026-10-04 21:13:19,406 INFO [debussy_arabesque-no-1]            SheetStub.java:1000 | Loaded /sheet#6/sheet#6.xml
+2026-10-04 21:13:20,031 INFO [debussy_arabesque-no-1]            SheetStub.java:1000 | Loaded /sheet#7/sheet#7.xml
+2026-10-04 21:13:20,760 INFO [debussy_arabesque-no-1]            SheetStub.java:1000 | Loaded /sheet#8/sheet#8.xml
+2026-10-04 21:13:22,088 INFO [debussy_arabesque-no-1]            SheetStub.java:1000 | Loaded /sheet#9/sheet#9.xml
+2026-10-04 21:13:22,502 INFO [debussy_arabesque-no-1]            SheetStub.java:1000 | Loaded /sheet#10/sheet#10.xml
+2026-10-04 21:13:24,171 INFO [debussy_arabesque-no-1]      PartwiseBuilder.java:2707 | Exporting sheet(s): [#1#2#3#4#5#6#7#8#9#10]
+2026-10-04 21:13:24,195 WARN [debussy_arabesque-no-1]      PartwiseBuilder.java:2229 | Error visiting Measure{#4} in {Page#1.1}
+java.lang.NullPointerException: Cannot invoke "org.audiveris.omr.math.Rational.compareTo(org.audiveris.omr.math.Rational)" because "w1.timeOffset" is null
+	at org.audiveris.omr.score.PartwiseBuilder$WedgeIterators.lambda$new$0(PartwiseBuilder.java:3722)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(Unknown Source)
+	at java.base/java.util.TimSort.sort(Unknown Source)
+	at java.base/java.util.Arrays.sort(Unknown Source)
+	at java.base/java.util.ArrayList.sortRange(Unknown Source)
+	at java.base/java.util.ArrayList.sort(Unknown Source)
+	at java.base/java.util.Collections.sort(Unknown Source)
+	at org.audiveris.omr.score.PartwiseBuilder$WedgeIterators.<init>(PartwiseBuilder.java:3718)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2058)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2678)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3223)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1875)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3174)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2710)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2985)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3543)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:927)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:370)
+	at org.audiveris.omr.Main.main(Main.java:272)
+	at Audiveris.main(Audiveris.java:50)
+2026-10-04 21:13:24,227 WARN [debussy_arabesque-no-1]      PartwiseBuilder.java:2229 | Error visiting Measure{#4} in {Page#2.1}
+java.lang.NullPointerException: Cannot invoke "org.audiveris.omr.math.Rational.compareTo(org.audiveris.omr.math.Rational)" because "w1.timeOffset" is null
+	at org.audiveris.omr.score.PartwiseBuilder$WedgeIterators.lambda$new$0(PartwiseBuilder.java:3722)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(Unknown Source)
+	at java.base/java.util.TimSort.sort(Unknown Source)
+	at java.base/java.util.Arrays.sort(Unknown Source)
+	at java.base/java.util.ArrayList.sortRange(Unknown Source)
+	at java.base/java.util.ArrayList.sort(Unknown Source)
+	at java.base/java.util.Collections.sort(Unknown Source)
+	at org.audiveris.omr.score.PartwiseBuilder$WedgeIterators.<init>(PartwiseBuilder.java:3718)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2058)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2678)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3223)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1875)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3174)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2710)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2985)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3543)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:927)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:370)
+	at org.audiveris.omr.Main.main(Main.java:272)
+	at Audiveris.main(Audiveris.java:50)
+2026-10-04 21:13:24,372 WARN [debussy_arabesque-no-1]      PartwiseBuilder.java:2229 | Error visiting Measure{#5} in {Page#5.1}
+java.lang.NullPointerException: Cannot invoke "org.audiveris.omr.math.Rational.compareTo(org.audiveris.omr.math.Rational)" because "w1.timeOffset" is null
+	at org.audiveris.omr.score.PartwiseBuilder$WedgeIterators.lambda$new$0(PartwiseBuilder.java:3722)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(Unknown Source)
+	at java.base/java.util.TimSort.sort(Unknown Source)
+	at java.base/java.util.Arrays.sort(Unknown Source)
+	at java.base/java.util.ArrayList.sortRange(Unknown Source)
+	at java.base/java.util.ArrayList.sort(Unknown Source)
+	at java.base/java.util.Collections.sort(Unknown Source)
+	at org.audiveris.omr.score.PartwiseBuilder$WedgeIterators.<init>(PartwiseBuilder.java:3718)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2058)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2678)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3223)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1875)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3174)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2710)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2985)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3543)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:927)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:370)
+	at org.audiveris.omr.Main.main(Main.java:272)
+	at Audiveris.main(Audiveris.java:50)
+2026-10-04 21:13:24,416 WARN [debussy_arabesque-no-1]      PartwiseBuilder.java:2229 | Error visiting Measure{#6} in {Page#7.1}
+java.lang.NullPointerException: Cannot invoke "org.audiveris.omr.math.Rational.compareTo(org.audiveris.omr.math.Rational)" because "w1.timeOffset" is null
+	at org.audiveris.omr.score.PartwiseBuilder$WedgeIterators.lambda$new$0(PartwiseBuilder.java:3722)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(Unknown Source)
+	at java.base/java.util.TimSort.sort(Unknown Source)
+	at java.base/java.util.Arrays.sort(Unknown Source)
+	at java.base/java.util.ArrayList.sortRange(Unknown Source)
+	at java.base/java.util.ArrayList.sort(Unknown Source)
+	at java.base/java.util.Collections.sort(Unknown Source)
+	at org.audiveris.omr.score.PartwiseBuilder$WedgeIterators.<init>(PartwiseBuilder.java:3718)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2058)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2678)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3223)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1875)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3174)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2710)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2985)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3543)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:927)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:370)
+	at org.audiveris.omr.Main.main(Main.java:272)
+	at Audiveris.main(Audiveris.java:50)
+2026-10-04 21:13:24,442 WARN [debussy_arabesque-no-1]      PartwiseBuilder.java:2229 | Error visiting Measure{#8} in {Page#8.1}
+java.lang.NullPointerException: Cannot invoke "org.audiveris.omr.math.Rational.compareTo(org.audiveris.omr.math.Rational)" because "w1.timeOffset" is null
+	at org.audiveris.omr.score.PartwiseBuilder$WedgeIterators.lambda$new$0(PartwiseBuilder.java:3722)
+	at java.base/java.util.TimSort.countRunAndMakeAscending(Unknown Source)
+	at java.base/java.util.TimSort.sort(Unknown Source)
+	at java.base/java.util.Arrays.sort(Unknown Source)
+	at java.base/java.util.ArrayList.sortRange(Unknown Source)
+	at java.base/java.util.ArrayList.sort(Unknown Source)
+	at java.base/java.util.Collections.sort(Unknown Source)
+	at org.audiveris.omr.score.PartwiseBuilder$WedgeIterators.<init>(PartwiseBuilder.java:3718)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2058)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2678)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3223)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1875)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3174)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2710)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2985)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3543)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:927)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:370)
+	at org.audiveris.omr.Main.main(Main.java:272)
+	at Audiveris.main(Audiveris.java:50)
+2026-10-04 21:13:24,458 WARN [debussy_arabesque-no-1]      PartwiseBuilder.java:2229 | Error visiting Measure{#6} in {Page#9.1}
+java.lang.NullPointerException: Cannot invoke "org.audiveris.omr.math.Rational.compareTo(org.audiveris.omr.math.Rational)" because "event.timeOffset" is null
+	at org.audiveris.omr.score.PartwiseBuilder$WedgeIterators.push(PartwiseBuilder.java:3747)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2068)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2678)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3223)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1875)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3174)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2710)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2985)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3543)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:927)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:370)
+	at org.audiveris.omr.Main.main(Main.java:272)
+	at Audiveris.main(Audiveris.java:50)
+2026-10-04 21:13:24,762 INFO [debussy_arabesque-no-1]        ScoreExporter.java:164  | Score debussy_arabesque-no-1 exported to /Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_fixed_ext/logs/audiveris_output/debussy_arabesque-no-1/debussy_arabesque-no-1.mxl
+2026-10-04 21:13:24,892 INFO [debussy_arabesque-no-1]                Score.java:181  | Closing {Score 1}

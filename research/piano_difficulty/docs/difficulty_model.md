@@ -64,3 +64,25 @@ are not incorporated in the selected v1 factors.
 Source/parser warnings, method settings and registry/schema versions accompany
 the report. Synthetic verification demonstrates stated calculations; teacher
 agreement and learning benefit remain separate research questions.
+
+## Difficulty events (post-processing, v1)
+
+`difficulty_events.v1` is a post-processing explanation layer that subdivides an
+already-flagged difficult passage (candidate section) into musically meaningful
+difficulty events. It does not change difficulty scores. Design: metric-driven
+segmentation first (feature-change boundaries in `TemporalFeatureSeries`
+normalized traces: `leaps.*` spikes, `pitch_geometry.*` expansion, `texture.*`
+sustained, `rhythm.*` density shifts, `coordination.*` mismatch), lightweight
+selective note inspection second (exact `ScoreRegion` via `temporal/selection.py`
+on `ScoreIR` logical/written notes, voices, hands/staves, measure/beat positions).
+Note data is a local inspection tool for “what musical thing caused that change”.
+
+Each event has: span (`ScoreRegion` measure/beat range), likely difficulty type
+(`repeated_ascending_pattern`, `two_voice_texture`, `arpeggiated_arrival`,
+`hand_relocation`, `dense_two_hand_coordination`, etc.), supporting metric
+evidence (`feature_id`, window, raw/normalized/delta), optional note-level
+evidence (`NoteEvidence` hand summaries and `extra` heuristics), confidence
+`[0,1]`, and explicit uncertainty (`uncertainty`, `uncertainty_reason`) when
+no clean label applies. Events may overlap when a texture spans the whole
+passage while an arrival occupies the tail. Existing scores and factor rankings
+are unchanged in v1; the layer is opt-in via `pipeline.analyze_score(..., explain_events=True)` or CLI `--explain-events`.

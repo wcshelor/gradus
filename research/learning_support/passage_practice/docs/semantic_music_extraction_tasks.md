@@ -1,10 +1,17 @@
 # Semantic Music Extraction Atomic Tasks
 
-This checklist decomposes `semantic_music_extraction_plan.md` into agent-sized
-tasks. It is now an active execution aid: S1–S6.7 plus S7.1–S7.7 annotation
-and model experiments have been implemented and tested (834 tests). Remaining
-S8.1+ tasks remain future work until explicitly claimed. Status is reconciled
-with the code on this branch as of 2026-09-10.
+This checklist began as a decomposition of the now-superseded
+`semantic_music_extraction_plan.md`. Treat it as a task/status record for the
+semantic support already implemented, not as the primary architecture for new
+work. New planning should start from `practice_chunk_objects.md`: bounded
+practice chunks with core/display regions, evidence briefs, attached semantic
+observations, provenance, and learner-facing explanations.
+
+S1–S6.7 plus S7.1–S7.7 annotation and model experiments have been implemented
+and tested (834 tests). Remaining S8.1+ tasks remain future work until
+explicitly claimed and should be reframed around practice chunks before
+implementation. Status is reconciled with the code on this branch as of
+2026-09-10.
 
 ## Use rules
 
@@ -18,7 +25,8 @@ runtime code, read only:
 
 Do not perform open-ended repository exploration. Read broad context documents
 such as `README.md`, `docs/architecture.md`, `docs/contracts.md`,
-`docs/testing_strategy.md`, or `docs/semantic_music_extraction_plan.md` only
+`docs/testing_strategy.md`, `docs/practice_chunk_objects.md`, or
+`docs/semantic_music_extraction_plan.md` only
 when the selected task explicitly names them or the listed context is
 insufficient. If the listed context is insufficient, stop and ask for the
 specific missing file or output.
@@ -332,7 +340,9 @@ Resolve these before downstream implementation depends on them:
   Status 2026-09-10: frozen in `tests/regression/semantic_payloads/` (5 JSON:
   `top_voice_melody`, `left_hand_melody`, `accompaniment`, `independent_rhythm`,
   `ambiguous`) with `tests/unit/test_semantic_regression.py` (4 tests: exist/valid,
-  rebuild match, expected families, update path). See `docs/semantic_music_extraction_plan.md` § Testing strategy regression.
+  rebuild match, expected families, update path). Future fixture work should
+  decide whether these payloads remain standalone semantic evidence or become
+  chunk-attached semantic observations.
 
 ## Phase S4 — Pedagogical Hypothesis Bridge
 

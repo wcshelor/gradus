@@ -6,11 +6,11 @@ Depends on LS-10 (done). Owner: repository-wide direction and local roadmap.
 ## Outcome
 
 Planning/documentation only. The next increment is explicitly selected as a
-**CEO walkthrough prototype**: a thin, local, unpolished presentation harness
+**David walkthrough prototype**: a thin, local, unpolished presentation harness
 over the evaluated M2 slice plus the existing difficulty overview — planned
 here, not built:
 
-- `research/learning_support/ceo_demo_milestone_2026-09-06.md` (new):
+- `research/learning_support/david_demo_milestone_2026-09-06.md` (new):
   why-this-next rationale (LS-10's evidence needs a human review venue; the
   walkthrough is that venue and the owner-requested visibility step),
   reuse-vs-new table mapping every owner flow beat to existing components,
@@ -24,15 +24,15 @@ here, not built:
   boundary, and plan-level acceptance.
 - Task list: new M4 milestone bullet referencing the milestone doc; LS-11
   execution-log row marking completion with DEMO-01 as the exact next task.
-- `research/learning_support/tests/unit/test_ceo_demo_milestone.py` (new, 6
+- `research/learning_support/tests/unit/test_david_demo_milestone.py` (new, 6
   doc tests): planning-only status, local link resolution, all ten DEMO
   sections with done criteria, plan reference + LS-11 closure, scope guards
   without product claims, modularity (both entry origins, `difficulty == ()`).
 
 ## Changed files
 
-- `research/learning_support/ceo_demo_milestone_2026-09-06.md` (new).
-- `research/learning_support/tests/unit/test_ceo_demo_milestone.py` (new).
+- `research/learning_support/david_demo_milestone_2026-09-06.md` (new).
+- `research/learning_support/tests/unit/test_david_demo_milestone.py` (new).
 - `docs/Task_list_2026-09-05_flexible_piano_learning_support.md` (M4 + LS-11
   log row). No runtime, contract, fixture, or existing-test files touched;
   no GUI, graph, or demo code written.

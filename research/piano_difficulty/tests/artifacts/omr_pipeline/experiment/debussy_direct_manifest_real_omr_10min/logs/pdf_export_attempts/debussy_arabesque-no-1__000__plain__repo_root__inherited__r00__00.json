@@ -1,0 +1,42 @@
+{
+  "argv": [
+    "/opt/homebrew/Caskroom/musescore/4.7.5.260831071,4.7.5/.homebrew-command-wrappers/mscore",
+    "-o",
+    "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_10min/pdfs/debussy_arabesque-no-1.pdf",
+    "/Users/campshelor/repos/gradus/research/learning_support/david_demo/data/source_scores/debussy_arabesque-no-1.musicxml"
+  ],
+  "attempt_index": 0,
+  "command_json_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_10min/logs/pdf_export_attempts/debussy_arabesque-no-1__000__plain__repo_root__inherited__r00__00.json",
+  "cwd": "/Users/campshelor/repos/gradus/research/piano_difficulty",
+  "cwd_label": "repo_root",
+  "duration_seconds": 3.422,
+  "env_profile": "inherited",
+  "failure_category": "success",
+  "has_crash_abort": false,
+  "has_hiservices": true,
+  "has_import_error": false,
+  "has_missing_output": true,
+  "has_pasteboard": false,
+  "has_unsupported_option": false,
+  "markers": {
+    "crash_abort": false,
+    "hiservices": true,
+    "import_error": false,
+    "missing_output": true,
+    "pasteboard": false,
+    "timeout": false,
+    "unsupported_option": false
+  },
+  "musescore_variant": "plain",
+  "pdf_exists": true,
+  "pdf_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_10min/pdfs/debussy_arabesque-no-1.pdf",
+  "pdf_size_bytes": 169683,
+  "pdf_valid_header": true,
+  "retry_index": 0,
+  "returncode": 0,
+  "source_row_index": 0,
+  "stderr_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_10min/logs/pdf_export_attempts/debussy_arabesque-no-1__000__plain__repo_root__inherited__r00__00.stderr.txt",
+  "stdout_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_10min/logs/pdf_export_attempts/debussy_arabesque-no-1__000__plain__repo_root__inherited__r00__00.stdout.txt",
+  "timeout": false,
+  "variant_flags": []
+}

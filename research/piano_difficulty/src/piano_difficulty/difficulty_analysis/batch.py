@@ -38,6 +38,7 @@ def analyze_batch(
     profile_ids: tuple[str, ...] = DEFAULT_PROFILE_IDS,
     write_csv: bool = False,
     overview_options: OverviewOptions | None = None,
+    explain_events: bool = False,
 ) -> BatchAnalysisResult:
     """Analyze a file or directory into deterministic JSON outputs."""
 
@@ -53,7 +54,12 @@ def analyze_batch(
 
     for path, output_path in _iter_output_paths(inputs, output_dir):
         try:
-            result = analyze_score(path, profile_ids=profile_ids, overview_options=overview_options)
+            result = analyze_score(
+                path,
+                profile_ids=profile_ids,
+                overview_options=overview_options,
+                explain_events=explain_events,
+            )
         except Exception as exc:
             failure = BatchFailure(
                 source_path=path,
@@ -93,6 +99,7 @@ def analyze_batch(
         "success_count": len(payload_paths),
         "failure_count": len(failures),
         "profile_ids": list(profile_ids),
+        "explain_events": explain_events,
         "scores": score_rows,
     }
     corpus_summary_path = output_dir / "corpus_summary.json"

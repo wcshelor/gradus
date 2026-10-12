@@ -86,6 +86,17 @@ validation remain separate layers (see taxonomy doc).
 - explicit dynamic-mark counts and changes
 - crescendo and diminuendo wedge counts
 
+### Hand shape and hand position (Gradus experimental / Yan-adjacent)
+
+Gradus experimental features in `src/piano_difficulty/features/hand_shape.py`. Not Yan-derived; Yan-adjacent — related to Yan `hand_stretch`/`chord_number` families but formulas are Gradus-defined. Do not infer fingering, actual hand repositioning, independent voices, or voice-leading; chord-tone comparisons are sorted-pitch comparisons only. Hand-position features report likely hand-position shift (center shift), not literal repositioning.
+
+- Thresholds: `large_span_threshold=12` semitones, `comfortable_span_threshold=9` semitones, `large_center_shift_threshold=7` semitones
+- Span / chord size: `hand_shape.octave_onset_rate`, `hand_shape.large_span_onset_rate`, `hand_shape.mean_large_span_burden`, `hand_shape.wide_chord_density`, `hand_shape.repeated_octave_texture_rate`
+- Chord-shape variability: `hand_shape.chord_shape_change_rate`, `hand_shape.chord_shape_entropy`, `hand_shape.chord_shape_edit_distance_mean` (unmatched penalty 6 semitones per extra tone, normalized by max chord size), `hand_shape.chord_size_change_rate`, `hand_shape.repeated_shape_ratio`
+- Chord-tone motion (same-size chordal transitions only, sorted pitches): `hand_shape.chord_tone_motion_variability`, `hand_shape.nonparallel_chord_tone_motion_rate`, `hand_shape.inner_chord_tone_change_rate`
+- Hand position (all hand onsets, likely center shift): `hand_position.max_center_shift`, `hand_position.mean_center_shift`, `hand_position.large_center_shift_rate`, `hand_position.timed_center_shift` (ignores transitions with onset gap ≤0)
+- All are per-hand (`scope=hand`, `scope_ref=left|right`); inapplicable chord-transition features emit `0.0` with an explicit insufficient-eligibility diagnostic rather than implying stability/ease.
+
 ### Statistics (promoted from Yan harness, score-native)
 
 Promoted compact predictors (see `src/piano_difficulty/features/statistics.py`):

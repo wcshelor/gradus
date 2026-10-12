@@ -1,0 +1,48 @@
+{
+  "argv": [
+    "/opt/homebrew/Caskroom/musescore/4.7.5.260831071,4.7.5/.homebrew-command-wrappers/mscore",
+    "-R",
+    "-f",
+    "-o",
+    "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/musescore_diagnostics/20261004_165335/pdfs/debussy_arabesque-no-1__R_f__repo_root__minimal.pdf",
+    "/Users/campshelor/repos/gradus/research/learning_support/david_demo/data/source_scores/debussy_arabesque-no-1.musicxml"
+  ],
+  "attempt_id": "attempt_0019",
+  "cwd": "/Users/campshelor/repos/gradus/research/piano_difficulty",
+  "cwd_label": "repo_root",
+  "duration_seconds": 2.468,
+  "env_keys": [
+    "HOME",
+    "PATH",
+    "TMPDIR"
+  ],
+  "env_profile": "minimal",
+  "failure_category": "crash_abort",
+  "markers": {
+    "crash_abort": true,
+    "hiservices": true,
+    "import_error": false,
+    "missing_output": true,
+    "pasteboard": false,
+    "timeout": false,
+    "unsupported_option": false
+  },
+  "musescore_bin": "/opt/homebrew/Caskroom/musescore/4.7.5.260831071,4.7.5/.homebrew-command-wrappers/mscore",
+  "pdf_exists": true,
+  "pdf_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/musescore_diagnostics/20261004_165335/pdfs/debussy_arabesque-no-1__R_f__repo_root__minimal.pdf",
+  "pdf_size_bytes": 169683,
+  "pdf_valid_header": true,
+  "piece_id": "",
+  "returncode": -6,
+  "score_name": "debussy_arabesque-no-1.musicxml",
+  "score_path": "/Users/campshelor/repos/gradus/research/learning_support/david_demo/data/source_scores/debussy_arabesque-no-1.musicxml",
+  "stderr_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/musescore_diagnostics/20261004_165335/logs/attempt_0019.stderr.txt",
+  "stdout_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/musescore_diagnostics/20261004_165335/logs/attempt_0019.stdout.txt",
+  "timeout": false,
+  "timeout_seconds": 20.0,
+  "variant": "-R -f",
+  "variant_flags": [
+    "-R",
+    "-f"
+  ]
+}

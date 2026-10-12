@@ -483,7 +483,7 @@ Recommended:
 | `difficulty_overview.v1` | Compatibility/timeline output. 5 reviewed factors. | Frozen unless explicitly migrated. | Descriptive equal weights; within-piece ranking only. |
 
 Design decision: keep `difficulty_aspects.v1` separate from the existing
-overview payload. Separate output minimizes risk to CEO stability.
+overview payload. Separate output minimizes risk to David stability.
 
 ## Validation disclaimer
 

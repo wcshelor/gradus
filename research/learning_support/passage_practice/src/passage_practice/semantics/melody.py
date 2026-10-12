@@ -6,7 +6,8 @@ hypotheses using register (is_onset_top_note), duration
 continuity, and accompaniment-pattern exclusion via texture.
 
 Design refs:
-- docs/semantic_music_extraction_plan.md § Melody hypotheses
+- docs/practice_chunk_objects.md: semantic observations must remain
+  evidence-backed when attached to a chunk
 - S2.8 salience_view: per-event candidate factors (register, duration,
   metric, accent, dynamics, slur unavailable, pattern exclusion not
   available)

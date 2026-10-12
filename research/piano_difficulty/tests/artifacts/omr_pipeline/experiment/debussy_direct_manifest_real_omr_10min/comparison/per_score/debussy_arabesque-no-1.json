@@ -1,0 +1,46 @@
+{
+  "composer": "",
+  "curated_tag": "",
+  "dataset": "",
+  "difficulty_label": "",
+  "error": "MusicXML file '/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_10min/omr_musicxml/debussy_arabesque-no-1.musicxml' is malformed.",
+  "failure_categories": [
+    "omr_extraction_failed"
+  ],
+  "failure_category": "omr_extraction_failed",
+  "metrics": {},
+  "omr_error": "MusicXML file '/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_10min/omr_musicxml/debussy_arabesque-no-1.musicxml' is malformed.",
+  "omr_hotspots": [],
+  "omr_musicxml_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_10min/omr_musicxml/debussy_arabesque-no-1.musicxml",
+  "omr_score_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_10min/omr_musicxml/debussy_arabesque-no-1.musicxml",
+  "omr_status": "success",
+  "orig_diagnostics": {
+    "candidate_section_count": 5,
+    "hand_distribution": {
+      "both": 1489,
+      "left": 731,
+      "right": 758,
+      "unassigned": 0
+    },
+    "logical_note_count": 1489,
+    "measure_count": 108,
+    "region_count": 107,
+    "score_ir_error": "'LogicalNoteIR' object has no attribute 'pitch'",
+    "score_measure_count": 107
+  },
+  "original_hotspots": [],
+  "original_score_path": "/Users/campshelor/repos/gradus/research/learning_support/david_demo/data/source_scores/debussy_arabesque-no-1.musicxml",
+  "overall_metrics": {},
+  "pdf_path": "/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_10min/pdfs/debussy_arabesque-no-1.pdf",
+  "pdf_status": "success",
+  "peak_distance_measures": null,
+  "pearson_r": null,
+  "piece_id": "",
+  "schema_version": "omr_hotspot_comparison.v1",
+  "source_filename": "debussy_arabesque-no-1.musicxml",
+  "source_score_path": "/Users/campshelor/repos/gradus/research/learning_support/david_demo/data/source_scores/debussy_arabesque-no-1.musicxml",
+  "spearman_r": null,
+  "status": "failure",
+  "summary_answer": "Comparison failed: MusicXML file '/Users/campshelor/repos/gradus/research/piano_difficulty/tests/artifacts/omr_pipeline/experiment/debussy_direct_manifest_real_omr_10min/omr_musicxml/debussy_arabesque-no-1.musicxml' is malformed. (category: omr_extraction_failed)",
+  "title": ""
+}

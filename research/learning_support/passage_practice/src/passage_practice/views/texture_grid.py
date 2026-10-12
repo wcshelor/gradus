@@ -7,9 +7,9 @@ parses MusicXML and never recomputes pitch, tie collapse, or event
 identity (S0.4 R2/R3/R4/R5).
 
 Design refs:
-- docs/semantic_music_extraction_plan.md: Layer 3 ``texture_grid``
 - docs/contracts.md: Derived view (view_type, source passage, method,
   included IDs, ordering, omissions, diagnostics)
+- docs/practice_chunk_objects.md: views provide chunk-citable evidence
 - docs/decisions.md: D-011 (SourceRef), D-014 (half-open selection),
   D-015 (two encoded voices do not imply two musical roles),
   D-018 (S-Q004: attack/written streams + onset groups + durations are

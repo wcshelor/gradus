@@ -347,6 +347,23 @@ def test_extract_all_emits_registry_feature_families(tmp_path: Path) -> None:
         "expression.crescendo_start_count",
         "expression.diminuendo_start_count",
         "expression.staff_specific_dynamic_ratio",
+        "hand_shape.octave_onset_rate",
+        "hand_shape.large_span_onset_rate",
+        "hand_shape.mean_large_span_burden",
+        "hand_shape.wide_chord_density",
+        "hand_shape.repeated_octave_texture_rate",
+        "hand_shape.chord_shape_change_rate",
+        "hand_shape.chord_shape_entropy",
+        "hand_shape.chord_shape_edit_distance_mean",
+        "hand_shape.chord_size_change_rate",
+        "hand_shape.repeated_shape_ratio",
+        "hand_shape.chord_tone_motion_variability",
+        "hand_shape.nonparallel_chord_tone_motion_rate",
+        "hand_shape.inner_chord_tone_change_rate",
+        "hand_position.max_center_shift",
+        "hand_position.mean_center_shift",
+        "hand_position.large_center_shift_rate",
+        "hand_position.timed_center_shift",
     }
 
     assert {feature_id for feature_id, _scope, _ref in features} == expected_feature_ids
@@ -451,6 +468,6 @@ def test_extract_score_returns_json_ready_single_file_result(tmp_path: Path) -> 
     assert payload["schema_version"] == "score_payload.v1"
     assert payload["core_feature_schema_version"] == "core_features.v1"
     assert payload["analysis_profiles"] == []
-    assert len(payload["features"]) == 101
-    assert payload["piece_summary"]["feature_count"] == 101
+    assert len(payload["features"]) == 135
+    assert payload["piece_summary"]["feature_count"] == 135
     assert payload["diagnostics"] == []

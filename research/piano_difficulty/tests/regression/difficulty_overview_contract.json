@@ -133,6 +133,7 @@
   "schema_version": "difficulty_overview.v1",
   "top_level_fields": [
     "candidate_sections",
+    "combined_candidate_sections",
     "composite",
     "composite_peaks",
     "diagnostics",
@@ -148,6 +149,7 @@
     "profile_version",
     "region_evidence",
     "regions",
+    "resolution_views",
     "schema_version",
     "series",
     "warnings"

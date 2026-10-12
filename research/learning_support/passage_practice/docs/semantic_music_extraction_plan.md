@@ -1,5 +1,12 @@
 # Semantic Music Extraction Implementation Plan
 
+Status: superseded as the main planning model. Keep this document as historical
+background for implemented semantic contracts and old task references. New work
+should start from `practice_chunk_objects.md`, which reflects the current
+practice-chunk-centered mindset: grouped regions with core/display boundaries,
+evidence briefs, semantic observations, provenance, and learner-facing
+explanations.
+
 ## Purpose
 
 This plan defines a later implementation track for richer semantic extraction

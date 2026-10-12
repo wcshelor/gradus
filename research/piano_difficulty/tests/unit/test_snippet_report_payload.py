@@ -107,7 +107,7 @@ def test_html_report_includes_snippet_gallery(tmp_path: Path):
 
 def test_writer_preserves_snippets_dir(tmp_path: Path):
     # analyzer should not delete snippets/ on rerun
-    from tests.harness.ceo_walkthrough.artifacts import clean_planned_outputs
+    from tests.harness.david_walkthrough.artifacts import clean_planned_outputs
 
     out = tmp_path / "out"
     demo_dir = out / "demo_piece"

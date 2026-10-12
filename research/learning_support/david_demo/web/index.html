@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gradus — Local Demo</title>
+  <meta name="description" content="Gradus local demo — 11 pre-analyzed pieces + local CIPI/Oktav analysis. Symbolic-score evidence only; no calibrated grade." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Gradus — Local Demo</h1>
+      <p class="small muted" style="margin:4px 0 0">Local symbolic-score demo</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Screen 1 — two clear sections: catalog + local analysis -->
+    <div id="view-load" class="load-screen">
+      <!-- Section 1: Choose a piece (primary — 11 pre-analyzed catalog pieces) -->
+      <section id="catalog-card" class="card card-catalog" aria-label="Choose a piece">
+        <div class="catalog-header">
+          <div>
+            <h2>Choose a piece</h2>
+            <p class="small muted" style="margin:4px 0 0">Source labels are for reference only.</p>
+          </div>
+          <span id="catalog-count" class="badge badge-pass">11 pieces</span>
+        </div>
+        <div id="piece-list" class="piece-list" role="listbox" aria-label="Pre-analyzed pieces"></div>
+        <p id="load-error" class="msg msg-error hidden" role="alert"></p>
+        <span id="catalog-status" class="small muted hidden" aria-live="polite"></span>
+      </section>
+
+      <!-- Section 2: Analyze another piece (below catalog) -->
+      <section id="live-panel" class="card live-card" aria-label="Analyze another piece">
+        <div class="live-header">
+          <h3>Analyze another piece</h3>
+        </div>
+        <p class="small muted" style="margin:6px 0 10px">Search the local CIPI or Oktav library.</p>
+        <div class="live-controls">
+          <label class="small" for="live-dataset">Dataset</label>
+          <select id="live-dataset" class="live-select" aria-label="Dataset selector">
+            <option value="cipi">CIPI</option>
+            <option value="oktav">Oktav</option>
+          </select>
+          <input id="live-search" type="text" class="live-search-input" placeholder="Search composer/title/id, e.g. mozart, arabesque, Le Onde" aria-label="Search text" />
+          <button id="btn-live-search" class="btn">Search</button>
+        </div>
+        <div id="live-results" class="live-results" role="listbox" aria-label="Live search results"></div>
+        <div class="live-actions">
+          <button id="btn-analyze" class="btn btn-primary" disabled>Analyze piece</button>
+          <span id="live-status" class="small muted"></span>
+        </div>
+        <p id="live-error" class="msg msg-error hidden" role="alert"></p>
+        <p id="live-hint" class="small muted hidden"></p>
+      </section>
+    </div>
+
+    <!-- Difficulty Chart screen (Screen 2) — hidden until manifest loads -->
+    <section id="view-chart" class="hidden">
+      <nav class="chart-nav" aria-label="Demo navigation">
+        <button id="btn-back-to-load" class="btn btn-ghost small">&larr; Back to pieces</button>
+      </nav>
+
+      <header id="piece-header" class="piece-header">
+        <div id="piece-meta" class="piece-title-block"></div>
+        <div class="piece-actions">
+          <button id="btn-open-score" class="btn btn-primary hidden" disabled>Open in MuseScore</button>
+          <span id="open-score-status" class="small muted hidden"></span>
+        </div>
+      </header>
+
+      <section class="card chart-card">
+        <div class="chart-head">
+          <h3>Difficulty overview</h3>
+        </div>
+        <div class="chart-wrap">
+          <svg id="chart-svg" viewBox="0 0 1120 460" width="1120" height="460" role="img" aria-label="Difficulty overview"></svg>
+        </div>
+        <div id="chart-x-labels" class="x-labels mono small"></div>
+      </section>
+
+      <section class="card controls-card">
+        <div class="controls-header">
+          <h3>Show dimensions</h3>
+          <div class="controls-actions">
+            <button id="btn-show-all" class="btn btn-ghost small" type="button">Show all</button>
+            <button id="btn-hide-all" class="btn btn-ghost small" type="button">Hide all</button>
+          </div>
+        </div>
+        <div id="factor-toggles" class="toggles"></div>
+        <div class="composite-row">
+          <label class="toggle composite-toggle">
+            <input type="checkbox" id="toggle-composite" checked />
+            <span class="swatch swatch-composite"></span>
+            <span>Overall</span>
+          </label>
+        </div>
+      </section>
+
+      <div class="chart-layout">
+        <section class="card passages-card">
+          <h3>Key passages</h3>
+          <p class="small muted" style="margin:4px 0 10px">Select a passage to see details.</p>
+          <div id="hotspot-list" class="hotspot-list"></div>
+        </section>
+
+        <aside id="detail-panel" class="card detail-card" aria-live="polite">
+          <div id="detail-empty" class="detail-empty">
+            <h3>Details</h3>
+            <p class="muted">Select a passage on the chart or in the list to see its details.</p>
+            <div class="placeholder-snippet">
+              <div class="snippet-badge">Snippet</div>
+              <div class="snippet-state">Select a passage to view its snippet image.</div>
+            </div>
+          </div>
+          <div id="detail-content" class="hidden"></div>
+        </aside>
+      </div>
+
+      <details class="card provenance-card" style="margin-top:12px">
+        <summary class="small" style="cursor:pointer;font-weight:600">About this analysis</summary>
+        <div style="margin-top:10px">
+          <ul id="caveats-list" class="small"></ul>
+          <p id="snippet-global-status" class="small muted"></p>
+          <section id="aspects-panel" class="hidden" aria-label="Analysis details">
+            <div id="aspects-notice" class="msg small hidden" role="status"></div>
+            <div id="aspects-grid" class="aspects-grid" aria-live="polite"></div>
+            <div class="aspects-meta small muted hidden">
+              <div>Schema: <code id="aspects-schema"></code></div>
+              <div id="aspects-count"></div>
+              <div id="aspects-profile-version" class="mono small"></div>
+            </div>
+            <p class="small muted" id="aspects-interpretation"></p>
+            <p id="aspects-diagnostics" class="small muted"></p>
+            <p id="aspects-warnings" class="small muted"></p>
+          </section>
+        </div>
+      </details>
+
+      <p class="small muted" style="margin-top:12px;text-align:center">Local symbolic-score demo. Source labels are for reference only.</p>
+    </section>
+
+    <footer class="footer small muted">
+      <p>Local symbolic-score demo. Labels are source labels, not Gradus grades.</p>
+    </footer>
+  </main>
+
+  <script src="app.js?v=2026-09-21"></script>
+</body>
+</html>
